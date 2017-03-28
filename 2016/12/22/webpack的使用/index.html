@@ -102,35 +102,35 @@
 
 
 
-<meta name="description" content="官网：https://webpack.js.org/webpack是一款模块加载和打包的工具 类似于glup
-使用功能是什么？
-首先全局安装 npm install -g webpack
-进入你的项目文件夹 初始化cd yourproject
+<meta name="description" content="官网：https://webpack.js.org/
+webpack是一款模块加载和打包的工具
+1.全局安装 npm install -g webpack
+进入你的项目文件夹（比如叫yourproject）和 初始化cd yourproject
 npm init
-初始化主要生成package.json包
+初始化用来生成package.json包
 {
   &amp;quot;name&amp;quot;: &amp;quot;webpacktest&amp;quot;,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="webpack使用">
+<meta property="og:title" content="webpack基础应用">
 <meta property="og:url" content="http://yoursite.com/2016/12/22/webpack的使用/index.html">
 <meta property="og:site_name" content="OLLIFE">
-<meta property="og:description" content="官网：https://webpack.js.org/webpack是一款模块加载和打包的工具 类似于glup
-使用功能是什么？
-首先全局安装 npm install -g webpack
-进入你的项目文件夹 初始化cd yourproject
+<meta property="og:description" content="官网：https://webpack.js.org/
+webpack是一款模块加载和打包的工具
+1.全局安装 npm install -g webpack
+进入你的项目文件夹（比如叫yourproject）和 初始化cd yourproject
 npm init
-初始化主要生成package.json包
+初始化用来生成package.json包
 {
   &amp;quot;name&amp;quot;: &amp;quot;webpacktest&amp;quot;,">
-<meta property="og:updated_time" content="2017-01-19T07:44:06.000Z">
+<meta property="og:updated_time" content="2017-03-28T14:23:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="webpack使用">
-<meta name="twitter:description" content="官网：https://webpack.js.org/webpack是一款模块加载和打包的工具 类似于glup
-使用功能是什么？
-首先全局安装 npm install -g webpack
-进入你的项目文件夹 初始化cd yourproject
+<meta name="twitter:title" content="webpack基础应用">
+<meta name="twitter:description" content="官网：https://webpack.js.org/
+webpack是一款模块加载和打包的工具
+1.全局安装 npm install -g webpack
+进入你的项目文件夹（比如叫yourproject）和 初始化cd yourproject
 npm init
-初始化主要生成package.json包
+初始化用来生成package.json包
 {
   &amp;quot;name&amp;quot;: &amp;quot;webpacktest&amp;quot;,">
 
@@ -166,7 +166,7 @@ npm init
 
 
 
-  <title> webpack使用 | OLLIFE </title>
+  <title> webpack基础应用 | OLLIFE </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -303,7 +303,7 @@ npm init
             
             
               
-                webpack使用
+                webpack基础应用
               
             
           </h1>
@@ -376,12 +376,12 @@ npm init
       
 
       
-        <p><code>官网</code>：<a href="https://webpack.js.org/" target="_blank" rel="external">https://webpack.js.org/</a><br>webpack是一款模块加载和打包的工具 类似于glup</p>
-<p>使用功能是什么？</p>
-<h2 id="首先全局安装"><a href="#首先全局安装" class="headerlink" title="首先全局安装"></a>首先全局安装</h2><pre><code> npm install -g webpack
-</code></pre><h2 id="进入你的项目文件夹-初始化"><a href="#进入你的项目文件夹-初始化" class="headerlink" title="进入你的项目文件夹 初始化"></a>进入你的项目文件夹 初始化</h2><pre><code>cd yourproject
+        <p><code>官网</code>：<a href="https://webpack.js.org/" target="_blank" rel="external">https://webpack.js.org/</a></p>
+<p>webpack是一款模块加载和打包的工具</p>
+<h2 id="1-全局安装"><a href="#1-全局安装" class="headerlink" title="1.全局安装"></a>1.全局安装</h2><pre><code> npm install -g webpack
+</code></pre><h2 id="进入你的项目文件夹（比如叫yourproject）和-初始化"><a href="#进入你的项目文件夹（比如叫yourproject）和-初始化" class="headerlink" title="进入你的项目文件夹（比如叫yourproject）和 初始化"></a>进入你的项目文件夹（比如叫yourproject）和 初始化</h2><pre><code>cd yourproject
 npm init
-</code></pre><p>初始化主要生成package.json包</p>
+</code></pre><p>初始化用来生成package.json包</p>
 <pre><code class="json">{
   &quot;name&quot;: &quot;webpacktest&quot;,
   &quot;version&quot;: &quot;1.0.0&quot;,
@@ -399,57 +399,74 @@ npm init
 </code></pre>
 <h2 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h2><pre><code class="npm">npm install webpack --save-dev
 </code></pre>
-<p>生成mode_modules文件夹以及在package.json里生成 </p>
+<p>生成mode_modules文件夹以及在package.json的devDependencies中自动添加</p>
 <pre><code class="json">&quot;devDependencies&quot;: {
     &quot;webpack&quot;: &quot;^1.14.0&quot;
   }
 </code></pre>
 <p>在每个项目根目录下必须配置一个webpack.config.js文件，此文件用来写配置项，用来告诉webpack做什么。<br>webpack.config.js里一般写法</p>
-<pre><code class="javascript">var webpack=require(&#39;webpack&#39;);
-var commonPlugin = new webpack.optimize.CommonsChunkPlugin(&#39;comon.js&#39;);
+<pre><code class="javascript">//var webpack=require(&#39;webpack&#39;);
+//var commonPlugin = new webpack.optimize.CommonsChunkPlugin(&#39;comon.js&#39;);
+
+
 module.explorts={
-  //此项为插件项，指明使用的插件名
-  plugins:[commonPlugin],
-  //entry里为设置处理的文件路径
+  //plugins:[commonPlugin],
+  //entry里为设置处理的文件路径入口
   entry:{
     index:&#39;./src/js/page/index.js&#39;
     },
   //output里为处理后存放的文件夹以及新的文件名
   output:{
     path:&#39;dist/js/page&#39;,
+    //publiPath:&#39;&#39;,
     filename:&#39;[name].js&#39;
     },
   // module这里定义了处理指定后缀文件的插件，插件需要安装在项目内
   // npm install 插件名 -dev--save
   module:{
     loaders:[
-        {test:/\.css$/,loader:&#39;style-loader!css-loader&#39;},
+      //处理css和scss文件
+        {test:/\.css$/,
+         loader:&#39;style-loader!css-loader!sass-loader&#39;
+        },
+      //处理es6文件
+        {
+          test:/\.js$/,
+          //排除不需要解析道文件夹
+          exclude:(),
+          loader:&#39;label-loader&#39;,
+          //
+          qurey:{
+            presets:[&#39;es2015&#39;]
+          }
+        }
 
       ]
     },
   //
   resolve:{
+    // 设置查找module的根目录，可忽略
     root:&#39;&#39;,
-    extensions:[],
+    // resolve.extensions设置扩展文件后缀名， require()可以省略文件名
+    extensions:[&#39;&#39;,&#39;js&#39;,&#39;css&#39;],
+    //设置模块别名
     alias:{
 
       }
-    }
+    },
+  //插件
+  plugins:{
+
+  }
 }
 </code></pre>
-<h2 id="小例子"><a href="#小例子" class="headerlink" title="小例子"></a>小例子</h2><p>假设我们的项目在webpacktest文件夹里<br>我们现在全局安装</p>
-<pre><code> npm install -g webpack
-</code></pre><h2 id="进入项目文件夹webpack-然后初始化"><a href="#进入项目文件夹webpack-然后初始化" class="headerlink" title="进入项目文件夹webpack 然后初始化"></a>进入项目文件夹webpack 然后初始化</h2><pre><code>cd yourproject
-npm init
-</code></pre><p>初始化主要生成package.json包<br><strong><code>扩展阅读</code></strong></p>
+<p><strong><code>扩展阅读</code></strong></p>
 <ul>
 <li><a href="http://www.w2bc.com/Article/50764" target="_blank" rel="external">http://www.w2bc.com/Article/50764</a></li>
 <li><a href="http://blog.csdn.net/github_26672553/article/details/52107165" target="_blank" rel="external">http://blog.csdn.net/github_26672553/article/details/52107165</a></li>
-<li>webpack-dev-server使用讲解 <ul>
+<li>webpack-dev-server使用讲解 </li>
 <li><a href="http://www.tuicool.com/articles/BZrQ3mv" target="_blank" rel="external">http://www.tuicool.com/articles/BZrQ3mv</a></li>
 <li><a href="https://segmentfault.com/a/1190000006964335" target="_blank" rel="external">https://segmentfault.com/a/1190000006964335</a></li>
-</ul>
-</li>
 </ul>
 
       
@@ -483,8 +500,8 @@ npm init
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/22/仿锤子3d动图/" rel="next" title="防锤子3d动图">
-                <i class="fa fa-chevron-left"></i> 防锤子3d动图
+              <a href="/2016/12/22/test/" rel="next" title="正则">
+                <i class="fa fa-chevron-left"></i> 正则
               </a>
             
           </div>
@@ -493,8 +510,8 @@ npm init
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/12/22/新手小问题收集（HTML）/" rel="prev" title="新手小问题收集">
-                新手小问题收集 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/12/22/requirejs 使用/" rel="prev" title="requirejs使用">
+                requirejs使用 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -565,7 +582,7 @@ npm init
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -618,7 +635,7 @@ npm init
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#首先全局安装"><span class="nav-number">1.</span> <span class="nav-text">首先全局安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进入你的项目文件夹-初始化"><span class="nav-number">2.</span> <span class="nav-text">进入你的项目文件夹 初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装依赖"><span class="nav-number">3.</span> <span class="nav-text">安装依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小例子"><span class="nav-number">4.</span> <span class="nav-text">小例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进入项目文件夹webpack-然后初始化"><span class="nav-number">5.</span> <span class="nav-text">进入项目文件夹webpack 然后初始化</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-全局安装"><span class="nav-number">1.</span> <span class="nav-text">1.全局安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进入你的项目文件夹（比如叫yourproject）和-初始化"><span class="nav-number">2.</span> <span class="nav-text">进入你的项目文件夹（比如叫yourproject）和 初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装依赖"><span class="nav-number">3.</span> <span class="nav-text">安装依赖</span></a></li></ol></div>
             
 
           </div>
