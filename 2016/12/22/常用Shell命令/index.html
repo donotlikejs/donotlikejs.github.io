@@ -103,48 +103,60 @@
 
 
 <meta name="description" content="本笔记操作以mac系统为准
-cd 进入目录
+路径表示 
+./    当前目录(可省略 比如 cd ./demo 写成 cd demo)
+../   上一级目录
+/     绝对路径(根目录)
+
+cd 改变目录
 //进入当前目录的子目录demo
 cd ./demo
-//进入根目录下的demo目录
-cd /demo
+//进入之前的目录
+cd -
 
-touch（新建文件） 和 mkdir（新建目录）
-ls 显示文件列表
-pwd 显示目录路径 
-rm 删除 
-mv（移动） 和 cp（拷贝）">
+touch（新建文件） 
+mkdir（新建目录）
+// 当前目录新建 demo.txt和index.html
+touch">
 <meta property="og:type" content="article">
 <meta property="og:title" content="常用Shell命令">
 <meta property="og:url" content="http://yoursite.com/2016/12/22/常用Shell命令/index.html">
 <meta property="og:site_name" content="OLLIFE">
 <meta property="og:description" content="本笔记操作以mac系统为准
-cd 进入目录
+路径表示 
+./    当前目录(可省略 比如 cd ./demo 写成 cd demo)
+../   上一级目录
+/     绝对路径(根目录)
+
+cd 改变目录
 //进入当前目录的子目录demo
 cd ./demo
-//进入根目录下的demo目录
-cd /demo
+//进入之前的目录
+cd -
 
-touch（新建文件） 和 mkdir（新建目录）
-ls 显示文件列表
-pwd 显示目录路径 
-rm 删除 
-mv（移动） 和 cp（拷贝）">
-<meta property="og:updated_time" content="2017-04-01T05:54:35.000Z">
+touch（新建文件） 
+mkdir（新建目录）
+// 当前目录新建 demo.txt和index.html
+touch">
+<meta property="og:updated_time" content="2017-04-05T11:18:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常用Shell命令">
 <meta name="twitter:description" content="本笔记操作以mac系统为准
-cd 进入目录
+路径表示 
+./    当前目录(可省略 比如 cd ./demo 写成 cd demo)
+../   上一级目录
+/     绝对路径(根目录)
+
+cd 改变目录
 //进入当前目录的子目录demo
 cd ./demo
-//进入根目录下的demo目录
-cd /demo
+//进入之前的目录
+cd -
 
-touch（新建文件） 和 mkdir（新建目录）
-ls 显示文件列表
-pwd 显示目录路径 
-rm 删除 
-mv（移动） 和 cp（拷贝）">
+touch（新建文件） 
+mkdir（新建目录）
+// 当前目录新建 demo.txt和index.html
+touch">
 
 
 
@@ -389,17 +401,57 @@ mv（移动） 和 cp（拷贝）">
 
       
         <p>本笔记操作以mac系统为准</p>
-<p><code>cd</code> 进入目录</p>
+<p><code>路径表示</code> </p>
+<pre><code class="shell">./    当前目录(可省略 比如 cd ./demo 写成 cd demo)
+../   上一级目录
+/     绝对路径(根目录)
+</code></pre>
+<p><code>cd</code> 改变目录</p>
 <pre><code class="shell">//进入当前目录的子目录demo
 cd ./demo
-//进入根目录下的demo目录
-cd /demo
+//进入之前的目录
+cd -
 </code></pre>
-<p>touch（新建文件） 和 mkdir（新建目录）</p>
-<p>ls 显示文件列表</p>
-<p>pwd 显示目录路径 </p>
-<p>rm 删除 </p>
-<p>mv（移动） 和 cp（拷贝） </p>
+<p><code>touch</code>（新建文件） </p>
+<p><code>mkdir</code>（新建目录）</p>
+<pre><code>// 当前目录新建 demo.txt和index.html
+touch demo.txt index.html
+// 当前目录新建demo文件夹
+mkdir demo
+</code></pre><p><code>rm</code> 删除文件       </p>
+<p>​    常用选项 </p>
+<p>​            -i -r -v 同复制</p>
+<p>​            -f: 忽略不存在的文件</p>
+<p><code>rmdir</code> 删除空目录</p>
+<p><code>ls</code> 显示文件列表</p>
+<p>常用选项    -l:长格式显示结果 </p>
+<p>​            -t:按修改时间来排序 </p>
+<p>​            -a:显示所有文件 -r:相反顺序显示 </p>
+<p>​            -h:长格式列出时，不已字节显示文件大小 </p>
+<p>​            -F: 每个文件加上指示符号 </p>
+<p>​            -d: 列出指定目录中内容 </p>
+<p><code>pwd</code> 显示目录路径 </p>
+<p><code>mv</code>（移动/重命名文件和目录） 和 <code>cp</code>（拷贝文件和目录） </p>
+<p>常用选项       -a:复制所有信息和属性</p>
+<p>​            -i:重写前确认</p>
+<p>​            -r:递归(复制)</p>
+<p>​            -u:仅复制目标目录不存在或新于的文件</p>
+<p>​            -v:显示详细命令操作信息</p>
+<pre><code class="shell">//复制file1文件到file2
+cp file1 file2
+//重命名为file2
+mv file1 file2
+//移动file1到根目录下的demo目录
+mv file1 /demo
+</code></pre>
+<p>file</p>
+<p>less</p>
+<p>type 解释一个命令名</p>
+<p>which 显示会执行哪个可执行程序（可用来找路径）</p>
+<p>man</p>
+<p>info</p>
+<p>whatis</p>
+<p>通配符 *</p>
 
       
     </div>
@@ -432,8 +484,8 @@ cd /demo
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/22/test/" rel="next" title="正则">
-                <i class="fa fa-chevron-left"></i> 正则
+              <a href="/2016/12/22/webpack的使用/" rel="next" title="webpack基础应用">
+                <i class="fa fa-chevron-left"></i> webpack基础应用
               </a>
             
           </div>
@@ -442,8 +494,8 @@ cd /demo
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/12/22/requirejs 使用/" rel="prev" title="requirejs使用">
-                requirejs使用 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/12/22/test/" rel="prev" title="正则">
+                正则 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
