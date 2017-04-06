@@ -208,6 +208,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
@@ -363,33 +373,49 @@ let patt=/abc/g;
 //2.
 let patt=new RegExp(&#39;abc&#39;,&#39;g&#39;);
 </code></pre>
-<h2 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h2><pre><code class="javascript">i    不区分大小
-g    全局匹配
-m    多行匹配
-u    （es6新增）
-</code></pre>
-<h2 id="元字符-b-w-d-s"><a href="#元字符-b-w-d-s" class="headerlink" title="元字符 . \b \w\d\s"></a>元字符 . \b \w\d\s</h2><pre><code class="javascript">.          匹配任意字符
-\b         匹配单词边界
-\w        匹配数字，字母，下划线
-\d        匹配数字
-\s        匹配空格
-[abc]    匹配方括号里任意一个字符
-^        匹配首部
-$        匹配尾部
+<h2 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h2><pre><code class="javascript">/*
 
-//取反
-\B \W \D \S [^abc]
+    i    不区分大小
+    g    全局匹配
+    m    多行匹配
+    u    （es6新增）
+
+*/
 </code></pre>
-<h2 id="量词"><a href="#量词" class="headerlink" title="量词 * + ? {}"></a>量词 * + ? {}</h2><pre><code class="javascript">*        匹配任意个
-+        匹配一到多个
-?        匹配 0 到 1 个
-{n}        匹配 n 个
-{n,}    匹配至少 n 个
-{n,m}    匹配 n 到 m 个
+<h2 id="元字符-b-w-d-s"><a href="#元字符-b-w-d-s" class="headerlink" title="元字符 . \b \w\d\s"></a>元字符 . \b \w\d\s</h2><pre><code class="javascript">/*
+    .          匹配任意字符
+    \b         匹配单词边界
+    \w        匹配数字，字母，下划线
+    \d        匹配数字
+    \s        匹配空格
+    [abc]    匹配方括号里任意一个字符
+    ^        匹配首部
+    $        匹配尾部
+
+    --取反--
+    \B \W \D \S [^abc]
+
+*/
 </code></pre>
-<h2 id="分枝条件"><a href="#分枝条件" class="headerlink" title="分枝条件 |"></a>分枝条件 |</h2><pre><code class="javascript">a|b         匹配 a 或者 b
+<h2 id="量词"><a href="#量词" class="headerlink" title="量词 * + ? {}"></a>量词 * + ? {}</h2><pre><code class="javascript">/*
+
+    *        匹配任意个
+    +        匹配一到多个
+    ?        匹配 0 到 1 个
+    {n}        匹配 n 个
+    {n,}    匹配至少 n 个
+    {n,m}    匹配 n 到 m 个
+
+*/
+</code></pre>
+<h2 id="分枝条件"><a href="#分枝条件" class="headerlink" title="分枝条件 |"></a>分枝条件 |</h2><pre><code class="javascript">/*
+
+a|b         匹配 a 或者 b 
+
+*/
 </code></pre>
 <h2 id="分组"><a href="#分组" class="headerlink" title="分组 ()"></a>分组 ()</h2><pre><code class="javascript">/*
+
     (exp)            匹配且分组
     (?&lt;name&gt;exp)    匹配且以name名分组
     (?:exp)            只匹配不捕获不分组
@@ -398,16 +424,24 @@ $        匹配尾部
     (?!exp)            匹配后面不跟着exp的位置
     (?&lt;!exp)        匹配前面不跟着exp的位置
     (?#comment)        注释
+
  */
 </code></pre>
-<h2 id="懒惰限定符"><a href="#懒惰限定符" class="headerlink" title="懒惰限定符"></a>懒惰限定符</h2><pre><code class="javascript">*?
-+?
-??
-{n,m}?
-{n,}?
+<h2 id="懒惰限定符"><a href="#懒惰限定符" class="headerlink" title="懒惰限定符"></a>懒惰限定符</h2><pre><code class="javascript">/*
+
+    *?
+    +?
+    ??
+    {n,m}?
+    {n,}?
+
+*/
 </code></pre>
-<h2 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符  \"></a>转义字符  \</h2><pre><code class="javascript">//需要转义的字符
-* . ? + $ ^ [ ] ( ) { } / \ |
+<h2 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符  \"></a>转义字符  \</h2><pre><code class="javascript">/*
+
+    需要转义的字符   * . ? + $ ^ [ ] ( ) { } / \ |
+
+*/
 </code></pre>
 <h2 id="RegExp方法"><a href="#RegExp方法" class="headerlink" title="RegExp方法"></a>RegExp方法</h2><h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><pre><code class="javascript">complie()
 exec()
@@ -1023,7 +1057,7 @@ split()
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/22/commonJS and AMD/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/22/计算机基础/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="lijian">
@@ -1048,8 +1082,8 @@ split()
             
               
                 
-                <a class="post-title-link" href="/2016/12/22/commonJS and AMD/" itemprop="url">
-                  commonJS 和 AMD 规范
+                <a class="post-title-link" href="/2016/12/22/计算机基础/" itemprop="url">
+                  计算机基础
                 </a>
               
             
@@ -1125,22 +1159,8 @@ split()
       
         
           
-            <h2 id="commonJS"><a href="#commonJS" class="headerlink" title="commonJS"></a>commonJS</h2><ul>
-<li>commonJS是服务器端模块的规范，</li>
-<li>commonJS规范定义 文件皆模块</li>
-<li><p>模块的的加载</p>
-<ul>
-<li>require() // 引入外部模块</li>
-<li>exports对象 // 导出当前模块的方法或者变量，唯一的导出口</li>
-</ul>
-</li>
-<li><p>commonJS同步加载模块</p>
-</li>
-</ul>
-<h2 id="AMD"><a href="#AMD" class="headerlink" title="AMD"></a>AMD</h2><p> AMD (Asynchronous Module Definition) 异步模块定义<br> AMD规范只有一个API<br> define(id?, dependencies?, factory);</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="https://segmentfault.com/a/1190000004873947" target="_blank" rel="external">https://segmentfault.com/a/1190000004873947</a></li>
-</ul>
+            <p>比特(bit): 1bit为单个二进制数值 0 或者 1 。</p>
+<p>字节(Byte)：1byte=8bit(00000000~11111111)=8位二进制。<br>位：计算机内部数据储存的最小单位(比如cpu有32位二进制和64位二进制)<br>码元：常用时间间隔相同的符号来表示一位二进制数字，这样的时间间隔内的信号          称为二进制码元。<br>字符</p>
 
           
         
@@ -1752,7 +1772,7 @@ mv file1 /demo
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/22/计算机基础/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/22/commonJS and AMD/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="lijian">
@@ -1777,8 +1797,8 @@ mv file1 /demo
             
               
                 
-                <a class="post-title-link" href="/2016/12/22/计算机基础/" itemprop="url">
-                  计算机基础
+                <a class="post-title-link" href="/2016/12/22/commonJS and AMD/" itemprop="url">
+                  commonJS 和 AMD 规范
                 </a>
               
             
@@ -1854,8 +1874,22 @@ mv file1 /demo
       
         
           
-            <p>比特(bit): 1bit为单个二进制数值 0 或者 1 。</p>
-<p>字节(Byte)：1byte=8bit(00000000~11111111)=8位二进制。<br>位：计算机内部数据储存的最小单位(比如cpu有32位二进制和64位二进制)<br>码元：常用时间间隔相同的符号来表示一位二进制数字，这样的时间间隔内的信号          称为二进制码元。<br>字符</p>
+            <h2 id="commonJS"><a href="#commonJS" class="headerlink" title="commonJS"></a>commonJS</h2><ul>
+<li>commonJS是服务器端模块的规范，</li>
+<li>commonJS规范定义 文件皆模块</li>
+<li><p>模块的的加载</p>
+<ul>
+<li>require() // 引入外部模块</li>
+<li>exports对象 // 导出当前模块的方法或者变量，唯一的导出口</li>
+</ul>
+</li>
+<li><p>commonJS同步加载模块</p>
+</li>
+</ul>
+<h2 id="AMD"><a href="#AMD" class="headerlink" title="AMD"></a>AMD</h2><p> AMD (Asynchronous Module Definition) 异步模块定义<br> AMD规范只有一个API<br> define(id?, dependencies?, factory);</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://segmentfault.com/a/1190000004873947" target="_blank" rel="external">https://segmentfault.com/a/1190000004873947</a></li>
+</ul>
 
           
         
