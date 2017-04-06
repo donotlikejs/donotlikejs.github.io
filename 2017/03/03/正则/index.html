@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="bash shell," />
+  <meta name="keywords" content="javascript," />
 
 
 
@@ -102,61 +102,52 @@
 
 
 
-<meta name="description" content="本笔记操作以mac系统为准
-路径表示 
-./    当前目录(可省略 比如 cd ./demo 写成 cd demo)
-../   上一级目录
-/     绝对路径(根目录)
+<meta name="description" content="创建 RegExp//1.
+let patt=/abc/g;
+//2.
+let patt=new RegExp(&amp;#39;abc&amp;#39;,&amp;#39;g&amp;#39;);
 
-cd 改变目录
-//进入当前目录的子目录demo
-cd ./demo
-//进入之前的目录
-cd -
+修饰符i    不区分大小
+g    全局匹配
+m    多行匹配
+u    （es6新增）
 
-touch（新建文件） 
-mkdir（新建目录）
-// 当前目录新建 demo.txt和index.html
-touch">
+元字符 . \b \w\d\s.          匹配任意字符
+\b         匹配单词边界
+\w        匹配数字，字">
 <meta property="og:type" content="article">
-<meta property="og:title" content="常用Shell命令">
-<meta property="og:url" content="http://yoursite.com/2016/12/22/常用Shell命令/index.html">
+<meta property="og:title" content="javascript正则">
+<meta property="og:url" content="http://yoursite.com/2017/03/03/正则/index.html">
 <meta property="og:site_name" content="OLLIFE">
-<meta property="og:description" content="本笔记操作以mac系统为准
-路径表示 
-./    当前目录(可省略 比如 cd ./demo 写成 cd demo)
-../   上一级目录
-/     绝对路径(根目录)
+<meta property="og:description" content="创建 RegExp//1.
+let patt=/abc/g;
+//2.
+let patt=new RegExp(&amp;#39;abc&amp;#39;,&amp;#39;g&amp;#39;);
 
-cd 改变目录
-//进入当前目录的子目录demo
-cd ./demo
-//进入之前的目录
-cd -
+修饰符i    不区分大小
+g    全局匹配
+m    多行匹配
+u    （es6新增）
 
-touch（新建文件） 
-mkdir（新建目录）
-// 当前目录新建 demo.txt和index.html
-touch">
-<meta property="og:updated_time" content="2017-04-05T11:18:37.000Z">
+元字符 . \b \w\d\s.          匹配任意字符
+\b         匹配单词边界
+\w        匹配数字，字">
+<meta property="og:updated_time" content="2017-04-06T06:27:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="常用Shell命令">
-<meta name="twitter:description" content="本笔记操作以mac系统为准
-路径表示 
-./    当前目录(可省略 比如 cd ./demo 写成 cd demo)
-../   上一级目录
-/     绝对路径(根目录)
+<meta name="twitter:title" content="javascript正则">
+<meta name="twitter:description" content="创建 RegExp//1.
+let patt=/abc/g;
+//2.
+let patt=new RegExp(&amp;#39;abc&amp;#39;,&amp;#39;g&amp;#39;);
 
-cd 改变目录
-//进入当前目录的子目录demo
-cd ./demo
-//进入之前的目录
-cd -
+修饰符i    不区分大小
+g    全局匹配
+m    多行匹配
+u    （es6新增）
 
-touch（新建文件） 
-mkdir（新建目录）
-// 当前目录新建 demo.txt和index.html
-touch">
+元字符 . \b \w\d\s.          匹配任意字符
+\b         匹配单词边界
+\w        匹配数字，字">
 
 
 
@@ -184,13 +175,13 @@ touch">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/12/22/常用Shell命令/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/03/正则/"/>
 
 
 
 
 
-  <title> 常用Shell命令 | OLLIFE </title>
+  <title> javascript正则 | OLLIFE </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -303,7 +294,7 @@ touch">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/22/常用Shell命令/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/正则/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="lijian">
@@ -327,7 +318,7 @@ touch">
             
             
               
-                常用Shell命令
+                javascript正则
               
             
           </h1>
@@ -342,8 +333,8 @@ touch">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-22T14:29:53+08:00">
-                2016-12-22
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-03T15:56:52+08:00">
+                2017-03-03
               </time>
             
 
@@ -365,8 +356,8 @@ touch">
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/shell/" itemprop="url" rel="index">
-                    <span itemprop="name">shell</span>
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
                   </a>
                 </span>
 
@@ -400,58 +391,63 @@ touch">
       
 
       
-        <p>本笔记操作以mac系统为准</p>
-<p><code>路径表示</code> </p>
-<pre><code class="shell">./    当前目录(可省略 比如 cd ./demo 写成 cd demo)
-../   上一级目录
-/     绝对路径(根目录)
+        <h2 id="创建-RegExp"><a href="#创建-RegExp" class="headerlink" title="创建 RegExp"></a>创建 RegExp</h2><pre><code class="javascript">//1.
+let patt=/abc/g;
+//2.
+let patt=new RegExp(&#39;abc&#39;,&#39;g&#39;);
 </code></pre>
-<p><code>cd</code> 改变目录</p>
-<pre><code class="shell">//进入当前目录的子目录demo
-cd ./demo
-//进入之前的目录
-cd -
+<h2 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h2><pre><code class="javascript">i    不区分大小
+g    全局匹配
+m    多行匹配
+u    （es6新增）
 </code></pre>
-<p><code>touch</code>（新建文件） </p>
-<p><code>mkdir</code>（新建目录）</p>
-<pre><code>// 当前目录新建 demo.txt和index.html
-touch demo.txt index.html
-// 当前目录新建demo文件夹
-mkdir demo
-</code></pre><p><code>rm</code> 删除文件       </p>
-<p>​    常用选项 </p>
-<p>​            -i -r -v 同复制</p>
-<p>​            -f: 忽略不存在的文件</p>
-<p><code>rmdir</code> 删除空目录</p>
-<p><code>ls</code> 显示文件列表</p>
-<p>常用选项    -l:长格式显示结果 </p>
-<p>​            -t:按修改时间来排序 </p>
-<p>​            -a:显示所有文件 -r:相反顺序显示 </p>
-<p>​            -h:长格式列出时，不已字节显示文件大小 </p>
-<p>​            -F: 每个文件加上指示符号 </p>
-<p>​            -d: 列出指定目录中内容 </p>
-<p><code>pwd</code> 显示目录路径 </p>
-<p><code>mv</code>（移动/重命名文件和目录） 和 <code>cp</code>（拷贝文件和目录） </p>
-<p>常用选项       -a:复制所有信息和属性</p>
-<p>​            -i:重写前确认</p>
-<p>​            -r:递归(复制)</p>
-<p>​            -u:仅复制目标目录不存在或新于的文件</p>
-<p>​            -v:显示详细命令操作信息</p>
-<pre><code class="shell">//复制file1文件到file2
-cp file1 file2
-//重命名为file2
-mv file1 file2
-//移动file1到根目录下的demo目录
-mv file1 /demo
+<h2 id="元字符-b-w-d-s"><a href="#元字符-b-w-d-s" class="headerlink" title="元字符 . \b \w\d\s"></a>元字符 . \b \w\d\s</h2><pre><code class="javascript">.          匹配任意字符
+\b         匹配单词边界
+\w        匹配数字，字母，下划线
+\d        匹配数字
+\s        匹配空格
+[abc]    匹配方括号里任意一个字符
+^        匹配首部
+$        匹配尾部
+
+//取反
+\B \W \D \S [^abc]
 </code></pre>
-<p>file</p>
-<p>less</p>
-<p>type 解释一个命令名</p>
-<p>which 显示会执行哪个可执行程序（可用来找路径）</p>
-<p>man</p>
-<p>info</p>
-<p>whatis</p>
-<p>通配符 *</p>
+<h2 id="量词"><a href="#量词" class="headerlink" title="量词 * + ? {}"></a>量词 * + ? {}</h2><pre><code class="javascript">*        匹配任意个
++        匹配一到多个
+?        匹配 0 到 1 个
+{n}        匹配 n 个
+{n,}    匹配至少 n 个
+{n,m}    匹配 n 到 m 个
+</code></pre>
+<h2 id="分枝条件"><a href="#分枝条件" class="headerlink" title="分枝条件 |"></a>分枝条件 |</h2><pre><code class="javascript">a|b         匹配 a 或者 b
+</code></pre>
+<h2 id="分组"><a href="#分组" class="headerlink" title="分组 ()"></a>分组 ()</h2><pre><code class="javascript">(exp)            匹配且分组
+(?&lt;name&gt;exp)    匹配且以name名分组
+(?:exp)            只匹配不捕获不分组
+(?=exp)            匹配exp前面位置
+(?&lt;=exp)        匹配exp后面位置
+(?!exp)            匹配后面不跟着exp的位置
+(?&lt;!exp)        匹配前面不跟着exp的位置
+</code></pre>
+<h2 id="懒惰限定符"><a href="#懒惰限定符" class="headerlink" title="懒惰限定符"></a>懒惰限定符</h2><pre><code class="javascript">*?
++?
+??
+{n,m}?
+{n,}?
+</code></pre>
+<h2 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符  \"></a>转义字符  \</h2><pre><code class="javascript">//需要转义的字符
+* . ? + $ ^ [ ] ( ) { } / \ |
+</code></pre>
+<h2 id="RegExp方法"><a href="#RegExp方法" class="headerlink" title="RegExp方法"></a>RegExp方法</h2><h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><pre><code class="javascript">complie()
+exec()
+test()
+</code></pre>
+<h3 id="2-支持RegExp的String方法"><a href="#2-支持RegExp的String方法" class="headerlink" title="2    支持RegExp的String方法"></a>2    支持RegExp的String方法</h3><pre><code class="javascript">search()
+match()
+replace()
+split()
+</code></pre>
 
       
     </div>
@@ -475,7 +471,7 @@ mv file1 /demo
       
         <div class="post-tags">
           
-            <a href="/tags/bash-shell/" rel="tag"># bash shell</a>
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
           
         </div>
       
@@ -484,8 +480,8 @@ mv file1 /demo
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/22/新手小问题收集（HTML）/" rel="next" title="新手小问题收集">
-                <i class="fa fa-chevron-left"></i> 新手小问题收集
+              <a href="/2017/01/16/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
               </a>
             
           </div>
@@ -493,10 +489,6 @@ mv file1 /demo
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/12/22/仿锤子3d动图/" rel="prev" title="防锤子3d动图">
-                防锤子3d动图 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -543,8 +535,17 @@ mv file1 /demo
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -600,6 +601,22 @@ mv file1 /demo
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建-RegExp"><span class="nav-number">1.</span> <span class="nav-text">创建 RegExp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修饰符"><span class="nav-number">2.</span> <span class="nav-text">修饰符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元字符-b-w-d-s"><span class="nav-number">3.</span> <span class="nav-text">元字符 . \b \w\d\s</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#量词"><span class="nav-number">4.</span> <span class="nav-text">量词 * + ? {}</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分枝条件"><span class="nav-number">5.</span> <span class="nav-text">分枝条件 |</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分组"><span class="nav-number">6.</span> <span class="nav-text">分组 ()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#懒惰限定符"><span class="nav-number">7.</span> <span class="nav-text">懒惰限定符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转义字符"><span class="nav-number">8.</span> <span class="nav-text">转义字符  \</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RegExp方法"><span class="nav-number">9.</span> <span class="nav-text">RegExp方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1"><span class="nav-number">9.1.</span> <span class="nav-text">1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-支持RegExp的String方法"><span class="nav-number">9.2.</span> <span class="nav-text">2    支持RegExp的String方法</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
