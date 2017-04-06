@@ -389,13 +389,16 @@ $        匹配尾部
 </code></pre>
 <h2 id="分枝条件"><a href="#分枝条件" class="headerlink" title="分枝条件 |"></a>分枝条件 |</h2><pre><code class="javascript">a|b         匹配 a 或者 b
 </code></pre>
-<h2 id="分组"><a href="#分组" class="headerlink" title="分组 ()"></a>分组 ()</h2><pre><code class="javascript">(exp)            匹配且分组
-(?&lt;name&gt;exp)    匹配且以name名分组
-(?:exp)            只匹配不捕获不分组
-(?=exp)            匹配exp前面位置
-(?&lt;=exp)        匹配exp后面位置
-(?!exp)            匹配后面不跟着exp的位置
-(?&lt;!exp)        匹配前面不跟着exp的位置
+<h2 id="分组"><a href="#分组" class="headerlink" title="分组 ()"></a>分组 ()</h2><pre><code class="javascript">/*
+    (exp)            匹配且分组
+    (?&lt;name&gt;exp)    匹配且以name名分组
+    (?:exp)            只匹配不捕获不分组
+    (?=exp)            匹配exp前面位置
+    (?&lt;=exp)        匹配exp后面位置
+    (?!exp)            匹配后面不跟着exp的位置
+    (?&lt;!exp)        匹配前面不跟着exp的位置
+    (?#comment)        注释
+ */
 </code></pre>
 <h2 id="懒惰限定符"><a href="#懒惰限定符" class="headerlink" title="懒惰限定符"></a>懒惰限定符</h2><pre><code class="javascript">*?
 +?
