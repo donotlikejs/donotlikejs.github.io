@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="git," />
+  <meta name="keywords" content="javascript,ajax," />
 
 
 
@@ -102,37 +102,55 @@
 
 
 
-<meta name="description" content="查看配置信息
-git config --list
-设置 姓名和邮箱地址  存放于 “~/.gitconfig”
-    git config —global user.name “donotlikejs”
-    git config —global user.email “lianggunzai@gmail.com”
+<meta name="description" content="AJAX原生
+异步加载必须先实例化一个XMLHttpRequest函数。
 
-    git config —global color.ui auto
-创">
+let xhr = new XMLHttpRequest();
+xhr.open();
+xhr.send();
+setRequsetHeader();
+
+
+XMLHttpRequest的响应方法
+
+/*
+    readyStateChange 用于监听readyState的变化
+    status 响应状态码 1xx">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git和github">
-<meta property="og:url" content="http://yoursite.com/2016/12/21/git/index.html">
+<meta property="og:title" content="ajax 跨域 jsonp">
+<meta property="og:url" content="http://yoursite.com/2017/03/03/ajax 跨域和jsonp/index.html">
 <meta property="og:site_name" content="OLLIFE">
-<meta property="og:description" content="查看配置信息
-git config --list
-设置 姓名和邮箱地址  存放于 “~/.gitconfig”
-    git config —global user.name “donotlikejs”
-    git config —global user.email “lianggunzai@gmail.com”
+<meta property="og:description" content="AJAX原生
+异步加载必须先实例化一个XMLHttpRequest函数。
 
-    git config —global color.ui auto
-创">
-<meta property="og:updated_time" content="2016-12-30T13:07:03.000Z">
+let xhr = new XMLHttpRequest();
+xhr.open();
+xhr.send();
+setRequsetHeader();
+
+
+XMLHttpRequest的响应方法
+
+/*
+    readyStateChange 用于监听readyState的变化
+    status 响应状态码 1xx">
+<meta property="og:updated_time" content="2017-04-06T14:40:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git和github">
-<meta name="twitter:description" content="查看配置信息
-git config --list
-设置 姓名和邮箱地址  存放于 “~/.gitconfig”
-    git config —global user.name “donotlikejs”
-    git config —global user.email “lianggunzai@gmail.com”
+<meta name="twitter:title" content="ajax 跨域 jsonp">
+<meta name="twitter:description" content="AJAX原生
+异步加载必须先实例化一个XMLHttpRequest函数。
 
-    git config —global color.ui auto
-创">
+let xhr = new XMLHttpRequest();
+xhr.open();
+xhr.send();
+setRequsetHeader();
+
+
+XMLHttpRequest的响应方法
+
+/*
+    readyStateChange 用于监听readyState的变化
+    status 响应状态码 1xx">
 
 
 
@@ -160,13 +178,13 @@ git config --list
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/12/21/git/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/03/ajax 跨域和jsonp/"/>
 
 
 
 
 
-  <title> git和github | OLLIFE </title>
+  <title> ajax 跨域 jsonp | OLLIFE </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -289,7 +307,7 @@ git config --list
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/21/git/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/ajax 跨域和jsonp/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="lijian">
@@ -313,7 +331,7 @@ git config --list
             
             
               
-                git和github
+                ajax 跨域 jsonp
               
             
           </h1>
@@ -328,8 +346,8 @@ git config --list
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-21T23:09:57+08:00">
-                2016-12-21
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-03T15:56:52+08:00">
+                2017-03-03
               </time>
             
 
@@ -351,8 +369,8 @@ git config --list
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/other/" itemprop="url" rel="index">
-                    <span itemprop="name">other</span>
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
                   </a>
                 </span>
 
@@ -386,65 +404,73 @@ git config --list
       
 
       
-        <p>查看配置信息</p>
-<pre><code>git config --list
-</code></pre><p>设置 姓名和邮箱地址  存放于 “~/.gitconfig”</p>
-<pre><code>    git config —global user.name “donotlikejs”
-    git config —global user.email “lianggunzai@gmail.com”
+        <h2 id="AJAX原生"><a href="#AJAX原生" class="headerlink" title="AJAX原生"></a>AJAX原生</h2><ul>
+<li>异步加载必须先<code>实例化一个XMLHttpRequest函数</code>。</li>
+</ul>
+<pre><code class="javascript">let xhr = new XMLHttpRequest();
+xhr.open();
+xhr.send();
+setRequsetHeader();
+</code></pre>
+<ul>
+<li>XMLHttpRequest的响应方法</li>
+</ul>
+<pre><code class="javascript">/*
+    readyStateChange 用于监听readyState的变化
+    status 响应状态码 1xx 2xx 3xx 4xx 5xx
+    statusText 响应状态说明
+    readyState    请求／响应过程的当前活动状态
+        0
+        1
+        2    发送，已经调用send方法
+        3    接收响应数据
+        4    表示完成
 
-    git config —global color.ui auto
-</code></pre><p>创建 SSH Key</p>
-<pre><code>    ssh-keygen -t -C “lianggunzai@gmail.com”
-</code></pre><p>查看 id_rsa.pub（公开密钥）( id_rsa 私有密钥 )</p>
-<pre><code>    cat ~/.ssh/id_rsa.pub
-</code></pre><p>和github进行认证</p>
-<pre><code>    ssh -T git@github.com
-</code></pre><p>从远程仓库获取</p>
-<pre><code>    git clone git@github.com:Jianru-Lin/lambda-view.git
-</code></pre><pre><code>git status    
-查看当前目录还没有被git管理和被git管理且被修改但还没有提交的文件
-查看当前分支的相关信息     -a     参数可以同时显示本地仓库和远程仓库的分支信息
-git branch -a 
-git  add    将文件加入暂存区
-git commit -m “解释短语”   提交
+    responseText    响应主体返回的文本
+    responseXML        响应主体返回的XML
 
-git push    更新
-</code></pre><p>```<br>本地建立项目并且推送到远程仓库</p>
-<p>首先先建立一个文件夹并进入<br>    mkdir gittest<br>    cd gittest</p>
-<p>初始化仓库（目的是为了产生“.git”目录，里面存放管理当前目录内容的数据，数据也称为附属该目录的工作树）<br>    git init</p>
-<p>查看仓库状态<br>    git status</p>
-<p>提交到暂存区<br>    git add filename</p>
-<p>更新（提交到工作树）<br>    git commit -m “这里是解释说明短语”</p>
-<p>After doing this, you may fix the identity used for this commit with:<br>设置完成以后，你可以通过以下这条语句来修复用于此提交到身份</p>
-<pre><code>git commit --amend --reset-author
-</code></pre><p>查看已提交到日志<br>    git log </p>
-<pre><code>参数 
-    —pertty=short 只显示第一行参数
-    加文件名或目录名 只会显示相关的日志
-    -p 显示文件的前后差别
-</code></pre><p>查看更改前后的差别<br>    git diff</p>
-<pre><code>            参数 HEAD 查看与最新提交的差别 （好习惯：git commit 前先 git diff HEAD 查看区别）
-</code></pre><p>分支操作（重点难点）</p>
-<p>显示分支一览表<br>    git branch</p>
-<p>已当前branch分支为基础创建新分支并且切换到新建的分支<br>git checkout -b fenzhia  等同于 git branch fenzhia ; git checkout fenzhia（可以用 git branch 查看当前工作分支）</p>
-<p>   切换分支<br>git checkout 分支名</p>
-<p>git checkout - 切换回上一个分支</p>
-<p>合并分支<br>先切换到master主分支<br>git checkout master<br>再<br>git merge —no-ff fenzhia （参数—no-ff 可以确保历史记录中明确记录下本次分支合并）</p>
-<p>随后编辑器会启动（vi编辑器，直接退出或者，编辑再退出都ok）<br>然后结束</p>
-<p>以图表形式查看分支<br>git log –graph</p>
-<p>回溯历史分支（跑回之前修改的某个地方）</p>
-<p>git reset —hard 哈希值 （哈希值通过git log 能找到 复制粘贴即可）</p>
-<p>git reflog  查看当前仓库的所有日志</p>
-<p>冲突解决<br>如果git merge –no—ff 分支 有冲突</p>
-<h2 id="打开编辑器-把内容修改好后-执行-git-add-文件名；git-commit-m-“解释短语”"><a href="#打开编辑器-把内容修改好后-执行-git-add-文件名；git-commit-m-“解释短语”" class="headerlink" title="打开编辑器 把内容修改好后 执行 git add 文件名；git commit -m “解释短语”"></a>打开编辑器 把内容修改好后 执行 git add 文件名；git commit -m “解释短语”</h2><p>推送到远程仓库</p>
-<pre><code>添加远程仓库
-    git remote add 仓库路径
+*/
+</code></pre>
+<ul>
+<li>GET 和 POST 的一般写法</li>
+</ul>
+<pre><code class="javascript">// get
+let xhr=new XMLHttpRequest();
+url=&quot;http://www.abc.com?a=b&amp;c=d&quot;;
+xhr.open(&quot;get&quot;,url,true);
+xhr.send(null);
+xhr.readyStateChange=function(){
+  if(xhr.readyState==4&amp;&amp;xhr.status==200){
+    console.log(xhr.responseText);
+  }else{
+    console.log(`error${xhr.status}`);
+  }
+};
 
-推送至远程仓库
-    git push -u origin master         推送至master分支
-    git push -u origin 其他分支    推送到其他分支
-    (-u参数可以在推送到同时，将origin仓库的master分支设置为本地仓库当前分支的upstream （上游）)
-</code></pre><hr>
+//post
+let xhr=new XMLHttpRequest();
+url=&quot;http://abc.com&quot;;
+data=&quot;a=b&amp;c=d&quot;;
+xhr.open(&quot;post&quot;,url,true);
+xhr.setRequestHeader(&quot;Content-Type&quot;,&quot;application/x-www-from-urlencoded&quot;);
+xhr.send(data);
+xhr.readyStateChange=function(){
+  if(xhr.readyState==4&amp;&amp;xhr.stauts=200){
+    console.log(xhr.responseText);
+  }else{
+    console.log(`error:${xhr.status}`);
+
+  }
+}
+</code></pre>
+<h2 id="jquery-异步"><a href="#jquery-异步" class="headerlink" title="jquery 异步"></a>jquery 异步</h2><h2 id="jsonP"><a href="#jsonP" class="headerlink" title="jsonP"></a>jsonP</h2><h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><p> 两个url中 协议 子域名 主域名 端口号 任意一个不同皆为不同域，而不同域之间的通信称之为跨域。</p>
+<pre><code class="javascript">／*
+
+http :  //  www  .  abc.com  :  8000  /demo/index.html
+协议        子域名        主域名        端口号        路径
+
+*／
+</code></pre>
 
       
     </div>
@@ -468,7 +494,7 @@ git push    更新
       
         <div class="post-tags">
           
-            <a href="/tags/git/" rel="tag"># git</a>
+            <a href="/tags/javascript-ajax/" rel="tag"># javascript,ajax</a>
           
         </div>
       
@@ -477,15 +503,15 @@ git push    更新
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/03/03/正则/" rel="next" title="javascript正则">
+                <i class="fa fa-chevron-left"></i> javascript正则
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/12/22/webpack的使用/" rel="prev" title="webpack基础应用">
-                webpack基础应用 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -608,7 +634,7 @@ git push    更新
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#打开编辑器-把内容修改好后-执行-git-add-文件名；git-commit-m-“解释短语”"><span class="nav-number">1.</span> <span class="nav-text">打开编辑器 把内容修改好后 执行 git add 文件名；git commit -m “解释短语”</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#AJAX原生"><span class="nav-number">1.</span> <span class="nav-text">AJAX原生</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jquery-异步"><span class="nav-number">2.</span> <span class="nav-text">jquery 异步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsonP"><span class="nav-number">3.</span> <span class="nav-text">jsonP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跨域"><span class="nav-number">4.</span> <span class="nav-text">跨域</span></a></li></ol></div>
             
 
           </div>
