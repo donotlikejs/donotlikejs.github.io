@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="javascript,regex," />
+  <meta name="keywords" content="html," />
 
 
 
@@ -102,61 +102,43 @@
 
 
 
-<meta name="description" content="创建 RegExp//1.
-let patt=/abc/g;
-//2.
-let patt=new RegExp(&amp;#39;abc&amp;#39;,&amp;#39;g&amp;#39;);
-
-修饰符/*
-
-    i    不区分大小
-    g    全局匹配
-    m    多行匹配
-    u    （es6新增）
-
-*/
-
-元字符 . \b \w\d\s/*
-    .          匹配任意字符">
+<meta name="description" content="使用canvas绘图共同步骤
+指定canvas大小（也可称之画布大小）
+调用Context(“2d”)方法
+//html
+&amp;lt;canvas id=&amp;quot;drawing&amp;quot;&amp;gt;&amp;lt;/canvas&amp;gt;
+&amp;lt;style&amp;gt;
+#drawing{width:300px;height:300px}
+&amp;lt;/style&amp;gt;
+&amp;lt;script&amp;gt;
+let dra">
 <meta property="og:type" content="article">
-<meta property="og:title" content="javascript正则">
-<meta property="og:url" content="http://yoursite.com/2017/03/03/正则/index.html">
+<meta property="og:title" content="html之canvas 绘图">
+<meta property="og:url" content="http://yoursite.com/2017/03/03/canvas要点/index.html">
 <meta property="og:site_name" content="OLLIFE">
-<meta property="og:description" content="创建 RegExp//1.
-let patt=/abc/g;
-//2.
-let patt=new RegExp(&amp;#39;abc&amp;#39;,&amp;#39;g&amp;#39;);
-
-修饰符/*
-
-    i    不区分大小
-    g    全局匹配
-    m    多行匹配
-    u    （es6新增）
-
-*/
-
-元字符 . \b \w\d\s/*
-    .          匹配任意字符">
-<meta property="og:updated_time" content="2017-04-07T14:12:15.000Z">
+<meta property="og:description" content="使用canvas绘图共同步骤
+指定canvas大小（也可称之画布大小）
+调用Context(“2d”)方法
+//html
+&amp;lt;canvas id=&amp;quot;drawing&amp;quot;&amp;gt;&amp;lt;/canvas&amp;gt;
+&amp;lt;style&amp;gt;
+#drawing{width:300px;height:300px}
+&amp;lt;/style&amp;gt;
+&amp;lt;script&amp;gt;
+let dra">
+<meta property="og:updated_time" content="2017-04-12T14:39:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="javascript正则">
-<meta name="twitter:description" content="创建 RegExp//1.
-let patt=/abc/g;
-//2.
-let patt=new RegExp(&amp;#39;abc&amp;#39;,&amp;#39;g&amp;#39;);
-
-修饰符/*
-
-    i    不区分大小
-    g    全局匹配
-    m    多行匹配
-    u    （es6新增）
-
-*/
-
-元字符 . \b \w\d\s/*
-    .          匹配任意字符">
+<meta name="twitter:title" content="html之canvas 绘图">
+<meta name="twitter:description" content="使用canvas绘图共同步骤
+指定canvas大小（也可称之画布大小）
+调用Context(“2d”)方法
+//html
+&amp;lt;canvas id=&amp;quot;drawing&amp;quot;&amp;gt;&amp;lt;/canvas&amp;gt;
+&amp;lt;style&amp;gt;
+#drawing{width:300px;height:300px}
+&amp;lt;/style&amp;gt;
+&amp;lt;script&amp;gt;
+let dra">
 
 
 
@@ -184,13 +166,13 @@ let patt=new RegExp(&amp;#39;abc&amp;#39;,&amp;#39;g&amp;#39;);
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/03/正则/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/03/canvas要点/"/>
 
 
 
 
 
-  <title> javascript正则 | OLLIFE </title>
+  <title> html之canvas 绘图 | OLLIFE </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -313,7 +295,7 @@ let patt=new RegExp(&amp;#39;abc&amp;#39;,&amp;#39;g&amp;#39;);
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/正则/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/canvas要点/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="lijian">
@@ -337,7 +319,7 @@ let patt=new RegExp(&amp;#39;abc&amp;#39;,&amp;#39;g&amp;#39;);
             
             
               
-                javascript正则
+                html之canvas 绘图
               
             
           </h1>
@@ -410,91 +392,71 @@ let patt=new RegExp(&amp;#39;abc&amp;#39;,&amp;#39;g&amp;#39;);
       
 
       
-        <h2 id="创建-RegExp"><a href="#创建-RegExp" class="headerlink" title="创建 RegExp"></a>创建 RegExp</h2><pre><code class="javascript">//1.
-let patt=/abc/g;
-//2.
-let patt=new RegExp(&#39;abc&#39;,&#39;g&#39;);
+        <p>使用canvas绘图共同步骤</p>
+<p>指定canvas大小（也可称之画布大小）</p>
+<p>调用Context(“2d”)方法</p>
+<pre><code class="html">//html
+&lt;canvas id=&quot;drawing&quot;&gt;&lt;/canvas&gt;
+&lt;style&gt;
+#drawing{width:300px;height:300px}
+&lt;/style&gt;
+&lt;script&gt;
+let drawing=document.getElementById(&quot;drawing&quot;);
+let context=drawing.Context(&quot;2d&quot;);
+&lt;/script&gt;
 </code></pre>
-<h2 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h2><pre><code class="javascript">/*
+<h2 id="绘制矩形"><a href="#绘制矩形" class="headerlink" title="绘制矩形"></a>绘制矩形</h2><p>填充:fillStyle 描边:strokeStyle</p>
+<p>绘制矩形</p>
+<p>fillRect(x,y,width,height)</p>
+<p>strokeRect(x,y,width,height)</p>
+<p>clearRect(x,y,width,height)</p>
+<pre><code class="javascript">//填充
+context.fillStyle=&quot;#e5e5e5&quot;;
+context.fillRect(5,5,50,50);
+//描边
+context.strokeStyle=&quot;yellow&quot;;
+context.strokeRect(15,15,50,50);
+</code></pre>
+<p>控制线条</p>
+<p>​        粗细 lineWidth</p>
+<p>​        末端形状 lineCap     butt 平头    round 圆头        square 方头</p>
+<p>​        相交方式 lineJoin     round 圆交      bevel 斜交        miter 斜接</p>
+<h3 id="绘制路径"><a href="#绘制路径" class="headerlink" title="绘制路径"></a>绘制路径</h3><p>​    调用beginPath();</p>
+<pre><code class="javascript">
 
-    i    不区分大小
-    g    全局匹配
-    m    多行匹配
-    u    （es6新增）
+arc(x,y,radius,startAngle,endAngle,counterclockwise)
 
+arcTo(x1,y1,x2,y2,radius)
+
+bezierCurveTo(c1x,c1y,c2x,c2y,x,y)
+
+lineTo(x,y)
+
+moveTo(x,y)
+
+quadraticCurveTo(cx,cy,x,y)
+
+rect(x,y,width,height)
+
+closePath
+
+fill()
+
+stroke()
+
+clip()
+</code></pre>
+<h2 id="绘制文本"><a href="#绘制文本" class="headerlink" title="绘制文本"></a>绘制文本</h2><pre><code class="javascript">fillText(str,x,y,width)
+strokeText(str,x,y,width)
+/*
+属性
+font 样式 大小 字体
+textAlign 对齐方式 start end left right center
+textBaseline 基线 top bottom middle 
+                    hanging alphabetic ideog raphic
 */
 </code></pre>
-<h2 id="元字符-b-w-d-s"><a href="#元字符-b-w-d-s" class="headerlink" title="元字符 . \b \w\d\s"></a>元字符 . \b \w\d\s</h2><pre><code class="javascript">/*
-    .          匹配任意字符
-    \b         匹配单词边界
-    \w        匹配数字，字母，下划线
-    \d        匹配数字
-    \s        匹配空格
-    [abc]    匹配方括号里任意一个字符
-    ^        匹配首部
-    $        匹配尾部
-
-    --取反--
-    \B \W \D \S [^abc]
-
-*/
-</code></pre>
-<h2 id="量词"><a href="#量词" class="headerlink" title="量词 * + ? {}"></a>量词 * + ? {}</h2><pre><code class="javascript">/*
-
-    *        匹配任意个
-    +        匹配一到多个
-    ?        匹配 0 到 1 个
-    {n}        匹配 n 个
-    {n,}    匹配至少 n 个
-    {n,m}    匹配 n 到 m 个
-
-*/
-</code></pre>
-<h2 id="分枝条件"><a href="#分枝条件" class="headerlink" title="分枝条件 |"></a>分枝条件 |</h2><pre><code class="javascript">/*
-
-a|b         匹配 a 或者 b 
-
-*/
-</code></pre>
-<h2 id="分组"><a href="#分组" class="headerlink" title="分组 ()"></a>分组 ()</h2><pre><code class="javascript">/*
-
-    (exp)            匹配且分组
-    (?&lt;name&gt;exp)    匹配且以name名分组
-    (?:exp)            只匹配不捕获不分组
-    (?=exp)            匹配exp前面位置
-    (?&lt;=exp)        匹配exp后面位置
-    (?!exp)            匹配后面不跟着exp的位置
-    (?&lt;!exp)        匹配前面不跟着exp的位置
-    (?#comment)        注释
-
- */
-</code></pre>
-<h2 id="懒惰限定符"><a href="#懒惰限定符" class="headerlink" title="懒惰限定符"></a>懒惰限定符</h2><pre><code class="javascript">/*
-
-    *?
-    +?
-    ??
-    {n,m}?
-    {n,}?
-
-*/
-</code></pre>
-<h2 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符  \"></a>转义字符  \</h2><pre><code class="javascript">/*
-
-    需要转义的字符   * . ? + $ ^ [ ] ( ) { } / \ |
-
-*/
-</code></pre>
-<h2 id="RegExp方法"><a href="#RegExp方法" class="headerlink" title="RegExp方法"></a>RegExp方法</h2><h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><pre><code class="javascript">complie()
-exec()
-test()
-</code></pre>
-<h3 id="2-支持RegExp的String方法"><a href="#2-支持RegExp的String方法" class="headerlink" title="2    支持RegExp的String方法"></a>2    支持RegExp的String方法</h3><pre><code class="javascript">search()
-match()
-replace()
-split()
-</code></pre>
-
+<h2 id="变换"><a href="#变换" class="headerlink" title="变换"></a>变换</h2><h2 id="绘制图像"><a href="#绘制图像" class="headerlink" title="绘制图像"></a>绘制图像</h2><h2 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h2><h2 id="渐变"><a href="#渐变" class="headerlink" title="渐变"></a>渐变</h2><h2 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h2><h2 id="图像数据"><a href="#图像数据" class="headerlink" title="图像数据"></a>图像数据</h2><h2 id="合成"><a href="#合成" class="headerlink" title="合成"></a>合成</h2><h2 id="WebGL"><a href="#WebGL" class="headerlink" title="WebGL"></a>WebGL</h2>
       
     </div>
 
@@ -517,7 +479,7 @@ split()
       
         <div class="post-tags">
           
-            <a href="/tags/javascript-regex/" rel="tag"># javascript,regex</a>
+            <a href="/tags/html/" rel="tag"># html</a>
           
         </div>
       
@@ -526,8 +488,8 @@ split()
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/01/16/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2017/03/03/偏移量 滚动 视口之类的/" rel="next" title="offset alien scroll">
+                <i class="fa fa-chevron-left"></i> offset alien scroll
               </a>
             
           </div>
@@ -536,8 +498,8 @@ split()
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/03/偏移量 滚动 视口之类的/" rel="prev" title="offset alien scroll">
-                offset alien scroll <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/03/事件event/" rel="prev" title="ajax 跨域 jsonp">
+                ajax 跨域 jsonp <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -661,7 +623,7 @@ split()
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建-RegExp"><span class="nav-number">1.</span> <span class="nav-text">创建 RegExp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修饰符"><span class="nav-number">2.</span> <span class="nav-text">修饰符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元字符-b-w-d-s"><span class="nav-number">3.</span> <span class="nav-text">元字符 . \b \w\d\s</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#量词"><span class="nav-number">4.</span> <span class="nav-text">量词 * + ? {}</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分枝条件"><span class="nav-number">5.</span> <span class="nav-text">分枝条件 |</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分组"><span class="nav-number">6.</span> <span class="nav-text">分组 ()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#懒惰限定符"><span class="nav-number">7.</span> <span class="nav-text">懒惰限定符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转义字符"><span class="nav-number">8.</span> <span class="nav-text">转义字符  \</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RegExp方法"><span class="nav-number">9.</span> <span class="nav-text">RegExp方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1"><span class="nav-number">9.1.</span> <span class="nav-text">1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-支持RegExp的String方法"><span class="nav-number">9.2.</span> <span class="nav-text">2    支持RegExp的String方法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#绘制矩形"><span class="nav-number">1.</span> <span class="nav-text">绘制矩形</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#绘制路径"><span class="nav-number">1.1.</span> <span class="nav-text">绘制路径</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绘制文本"><span class="nav-number">2.</span> <span class="nav-text">绘制文本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变换"><span class="nav-number">3.</span> <span class="nav-text">变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绘制图像"><span class="nav-number">4.</span> <span class="nav-text">绘制图像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阴影"><span class="nav-number">5.</span> <span class="nav-text">阴影</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#渐变"><span class="nav-number">6.</span> <span class="nav-text">渐变</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模式"><span class="nav-number">7.</span> <span class="nav-text">模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图像数据"><span class="nav-number">8.</span> <span class="nav-text">图像数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#合成"><span class="nav-number">9.</span> <span class="nav-text">合成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WebGL"><span class="nav-number">10.</span> <span class="nav-text">WebGL</span></a></li></ol></div>
             
 
           </div>
