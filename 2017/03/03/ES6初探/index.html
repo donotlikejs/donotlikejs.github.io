@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="html," />
+  <meta name="keywords" content="javascript," />
 
 
 
@@ -102,43 +102,34 @@
 
 
 
-<meta name="description" content="使用canvas绘图共同步骤
-指定canvas大小（也可称之画布大小）
-调用Context(“2d”)方法
-//html
-&amp;lt;canvas id=&amp;quot;drawing&amp;quot;&amp;gt;&amp;lt;/canvas&amp;gt;
-&amp;lt;style&amp;gt;
-#drawing{width:300px;height:300px}
-&amp;lt;/style&amp;gt;
-&amp;lt;script&amp;gt;
-let dra">
+<meta name="description" content="let 和 constlet和const声明都不能提升，声明的变量不能重复声明
+const声明和赋值同时进行，对于基本类型不能重复赋值（可以作为常量赋值），引用类型可以。
+let能解决for循环中i的锁定问题。
+箭头函数箭头函数没有this，也没有argument
+//let exp1=function(){return a;}
+let exp1=()=&amp;gt;a;
+//let exp2=func">
 <meta property="og:type" content="article">
-<meta property="og:title" content="html之canvas 绘图">
-<meta property="og:url" content="http://yoursite.com/2017/03/03/canvas要点/index.html">
+<meta property="og:title" content="ES6 初探">
+<meta property="og:url" content="http://yoursite.com/2017/03/03/ES6初探/index.html">
 <meta property="og:site_name" content="OLLIFE">
-<meta property="og:description" content="使用canvas绘图共同步骤
-指定canvas大小（也可称之画布大小）
-调用Context(“2d”)方法
-//html
-&amp;lt;canvas id=&amp;quot;drawing&amp;quot;&amp;gt;&amp;lt;/canvas&amp;gt;
-&amp;lt;style&amp;gt;
-#drawing{width:300px;height:300px}
-&amp;lt;/style&amp;gt;
-&amp;lt;script&amp;gt;
-let dra">
-<meta property="og:updated_time" content="2017-04-12T14:39:06.000Z">
+<meta property="og:description" content="let 和 constlet和const声明都不能提升，声明的变量不能重复声明
+const声明和赋值同时进行，对于基本类型不能重复赋值（可以作为常量赋值），引用类型可以。
+let能解决for循环中i的锁定问题。
+箭头函数箭头函数没有this，也没有argument
+//let exp1=function(){return a;}
+let exp1=()=&amp;gt;a;
+//let exp2=func">
+<meta property="og:updated_time" content="2017-04-20T08:57:55.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="html之canvas 绘图">
-<meta name="twitter:description" content="使用canvas绘图共同步骤
-指定canvas大小（也可称之画布大小）
-调用Context(“2d”)方法
-//html
-&amp;lt;canvas id=&amp;quot;drawing&amp;quot;&amp;gt;&amp;lt;/canvas&amp;gt;
-&amp;lt;style&amp;gt;
-#drawing{width:300px;height:300px}
-&amp;lt;/style&amp;gt;
-&amp;lt;script&amp;gt;
-let dra">
+<meta name="twitter:title" content="ES6 初探">
+<meta name="twitter:description" content="let 和 constlet和const声明都不能提升，声明的变量不能重复声明
+const声明和赋值同时进行，对于基本类型不能重复赋值（可以作为常量赋值），引用类型可以。
+let能解决for循环中i的锁定问题。
+箭头函数箭头函数没有this，也没有argument
+//let exp1=function(){return a;}
+let exp1=()=&amp;gt;a;
+//let exp2=func">
 
 
 
@@ -166,13 +157,13 @@ let dra">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/03/canvas要点/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/03/ES6初探/"/>
 
 
 
 
 
-  <title> html之canvas 绘图 | OLLIFE </title>
+  <title> ES6 初探 | OLLIFE </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -295,7 +286,7 @@ let dra">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/canvas要点/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/ES6初探/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="lijian">
@@ -319,7 +310,7 @@ let dra">
             
             
               
-                html之canvas 绘图
+                ES6 初探
               
             
           </h1>
@@ -357,8 +348,8 @@ let dra">
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/基础/" itemprop="url" rel="index">
-                    <span itemprop="name">基础</span>
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
                   </a>
                 </span>
 
@@ -392,71 +383,22 @@ let dra">
       
 
       
-        <p>使用canvas绘图共同步骤</p>
-<p>指定canvas大小（也可称之画布大小）</p>
-<p>调用Context(“2d”)方法</p>
-<pre><code class="html">//html
-&lt;canvas id=&quot;drawing&quot;&gt;&lt;/canvas&gt;
-&lt;style&gt;
-#drawing{width:300px;height:300px}
-&lt;/style&gt;
-&lt;script&gt;
-let drawing=document.getElementById(&quot;drawing&quot;);
-let context=drawing.Context(&quot;2d&quot;);
-&lt;/script&gt;
+        <h2 id="let-和-const"><a href="#let-和-const" class="headerlink" title="let 和 const"></a>let 和 const</h2><p>let和const声明都不能提升，声明的变量不能重复声明</p>
+<p>const声明和赋值同时进行，对于基本类型不能重复赋值（可以作为常量赋值），引用类型可以。</p>
+<p>let能解决for循环中i的锁定问题。</p>
+<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><p>箭头函数没有this，也没有argument</p>
+<pre><code class="javascript">//let exp1=function(){return a;}
+let exp1=()=&gt;a;
+//let exp2=function(){let a=0;return console.log(a);}
+let exp2=()=&gt;{let a=0;return console.log(a);}
 </code></pre>
-<h2 id="绘制矩形"><a href="#绘制矩形" class="headerlink" title="绘制矩形"></a>绘制矩形</h2><p>填充:fillStyle 描边:strokeStyle</p>
-<p>绘制矩形</p>
-<p>fillRect(x,y,width,height)</p>
-<p>strokeRect(x,y,width,height)</p>
-<p>clearRect(x,y,width,height)</p>
-<pre><code class="javascript">//填充
-context.fillStyle=&quot;#e5e5e5&quot;;
-context.fillRect(5,5,50,50);
-//描边
-context.strokeStyle=&quot;yellow&quot;;
-context.strokeRect(15,15,50,50);
+<h2 id="不定参数和默认参数"><a href="#不定参数和默认参数" class="headerlink" title="不定参数和默认参数"></a>不定参数和默认参数</h2><h2 id="for-of"><a href="#for-of" class="headerlink" title="for - of"></a>for - of</h2><h2 id="模版字符串"><a href="#模版字符串" class="headerlink" title="模版字符串"></a>模版字符串</h2><p>使用`  ` 包裹，需要解析的变量用 ${} </p>
+<h2 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h2><pre><code class="javascript">let arr=[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;];
+let first=arr[0],second=arr[1],third=arr[2];
+// 等同于
+let[first,second,third]=arr;
 </code></pre>
-<p>控制线条</p>
-<p>​        粗细 lineWidth</p>
-<p>​        末端形状 lineCap     butt 平头    round 圆头        square 方头</p>
-<p>​        相交方式 lineJoin     round 圆交      bevel 斜交        miter 斜接</p>
-<h3 id="绘制路径"><a href="#绘制路径" class="headerlink" title="绘制路径"></a>绘制路径</h3><p>​    调用beginPath();</p>
-<pre><code class="javascript">
-
-arc(x,y,radius,startAngle,endAngle,counterclockwise)
-
-arcTo(x1,y1,x2,y2,radius)
-
-bezierCurveTo(c1x,c1y,c2x,c2y,x,y)
-
-lineTo(x,y)
-
-moveTo(x,y)
-
-quadraticCurveTo(cx,cy,x,y)
-
-rect(x,y,width,height)
-
-closePath
-
-fill()
-
-stroke()
-
-clip()
-</code></pre>
-<h2 id="绘制文本"><a href="#绘制文本" class="headerlink" title="绘制文本"></a>绘制文本</h2><pre><code class="javascript">fillText(str,x,y,width)
-strokeText(str,x,y,width)
-/*
-属性
-font 样式 大小 字体
-textAlign 对齐方式 start end left right center
-textBaseline 基线 top bottom middle 
-                    hanging alphabetic ideog raphic
-*/
-</code></pre>
-<h2 id="变换"><a href="#变换" class="headerlink" title="变换"></a>变换</h2><h2 id="绘制图像"><a href="#绘制图像" class="headerlink" title="绘制图像"></a>绘制图像</h2><h2 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h2><h2 id="渐变"><a href="#渐变" class="headerlink" title="渐变"></a>渐变</h2><h2 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h2><h2 id="图像数据"><a href="#图像数据" class="headerlink" title="图像数据"></a>图像数据</h2><h2 id="合成"><a href="#合成" class="headerlink" title="合成"></a>合成</h2><h2 id="WebGL"><a href="#WebGL" class="headerlink" title="WebGL"></a>WebGL</h2>
+<h2 id="Symbols"><a href="#Symbols" class="headerlink" title="Symbols"></a>Symbols</h2><h2 id="集合-Set-Map-amp-amp-weakSet-weakMap"><a href="#集合-Set-Map-amp-amp-weakSet-weakMap" class="headerlink" title="集合 Set Map &amp;&amp; weakSet weakMap"></a>集合 Set Map &amp;&amp; weakSet weakMap</h2><h2 id="代理-proxies"><a href="#代理-proxies" class="headerlink" title="代理 proxies"></a>代理 proxies</h2><h2 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h2><h2 id="类class"><a href="#类class" class="headerlink" title="类class"></a>类class</h2><h2 id="子类-Subclass"><a href="#子类-Subclass" class="headerlink" title="子类 Subclass"></a>子类 Subclass</h2>
       
     </div>
 
@@ -479,7 +421,7 @@ textBaseline 基线 top bottom middle
       
         <div class="post-tags">
           
-            <a href="/tags/html/" rel="tag"># html</a>
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
           
         </div>
       
@@ -488,8 +430,8 @@ textBaseline 基线 top bottom middle
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/03/javascript base/" rel="next" title="javascript">
-                <i class="fa fa-chevron-left"></i> javascript
+              <a href="/2017/03/03/canvas要点/" rel="next" title="html之canvas 绘图">
+                <i class="fa fa-chevron-left"></i> html之canvas 绘图
               </a>
             
           </div>
@@ -498,8 +440,8 @@ textBaseline 基线 top bottom middle
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/03/ES6初探/" rel="prev" title="ES6 初探">
-                ES6 初探 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/07/lazyload/" rel="prev" title="懒加载原理">
+                懒加载原理 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -623,7 +565,7 @@ textBaseline 基线 top bottom middle
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#绘制矩形"><span class="nav-number">1.</span> <span class="nav-text">绘制矩形</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#绘制路径"><span class="nav-number">1.1.</span> <span class="nav-text">绘制路径</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绘制文本"><span class="nav-number">2.</span> <span class="nav-text">绘制文本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变换"><span class="nav-number">3.</span> <span class="nav-text">变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绘制图像"><span class="nav-number">4.</span> <span class="nav-text">绘制图像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阴影"><span class="nav-number">5.</span> <span class="nav-text">阴影</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#渐变"><span class="nav-number">6.</span> <span class="nav-text">渐变</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模式"><span class="nav-number">7.</span> <span class="nav-text">模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图像数据"><span class="nav-number">8.</span> <span class="nav-text">图像数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#合成"><span class="nav-number">9.</span> <span class="nav-text">合成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WebGL"><span class="nav-number">10.</span> <span class="nav-text">WebGL</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#let-和-const"><span class="nav-number">1.</span> <span class="nav-text">let 和 const</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#箭头函数"><span class="nav-number">2.</span> <span class="nav-text">箭头函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不定参数和默认参数"><span class="nav-number">3.</span> <span class="nav-text">不定参数和默认参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for-of"><span class="nav-number">4.</span> <span class="nav-text">for - of</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模版字符串"><span class="nav-number">5.</span> <span class="nav-text">模版字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解构赋值"><span class="nav-number">6.</span> <span class="nav-text">解构赋值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Symbols"><span class="nav-number">7.</span> <span class="nav-text">Symbols</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合-Set-Map-amp-amp-weakSet-weakMap"><span class="nav-number">8.</span> <span class="nav-text">集合 Set Map && weakSet weakMap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代理-proxies"><span class="nav-number">9.</span> <span class="nav-text">代理 proxies</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成器"><span class="nav-number">10.</span> <span class="nav-text">生成器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类class"><span class="nav-number">11.</span> <span class="nav-text">类class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#子类-Subclass"><span class="nav-number">12.</span> <span class="nav-text">子类 Subclass</span></a></li></ol></div>
             
 
           </div>
