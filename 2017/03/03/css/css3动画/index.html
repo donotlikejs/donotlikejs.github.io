@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="bash shell," />
+  <meta name="keywords" content="css3," />
 
 
 
@@ -102,61 +102,28 @@
 
 
 
-<meta name="description" content="本笔记操作以mac系统为准
-路径表示 
-./    当前目录(可省略 比如 cd ./demo 写成 cd demo)
-../   上一级目录
-/     绝对路径(根目录)
-
-cd 改变目录
-//进入当前目录的子目录demo
-cd ./demo
-//进入之前的目录
-cd -
-
-touch（新建文件） 
-mkdir（新建目录）
-// 当前目录新建 demo.txt和index.html
-touch">
+<meta name="description" content="[TOC]
+浏览器前缀：-moz-，-webkit-，-o-，-ms-css3 动画一共三种转换 transformtransform:translate()/rotate()/scale()/skew()/matrix()
+transform-origin:(默认位置为50% 50%[ 0]，即中心点)
+transform-style:preserve-3d/flat
+perspective:n">
 <meta property="og:type" content="article">
-<meta property="og:title" content="常用Shell命令">
-<meta property="og:url" content="http://yoursite.com/2016/12/22/常用Shell命令/index.html">
+<meta property="og:title" content="css3 动画">
+<meta property="og:url" content="http://yoursite.com/2017/03/03/css/css3动画/index.html">
 <meta property="og:site_name" content="OLLIFE">
-<meta property="og:description" content="本笔记操作以mac系统为准
-路径表示 
-./    当前目录(可省略 比如 cd ./demo 写成 cd demo)
-../   上一级目录
-/     绝对路径(根目录)
-
-cd 改变目录
-//进入当前目录的子目录demo
-cd ./demo
-//进入之前的目录
-cd -
-
-touch（新建文件） 
-mkdir（新建目录）
-// 当前目录新建 demo.txt和index.html
-touch">
-<meta property="og:updated_time" content="2017-04-05T11:18:37.000Z">
+<meta property="og:description" content="[TOC]
+浏览器前缀：-moz-，-webkit-，-o-，-ms-css3 动画一共三种转换 transformtransform:translate()/rotate()/scale()/skew()/matrix()
+transform-origin:(默认位置为50% 50%[ 0]，即中心点)
+transform-style:preserve-3d/flat
+perspective:n">
+<meta property="og:updated_time" content="2017-04-25T06:57:53.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="常用Shell命令">
-<meta name="twitter:description" content="本笔记操作以mac系统为准
-路径表示 
-./    当前目录(可省略 比如 cd ./demo 写成 cd demo)
-../   上一级目录
-/     绝对路径(根目录)
-
-cd 改变目录
-//进入当前目录的子目录demo
-cd ./demo
-//进入之前的目录
-cd -
-
-touch（新建文件） 
-mkdir（新建目录）
-// 当前目录新建 demo.txt和index.html
-touch">
+<meta name="twitter:title" content="css3 动画">
+<meta name="twitter:description" content="[TOC]
+浏览器前缀：-moz-，-webkit-，-o-，-ms-css3 动画一共三种转换 transformtransform:translate()/rotate()/scale()/skew()/matrix()
+transform-origin:(默认位置为50% 50%[ 0]，即中心点)
+transform-style:preserve-3d/flat
+perspective:n">
 
 
 
@@ -184,13 +151,13 @@ touch">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/12/22/常用Shell命令/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/03/css/css3动画/"/>
 
 
 
 
 
-  <title> 常用Shell命令 | OLLIFE </title>
+  <title> css3 动画 | OLLIFE </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -313,7 +280,7 @@ touch">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/22/常用Shell命令/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/css/css3动画/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="lijian">
@@ -337,7 +304,7 @@ touch">
             
             
               
-                常用Shell命令
+                css3 动画
               
             
           </h1>
@@ -352,8 +319,8 @@ touch">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-22T14:29:53+08:00">
-                2016-12-22
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-03T15:56:52+08:00">
+                2017-03-03
               </time>
             
 
@@ -375,8 +342,8 @@ touch">
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/shell/" itemprop="url" rel="index">
-                    <span itemprop="name">shell</span>
+                  <a href="/categories/css3/" itemprop="url" rel="index">
+                    <span itemprop="name">css3</span>
                   </a>
                 </span>
 
@@ -410,58 +377,27 @@ touch">
       
 
       
-        <p>本笔记操作以mac系统为准</p>
-<p><code>路径表示</code> </p>
-<pre><code class="shell">./    当前目录(可省略 比如 cd ./demo 写成 cd demo)
-../   上一级目录
-/     绝对路径(根目录)
+        <p>[TOC]</p>
+<h2 id="浏览器前缀：-moz-，-webkit-，-o-，-ms"><a href="#浏览器前缀：-moz-，-webkit-，-o-，-ms" class="headerlink" title="浏览器前缀：-moz-，-webkit-，-o-，-ms-"></a>浏览器前缀：-moz-，-webkit-，-o-，-ms-</h2><h2 id="css3-动画一共三种"><a href="#css3-动画一共三种" class="headerlink" title="css3 动画一共三种"></a>css3 动画一共三种</h2><h3 id="转换-transform"><a href="#转换-transform" class="headerlink" title="转换 transform"></a>转换 transform</h3><pre><code class="css">transform:translate()/rotate()/scale()/skew()/matrix()
+transform-origin:(默认位置为50% 50%[ 0]，即中心点)
+transform-style:preserve-3d/flat
+perspective:num(3d元素距视图的距离)
+perspective-origin:x y （改变3d元素底部的xy位置）
+backface-visibility:visible／hidden （是否隐藏背面）
 </code></pre>
-<p><code>cd</code> 改变目录</p>
-<pre><code class="shell">//进入当前目录的子目录demo
-cd ./demo
-//进入之前的目录
-cd -
+<h3 id="过渡-transition"><a href="#过渡-transition" class="headerlink" title="过渡 transition"></a>过渡 transition</h3><pre><code class="css">transiton:propety duration timing-function delay;
+//timing-function:linear ease ease-in ease-out ease-in-out cubic-bezier()
 </code></pre>
-<p><code>touch</code>（新建文件） </p>
-<p><code>mkdir</code>（新建目录）</p>
-<pre><code>// 当前目录新建 demo.txt和index.html
-touch demo.txt index.html
-// 当前目录新建demo文件夹
-mkdir demo
-</code></pre><p><code>rm</code> 删除文件       </p>
-<p>​    常用选项 </p>
-<p>​            -i -r -v 同复制</p>
-<p>​            -f: 忽略不存在的文件</p>
-<p><code>rmdir</code> 删除空目录</p>
-<p><code>ls</code> 显示文件列表</p>
-<p>常用选项    -l:长格式显示结果 </p>
-<p>​            -t:按修改时间来排序 </p>
-<p>​            -a:显示所有文件 -r:相反顺序显示 </p>
-<p>​            -h:长格式列出时，不已字节显示文件大小 </p>
-<p>​            -F: 每个文件加上指示符号 </p>
-<p>​            -d: 列出指定目录中内容 </p>
-<p><code>pwd</code> 显示目录路径 </p>
-<p><code>mv</code>（移动/重命名文件和目录） 和 <code>cp</code>（拷贝文件和目录） </p>
-<p>常用选项       -a:复制所有信息和属性</p>
-<p>​            -i:重写前确认</p>
-<p>​            -r:递归(复制)</p>
-<p>​            -u:仅复制目标目录不存在或新于的文件</p>
-<p>​            -v:显示详细命令操作信息</p>
-<pre><code class="shell">//复制file1文件到file2
-cp file1 file2
-//重命名为file2
-mv file1 file2
-//移动file1到根目录下的demo目录
-mv file1 /demo
+<h3 id="动画-animation-keyframe-name"><a href="#动画-animation-keyframe-name" class="headerlink" title="动画 animation @keyframe name{ ;[;;]}"></a>动画 animation @keyframe name{ ;[;;]}</h3><pre><code class="css">animation
+    animation-name            @keyframe名
+    animation-duration        完成一个周期的时间
+    animation-timing-function    速度曲线
+    animation-delay                延迟时间
+    animation-iteratin-count    num/infinite 播放次数
+    animation-direction            normal/alternate 是否下一周期逆向播放
+    animation-play-stat            paused/running(不能简写)    
+    animation-fill-mode            none/forware/backwards/both
 </code></pre>
-<p>file</p>
-<p>less</p>
-<p>type 解释一个命令名</p>
-<p>which 显示会执行哪个可执行程序（可用来找路径）</p>
-<p>man</p>
-<p>info</p>
-<p>whatis</p>
-<p>通配符 *</p>
 
       
     </div>
@@ -485,7 +421,7 @@ mv file1 /demo
       
         <div class="post-tags">
           
-            <a href="/tags/bash-shell/" rel="tag"># bash shell</a>
+            <a href="/tags/css3/" rel="tag"># css3</a>
           
         </div>
       
@@ -494,8 +430,8 @@ mv file1 /demo
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/22/新手小问题收集（HTML）/" rel="next" title="新手小问题收集">
-                <i class="fa fa-chevron-left"></i> 新手小问题收集
+              <a href="/2017/03/03/ajax 跨域和jsonp/" rel="next" title="ajax 跨域 jsonp">
+                <i class="fa fa-chevron-left"></i> ajax 跨域 jsonp
               </a>
             
           </div>
@@ -504,8 +440,8 @@ mv file1 /demo
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/12/22/仿锤子3d动图/" rel="prev" title="防锤子3d动图">
-                防锤子3d动图 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/03/javascript base/" rel="prev" title="javascript">
+                javascript <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -553,8 +489,17 @@ mv file1 /demo
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -610,6 +555,22 @@ mv file1 /demo
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器前缀：-moz-，-webkit-，-o-，-ms"><span class="nav-number">1.</span> <span class="nav-text">浏览器前缀：-moz-，-webkit-，-o-，-ms-</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css3-动画一共三种"><span class="nav-number">2.</span> <span class="nav-text">css3 动画一共三种</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#转换-transform"><span class="nav-number">2.1.</span> <span class="nav-text">转换 transform</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过渡-transition"><span class="nav-number">2.2.</span> <span class="nav-text">过渡 transition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动画-animation-keyframe-name"><span class="nav-number">2.3.</span> <span class="nav-text">动画 animation @keyframe name{ ;[;;]}</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
