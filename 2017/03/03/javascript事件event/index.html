@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="html," />
+  <meta name="keywords" content="javascript,event," />
 
 
 
@@ -102,43 +102,49 @@
 
 
 
-<meta name="description" content="使用canvas绘图共同步骤
-指定canvas大小（也可称之画布大小）
-调用Context(“2d”)方法
-//html
-&amp;lt;canvas id=&amp;quot;drawing&amp;quot;&amp;gt;&amp;lt;/canvas&amp;gt;
-&amp;lt;style&amp;gt;
-#drawing{width:300px;height:300px}
-&amp;lt;/style&amp;gt;
-&amp;lt;script&amp;gt;
-let dra">
+<meta name="description" content="事件：用户或者浏览器自身执行的某种动作
+事件处理程序（事件监听器）：响应某个事件的函数，事件处理程序的名字以“on”开头。
+DOM0级：将一个函数赋值给一个事件处理程序属性
+btn.onclick=function(){
+}
+
+DOM1级
+DOM2级事件处理程序
+/*
+*1参数为要处理的事件名
+*2参数事件处理程序的函数
+*3参数为布尔值，true表示捕获阶段调用2，false表示冒泡阶段调用2">
 <meta property="og:type" content="article">
-<meta property="og:title" content="html之canvas 绘图">
-<meta property="og:url" content="http://yoursite.com/2017/03/03/canvas要点/index.html">
+<meta property="og:title" content="事件event">
+<meta property="og:url" content="http://yoursite.com/2017/03/03/javascript事件event/index.html">
 <meta property="og:site_name" content="OLLIFE">
-<meta property="og:description" content="使用canvas绘图共同步骤
-指定canvas大小（也可称之画布大小）
-调用Context(“2d”)方法
-//html
-&amp;lt;canvas id=&amp;quot;drawing&amp;quot;&amp;gt;&amp;lt;/canvas&amp;gt;
-&amp;lt;style&amp;gt;
-#drawing{width:300px;height:300px}
-&amp;lt;/style&amp;gt;
-&amp;lt;script&amp;gt;
-let dra">
-<meta property="og:updated_time" content="2017-04-12T14:39:06.000Z">
+<meta property="og:description" content="事件：用户或者浏览器自身执行的某种动作
+事件处理程序（事件监听器）：响应某个事件的函数，事件处理程序的名字以“on”开头。
+DOM0级：将一个函数赋值给一个事件处理程序属性
+btn.onclick=function(){
+}
+
+DOM1级
+DOM2级事件处理程序
+/*
+*1参数为要处理的事件名
+*2参数事件处理程序的函数
+*3参数为布尔值，true表示捕获阶段调用2，false表示冒泡阶段调用2">
+<meta property="og:updated_time" content="2017-04-26T07:52:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="html之canvas 绘图">
-<meta name="twitter:description" content="使用canvas绘图共同步骤
-指定canvas大小（也可称之画布大小）
-调用Context(“2d”)方法
-//html
-&amp;lt;canvas id=&amp;quot;drawing&amp;quot;&amp;gt;&amp;lt;/canvas&amp;gt;
-&amp;lt;style&amp;gt;
-#drawing{width:300px;height:300px}
-&amp;lt;/style&amp;gt;
-&amp;lt;script&amp;gt;
-let dra">
+<meta name="twitter:title" content="事件event">
+<meta name="twitter:description" content="事件：用户或者浏览器自身执行的某种动作
+事件处理程序（事件监听器）：响应某个事件的函数，事件处理程序的名字以“on”开头。
+DOM0级：将一个函数赋值给一个事件处理程序属性
+btn.onclick=function(){
+}
+
+DOM1级
+DOM2级事件处理程序
+/*
+*1参数为要处理的事件名
+*2参数事件处理程序的函数
+*3参数为布尔值，true表示捕获阶段调用2，false表示冒泡阶段调用2">
 
 
 
@@ -166,13 +172,13 @@ let dra">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/03/canvas要点/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/03/javascript事件event/"/>
 
 
 
 
 
-  <title> html之canvas 绘图 | OLLIFE </title>
+  <title> 事件event | OLLIFE </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -305,7 +311,7 @@ let dra">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/canvas要点/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/javascript事件event/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="lijian">
@@ -329,7 +335,7 @@ let dra">
             
             
               
-                html之canvas 绘图
+                事件event
               
             
           </h1>
@@ -367,8 +373,8 @@ let dra">
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/基础/" itemprop="url" rel="index">
-                    <span itemprop="name">基础</span>
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
                   </a>
                 </span>
 
@@ -402,71 +408,90 @@ let dra">
       
 
       
-        <p>使用canvas绘图共同步骤</p>
-<p>指定canvas大小（也可称之画布大小）</p>
-<p>调用Context(“2d”)方法</p>
-<pre><code class="html">//html
-&lt;canvas id=&quot;drawing&quot;&gt;&lt;/canvas&gt;
-&lt;style&gt;
-#drawing{width:300px;height:300px}
-&lt;/style&gt;
-&lt;script&gt;
-let drawing=document.getElementById(&quot;drawing&quot;);
-let context=drawing.Context(&quot;2d&quot;);
-&lt;/script&gt;
+        <p>事件：用户或者浏览器自身执行的某种动作</p>
+<p>事件处理程序（事件监听器）：响应某个事件的函数，事件处理程序的名字以“on”开头。</p>
+<p>DOM0级：将一个函数赋值给一个事件处理程序属性</p>
+<pre><code class="javascr">btn.onclick=function(){
+}
 </code></pre>
-<h2 id="绘制矩形"><a href="#绘制矩形" class="headerlink" title="绘制矩形"></a>绘制矩形</h2><p>填充:fillStyle 描边:strokeStyle</p>
-<p>绘制矩形</p>
-<p>fillRect(x,y,width,height)</p>
-<p>strokeRect(x,y,width,height)</p>
-<p>clearRect(x,y,width,height)</p>
-<pre><code class="javascript">//填充
-context.fillStyle=&quot;#e5e5e5&quot;;
-context.fillRect(5,5,50,50);
-//描边
-context.strokeStyle=&quot;yellow&quot;;
-context.strokeRect(15,15,50,50);
-</code></pre>
-<p>控制线条</p>
-<p>​        粗细 lineWidth</p>
-<p>​        末端形状 lineCap     butt 平头    round 圆头        square 方头</p>
-<p>​        相交方式 lineJoin     round 圆交      bevel 斜交        miter 斜接</p>
-<h3 id="绘制路径"><a href="#绘制路径" class="headerlink" title="绘制路径"></a>绘制路径</h3><p>​    调用beginPath();</p>
-<pre><code class="javascript">
-
-arc(x,y,radius,startAngle,endAngle,counterclockwise)
-
-arcTo(x1,y1,x2,y2,radius)
-
-bezierCurveTo(c1x,c1y,c2x,c2y,x,y)
-
-lineTo(x,y)
-
-moveTo(x,y)
-
-quadraticCurveTo(cx,cy,x,y)
-
-rect(x,y,width,height)
-
-closePath
-
-fill()
-
-stroke()
-
-clip()
-</code></pre>
-<h2 id="绘制文本"><a href="#绘制文本" class="headerlink" title="绘制文本"></a>绘制文本</h2><pre><code class="javascript">fillText(str,x,y,width)
-strokeText(str,x,y,width)
-/*
-属性
-font 样式 大小 字体
-textAlign 对齐方式 start end left right center
-textBaseline 基线 top bottom middle 
-                    hanging alphabetic ideog raphic
+<p>DOM1级</p>
+<p>DOM2级事件处理程序</p>
+<pre><code>/*
+*1参数为要处理的事件名
+*2参数事件处理程序的函数
+*3参数为布尔值，true表示捕获阶段调用2，false表示冒泡阶段调用2
+    fn在当前作用于运行
 */
+addEventListener(&quot;&quot;,fn,boolean)
+/*
+参数同上，只是调用变成删除
+*/
+removeEventListener()
+</code></pre><p>捕获：从不具体的父元素逐步传到具体的元素</p>
+<p>冒泡：具体的元素逐步往上传播到不具体的父元素</p>
+<p>DOM事件流（DOM2）:分为事件捕获阶段，处于目标阶段和事件冒泡阶段。（但浏览器都支持捕获和冒泡阶段对目标对象进行操作）</p>
+<p>事件处理程序分类</p>
+<p>HTML事件处理程序 ：写在html标签里</p>
+<p>IE事件处理程序：</p>
+<pre><code class="javasc">// fn会在全局作用域中运行
+attachEvent()
+detachEvent()
 </code></pre>
-<h2 id="变换"><a href="#变换" class="headerlink" title="变换"></a>变换</h2><h2 id="绘制图像"><a href="#绘制图像" class="headerlink" title="绘制图像"></a>绘制图像</h2><h2 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h2><h2 id="渐变"><a href="#渐变" class="headerlink" title="渐变"></a>渐变</h2><h2 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h2><h2 id="图像数据"><a href="#图像数据" class="headerlink" title="图像数据"></a>图像数据</h2><h2 id="合成"><a href="#合成" class="headerlink" title="合成"></a>合成</h2><h2 id="WebGL"><a href="#WebGL" class="headerlink" title="WebGL"></a>WebGL</h2>
+<p>事件对象（event）</p>
+<p>触发DOM事件时自动产生事件对象event，该对象包含所有与事件有关的信息。</p>
+<pre><code class="javascript">stopPropagation
+preventDefault()   取消默认行为
+target                返回最初触发事件的元素
+type                返回事件类型
+</code></pre>
+<pre><code class="javascript">//原点为浏览器内容区域左上角
+clientX
+clientY
+
+//原点为屏幕左上角
+screenX
+screenY
+
+//FF特有 原点为浏览器内容区域左上角随scroll变化
+pageX
+pageY
+</code></pre>
+<p>事件委托（代理）：利用冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件</p>
+<h2 id="事件类型"><a href="#事件类型" class="headerlink" title="事件类型"></a>事件类型</h2><ul>
+<li>UI</li>
+</ul>
+<pre><code class="javascript">load
+unload
+abort
+error
+select
+resize
+scroll
+</code></pre>
+<ul>
+<li>鼠标</li>
+</ul>
+<pre><code class="javascript">click
+dbclick
+mousedown
+mouseup
+mouseenter  dom3级，事件不冒泡，移动到子元素上也不触发
+mouseleave  同上
+mousemove   鼠标在目标内移动时重复触发
+mouseout
+mouseover
+</code></pre>
+<ul>
+<li>滚轮</li>
+<li>焦点</li>
+<li>键盘</li>
+<li>文本</li>
+<li>合成，变动，变动名称</li>
+</ul>
+<h2 id="事件绑定-事件监听-事件委托"><a href="#事件绑定-事件监听-事件委托" class="headerlink" title="事件绑定 事件监听 事件委托"></a>事件绑定 事件监听 事件委托</h2><p>​    <code>事件绑定</code>  </p>
+<p>​    <code>事件监听</code>  </p>
+<p>​    <code>事件委托</code>  利用事件冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件。</p>
+
       
     </div>
 
@@ -489,7 +514,7 @@ textBaseline 基线 top bottom middle
       
         <div class="post-tags">
           
-            <a href="/tags/html/" rel="tag"># html</a>
+            <a href="/tags/javascript-event/" rel="tag"># javascript,event</a>
           
         </div>
       
@@ -498,8 +523,8 @@ textBaseline 基线 top bottom middle
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/03/正则/" rel="next" title="javascript正则">
-                <i class="fa fa-chevron-left"></i> javascript正则
+              <a href="/2017/03/03/canvas要点/" rel="next" title="html之canvas 绘图">
+                <i class="fa fa-chevron-left"></i> html之canvas 绘图
               </a>
             
           </div>
@@ -508,8 +533,8 @@ textBaseline 基线 top bottom middle
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/03/javascript事件event/" rel="prev" title="事件event">
-                事件event <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/07/lazyload/" rel="prev" title="懒加载原理">
+                懒加载原理 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -633,7 +658,7 @@ textBaseline 基线 top bottom middle
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#绘制矩形"><span class="nav-number">1.</span> <span class="nav-text">绘制矩形</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#绘制路径"><span class="nav-number">1.1.</span> <span class="nav-text">绘制路径</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绘制文本"><span class="nav-number">2.</span> <span class="nav-text">绘制文本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变换"><span class="nav-number">3.</span> <span class="nav-text">变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绘制图像"><span class="nav-number">4.</span> <span class="nav-text">绘制图像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阴影"><span class="nav-number">5.</span> <span class="nav-text">阴影</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#渐变"><span class="nav-number">6.</span> <span class="nav-text">渐变</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模式"><span class="nav-number">7.</span> <span class="nav-text">模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图像数据"><span class="nav-number">8.</span> <span class="nav-text">图像数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#合成"><span class="nav-number">9.</span> <span class="nav-text">合成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WebGL"><span class="nav-number">10.</span> <span class="nav-text">WebGL</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#事件类型"><span class="nav-number">1.</span> <span class="nav-text">事件类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件绑定-事件监听-事件委托"><span class="nav-number">2.</span> <span class="nav-text">事件绑定 事件监听 事件委托</span></a></li></ol></div>
             
 
           </div>
