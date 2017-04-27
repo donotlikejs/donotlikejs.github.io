@@ -113,7 +113,8 @@ screen
 open()
 
 ##String
-.valueOf(">
+/*
+.value">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javascript">
 <meta property="og:url" content="http://yoursite.com/2017/03/03/javascript base/index.html">
@@ -129,8 +130,9 @@ screen
 open()
 
 ##String
-.valueOf(">
-<meta property="og:updated_time" content="2017-04-20T11:41:02.000Z">
+/*
+.value">
+<meta property="og:updated_time" content="2017-04-27T08:11:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript">
 <meta name="twitter:description" content="windowlocalStorage //html5
@@ -144,7 +146,8 @@ screen
 open()
 
 ##String
-.valueOf(">
+/*
+.value">
 
 
 
@@ -419,7 +422,8 @@ screen
 open()
 </code></pre>
 <p>##String</p>
-<pre><code class="javascript">.valueOf()
+<pre><code class="javascript">/*
+.valueOf()
 .toString()
 fromCharCode()
 fromCodePoint()
@@ -433,10 +437,13 @@ prototype.concat()
 .repeat()
 .replace()
 .reach()
-.slice()
-.split()
-.substr()
-.substring()
+
+&lt;-----提取字符串-----&gt;
+    .slice(start,end)  获取star到end索引号的字符串并返回可以有负值
+    .substr(start,length) 
+    .substring(start,stop)  不包含stop索引号的值（非负值）
+
+.split(separator,howmany)  分割字符串为数组
 .toLocaleLowerCase()
 .toLocaleUpperCase()
 .toLowerCase()
@@ -446,6 +453,7 @@ prototype.concat()
 .trimLeft()
 .trimRight()
 .raw()
+*/
 </code></pre>
 <p>##Number</p>
 <pre><code class="javascript">.isFinite()
@@ -522,8 +530,8 @@ inedexOf()        //
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/03/ajax 跨域和jsonp/" rel="next" title="ajax 跨域 jsonp">
-                <i class="fa fa-chevron-left"></i> ajax 跨域 jsonp
+              <a href="/2017/03/03/css3动画/" rel="next" title="css3 动画">
+                <i class="fa fa-chevron-left"></i> css3 动画
               </a>
             
           </div>
@@ -532,8 +540,8 @@ inedexOf()        //
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/03/javascript this/" rel="prev" title="this的指向值">
-                this的指向值 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/03/正则/" rel="prev" title="javascript正则">
+                javascript正则 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

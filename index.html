@@ -1068,6 +1068,233 @@ split()
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/javascript base/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="lijian">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="OLLIFE">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="OLLIFE" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/03/javascript base/" itemprop="url">
+                  javascript
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-03T15:56:52+08:00">
+                2017-03-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="window"><a href="#window" class="headerlink" title="window"></a>window</h2><pre><code class="javascript">localStorage //html5
+    setItem()
+    getItem()
+location
+    host hostname href pathname protocol search port origin     hash
+history
+    back() forward() go()
+screen
+open()
+</code></pre>
+<p>##String</p>
+<pre><code class="javascript">/*
+.valueOf()
+.toString()
+fromCharCode()
+fromCodePoint()
+prototype.charAt()
+prototype.charCodeAt()
+prototype.codePointAt()
+prototype.concat()
+.indexOf()
+.lastIndexOf()
+.match()
+.repeat()
+.replace()
+.reach()
+
+&lt;-----提取字符串-----&gt;
+    .slice(start,end)  获取star到end索引号的字符串并返回可以有负值
+    .substr(start,length) 
+    .substring(start,stop)  不包含stop索引号的值（非负值）
+
+.split(separator,howmany)  分割字符串为数组
+.toLocaleLowerCase()
+.toLocaleUpperCase()
+.toLowerCase()
+.toUpperCase()
+
+.trim()
+.trimLeft()
+.trimRight()
+.raw()
+*/
+</code></pre>
+<p>##Number</p>
+<pre><code class="javascript">.isFinite()
+.isNaN()
+Number.parseFloat()==parseFloat()//es6
+Number.parseInt()==parseInt()//es6
+</code></pre>
+<p>##Array</p>
+<pre><code class="javascript">.concat()    //
+forEach()
+inedexOf()        //
+.lastIndexOf()        //
+.join()
+.pop()
+.push()
+.shift()
+.unshift()
+.slice()
+.sort()
+.splice()
+.value()
+.reverse()
+.keys()
+.includes()
+.toLocaleString()
+</code></pre>
+<p>##Math</p>
+<pre><code class="javascript">.random()
+.round()
+.floor()
+</code></pre>
+<p>##Date</p>
+<pre><code class="javascript">.UTC()
+.now()
+.parse()
+.prototype.getDate()
+.getDay()
+.getHours()
+.getFullYear()
+.getMinutes()
+.getMonth()
+.getSeconds()
+.getTime()
+</code></pre>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/css3动画/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1653,228 +1880,6 @@ let[first,second,third]=arr;
 <p>4.apply方法中，this指向第一参数</p>
 <p>5.箭头函数没有自己的this值，箭头函数内的this值继承自外围作用域。</p>
 <p>6.事件监听中的this</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/javascript base/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="lijian">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.gif">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="OLLIFE">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="OLLIFE" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/03/javascript base/" itemprop="url">
-                  javascript
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-03T15:56:52+08:00">
-                2017-03-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="window"><a href="#window" class="headerlink" title="window"></a>window</h2><pre><code class="javascript">localStorage //html5
-    setItem()
-    getItem()
-location
-    host hostname href pathname protocol search port origin     hash
-history
-    back() forward() go()
-screen
-open()
-</code></pre>
-<p>##String</p>
-<pre><code class="javascript">.valueOf()
-.toString()
-fromCharCode()
-fromCodePoint()
-prototype.charAt()
-prototype.charCodeAt()
-prototype.codePointAt()
-prototype.concat()
-.indexOf()
-.lastIndexOf()
-.match()
-.repeat()
-.replace()
-.reach()
-.slice()
-.split()
-.substr()
-.substring()
-.toLocaleLowerCase()
-.toLocaleUpperCase()
-.toLowerCase()
-.toUpperCase()
-
-.trim()
-.trimLeft()
-.trimRight()
-.raw()
-</code></pre>
-<p>##Number</p>
-<pre><code class="javascript">.isFinite()
-.isNaN()
-Number.parseFloat()==parseFloat()//es6
-Number.parseInt()==parseInt()//es6
-</code></pre>
-<p>##Array</p>
-<pre><code class="javascript">.concat()    //
-forEach()
-inedexOf()        //
-.lastIndexOf()        //
-.join()
-.pop()
-.push()
-.shift()
-.unshift()
-.slice()
-.sort()
-.splice()
-.value()
-.reverse()
-.keys()
-.includes()
-.toLocaleString()
-</code></pre>
-<p>##Math</p>
-<pre><code class="javascript">.random()
-.round()
-.floor()
-</code></pre>
-<p>##Date</p>
-<pre><code class="javascript">.UTC()
-.now()
-.parse()
-.prototype.getDate()
-.getDay()
-.getHours()
-.getFullYear()
-.getMinutes()
-.getMonth()
-.getSeconds()
-.getTime()
-</code></pre>
 
           
         
