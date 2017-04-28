@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="webpack," />
+  <meta name="keywords" content="javascript," />
 
 
 
@@ -102,37 +102,43 @@
 
 
 
-<meta name="description" content="官网：https://webpack.js.org/
-webpack是一款模块加载和打包的工具
-1.全局安装 npm install -g webpack
-进入你的项目文件夹（比如叫yourproject）和 初始化cd yourproject
-npm init
-初始化用来生成package.json包
-{
-  &amp;quot;name&amp;quot;: &amp;quot;webpacktest&amp;quot;,">
+<meta name="description" content="[TOC]
+创建与删除// 创建元素节点
+document.createElement(&amp;#39;element&amp;#39;)
+// 创建文本节点
+document.createTextNode(&amp;#39;text&amp;#39;)
+// 删除节点
+element.removeChild()
+
+获得元素document.getElementById(&amp;#39;idname&amp;#39;)
+element.id">
 <meta property="og:type" content="article">
-<meta property="og:title" content="webpack基础应用">
-<meta property="og:url" content="http://yoursite.com/2016/12/22/webpack的使用/index.html">
+<meta property="og:title" content="DOM 操作">
+<meta property="og:url" content="http://yoursite.com/2017/03/03/javascript DOM操作/index.html">
 <meta property="og:site_name" content="OLLIFE">
-<meta property="og:description" content="官网：https://webpack.js.org/
-webpack是一款模块加载和打包的工具
-1.全局安装 npm install -g webpack
-进入你的项目文件夹（比如叫yourproject）和 初始化cd yourproject
-npm init
-初始化用来生成package.json包
-{
-  &amp;quot;name&amp;quot;: &amp;quot;webpacktest&amp;quot;,">
-<meta property="og:updated_time" content="2017-03-28T14:23:14.000Z">
+<meta property="og:description" content="[TOC]
+创建与删除// 创建元素节点
+document.createElement(&amp;#39;element&amp;#39;)
+// 创建文本节点
+document.createTextNode(&amp;#39;text&amp;#39;)
+// 删除节点
+element.removeChild()
+
+获得元素document.getElementById(&amp;#39;idname&amp;#39;)
+element.id">
+<meta property="og:updated_time" content="2017-04-28T08:46:15.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="webpack基础应用">
-<meta name="twitter:description" content="官网：https://webpack.js.org/
-webpack是一款模块加载和打包的工具
-1.全局安装 npm install -g webpack
-进入你的项目文件夹（比如叫yourproject）和 初始化cd yourproject
-npm init
-初始化用来生成package.json包
-{
-  &amp;quot;name&amp;quot;: &amp;quot;webpacktest&amp;quot;,">
+<meta name="twitter:title" content="DOM 操作">
+<meta name="twitter:description" content="[TOC]
+创建与删除// 创建元素节点
+document.createElement(&amp;#39;element&amp;#39;)
+// 创建文本节点
+document.createTextNode(&amp;#39;text&amp;#39;)
+// 删除节点
+element.removeChild()
+
+获得元素document.getElementById(&amp;#39;idname&amp;#39;)
+element.id">
 
 
 
@@ -160,13 +166,13 @@ npm init
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/12/22/webpack的使用/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/03/javascript DOM操作/"/>
 
 
 
 
 
-  <title> webpack基础应用 | OLLIFE </title>
+  <title> DOM 操作 | OLLIFE </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -299,7 +305,7 @@ npm init
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/22/webpack的使用/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/javascript DOM操作/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="lijian">
@@ -323,7 +329,7 @@ npm init
             
             
               
-                webpack基础应用
+                DOM 操作
               
             
           </h1>
@@ -338,8 +344,8 @@ npm init
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-22T14:29:53+08:00">
-                2016-12-22
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-03T15:56:52+08:00">
+                2017-03-03
               </time>
             
 
@@ -361,8 +367,8 @@ npm init
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/工具/" itemprop="url" rel="index">
-                    <span itemprop="name">工具</span>
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
                   </a>
                 </span>
 
@@ -396,99 +402,39 @@ npm init
       
 
       
-        <p><code>官网</code>：<a href="https://webpack.js.org/" target="_blank" rel="external">https://webpack.js.org/</a></p>
-<p>webpack是一款模块加载和打包的工具</p>
-<h2 id="1-全局安装"><a href="#1-全局安装" class="headerlink" title="1.全局安装"></a>1.全局安装</h2><pre><code> npm install -g webpack
-</code></pre><h2 id="进入你的项目文件夹（比如叫yourproject）和-初始化"><a href="#进入你的项目文件夹（比如叫yourproject）和-初始化" class="headerlink" title="进入你的项目文件夹（比如叫yourproject）和 初始化"></a>进入你的项目文件夹（比如叫yourproject）和 初始化</h2><pre><code>cd yourproject
-npm init
-</code></pre><p>初始化用来生成package.json包</p>
-<pre><code class="json">{
-  &quot;name&quot;: &quot;webpacktest&quot;,
-  &quot;version&quot;: &quot;1.0.0&quot;,
-  &quot;description&quot;: &quot;&quot;,
-  &quot;main&quot;: &quot;index.js&quot;,
-  &quot;scripts&quot;: {
-    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;
-  },
-  &quot;author&quot;: &quot;&quot;,
-  &quot;license&quot;: &quot;ISC&quot;,
-  &quot;devDependencies&quot;: {
-    &quot;webpack&quot;: &quot;^1.14.0&quot;
-  }
-}
+        <p>[TOC]</p>
+<h2 id="创建与删除"><a href="#创建与删除" class="headerlink" title="创建与删除"></a>创建与删除</h2><pre><code class="javascript">// 创建元素节点
+document.createElement(&#39;element&#39;)
+// 创建文本节点
+document.createTextNode(&#39;text&#39;)
+// 删除节点
+element.removeChild()
 </code></pre>
-<h2 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h2><pre><code class="npm">npm install webpack --save-dev
+<h2 id="获得元素"><a href="#获得元素" class="headerlink" title="获得元素"></a>获得元素</h2><pre><code class="javascript">document.getElementById(&#39;idname&#39;)
+element.id
+document.getElementsByTagName(&#39;element&#39;)
+document.getElementsByClassName(&#39;classname&#39;)
+// 接收css选择符，返回与该模式匹配的第一个元素
+element.querySelector()
+// 返回一个NodeList()实例
+element.querySelectorAll()
 </code></pre>
-<p>生成mode_modules文件夹以及在package.json的devDependencies中自动添加</p>
-<pre><code class="json">&quot;devDependencies&quot;: {
-    &quot;webpack&quot;: &quot;^1.14.0&quot;
-  }
+<h2 id="判断节点类型"><a href="#判断节点类型" class="headerlink" title="判断节点类型"></a>判断节点类型</h2><h2 id="获取-添加属性节点"><a href="#获取-添加属性节点" class="headerlink" title="获取,添加属性节点"></a>获取,添加属性节点</h2><pre><code class="javascript">element.attribute
+element.getAttribute()
+element.setAttribuet()
+element.removeAttribute()
+hasAttribute()
 </code></pre>
-<p>在每个项目根目录下必须配置一个webpack.config.js文件，此文件用来写配置项，用来告诉webpack做什么。<br>webpack.config.js里一般写法</p>
-<pre><code class="javascript">//var webpack=require(&#39;webpack&#39;);
-//var commonPlugin = new webpack.optimize.CommonsChunkPlugin(&#39;comon.js&#39;);
+<h2 id="添加-插入"><a href="#添加-插入" class="headerlink" title="添加 插入"></a>添加 插入</h2><pre><code class="javascript">element.appendChild();
+element.innerHTML
+element.innerText
 
-
-module.explorts={
-  //plugins:[commonPlugin],
-  //entry里为设置处理的文件路径入口
-  entry:{
-    index:&#39;./src/js/page/index.js&#39;
-    },
-  //output里为处理后存放的文件夹以及新的文件名
-  output:{
-    path:&#39;dist/js/page&#39;,
-    //publiPath:&#39;&#39;,
-    filename:&#39;[name].js&#39;
-    },
-  // module这里定义了处理指定后缀文件的插件，插件需要安装在项目内
-  // npm install 插件名 -dev--save
-  module:{
-    loaders:[
-      //处理css和scss文件
-        {test:/\.css$/,
-         loader:&#39;style-loader!css-loader!sass-loader&#39;
-        },
-      //处理es6文件
-        {
-          test:/\.js$/,
-          //排除不需要解析道文件夹
-          exclude:(),
-          loader:&#39;label-loader&#39;,
-          //
-          qurey:{
-            presets:[&#39;es2015&#39;]
-          }
-        }
-
-      ]
-    },
-  //
-  resolve:{
-    // 设置查找module的根目录，可忽略
-    root:&#39;&#39;,
-    // resolve.extensions设置扩展文件后缀名， require()可以省略文件名
-    extensions:[&#39;&#39;,&#39;js&#39;,&#39;css&#39;],
-    //设置模块别名
-    alias:{
-
-      }
-    },
-  //插件
-  plugins:{
-
-  }
-}
+//不常用
+element.outerHTML
+element.outText
 </code></pre>
-<p><strong><code>扩展阅读</code></strong></p>
-<ul>
-<li><a href="http://www.w2bc.com/Article/50764" target="_blank" rel="external">http://www.w2bc.com/Article/50764</a></li>
-<li><a href="http://blog.csdn.net/github_26672553/article/details/52107165" target="_blank" rel="external">http://blog.csdn.net/github_26672553/article/details/52107165</a></li>
-<li>webpack-dev-server使用讲解 </li>
-<li><a href="http://www.tuicool.com/articles/BZrQ3mv" target="_blank" rel="external">http://www.tuicool.com/articles/BZrQ3mv</a></li>
-<li><a href="https://segmentfault.com/a/1190000006964335" target="_blank" rel="external">https://segmentfault.com/a/1190000006964335</a></li>
-</ul>
-
+<h2 id="html属性获取与设置"><a href="#html属性获取与设置" class="headerlink" title="html属性获取与设置"></a>html属性获取与设置</h2><p>##css操作</p>
+<h2 id="表格操作"><a href="#表格操作" class="headerlink" title="表格操作"></a>表格操作</h2>
       
     </div>
 
@@ -511,7 +457,7 @@ module.explorts={
       
         <div class="post-tags">
           
-            <a href="/tags/webpack/" rel="tag"># webpack</a>
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
           
         </div>
       
@@ -520,8 +466,8 @@ module.explorts={
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/22/仿锤子3d动图/" rel="next" title="防锤子3d动图">
-                <i class="fa fa-chevron-left"></i> 防锤子3d动图
+              <a href="/2017/01/16/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
               </a>
             
           </div>
@@ -530,8 +476,8 @@ module.explorts={
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/12/22/requirejs 使用/" rel="prev" title="requirejs使用">
-                requirejs使用 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/03/javascript事件event/" rel="prev" title="事件event">
+                事件event <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -655,7 +601,7 @@ module.explorts={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-全局安装"><span class="nav-number">1.</span> <span class="nav-text">1.全局安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进入你的项目文件夹（比如叫yourproject）和-初始化"><span class="nav-number">2.</span> <span class="nav-text">进入你的项目文件夹（比如叫yourproject）和 初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装依赖"><span class="nav-number">3.</span> <span class="nav-text">安装依赖</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建与删除"><span class="nav-number">1.</span> <span class="nav-text">创建与删除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获得元素"><span class="nav-number">2.</span> <span class="nav-text">获得元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判断节点类型"><span class="nav-number">3.</span> <span class="nav-text">判断节点类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取-添加属性节点"><span class="nav-number">4.</span> <span class="nav-text">获取,添加属性节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加-插入"><span class="nav-number">5.</span> <span class="nav-text">添加 插入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#html属性获取与设置"><span class="nav-number">6.</span> <span class="nav-text">html属性获取与设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表格操作"><span class="nav-number">7.</span> <span class="nav-text">表格操作</span></a></li></ol></div>
             
 
           </div>
