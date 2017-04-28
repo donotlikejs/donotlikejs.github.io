@@ -276,7 +276,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/javascript DOM操作/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/ES6初探/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="lijian">
@@ -301,8 +301,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/03/03/javascript DOM操作/" itemprop="url">
-                  DOM 操作
+                <a class="post-title-link" href="/2017/03/03/ES6初探/" itemprop="url">
+                  ES6 初探
                 </a>
               
             
@@ -378,39 +378,24 @@
       
         
           
-            <p>[TOC]</p>
-<h2 id="创建与删除"><a href="#创建与删除" class="headerlink" title="创建与删除"></a>创建与删除</h2><pre><code class="javascript">// 创建元素节点
-document.createElement(&#39;element&#39;)
-// 创建文本节点
-document.createTextNode(&#39;text&#39;)
-// 删除节点
-element.removeChild()
+            <h2 id="let-和-const"><a href="#let-和-const" class="headerlink" title="let 和 const"></a>let 和 const</h2><p>let和const声明都不能提升，</p>
+<p>同一个变量不能重复声明，</p>
+<p>声明的全局变量不是全局对象的属性</p>
+<p>const声明和赋值同时进行，对于基本类型不能重复赋值（可以作为常量赋值），引用类型可以。</p>
+<p>let能解决for循环中i的锁定问题。</p>
+<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><p>箭头函数没有this，也没有argument</p>
+<pre><code class="javascript">//let exp1=function(){return a;}
+let exp1=()=&gt;a;
+//let exp2=function(){let a=0;return console.log(a);}
+let exp2=()=&gt;{let a=0;return console.log(a);}
 </code></pre>
-<h2 id="获得元素"><a href="#获得元素" class="headerlink" title="获得元素"></a>获得元素</h2><pre><code class="javascript">document.getElementById(&#39;idname&#39;)
-element.id
-document.getElementsByTagName(&#39;element&#39;)
-document.getElementsByClassName(&#39;classname&#39;)
-// 接收css选择符，返回与该模式匹配的第一个元素
-element.querySelector()
-// 返回一个NodeList()实例
-element.querySelectorAll()
+<h2 id="不定参数和默认参数"><a href="#不定参数和默认参数" class="headerlink" title="不定参数和默认参数"></a>不定参数和默认参数</h2><h2 id="for-of"><a href="#for-of" class="headerlink" title="for - of"></a>for - of</h2><h2 id="模版字符串"><a href="#模版字符串" class="headerlink" title="模版字符串"></a>模版字符串</h2><p>使用`  ` 包裹，需要解析的变量用 ${} </p>
+<h2 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h2><pre><code class="javascript">let arr=[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;];
+let first=arr[0],second=arr[1],third=arr[2];
+// 等同于
+let[first,second,third]=arr;
 </code></pre>
-<h2 id="判断节点类型"><a href="#判断节点类型" class="headerlink" title="判断节点类型"></a>判断节点类型</h2><h2 id="获取-添加属性节点"><a href="#获取-添加属性节点" class="headerlink" title="获取,添加属性节点"></a>获取,添加属性节点</h2><pre><code class="javascript">element.attribute
-element.getAttribute()
-element.setAttribuet()
-element.removeAttribute()
-hasAttribute()
-</code></pre>
-<h2 id="添加-插入"><a href="#添加-插入" class="headerlink" title="添加 插入"></a>添加 插入</h2><pre><code class="javascript">element.appendChild();
-element.innerHTML
-element.innerText
-
-//不常用
-element.outerHTML
-element.outText
-</code></pre>
-<h2 id="html属性获取与设置"><a href="#html属性获取与设置" class="headerlink" title="html属性获取与设置"></a>html属性获取与设置</h2><p>##css操作</p>
-<h2 id="表格操作"><a href="#表格操作" class="headerlink" title="表格操作"></a>表格操作</h2>
+<h2 id="Symbols"><a href="#Symbols" class="headerlink" title="Symbols"></a>Symbols</h2><h2 id="集合-Set-Map-amp-amp-weakSet-weakMap"><a href="#集合-Set-Map-amp-amp-weakSet-weakMap" class="headerlink" title="集合 Set Map &amp;&amp; weakSet weakMap"></a>集合 Set Map &amp;&amp; weakSet weakMap</h2><h2 id="代理-proxies"><a href="#代理-proxies" class="headerlink" title="代理 proxies"></a>代理 proxies</h2><h2 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h2><h2 id="类class"><a href="#类class" class="headerlink" title="类class"></a>类class</h2><h2 id="子类-Subclass"><a href="#子类-Subclass" class="headerlink" title="子类 Subclass"></a>子类 Subclass</h2>
           
         
       
@@ -1120,6 +1105,198 @@ module.explorts={
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/22/常用Shell命令/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="lijian">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/17428.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="OLLIFE">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="OLLIFE" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/22/常用Shell命令/" itemprop="url">
+                  常用Shell命令
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-22T14:29:53+08:00">
+                2016-12-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/shell/" itemprop="url" rel="index">
+                    <span itemprop="name">shell</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>本笔记操作以mac系统为准</p>
+<p><code>路径表示</code> </p>
+<pre><code class="shell">./    当前目录(可省略 比如 cd ./demo 写成 cd demo)
+../   上一级目录
+/     绝对路径(根目录)
+</code></pre>
+<p><code>cd</code> 改变目录</p>
+<pre><code class="shell">//进入当前目录的子目录demo
+cd ./demo
+//进入之前的目录
+cd -
+</code></pre>
+<p><code>touch</code>（新建文件） </p>
+<p><code>mkdir</code>（新建目录）</p>
+<pre><code>// 当前目录新建 demo.txt和index.html
+touch demo.txt index.html
+// 当前目录新建demo文件夹
+mkdir demo
+</code></pre><p><code>rm</code> 删除文件       </p>
+<p>​    常用选项 </p>
+<p>​            -i -r -v 同复制</p>
+<p>​            -f: 忽略不存在的文件</p>
+<p><code>rmdir</code> 删除空目录</p>
+<p><code>ls</code> 显示文件列表</p>
+<p>常用选项    -l:长格式显示结果 </p>
+<p>​            -t:按修改时间来排序 </p>
+<p>​            -a:显示所有文件 -r:相反顺序显示 </p>
+<p>​            -h:长格式列出时，不已字节显示文件大小 </p>
+<p>​            -F: 每个文件加上指示符号 </p>
+<p>​            -d: 列出指定目录中内容 </p>
+<p><code>pwd</code> 显示目录路径 </p>
+<p><code>mv</code>（移动/重命名文件和目录） 和 <code>cp</code>（拷贝文件和目录） </p>
+<p>常用选项       -a:复制所有信息和属性</p>
+<p>​            -i:重写前确认</p>
+<p>​            -r:递归(复制)</p>
+<p>​            -u:仅复制目标目录不存在或新于的文件</p>
+<p>​            -v:显示详细命令操作信息</p>
+<pre><code class="shell">//复制file1文件到file2
+cp file1 file2
+//重命名为file2
+mv file1 file2
+//移动file1到根目录下的demo目录
+mv file1 /demo
+</code></pre>
+<p>file</p>
+<p>less</p>
+<p>type 解释一个命令名</p>
+<p>which 显示会执行哪个可执行程序（可用来找路径）</p>
+<p>man</p>
+<p>info</p>
+<p>whatis</p>
+<p>通配符 *</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/22/仿锤子3d动图/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1371,198 +1548,6 @@ module.explorts={
 //10s后跳转到bing
 &lt;meta http-equiv=&quot;refresh&quot; content=&quot;10&quot; url=&quot;http://bing.com&quot;&gt;
 </code></pre>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/22/常用Shell命令/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="lijian">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/uploads/17428.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="OLLIFE">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="OLLIFE" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/22/常用Shell命令/" itemprop="url">
-                  常用Shell命令
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-22T14:29:53+08:00">
-                2016-12-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/shell/" itemprop="url" rel="index">
-                    <span itemprop="name">shell</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>本笔记操作以mac系统为准</p>
-<p><code>路径表示</code> </p>
-<pre><code class="shell">./    当前目录(可省略 比如 cd ./demo 写成 cd demo)
-../   上一级目录
-/     绝对路径(根目录)
-</code></pre>
-<p><code>cd</code> 改变目录</p>
-<pre><code class="shell">//进入当前目录的子目录demo
-cd ./demo
-//进入之前的目录
-cd -
-</code></pre>
-<p><code>touch</code>（新建文件） </p>
-<p><code>mkdir</code>（新建目录）</p>
-<pre><code>// 当前目录新建 demo.txt和index.html
-touch demo.txt index.html
-// 当前目录新建demo文件夹
-mkdir demo
-</code></pre><p><code>rm</code> 删除文件       </p>
-<p>​    常用选项 </p>
-<p>​            -i -r -v 同复制</p>
-<p>​            -f: 忽略不存在的文件</p>
-<p><code>rmdir</code> 删除空目录</p>
-<p><code>ls</code> 显示文件列表</p>
-<p>常用选项    -l:长格式显示结果 </p>
-<p>​            -t:按修改时间来排序 </p>
-<p>​            -a:显示所有文件 -r:相反顺序显示 </p>
-<p>​            -h:长格式列出时，不已字节显示文件大小 </p>
-<p>​            -F: 每个文件加上指示符号 </p>
-<p>​            -d: 列出指定目录中内容 </p>
-<p><code>pwd</code> 显示目录路径 </p>
-<p><code>mv</code>（移动/重命名文件和目录） 和 <code>cp</code>（拷贝文件和目录） </p>
-<p>常用选项       -a:复制所有信息和属性</p>
-<p>​            -i:重写前确认</p>
-<p>​            -r:递归(复制)</p>
-<p>​            -u:仅复制目标目录不存在或新于的文件</p>
-<p>​            -v:显示详细命令操作信息</p>
-<pre><code class="shell">//复制file1文件到file2
-cp file1 file2
-//重命名为file2
-mv file1 file2
-//移动file1到根目录下的demo目录
-mv file1 /demo
-</code></pre>
-<p>file</p>
-<p>less</p>
-<p>type 解释一个命令名</p>
-<p>which 显示会执行哪个可执行程序（可用来找路径）</p>
-<p>man</p>
-<p>info</p>
-<p>whatis</p>
-<p>通配符 *</p>
 
           
         

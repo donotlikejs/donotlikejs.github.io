@@ -417,7 +417,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/ES6初探/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/javascript事件event/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="lijian">
@@ -442,8 +442,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/03/03/ES6初探/" itemprop="url">
-                  ES6 初探
+                <a class="post-title-link" href="/2017/03/03/javascript事件event/" itemprop="url">
+                  事件event
                 </a>
               
             
@@ -519,24 +519,526 @@
       
         
           
-            <h2 id="let-和-const"><a href="#let-和-const" class="headerlink" title="let 和 const"></a>let 和 const</h2><p>let和const声明都不能提升，</p>
-<p>同一个变量不能重复声明，</p>
-<p>声明的全局变量不是全局对象的属性</p>
-<p>const声明和赋值同时进行，对于基本类型不能重复赋值（可以作为常量赋值），引用类型可以。</p>
-<p>let能解决for循环中i的锁定问题。</p>
-<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><p>箭头函数没有this，也没有argument</p>
-<pre><code class="javascript">//let exp1=function(){return a;}
-let exp1=()=&gt;a;
-//let exp2=function(){let a=0;return console.log(a);}
-let exp2=()=&gt;{let a=0;return console.log(a);}
+            <p>事件：用户或者浏览器自身执行的某种动作</p>
+<p>事件处理程序（事件监听器）：响应某个事件的函数，事件处理程序的名字以“on”开头。</p>
+<p>DOM0级：将一个函数赋值给一个事件处理程序属性</p>
+<pre><code class="javascr">btn.onclick=function(){
+}
 </code></pre>
-<h2 id="不定参数和默认参数"><a href="#不定参数和默认参数" class="headerlink" title="不定参数和默认参数"></a>不定参数和默认参数</h2><h2 id="for-of"><a href="#for-of" class="headerlink" title="for - of"></a>for - of</h2><h2 id="模版字符串"><a href="#模版字符串" class="headerlink" title="模版字符串"></a>模版字符串</h2><p>使用`  ` 包裹，需要解析的变量用 ${} </p>
-<h2 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h2><pre><code class="javascript">let arr=[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;];
-let first=arr[0],second=arr[1],third=arr[2];
-// 等同于
-let[first,second,third]=arr;
+<p>DOM1级</p>
+<p>DOM2级事件处理程序</p>
+<pre><code>/*
+*1参数为要处理的事件名
+*2参数事件处理程序的函数
+*3参数为布尔值，true表示捕获阶段调用2，false表示冒泡阶段调用2
+    fn在当前作用于运行
+*/
+addEventListener(&quot;&quot;,fn,boolean)
+/*
+参数同上，只是调用变成删除
+*/
+removeEventListener()
+</code></pre><p>捕获：从不具体的父元素逐步传到具体的元素</p>
+<p>冒泡：具体的元素逐步往上传播到不具体的父元素</p>
+<p>DOM事件流（DOM2）:分为事件捕获阶段，处于目标阶段和事件冒泡阶段。（但浏览器都支持捕获和冒泡阶段对目标对象进行操作）</p>
+<p>事件处理程序分类</p>
+<p>HTML事件处理程序 ：写在html标签里</p>
+<p>IE事件处理程序：</p>
+<pre><code class="javasc">// fn会在全局作用域中运行
+attachEvent()
+detachEvent()
 </code></pre>
-<h2 id="Symbols"><a href="#Symbols" class="headerlink" title="Symbols"></a>Symbols</h2><h2 id="集合-Set-Map-amp-amp-weakSet-weakMap"><a href="#集合-Set-Map-amp-amp-weakSet-weakMap" class="headerlink" title="集合 Set Map &amp;&amp; weakSet weakMap"></a>集合 Set Map &amp;&amp; weakSet weakMap</h2><h2 id="代理-proxies"><a href="#代理-proxies" class="headerlink" title="代理 proxies"></a>代理 proxies</h2><h2 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h2><h2 id="类class"><a href="#类class" class="headerlink" title="类class"></a>类class</h2><h2 id="子类-Subclass"><a href="#子类-Subclass" class="headerlink" title="子类 Subclass"></a>子类 Subclass</h2>
+<p>事件对象（event）</p>
+<p>触发DOM事件时自动产生事件对象event，该对象包含所有与事件有关的信息。</p>
+<pre><code class="javascript">stopPropagation
+preventDefault()   取消默认行为
+target                返回最初触发事件的元素
+type                返回事件类型
+</code></pre>
+<pre><code class="javascript">//原点为浏览器内容区域左上角
+clientX
+clientY
+
+//原点为屏幕左上角
+screenX
+screenY
+
+//FF特有 原点为浏览器内容区域左上角随scroll变化
+pageX
+pageY
+</code></pre>
+<p>事件委托（代理）：利用冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件</p>
+<h2 id="事件类型"><a href="#事件类型" class="headerlink" title="事件类型"></a>事件类型</h2><ul>
+<li>UI</li>
+</ul>
+<pre><code class="javascript">load
+unload
+abort
+error
+select
+resize
+scroll
+</code></pre>
+<ul>
+<li>鼠标</li>
+</ul>
+<pre><code class="javascript">click
+dbclick
+mousedown
+mouseup
+mouseenter  dom3级，事件不冒泡，移动到子元素上也不触发
+mouseleave  同上
+mousemove   鼠标在目标内移动时重复触发
+mouseout
+mouseover
+</code></pre>
+<ul>
+<li>滚轮</li>
+<li>焦点</li>
+<li>键盘</li>
+<li>文本</li>
+<li>合成，变动，变动名称</li>
+</ul>
+<h2 id="事件绑定-事件监听-事件委托"><a href="#事件绑定-事件监听-事件委托" class="headerlink" title="事件绑定 事件监听 事件委托"></a>事件绑定 事件监听 事件委托</h2><p>​    <code>事件绑定</code>  </p>
+<p>​    <code>事件监听</code>  </p>
+<p>​    <code>事件委托</code>  利用事件冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/ajax 跨域和jsonp/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="lijian">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/17428.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="OLLIFE">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="OLLIFE" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/03/ajax 跨域和jsonp/" itemprop="url">
+                  ajax 跨域 jsonp
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-03T15:56:52+08:00">
+                2017-03-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/基础/" itemprop="url" rel="index">
+                    <span itemprop="name">基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="AJAX原生"><a href="#AJAX原生" class="headerlink" title="AJAX原生"></a>AJAX原生</h2><ul>
+<li>异步加载必须先<code>实例化一个XMLHttpRequest函数</code>。</li>
+</ul>
+<pre><code class="javascript">let xhr = new XMLHttpRequest();
+xhr.open();
+xhr.send();
+setRequsetHeader();
+</code></pre>
+<ul>
+<li>XMLHttpRequest的响应方法</li>
+</ul>
+<pre><code class="javascript">/*
+    readyStateChange 用于监听readyState的变化
+    status 响应状态码 1xx 2xx 3xx 4xx 5xx
+    statusText 响应状态说明
+    readyState    请求／响应过程的当前活动状态
+        0
+        1
+        2    发送，已经调用send方法
+        3    接收响应数据
+        4    表示完成
+
+    responseText    响应主体返回的文本
+    responseXML        响应主体返回的XML
+
+*/
+</code></pre>
+<ul>
+<li>GET 和 POST 的一般写法</li>
+</ul>
+<pre><code class="javascript">// get
+let xhr=new XMLHttpRequest();
+url=&quot;http://www.abc.com?a=b&amp;c=d&quot;;
+xhr.open(&quot;get&quot;,url,true);
+xhr.send(null);
+xhr.readyStateChange=function(){
+  if(xhr.readyState==4&amp;&amp;xhr.status==200){
+    console.log(xhr.responseText);
+  }else{
+    console.log(`error${xhr.status}`);
+  }
+};
+
+//post
+let xhr=new XMLHttpRequest();
+url=&quot;http://abc.com&quot;;
+data=&quot;a=b&amp;c=d&quot;;
+xhr.open(&quot;post&quot;,url,true);
+xhr.setRequestHeader(&quot;Content-Type&quot;,&quot;application/x-www-from-urlencoded&quot;);
+xhr.send(data);
+xhr.readyStateChange=function(){
+  if(xhr.readyState==4&amp;&amp;xhr.status=200){
+    console.log(xhr.responseText);
+  }else{
+    console.log(`error:${xhr.status}`);
+
+  }
+}
+</code></pre>
+<h2 id="jquery-异步"><a href="#jquery-异步" class="headerlink" title="jquery 异步"></a>jquery 异步</h2><h2 id="jsonP"><a href="#jsonP" class="headerlink" title="jsonP"></a>jsonP</h2><h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><p> 两个url中 协议 子域名 主域名 端口号 任意一个不同皆为不同域，而不同域之间的通信称之为跨域。</p>
+<pre><code class="javascript">／*
+
+http :  //  www  .  abc.com  :  8000  /demo/index.html
+协议        子域名        主域名        端口号        路径
+
+*／
+</code></pre>
+<h2 id="JSON-方法"><a href="#JSON-方法" class="headerlink" title="JSON 方法"></a>JSON 方法</h2><pre><code class="javascript">    //to obj
+JSON.parse(str);
+    //to str
+JSON.stringify(obj);
+</code></pre>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/正则/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="lijian">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/17428.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="OLLIFE">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="OLLIFE" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/03/正则/" itemprop="url">
+                  javascript正则
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-03T15:56:52+08:00">
+                2017-03-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/基础/" itemprop="url" rel="index">
+                    <span itemprop="name">基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="创建-RegExp"><a href="#创建-RegExp" class="headerlink" title="创建 RegExp"></a>创建 RegExp</h2><pre><code class="javascript">//1.
+let patt=/abc/g;
+//2.
+let patt=new RegExp(&#39;abc&#39;,&#39;g&#39;);
+</code></pre>
+<h2 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h2><pre><code class="javascript">/*
+
+    i    不区分大小
+    g    全局匹配
+    m    多行匹配
+    u    （es6新增）
+
+*/
+</code></pre>
+<h2 id="元字符-b-w-d-s"><a href="#元字符-b-w-d-s" class="headerlink" title="元字符 . \b \w\d\s"></a>元字符 . \b \w\d\s</h2><pre><code class="javascript">/*
+    .          匹配任意字符
+    \b         匹配单词边界
+    \w        匹配数字，字母，下划线
+    \d        匹配数字
+    \s        匹配空格
+    [abc]    匹配方括号里任意一个字符
+    ^        匹配首部
+    $        匹配尾部
+
+    --取反--
+    \B \W \D \S [^abc]
+
+*/
+</code></pre>
+<h2 id="量词"><a href="#量词" class="headerlink" title="量词 * + ? {}"></a>量词 * + ? {}</h2><pre><code class="javascript">/*
+
+    *        匹配任意个
+    +        匹配一到多个
+    ?        匹配 0 到 1 个
+    {n}        匹配 n 个
+    {n,}    匹配至少 n 个
+    {n,m}    匹配 n 到 m 个
+
+*/
+</code></pre>
+<h2 id="分枝条件"><a href="#分枝条件" class="headerlink" title="分枝条件 |"></a>分枝条件 |</h2><pre><code class="javascript">/*
+
+a|b         匹配 a 或者 b 
+
+*/
+</code></pre>
+<h2 id="分组"><a href="#分组" class="headerlink" title="分组 ()"></a>分组 ()</h2><pre><code class="javascript">/*
+
+    (exp)            匹配且分组
+    (?&lt;name&gt;exp)    匹配且以name名分组
+    (?:exp)            只匹配不捕获不分组
+    (?=exp)            匹配exp前面位置
+    (?&lt;=exp)        匹配exp后面位置
+    (?!exp)            匹配后面不跟着exp的位置
+    (?&lt;!exp)        匹配前面不跟着exp的位置
+    (?#comment)        注释
+
+ */
+</code></pre>
+<h2 id="懒惰限定符"><a href="#懒惰限定符" class="headerlink" title="懒惰限定符"></a>懒惰限定符</h2><pre><code class="javascript">/*
+
+    *?
+    +?
+    ??
+    {n,m}?
+    {n,}?
+
+*/
+</code></pre>
+<h2 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符  \"></a>转义字符  <code>\</code></h2><pre><code class="javascript">/*
+
+    需要转义的字符   * . ? + $ ^ [ ] ( ) { } / \ |
+
+*/
+</code></pre>
+<h2 id="RegExp方法"><a href="#RegExp方法" class="headerlink" title="RegExp方法"></a>RegExp方法</h2><h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><pre><code class="javascript">complie()
+exec()
+test()
+</code></pre>
+<h3 id="2-支持RegExp的String方法"><a href="#2-支持RegExp的String方法" class="headerlink" title="2    支持RegExp的String方法"></a>2    支持RegExp的String方法</h3><pre><code class="javascript">search()
+match()
+replace()
+split()
+</code></pre>
+
           
         
       
@@ -939,230 +1441,6 @@ backface-visibility:visible／hidden （是否隐藏背面）
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/正则/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="lijian">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/uploads/17428.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="OLLIFE">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="OLLIFE" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/03/正则/" itemprop="url">
-                  javascript正则
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-03T15:56:52+08:00">
-                2017-03-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/基础/" itemprop="url" rel="index">
-                    <span itemprop="name">基础</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="创建-RegExp"><a href="#创建-RegExp" class="headerlink" title="创建 RegExp"></a>创建 RegExp</h2><pre><code class="javascript">//1.
-let patt=/abc/g;
-//2.
-let patt=new RegExp(&#39;abc&#39;,&#39;g&#39;);
-</code></pre>
-<h2 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h2><pre><code class="javascript">/*
-
-    i    不区分大小
-    g    全局匹配
-    m    多行匹配
-    u    （es6新增）
-
-*/
-</code></pre>
-<h2 id="元字符-b-w-d-s"><a href="#元字符-b-w-d-s" class="headerlink" title="元字符 . \b \w\d\s"></a>元字符 . \b \w\d\s</h2><pre><code class="javascript">/*
-    .          匹配任意字符
-    \b         匹配单词边界
-    \w        匹配数字，字母，下划线
-    \d        匹配数字
-    \s        匹配空格
-    [abc]    匹配方括号里任意一个字符
-    ^        匹配首部
-    $        匹配尾部
-
-    --取反--
-    \B \W \D \S [^abc]
-
-*/
-</code></pre>
-<h2 id="量词"><a href="#量词" class="headerlink" title="量词 * + ? {}"></a>量词 * + ? {}</h2><pre><code class="javascript">/*
-
-    *        匹配任意个
-    +        匹配一到多个
-    ?        匹配 0 到 1 个
-    {n}        匹配 n 个
-    {n,}    匹配至少 n 个
-    {n,m}    匹配 n 到 m 个
-
-*/
-</code></pre>
-<h2 id="分枝条件"><a href="#分枝条件" class="headerlink" title="分枝条件 |"></a>分枝条件 |</h2><pre><code class="javascript">/*
-
-a|b         匹配 a 或者 b 
-
-*/
-</code></pre>
-<h2 id="分组"><a href="#分组" class="headerlink" title="分组 ()"></a>分组 ()</h2><pre><code class="javascript">/*
-
-    (exp)            匹配且分组
-    (?&lt;name&gt;exp)    匹配且以name名分组
-    (?:exp)            只匹配不捕获不分组
-    (?=exp)            匹配exp前面位置
-    (?&lt;=exp)        匹配exp后面位置
-    (?!exp)            匹配后面不跟着exp的位置
-    (?&lt;!exp)        匹配前面不跟着exp的位置
-    (?#comment)        注释
-
- */
-</code></pre>
-<h2 id="懒惰限定符"><a href="#懒惰限定符" class="headerlink" title="懒惰限定符"></a>懒惰限定符</h2><pre><code class="javascript">/*
-
-    *?
-    +?
-    ??
-    {n,m}?
-    {n,}?
-
-*/
-</code></pre>
-<h2 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符  \"></a>转义字符  <code>\</code></h2><pre><code class="javascript">/*
-
-    需要转义的字符   * . ? + $ ^ [ ] ( ) { } / \ |
-
-*/
-</code></pre>
-<h2 id="RegExp方法"><a href="#RegExp方法" class="headerlink" title="RegExp方法"></a>RegExp方法</h2><h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><pre><code class="javascript">complie()
-exec()
-test()
-</code></pre>
-<h3 id="2-支持RegExp的String方法"><a href="#2-支持RegExp的String方法" class="headerlink" title="2    支持RegExp的String方法"></a>2    支持RegExp的String方法</h3><pre><code class="javascript">search()
-match()
-replace()
-split()
-</code></pre>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/偏移量 滚动 视口之类的/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1322,7 +1600,7 @@ innerWidth
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/ajax 跨域和jsonp/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/javascript DOM操作/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="lijian">
@@ -1347,8 +1625,8 @@ innerWidth
             
               
                 
-                <a class="post-title-link" href="/2017/03/03/ajax 跨域和jsonp/" itemprop="url">
-                  ajax 跨域 jsonp
+                <a class="post-title-link" href="/2017/03/03/javascript DOM操作/" itemprop="url">
+                  DOM 操作
                 </a>
               
             
@@ -1387,8 +1665,8 @@ innerWidth
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/基础/" itemprop="url" rel="index">
-                    <span itemprop="name">基础</span>
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
                   </a>
                 </span>
 
@@ -1424,79 +1702,39 @@ innerWidth
       
         
           
-            <h2 id="AJAX原生"><a href="#AJAX原生" class="headerlink" title="AJAX原生"></a>AJAX原生</h2><ul>
-<li>异步加载必须先<code>实例化一个XMLHttpRequest函数</code>。</li>
-</ul>
-<pre><code class="javascript">let xhr = new XMLHttpRequest();
-xhr.open();
-xhr.send();
-setRequsetHeader();
+            <p>[TOC]</p>
+<h2 id="创建与删除"><a href="#创建与删除" class="headerlink" title="创建与删除"></a>创建与删除</h2><pre><code class="javascript">// 创建元素节点
+document.createElement(&#39;element&#39;)
+// 创建文本节点
+document.createTextNode(&#39;text&#39;)
+// 删除节点
+element.removeChild()
 </code></pre>
-<ul>
-<li>XMLHttpRequest的响应方法</li>
-</ul>
-<pre><code class="javascript">/*
-    readyStateChange 用于监听readyState的变化
-    status 响应状态码 1xx 2xx 3xx 4xx 5xx
-    statusText 响应状态说明
-    readyState    请求／响应过程的当前活动状态
-        0
-        1
-        2    发送，已经调用send方法
-        3    接收响应数据
-        4    表示完成
-
-    responseText    响应主体返回的文本
-    responseXML        响应主体返回的XML
-
-*/
+<h2 id="获得元素"><a href="#获得元素" class="headerlink" title="获得元素"></a>获得元素</h2><pre><code class="javascript">document.getElementById(&#39;idname&#39;)
+element.id
+document.getElementsByTagName(&#39;element&#39;)
+document.getElementsByClassName(&#39;classname&#39;)
+// 接收css选择符，返回与该模式匹配的第一个元素
+element.querySelector()
+// 返回一个NodeList()实例
+element.querySelectorAll()
 </code></pre>
-<ul>
-<li>GET 和 POST 的一般写法</li>
-</ul>
-<pre><code class="javascript">// get
-let xhr=new XMLHttpRequest();
-url=&quot;http://www.abc.com?a=b&amp;c=d&quot;;
-xhr.open(&quot;get&quot;,url,true);
-xhr.send(null);
-xhr.readyStateChange=function(){
-  if(xhr.readyState==4&amp;&amp;xhr.status==200){
-    console.log(xhr.responseText);
-  }else{
-    console.log(`error${xhr.status}`);
-  }
-};
-
-//post
-let xhr=new XMLHttpRequest();
-url=&quot;http://abc.com&quot;;
-data=&quot;a=b&amp;c=d&quot;;
-xhr.open(&quot;post&quot;,url,true);
-xhr.setRequestHeader(&quot;Content-Type&quot;,&quot;application/x-www-from-urlencoded&quot;);
-xhr.send(data);
-xhr.readyStateChange=function(){
-  if(xhr.readyState==4&amp;&amp;xhr.status=200){
-    console.log(xhr.responseText);
-  }else{
-    console.log(`error:${xhr.status}`);
-
-  }
-}
+<h2 id="判断节点类型"><a href="#判断节点类型" class="headerlink" title="判断节点类型"></a>判断节点类型</h2><h2 id="获取-添加属性节点"><a href="#获取-添加属性节点" class="headerlink" title="获取,添加属性节点"></a>获取,添加属性节点</h2><pre><code class="javascript">element.attribute
+element.getAttribute()
+element.setAttribuet()
+element.removeAttribute()
+hasAttribute()
 </code></pre>
-<h2 id="jquery-异步"><a href="#jquery-异步" class="headerlink" title="jquery 异步"></a>jquery 异步</h2><h2 id="jsonP"><a href="#jsonP" class="headerlink" title="jsonP"></a>jsonP</h2><h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><p> 两个url中 协议 子域名 主域名 端口号 任意一个不同皆为不同域，而不同域之间的通信称之为跨域。</p>
-<pre><code class="javascript">／*
+<h2 id="添加-插入"><a href="#添加-插入" class="headerlink" title="添加 插入"></a>添加 插入</h2><pre><code class="javascript">element.appendChild();
+element.innerHTML
+element.innerText
 
-http :  //  www  .  abc.com  :  8000  /demo/index.html
-协议        子域名        主域名        端口号        路径
-
-*／
+//不常用
+element.outerHTML
+element.outText
 </code></pre>
-<h2 id="JSON-方法"><a href="#JSON-方法" class="headerlink" title="JSON 方法"></a>JSON 方法</h2><pre><code class="javascript">    //to obj
-JSON.parse(str);
-    //to str
-JSON.stringify(obj);
-</code></pre>
-
+<h2 id="html属性获取与设置"><a href="#html属性获取与设置" class="headerlink" title="html属性获取与设置"></a>html属性获取与设置</h2><p>##css操作</p>
+<h2 id="表格操作"><a href="#表格操作" class="headerlink" title="表格操作"></a>表格操作</h2>
           
         
       
@@ -1869,229 +2107,6 @@ inedexOf()        //
 <p>4.apply方法中，this指向第一参数</p>
 <p>5.箭头函数没有自己的this值，箭头函数内的this值继承自外围作用域。</p>
 <p>6.事件监听中的this</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/javascript事件event/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="lijian">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/uploads/17428.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="OLLIFE">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="OLLIFE" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/03/javascript事件event/" itemprop="url">
-                  事件event
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-03T15:56:52+08:00">
-                2017-03-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>事件：用户或者浏览器自身执行的某种动作</p>
-<p>事件处理程序（事件监听器）：响应某个事件的函数，事件处理程序的名字以“on”开头。</p>
-<p>DOM0级：将一个函数赋值给一个事件处理程序属性</p>
-<pre><code class="javascr">btn.onclick=function(){
-}
-</code></pre>
-<p>DOM1级</p>
-<p>DOM2级事件处理程序</p>
-<pre><code>/*
-*1参数为要处理的事件名
-*2参数事件处理程序的函数
-*3参数为布尔值，true表示捕获阶段调用2，false表示冒泡阶段调用2
-    fn在当前作用于运行
-*/
-addEventListener(&quot;&quot;,fn,boolean)
-/*
-参数同上，只是调用变成删除
-*/
-removeEventListener()
-</code></pre><p>捕获：从不具体的父元素逐步传到具体的元素</p>
-<p>冒泡：具体的元素逐步往上传播到不具体的父元素</p>
-<p>DOM事件流（DOM2）:分为事件捕获阶段，处于目标阶段和事件冒泡阶段。（但浏览器都支持捕获和冒泡阶段对目标对象进行操作）</p>
-<p>事件处理程序分类</p>
-<p>HTML事件处理程序 ：写在html标签里</p>
-<p>IE事件处理程序：</p>
-<pre><code class="javasc">// fn会在全局作用域中运行
-attachEvent()
-detachEvent()
-</code></pre>
-<p>事件对象（event）</p>
-<p>触发DOM事件时自动产生事件对象event，该对象包含所有与事件有关的信息。</p>
-<pre><code class="javascript">stopPropagation
-preventDefault()   取消默认行为
-target                返回最初触发事件的元素
-type                返回事件类型
-</code></pre>
-<pre><code class="javascript">//原点为浏览器内容区域左上角
-clientX
-clientY
-
-//原点为屏幕左上角
-screenX
-screenY
-
-//FF特有 原点为浏览器内容区域左上角随scroll变化
-pageX
-pageY
-</code></pre>
-<p>事件委托（代理）：利用冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件</p>
-<h2 id="事件类型"><a href="#事件类型" class="headerlink" title="事件类型"></a>事件类型</h2><ul>
-<li>UI</li>
-</ul>
-<pre><code class="javascript">load
-unload
-abort
-error
-select
-resize
-scroll
-</code></pre>
-<ul>
-<li>鼠标</li>
-</ul>
-<pre><code class="javascript">click
-dbclick
-mousedown
-mouseup
-mouseenter  dom3级，事件不冒泡，移动到子元素上也不触发
-mouseleave  同上
-mousemove   鼠标在目标内移动时重复触发
-mouseout
-mouseover
-</code></pre>
-<ul>
-<li>滚轮</li>
-<li>焦点</li>
-<li>键盘</li>
-<li>文本</li>
-<li>合成，变动，变动名称</li>
-</ul>
-<h2 id="事件绑定-事件监听-事件委托"><a href="#事件绑定-事件监听-事件委托" class="headerlink" title="事件绑定 事件监听 事件委托"></a>事件绑定 事件监听 事件委托</h2><p>​    <code>事件绑定</code>  </p>
-<p>​    <code>事件监听</code>  </p>
-<p>​    <code>事件委托</code>  利用事件冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件。</p>
 
           
         
