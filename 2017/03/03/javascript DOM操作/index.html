@@ -126,7 +126,7 @@ element.removeChild()
 
 获得元素document.getElementById(&amp;#39;idname&amp;#39;)
 element.id">
-<meta property="og:updated_time" content="2017-04-28T08:46:15.000Z">
+<meta property="og:updated_time" content="2017-04-28T11:42:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DOM 操作">
 <meta name="twitter:description" content="[TOC]
@@ -427,14 +427,53 @@ hasAttribute()
 </code></pre>
 <h2 id="添加-插入"><a href="#添加-插入" class="headerlink" title="添加 插入"></a>添加 插入</h2><pre><code class="javascript">element.appendChild();
 element.innerHTML
-element.innerText
+element.innerText //不是DOM标准
 
 //不常用
 element.outerHTML
 element.outText
 </code></pre>
 <h2 id="html属性获取与设置"><a href="#html属性获取与设置" class="headerlink" title="html属性获取与设置"></a>html属性获取与设置</h2><p>##css操作</p>
-<h2 id="表格操作"><a href="#表格操作" class="headerlink" title="表格操作"></a>表格操作</h2>
+<h2 id="表格操作"><a href="#表格操作" class="headerlink" title="表格操作"></a>表格操作</h2><h2 id="节点：dom的最小组成单位叫做节点（node）"><a href="#节点：dom的最小组成单位叫做节点（node）" class="headerlink" title="节点：dom的最小组成单位叫做节点（node）"></a>节点：dom的最小组成单位叫做节点（node）</h2><p>html文档中节点主要有六种（一共11种） Document    DocumentType    Element        Attribute    Text    DocumentFragment(文档碎片节点) comment节点（注释节点） 都继承Node对象的属性和方法</p>
+<pre><code class="javascript">/*
+-- 属性 ---------------
+    nodeName
+    nodeType
+    ownerDocument
+
+    nextSibling
+    previousSibling
+    parentNode //返回父节点 只有三种doc element documentfragment
+    parentElement //返回父element节点
+
+    textContent //返回当前节点和它的所有后代节点的文本内容 可读写
+    nodeValue  //返回或设置当前节点的值（等同text节点的data）
+    childNodes
+    firstNode
+    lastChild
+    baseURI //返回网站绝对路径
+
+-- 方法 ---------------
+    appendChild()
+    hasChildNodes()
+    cloneNode(boolean)
+    insertBefore()
+    removeChild()  //从当前节点移除该节点并返回该节点
+    replaceChild(newChild,oldChild)
+
+    // 目前忽略
+    contains()
+    compareDocumentPosition()
+    isEqualNode()
+
+    //转化类数组为真正的数组 for of 能正确遍历NodeList列表
+    array.prototype.slice.call()
+
+    nodeList.item(index)  //nodelist方法 返回索引成员
+*/
+</code></pre>
+<p>​    </p>
+
       
     </div>
 
@@ -601,7 +640,7 @@ element.outText
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建与删除"><span class="nav-number">1.</span> <span class="nav-text">创建与删除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获得元素"><span class="nav-number">2.</span> <span class="nav-text">获得元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判断节点类型"><span class="nav-number">3.</span> <span class="nav-text">判断节点类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取-添加属性节点"><span class="nav-number">4.</span> <span class="nav-text">获取,添加属性节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加-插入"><span class="nav-number">5.</span> <span class="nav-text">添加 插入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#html属性获取与设置"><span class="nav-number">6.</span> <span class="nav-text">html属性获取与设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表格操作"><span class="nav-number">7.</span> <span class="nav-text">表格操作</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建与删除"><span class="nav-number">1.</span> <span class="nav-text">创建与删除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获得元素"><span class="nav-number">2.</span> <span class="nav-text">获得元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判断节点类型"><span class="nav-number">3.</span> <span class="nav-text">判断节点类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取-添加属性节点"><span class="nav-number">4.</span> <span class="nav-text">获取,添加属性节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加-插入"><span class="nav-number">5.</span> <span class="nav-text">添加 插入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#html属性获取与设置"><span class="nav-number">6.</span> <span class="nav-text">html属性获取与设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表格操作"><span class="nav-number">7.</span> <span class="nav-text">表格操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#节点：dom的最小组成单位叫做节点（node）"><span class="nav-number">8.</span> <span class="nav-text">节点：dom的最小组成单位叫做节点（node）</span></a></li></ol></div>
             
 
           </div>
