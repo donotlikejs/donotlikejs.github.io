@@ -116,7 +116,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Muse',
-    sidebar: {"position":"right","display":"hide"},
+    sidebar: {"position":"right","display":"post"},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -211,7 +211,7 @@
         <li class="menu-item menu-item-html">
           <a href="/categories/html" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             HTML
           </a>
@@ -221,7 +221,7 @@
         <li class="menu-item menu-item-css">
           <a href="/categories/css" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             CSS
           </a>
@@ -231,7 +231,7 @@
         <li class="menu-item menu-item-javascript">
           <a href="/categories/javascript" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             JavaScript
           </a>
@@ -241,7 +241,7 @@
         <li class="menu-item menu-item-other">
           <a href="/categories/other" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             Other
           </a>
@@ -640,7 +640,7 @@ mouseover
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/canvas要点/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/ES6初探/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="lijian">
@@ -665,8 +665,8 @@ mouseover
             
               
                 
-                <a class="post-title-link" href="/2017/03/03/canvas要点/" itemprop="url">
-                  html之canvas 绘图
+                <a class="post-title-link" href="/2017/03/03/ES6初探/" itemprop="url">
+                  ES6 初探
                 </a>
               
             
@@ -705,8 +705,8 @@ mouseover
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/基础/" itemprop="url" rel="index">
-                    <span itemprop="name">基础</span>
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
                   </a>
                 </span>
 
@@ -742,71 +742,24 @@ mouseover
       
         
           
-            <p>使用canvas绘图共同步骤</p>
-<p>指定canvas大小（也可称之画布大小）</p>
-<p>调用Context(“2d”)方法</p>
-<pre><code class="html">//html
-&lt;canvas id=&quot;drawing&quot;&gt;&lt;/canvas&gt;
-&lt;style&gt;
-#drawing{width:300px;height:300px}
-&lt;/style&gt;
-&lt;script&gt;
-let drawing=document.getElementById(&quot;drawing&quot;);
-let context=drawing.Context(&quot;2d&quot;);
-&lt;/script&gt;
+            <h2 id="let-和-const"><a href="#let-和-const" class="headerlink" title="let 和 const"></a>let 和 const</h2><p>let和const声明都不能提升，</p>
+<p>同一个变量不能重复声明，</p>
+<p>声明的全局变量不是全局对象的属性</p>
+<p>const声明和赋值同时进行，对于基本类型不能重复赋值（可以作为常量赋值），引用类型可以。</p>
+<p>let能解决for循环中i的锁定问题。</p>
+<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><p>箭头函数没有this，也没有argument</p>
+<pre><code class="javascript">//let exp1=function(){return a;}
+let exp1=()=&gt;a;
+//let exp2=function(){let a=0;return console.log(a);}
+let exp2=()=&gt;{let a=0;return console.log(a);}
 </code></pre>
-<h2 id="绘制矩形"><a href="#绘制矩形" class="headerlink" title="绘制矩形"></a>绘制矩形</h2><p>填充:fillStyle 描边:strokeStyle</p>
-<p>绘制矩形</p>
-<p>fillRect(x,y,width,height)</p>
-<p>strokeRect(x,y,width,height)</p>
-<p>clearRect(x,y,width,height)</p>
-<pre><code class="javascript">//填充
-context.fillStyle=&quot;#e5e5e5&quot;;
-context.fillRect(5,5,50,50);
-//描边
-context.strokeStyle=&quot;yellow&quot;;
-context.strokeRect(15,15,50,50);
+<h2 id="不定参数和默认参数"><a href="#不定参数和默认参数" class="headerlink" title="不定参数和默认参数"></a>不定参数和默认参数</h2><h2 id="for-of"><a href="#for-of" class="headerlink" title="for - of"></a>for - of</h2><h2 id="模版字符串"><a href="#模版字符串" class="headerlink" title="模版字符串"></a>模版字符串</h2><p>使用`  ` 包裹，需要解析的变量用 ${} </p>
+<h2 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h2><pre><code class="javascript">let arr=[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;];
+let first=arr[0],second=arr[1],third=arr[2];
+// 等同于
+let[first,second,third]=arr;
 </code></pre>
-<p>控制线条</p>
-<p>​        粗细 lineWidth</p>
-<p>​        末端形状 lineCap     butt 平头    round 圆头        square 方头</p>
-<p>​        相交方式 lineJoin     round 圆交      bevel 斜交        miter 斜接</p>
-<h3 id="绘制路径"><a href="#绘制路径" class="headerlink" title="绘制路径"></a>绘制路径</h3><p>​    调用beginPath();</p>
-<pre><code class="javascript">
-
-arc(x,y,radius,startAngle,endAngle,counterclockwise)
-
-arcTo(x1,y1,x2,y2,radius)
-
-bezierCurveTo(c1x,c1y,c2x,c2y,x,y)
-
-lineTo(x,y)
-
-moveTo(x,y)
-
-quadraticCurveTo(cx,cy,x,y)
-
-rect(x,y,width,height)
-
-closePath
-
-fill()
-
-stroke()
-
-clip()
-</code></pre>
-<h2 id="绘制文本"><a href="#绘制文本" class="headerlink" title="绘制文本"></a>绘制文本</h2><pre><code class="javascript">fillText(str,x,y,width)
-strokeText(str,x,y,width)
-/*
-属性
-font 样式 大小 字体
-textAlign 对齐方式 start end left right center
-textBaseline 基线 top bottom middle 
-                    hanging alphabetic ideog raphic
-*/
-</code></pre>
-<h2 id="变换"><a href="#变换" class="headerlink" title="变换"></a>变换</h2><h2 id="绘制图像"><a href="#绘制图像" class="headerlink" title="绘制图像"></a>绘制图像</h2><h2 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h2><h2 id="渐变"><a href="#渐变" class="headerlink" title="渐变"></a>渐变</h2><h2 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h2><h2 id="图像数据"><a href="#图像数据" class="headerlink" title="图像数据"></a>图像数据</h2><h2 id="合成"><a href="#合成" class="headerlink" title="合成"></a>合成</h2><h2 id="WebGL"><a href="#WebGL" class="headerlink" title="WebGL"></a>WebGL</h2>
+<h2 id="Symbols"><a href="#Symbols" class="headerlink" title="Symbols"></a>Symbols</h2><h2 id="集合-Set-Map-amp-amp-weakSet-weakMap"><a href="#集合-Set-Map-amp-amp-weakSet-weakMap" class="headerlink" title="集合 Set Map &amp;&amp; weakSet weakMap"></a>集合 Set Map &amp;&amp; weakSet weakMap</h2><h2 id="代理-proxies"><a href="#代理-proxies" class="headerlink" title="代理 proxies"></a>代理 proxies</h2><h2 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h2><h2 id="类class"><a href="#类class" class="headerlink" title="类class"></a>类class</h2><h2 id="子类-Subclass"><a href="#子类-Subclass" class="headerlink" title="子类 Subclass"></a>子类 Subclass</h2>
           
         
       
@@ -844,7 +797,7 @@ textBaseline 基线 top bottom middle
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/偏移量 滚动 视口之类的/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/正则/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="lijian">
@@ -869,8 +822,8 @@ textBaseline 基线 top bottom middle
             
               
                 
-                <a class="post-title-link" href="/2017/03/03/偏移量 滚动 视口之类的/" itemprop="url">
-                  offset alien scroll
+                <a class="post-title-link" href="/2017/03/03/正则/" itemprop="url">
+                  javascript正则
                 </a>
               
             
@@ -946,24 +899,89 @@ textBaseline 基线 top bottom middle
       
         
           
-            <pre><code class="javascript">offsetTop
-offsetLeft
-offsetHeight
-offsetWidth
+            <h2 id="创建-RegExp"><a href="#创建-RegExp" class="headerlink" title="创建 RegExp"></a>创建 RegExp</h2><pre><code class="javascript">//1.
+let patt=/abc/g;
+//2.
+let patt=new RegExp(&#39;abc&#39;,&#39;g&#39;);
+</code></pre>
+<h2 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h2><pre><code class="javascript">/*
 
-clientHeight
-clientWidth
+    i    不区分大小
+    g    全局匹配
+    m    多行匹配
+    u    （es6新增）
 
-scrollHeight
-scrollWidth
-scrollLeft
-scrollTop
+*/
+</code></pre>
+<h2 id="元字符-b-w-d-s"><a href="#元字符-b-w-d-s" class="headerlink" title="元字符 . \b \w\d\s"></a>元字符 . \b \w\d\s</h2><pre><code class="javascript">/*
+    .          匹配任意字符
+    \b         匹配单词边界
+    \w        匹配数字，字母，下划线
+    \d        匹配数字
+    \s        匹配空格
+    [abc]    匹配方括号里任意一个字符
+    ^        匹配首部
+    $        匹配尾部
 
-outerHeight
-outerWidth
-//IE不支持，用clientHeight代替
-innerHeight
-innerWidth
+    --取反--
+    \B \W \D \S [^abc]
+
+*/
+</code></pre>
+<h2 id="量词"><a href="#量词" class="headerlink" title="量词 * + ? {}"></a>量词 * + ? {}</h2><pre><code class="javascript">/*
+
+    *        匹配任意个
+    +        匹配一到多个
+    ?        匹配 0 到 1 个
+    {n}        匹配 n 个
+    {n,}    匹配至少 n 个
+    {n,m}    匹配 n 到 m 个
+
+*/
+</code></pre>
+<h2 id="分枝条件"><a href="#分枝条件" class="headerlink" title="分枝条件 |"></a>分枝条件 |</h2><pre><code class="javascript">/*
+
+a|b         匹配 a 或者 b 
+
+*/
+</code></pre>
+<h2 id="分组"><a href="#分组" class="headerlink" title="分组 ()"></a>分组 ()</h2><pre><code class="javascript">/*
+
+    (exp)            匹配且分组
+    (?&lt;name&gt;exp)    匹配且以name名分组
+    (?:exp)            只匹配不捕获不分组
+    (?=exp)            匹配exp前面位置
+    (?&lt;=exp)        匹配exp后面位置
+    (?!exp)            匹配后面不跟着exp的位置
+    (?&lt;!exp)        匹配前面不跟着exp的位置
+    (?#comment)        注释
+
+ */
+</code></pre>
+<h2 id="懒惰限定符"><a href="#懒惰限定符" class="headerlink" title="懒惰限定符"></a>懒惰限定符</h2><pre><code class="javascript">/*
+
+    *?
+    +?
+    ??
+    {n,m}?
+    {n,}?
+
+*/
+</code></pre>
+<h2 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符  \"></a>转义字符  <code>\</code></h2><pre><code class="javascript">/*
+
+    需要转义的字符   * . ? + $ ^ [ ] ( ) { } / \ |
+
+*/
+</code></pre>
+<h2 id="RegExp方法"><a href="#RegExp方法" class="headerlink" title="RegExp方法"></a>RegExp方法</h2><h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><pre><code class="javascript">complie()
+exec()
+test()
+</code></pre>
+<h3 id="2-支持RegExp的String方法"><a href="#2-支持RegExp的String方法" class="headerlink" title="2    支持RegExp的String方法"></a>2    支持RegExp的String方法</h3><pre><code class="javascript">search()
+match()
+replace()
+split()
 </code></pre>
 
           
@@ -1127,163 +1145,6 @@ backface-visibility:visible／hidden （是否隐藏背面）
     animation-fill-mode            none/forware/backwards/both
 </code></pre>
 
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/ES6初探/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="lijian">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/uploads/17428.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="OLLIFE">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="OLLIFE" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/03/ES6初探/" itemprop="url">
-                  ES6 初探
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-03T15:56:52+08:00">
-                2017-03-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="let-和-const"><a href="#let-和-const" class="headerlink" title="let 和 const"></a>let 和 const</h2><p>let和const声明都不能提升，</p>
-<p>同一个变量不能重复声明，</p>
-<p>声明的全局变量不是全局对象的属性</p>
-<p>const声明和赋值同时进行，对于基本类型不能重复赋值（可以作为常量赋值），引用类型可以。</p>
-<p>let能解决for循环中i的锁定问题。</p>
-<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><p>箭头函数没有this，也没有argument</p>
-<pre><code class="javascript">//let exp1=function(){return a;}
-let exp1=()=&gt;a;
-//let exp2=function(){let a=0;return console.log(a);}
-let exp2=()=&gt;{let a=0;return console.log(a);}
-</code></pre>
-<h2 id="不定参数和默认参数"><a href="#不定参数和默认参数" class="headerlink" title="不定参数和默认参数"></a>不定参数和默认参数</h2><h2 id="for-of"><a href="#for-of" class="headerlink" title="for - of"></a>for - of</h2><h2 id="模版字符串"><a href="#模版字符串" class="headerlink" title="模版字符串"></a>模版字符串</h2><p>使用`  ` 包裹，需要解析的变量用 ${} </p>
-<h2 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h2><pre><code class="javascript">let arr=[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;];
-let first=arr[0],second=arr[1],third=arr[2];
-// 等同于
-let[first,second,third]=arr;
-</code></pre>
-<h2 id="Symbols"><a href="#Symbols" class="headerlink" title="Symbols"></a>Symbols</h2><h2 id="集合-Set-Map-amp-amp-weakSet-weakMap"><a href="#集合-Set-Map-amp-amp-weakSet-weakMap" class="headerlink" title="集合 Set Map &amp;&amp; weakSet weakMap"></a>集合 Set Map &amp;&amp; weakSet weakMap</h2><h2 id="代理-proxies"><a href="#代理-proxies" class="headerlink" title="代理 proxies"></a>代理 proxies</h2><h2 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h2><h2 id="类class"><a href="#类class" class="headerlink" title="类class"></a>类class</h2><h2 id="子类-Subclass"><a href="#子类-Subclass" class="headerlink" title="子类 Subclass"></a>子类 Subclass</h2>
           
         
       
@@ -1532,6 +1393,533 @@ element.outText
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/偏移量 滚动 视口之类的/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="lijian">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/17428.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="OLLIFE">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="OLLIFE" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/03/偏移量 滚动 视口之类的/" itemprop="url">
+                  offset alien scroll
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-03T15:56:52+08:00">
+                2017-03-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/基础/" itemprop="url" rel="index">
+                    <span itemprop="name">基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <pre><code class="javascript">offsetTop
+offsetLeft
+offsetHeight
+offsetWidth
+
+clientHeight
+clientWidth
+
+scrollHeight
+scrollWidth
+scrollLeft
+scrollTop
+
+outerHeight
+outerWidth
+//IE不支持，用clientHeight代替
+innerHeight
+innerWidth
+</code></pre>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/javascript base/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="lijian">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/17428.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="OLLIFE">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="OLLIFE" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/03/javascript base/" itemprop="url">
+                  javascript
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-03T15:56:52+08:00">
+                2017-03-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="window"><a href="#window" class="headerlink" title="window"></a>window</h2><pre><code class="javascript">localStorage //html5
+    setItem()
+    getItem()
+location
+    host hostname href pathname protocol search port origin     hash
+history
+    back() forward() go()
+screen
+open()
+</code></pre>
+<h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><pre><code class="javascript">/*
+.valueOf()
+.toString()
+fromCharCode()
+fromCodePoint()
+prototype.charAt()
+prototype.charCodeAt()
+prototype.codePointAt()
+prototype.concat()
+.indexOf()
+.lastIndexOf()
+.match()
+.repeat()
+.replace()
+.reach()
+
+&lt;-----提取字符串-----&gt;
+    .slice(start,end)  获取star到end索引号的字符串并返回可以有负值
+    .substr(start,length) 
+    .substring(start,stop)  不包含stop索引号的值（非负值）
+
+.split(separator,howmany)  分割字符串为数组
+.toLocaleLowerCase()
+.toLocaleUpperCase()
+.toLowerCase()
+.toUpperCase()
+
+.trim()
+.trimLeft()
+.trimRight()
+.raw()
+*/
+</code></pre>
+<h2 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h2><pre><code class="javascript">.isFinite()
+.isNaN()
+Number.parseFloat()==parseFloat()//es6
+Number.parseInt()==parseInt()//es6
+</code></pre>
+<h2 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h2><pre><code class="javascript">.concat()    //
+forEach()
+inedexOf()        //
+.lastIndexOf()        //
+.join()
+.pop()
+.push()
+.shift()
+.unshift()
+.slice(start,end) //不包含end索引的值
+.sort()
+.splice()
+.value()
+.reverse()
+.keys()
+.includes()
+.toLocaleString()
+</code></pre>
+<h2 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h2><pre><code class="javascript">.random()
+.round()
+.floor()
+</code></pre>
+<h2 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h2><pre><code class="javascript">.UTC()
+.now()
+.parse()
+.prototype.getDate()
+.getDay()
+.getHours()
+.getFullYear()
+.getMinutes()
+.getMonth()
+.getSeconds()
+.getTime()
+</code></pre>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/javascript this/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="lijian">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/17428.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="OLLIFE">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="OLLIFE" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/03/javascript this/" itemprop="url">
+                  this的指向值
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-03T15:56:52+08:00">
+                2017-03-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1.在普通函数的调用中，this指向全局对象</p>
+<p>2.函数作为对象方法调用，this指向该对象。</p>
+<p>3.构造函数中，this指向实例对象。</p>
+<p>4.apply方法中，this指向第一参数</p>
+<p>5.箭头函数没有自己的this值，箭头函数内的this值继承自外围作用域。</p>
+<p>6.事件监听中的this</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/ajax 跨域和jsonp/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1706,379 +2094,6 @@ JSON.parse(str);
     //to str
 JSON.stringify(obj);
 </code></pre>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/javascript base/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="lijian">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/uploads/17428.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="OLLIFE">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="OLLIFE" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/03/javascript base/" itemprop="url">
-                  javascript
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-03T15:56:52+08:00">
-                2017-03-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="window"><a href="#window" class="headerlink" title="window"></a>window</h2><pre><code class="javascript">localStorage //html5
-    setItem()
-    getItem()
-location
-    host hostname href pathname protocol search port origin     hash
-history
-    back() forward() go()
-screen
-open()
-</code></pre>
-<p>##String</p>
-<pre><code class="javascript">/*
-.valueOf()
-.toString()
-fromCharCode()
-fromCodePoint()
-prototype.charAt()
-prototype.charCodeAt()
-prototype.codePointAt()
-prototype.concat()
-.indexOf()
-.lastIndexOf()
-.match()
-.repeat()
-.replace()
-.reach()
-
-&lt;-----提取字符串-----&gt;
-    .slice(start,end)  获取star到end索引号的字符串并返回可以有负值
-    .substr(start,length) 
-    .substring(start,stop)  不包含stop索引号的值（非负值）
-
-.split(separator,howmany)  分割字符串为数组
-.toLocaleLowerCase()
-.toLocaleUpperCase()
-.toLowerCase()
-.toUpperCase()
-
-.trim()
-.trimLeft()
-.trimRight()
-.raw()
-*/
-</code></pre>
-<p>##Number</p>
-<pre><code class="javascript">.isFinite()
-.isNaN()
-Number.parseFloat()==parseFloat()//es6
-Number.parseInt()==parseInt()//es6
-</code></pre>
-<p>##Array</p>
-<pre><code class="javascript">.concat()    //
-forEach()
-inedexOf()        //
-.lastIndexOf()        //
-.join()
-.pop()
-.push()
-.shift()
-.unshift()
-.slice()
-.sort()
-.splice()
-.value()
-.reverse()
-.keys()
-.includes()
-.toLocaleString()
-</code></pre>
-<p>##Math</p>
-<pre><code class="javascript">.random()
-.round()
-.floor()
-</code></pre>
-<p>##Date</p>
-<pre><code class="javascript">.UTC()
-.now()
-.parse()
-.prototype.getDate()
-.getDay()
-.getHours()
-.getFullYear()
-.getMinutes()
-.getMonth()
-.getSeconds()
-.getTime()
-</code></pre>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/javascript this/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="lijian">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/uploads/17428.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="OLLIFE">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="OLLIFE" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/03/javascript this/" itemprop="url">
-                  this的指向值
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-03T15:56:52+08:00">
-                2017-03-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>1.在普通函数的调用中，this指向全局对象</p>
-<p>2.函数作为对象方法调用，this指向该对象。</p>
-<p>3.构造函数中，this指向实例对象。</p>
-<p>4.apply方法中，this指向第一参数</p>
-<p>5.箭头函数没有自己的this值，箭头函数内的this值继承自外围作用域。</p>
-<p>6.事件监听中的this</p>
 
           
         
