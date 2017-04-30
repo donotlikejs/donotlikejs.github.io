@@ -276,7 +276,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/canvas要点/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/ajax 跨域和jsonp/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="lijian">
@@ -301,8 +301,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/03/03/canvas要点/" itemprop="url">
-                  html之canvas 绘图
+                <a class="post-title-link" href="/2017/03/03/ajax 跨域和jsonp/" itemprop="url">
+                  ajax 跨域 jsonp
                 </a>
               
             
@@ -378,71 +378,302 @@
       
         
           
-            <p>使用canvas绘图共同步骤</p>
-<p>指定canvas大小（也可称之画布大小）</p>
-<p>调用Context(“2d”)方法</p>
-<pre><code class="html">//html
-&lt;canvas id=&quot;drawing&quot;&gt;&lt;/canvas&gt;
-&lt;style&gt;
-#drawing{width:300px;height:300px}
-&lt;/style&gt;
-&lt;script&gt;
-let drawing=document.getElementById(&quot;drawing&quot;);
-let context=drawing.Context(&quot;2d&quot;);
-&lt;/script&gt;
+            <h2 id="AJAX原生"><a href="#AJAX原生" class="headerlink" title="AJAX原生"></a>AJAX原生</h2><ul>
+<li>异步加载必须先<code>实例化一个XMLHttpRequest函数</code>。</li>
+</ul>
+<pre><code class="javascript">let xhr = new XMLHttpRequest();
+xhr.open();
+xhr.send();
+setRequsetHeader();
 </code></pre>
-<h2 id="绘制矩形"><a href="#绘制矩形" class="headerlink" title="绘制矩形"></a>绘制矩形</h2><p>填充:fillStyle 描边:strokeStyle</p>
-<p>绘制矩形</p>
-<p>fillRect(x,y,width,height)</p>
-<p>strokeRect(x,y,width,height)</p>
-<p>clearRect(x,y,width,height)</p>
-<pre><code class="javascript">//填充
-context.fillStyle=&quot;#e5e5e5&quot;;
-context.fillRect(5,5,50,50);
-//描边
-context.strokeStyle=&quot;yellow&quot;;
-context.strokeRect(15,15,50,50);
-</code></pre>
-<p>控制线条</p>
-<p>​        粗细 lineWidth</p>
-<p>​        末端形状 lineCap     butt 平头    round 圆头        square 方头</p>
-<p>​        相交方式 lineJoin     round 圆交      bevel 斜交        miter 斜接</p>
-<h3 id="绘制路径"><a href="#绘制路径" class="headerlink" title="绘制路径"></a>绘制路径</h3><p>​    调用beginPath();</p>
-<pre><code class="javascript">
+<ul>
+<li>XMLHttpRequest的响应方法</li>
+</ul>
+<pre><code class="javascript">/*
+    readyStateChange 用于监听readyState的变化
+    status 响应状态码 1xx 2xx 3xx 4xx 5xx
+    statusText 响应状态说明
+    readyState    请求／响应过程的当前活动状态
+        0
+        1
+        2    发送，已经调用send方法
+        3    接收响应数据
+        4    表示完成
 
-arc(x,y,radius,startAngle,endAngle,counterclockwise)
+    responseText    响应主体返回的文本
+    responseXML        响应主体返回的XML
 
-arcTo(x1,y1,x2,y2,radius)
-
-bezierCurveTo(c1x,c1y,c2x,c2y,x,y)
-
-lineTo(x,y)
-
-moveTo(x,y)
-
-quadraticCurveTo(cx,cy,x,y)
-
-rect(x,y,width,height)
-
-closePath
-
-fill()
-
-stroke()
-
-clip()
-</code></pre>
-<h2 id="绘制文本"><a href="#绘制文本" class="headerlink" title="绘制文本"></a>绘制文本</h2><pre><code class="javascript">fillText(str,x,y,width)
-strokeText(str,x,y,width)
-/*
-属性
-font 样式 大小 字体
-textAlign 对齐方式 start end left right center
-textBaseline 基线 top bottom middle 
-                    hanging alphabetic ideog raphic
 */
 </code></pre>
-<h2 id="变换"><a href="#变换" class="headerlink" title="变换"></a>变换</h2><h2 id="绘制图像"><a href="#绘制图像" class="headerlink" title="绘制图像"></a>绘制图像</h2><h2 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h2><h2 id="渐变"><a href="#渐变" class="headerlink" title="渐变"></a>渐变</h2><h2 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h2><h2 id="图像数据"><a href="#图像数据" class="headerlink" title="图像数据"></a>图像数据</h2><h2 id="合成"><a href="#合成" class="headerlink" title="合成"></a>合成</h2><h2 id="WebGL"><a href="#WebGL" class="headerlink" title="WebGL"></a>WebGL</h2>
+<ul>
+<li>GET 和 POST 的一般写法</li>
+</ul>
+<pre><code class="javascript">// get
+let xhr=new XMLHttpRequest();
+url=&quot;http://www.abc.com?a=b&amp;c=d&quot;;
+xhr.open(&quot;get&quot;,url,true);
+xhr.send(null);
+xhr.readyStateChange=function(){
+  if(xhr.readyState==4&amp;&amp;xhr.status==200){
+    console.log(xhr.responseText);
+  }else{
+    console.log(`error${xhr.status}`);
+  }
+};
+
+//post
+let xhr=new XMLHttpRequest();
+url=&quot;http://abc.com&quot;;
+data=&quot;a=b&amp;c=d&quot;;
+xhr.open(&quot;post&quot;,url,true);
+xhr.setRequestHeader(&quot;Content-Type&quot;,&quot;application/x-www-from-urlencoded&quot;);
+xhr.send(data);
+xhr.readyStateChange=function(){
+  if(xhr.readyState==4&amp;&amp;xhr.status=200){
+    console.log(xhr.responseText);
+  }else{
+    console.log(`error:${xhr.status}`);
+
+  }
+}
+</code></pre>
+<h2 id="jquery-异步"><a href="#jquery-异步" class="headerlink" title="jquery 异步"></a>jquery 异步</h2><h2 id="jsonP"><a href="#jsonP" class="headerlink" title="jsonP"></a>jsonP</h2><h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><p> 两个url中 协议 子域名 主域名 端口号 任意一个不同皆为不同域，而不同域之间的通信称之为跨域。</p>
+<pre><code class="javascript">／*
+
+http :  //  www  .  abc.com  :  8000  /demo/index.html
+协议        子域名        主域名        端口号        路径
+
+*／
+</code></pre>
+<h2 id="JSON-方法"><a href="#JSON-方法" class="headerlink" title="JSON 方法"></a>JSON 方法</h2><pre><code class="javascript">    //to obj
+JSON.parse(str);
+    //to str
+JSON.stringify(obj);
+</code></pre>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/javascript事件event/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="lijian">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/17428.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="OLLIFE">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="OLLIFE" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/03/javascript事件event/" itemprop="url">
+                  事件event
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-03T15:56:52+08:00">
+                2017-03-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>事件：用户或者浏览器自身执行的某种动作</p>
+<p>事件处理程序（事件监听器）：响应某个事件的函数，事件处理程序的名字以“on”开头。</p>
+<p>DOM0级：将一个函数赋值给一个事件处理程序属性</p>
+<pre><code class="javascr">btn.onclick=function(){
+}
+</code></pre>
+<p>DOM1级</p>
+<p>DOM2级事件处理程序</p>
+<pre><code>/*
+*1参数为要处理的事件名
+*2参数事件处理程序的函数
+*3参数为布尔值，true表示捕获阶段调用2，false表示冒泡阶段调用2
+    fn在当前作用于运行
+*/
+addEventListener(&quot;&quot;,fn,boolean)
+/*
+参数同上，只是调用变成删除
+*/
+removeEventListener()
+</code></pre><p>捕获：从不具体的父元素逐步传到具体的元素</p>
+<p>冒泡：具体的元素逐步往上传播到不具体的父元素</p>
+<p>DOM事件流（DOM2）:分为事件捕获阶段，处于目标阶段和事件冒泡阶段。（但浏览器都支持捕获和冒泡阶段对目标对象进行操作）</p>
+<p>事件处理程序分类</p>
+<p>HTML事件处理程序 ：写在html标签里</p>
+<p>IE事件处理程序：</p>
+<pre><code class="javasc">// fn会在全局作用域中运行
+attachEvent()
+detachEvent()
+</code></pre>
+<p>事件对象（event）</p>
+<p>触发DOM事件时自动产生事件对象event，该对象包含所有与事件有关的信息。</p>
+<pre><code class="javascript">stopPropagation
+preventDefault()   取消默认行为
+target                返回最初触发事件的元素
+type                返回事件类型
+</code></pre>
+<pre><code class="javascript">//原点为浏览器内容区域左上角
+clientX
+clientY
+
+//原点为屏幕左上角
+screenX
+screenY
+
+//FF特有 原点为浏览器内容区域左上角随scroll变化
+pageX
+pageY
+</code></pre>
+<p>事件委托（代理）：利用冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件</p>
+<h2 id="事件类型"><a href="#事件类型" class="headerlink" title="事件类型"></a>事件类型</h2><ul>
+<li>UI</li>
+</ul>
+<pre><code class="javascript">load
+unload
+abort
+error
+select
+resize
+scroll
+</code></pre>
+<ul>
+<li>鼠标</li>
+</ul>
+<pre><code class="javascript">click
+dbclick
+mousedown
+mouseup
+mouseenter  dom3级，事件不冒泡，移动到子元素上也不触发
+mouseleave  同上
+mousemove   鼠标在目标内移动时重复触发
+mouseout
+mouseover
+</code></pre>
+<ul>
+<li>滚轮</li>
+<li>焦点</li>
+<li>键盘</li>
+<li>文本</li>
+<li>合成，变动，变动名称</li>
+</ul>
+<h2 id="事件绑定-事件监听-事件委托"><a href="#事件绑定-事件监听-事件委托" class="headerlink" title="事件绑定 事件监听 事件委托"></a>事件绑定 事件监听 事件委托</h2><p>​    <code>事件绑定</code>  </p>
+<p>​    <code>事件监听</code>  </p>
+<p>​    <code>事件委托</code>  利用事件冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件。</p>
+
           
         
       
@@ -725,6 +956,162 @@ textBaseline 基线 top bottom middle
 <li><a href="http://www.ruanyifeng.com/blog/2012/11/require_js.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2012/11/require_js.html</a></li>
 <li><a href="https://www.oschina.net/translate/getting-started-with-the-requirejs-library?p=1#comments" target="_blank" rel="external">https://www.oschina.net/translate/getting-started-with-the-requirejs-library?p=1#comments</a></li>
 <li><a href="http://www.qdfuns.com/notes/28100/ce0ba3c76072e916a8ce86e6360ac3de.html" target="_blank" rel="external">http://www.qdfuns.com/notes/28100/ce0ba3c76072e916a8ce86e6360ac3de.html</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/22/commonJS and AMD/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="lijian">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/17428.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="OLLIFE">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="OLLIFE" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/22/commonJS and AMD/" itemprop="url">
+                  commonJS 和 AMD 规范
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-22T14:29:53+08:00">
+                2016-12-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="commonJS"><a href="#commonJS" class="headerlink" title="commonJS"></a>commonJS</h2><ul>
+<li>commonJS是服务器端模块的规范，</li>
+<li>commonJS规范定义 文件皆模块</li>
+<li><p>模块的的加载</p>
+<ul>
+<li>require() // 引入外部模块</li>
+<li>exports对象 // 导出当前模块的方法或者变量，唯一的导出口</li>
+</ul>
+</li>
+<li><p>commonJS同步加载模块</p>
+</li>
+</ul>
+<h2 id="AMD"><a href="#AMD" class="headerlink" title="AMD"></a>AMD</h2><p> AMD (Asynchronous Module Definition) 异步模块定义<br> AMD规范只有一个API<br> define(id?, dependencies?, factory);</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://segmentfault.com/a/1190000004873947" target="_blank" rel="external">https://segmentfault.com/a/1190000004873947</a></li>
 </ul>
 
           
@@ -1477,162 +1864,6 @@ mv file1 /demo
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/22/commonJS and AMD/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="lijian">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/uploads/17428.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="OLLIFE">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="OLLIFE" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/22/commonJS and AMD/" itemprop="url">
-                  commonJS 和 AMD 规范
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-22T14:29:53+08:00">
-                2016-12-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="commonJS"><a href="#commonJS" class="headerlink" title="commonJS"></a>commonJS</h2><ul>
-<li>commonJS是服务器端模块的规范，</li>
-<li>commonJS规范定义 文件皆模块</li>
-<li><p>模块的的加载</p>
-<ul>
-<li>require() // 引入外部模块</li>
-<li>exports对象 // 导出当前模块的方法或者变量，唯一的导出口</li>
-</ul>
-</li>
-<li><p>commonJS同步加载模块</p>
-</li>
-</ul>
-<h2 id="AMD"><a href="#AMD" class="headerlink" title="AMD"></a>AMD</h2><p> AMD (Asynchronous Module Definition) 异步模块定义<br> AMD规范只有一个API<br> define(id?, dependencies?, factory);</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="https://segmentfault.com/a/1190000004873947" target="_blank" rel="external">https://segmentfault.com/a/1190000004873947</a></li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/22/计算机基础/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1766,265 +1997,11 @@ mv file1 /demo
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/21/git/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="lijian">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/uploads/17428.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="OLLIFE">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="OLLIFE" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/21/git/" itemprop="url">
-                  git和github
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-21T23:09:57+08:00">
-                2016-12-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/基础/" itemprop="url" rel="index">
-                    <span itemprop="name">基础</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><p>​    + 查看配置信息</p>
-<pre><code class="Shell">git config --list
-</code></pre>
-<p>​    + 设置 姓名和邮箱地址  存放于 “~/.gitconfig”</p>
-<pre><code class="shell">    git config —global user.name “yourname”
-    git config —global user.email “yourEmail”
-
-    git config —global color.ui auto
-</code></pre>
-<p>​    + 创建 SSH Key</p>
-<pre><code class="shell">    ssh-keygen -t -C “lianggunzai@gmail.com”
-</code></pre>
-<p>​    + 查看 id_rsa.pub（公开密钥）( id_rsa 私有密钥 )</p>
-<pre><code class="shell">    cat ~/.ssh/id_rsa.pub
-</code></pre>
-<p>​    + 和github进行认证</p>
-<pre><code class="shell">    ssh -T git@github.com
-</code></pre>
-<p>​    + 从远程仓库获取</p>
-<pre><code class="shell">    git clone git@github.com:Jianru-Lin/lambda-view.git
-</code></pre>
-<pre><code class="shell">git status    
-查看当前目录还没有被git管理和被git管理且被修改但还没有提交的文件
-查看当前分支的相关信息     -a     参数可以同时显示本地仓库和远程仓库的分支信息
-git branch -a 
-git  add    将文件加入暂存区
-git commit -m “解释短语”   提交
-
-git push    更新
-</code></pre>
-<pre><code>本地建立项目并且推送到远程仓库
-
-首先先建立一个文件夹并进入
-    mkdir gittest
-    cd gittest
-
-初始化仓库（目的是为了产生“.git”目录，里面存放管理当前目录内容的数据，数据也称为附属该目录的工作树）
-    git init
-
-查看仓库状态
-    git status
-
-提交到暂存区
-    git add filename
-
-更新（提交到工作树）
-    git commit -m “这里是解释说明短语”
-
-
-After doing this, you may fix the identity used for this commit with:
-设置完成以后，你可以通过以下这条语句来修复用于此提交到身份
-
-    git commit --amend --reset-author
-查看已提交到日志
-    git log 
-
-    参数 
-        —pertty=short 只显示第一行参数
-        加文件名或目录名 只会显示相关的日志
-        -p 显示文件的前后差别
-
-查看更改前后的差别
-    git diff
-
-                参数 HEAD 查看与最新提交的差别 （好习惯：git commit 前先 git diff HEAD 查看区别）
-
-
-分支操作（重点难点）
-
-显示分支一览表
-    git branch
-
-已当前branch分支为基础创建新分支并且切换到新建的分支
-git checkout -b fenzhia  等同于 git branch fenzhia ; git checkout fenzhia（可以用 git branch 查看当前工作分支）
-
-   切换分支
-git checkout 分支名
-
-git checkout - 切换回上一个分支
-
-合并分支
-先切换到master主分支
-git checkout master
-再
-git merge —no-ff fenzhia （参数—no-ff 可以确保历史记录中明确记录下本次分支合并）
-
-随后编辑器会启动（vi编辑器，直接退出或者，编辑再退出都ok）
-然后结束
-
-以图表形式查看分支
-git log --graph
-
-回溯历史分支（跑回之前修改的某个地方）
-
-git reset —hard 哈希值 （哈希值通过git log 能找到 复制粘贴即可）
-
-
-git reflog  查看当前仓库的所有日志
-
-冲突解决
-如果git merge --no—ff 分支 有冲突
-
-打开编辑器 把内容修改好后 执行 git add 文件名；git commit -m “解释短语”
------------------------------------------------------------------------------------------------------------------------------------------
-推送到远程仓库
-
-    添加远程仓库
-        git remote add 仓库路径
-
-    推送至远程仓库
-        git push -u origin master         推送至master分支
-        git push -u origin 其他分支    推送到其他分支
-        (-u参数可以在推送到同时，将origin仓库的master分支设置为本地仓库当前分支的upstream （上游）)
---------------------------------------------------------------------------------------------------------------------------------------------
-</code></pre>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2067,7 +2044,7 @@ git reflog  查看当前仓库的所有日志
           
             <div class="site-state-item site-state-posts">
               <a href="/">
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
