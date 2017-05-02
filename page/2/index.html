@@ -378,80 +378,27 @@
       
         
           
-            <h2 id="AJAX原生"><a href="#AJAX原生" class="headerlink" title="AJAX原生"></a>AJAX原生</h2><ul>
-<li>异步加载必须先<code>实例化一个XMLHttpRequest函数</code>。</li>
-</ul>
-<pre><code class="javascript">let xhr = new XMLHttpRequest();
+          AJAX原生
+异步加载必须先实例化一个XMLHttpRequest函数。
+
+let xhr = new XMLHttpRequest();
 xhr.open();
 xhr.send();
 setRequsetHeader();
-</code></pre>
-<ul>
-<li>XMLHttpRequest的响应方法</li>
-</ul>
-<pre><code class="javascript">/*
-    readyStateChange 用于监听readyState的变化
-    status 响应状态码 1xx 2xx 3xx 4xx 5xx
-    statusText 响应状态说明
-    readyState    请求／响应过程的当前活动状态
-        0
-        1
-        2    发送，已经调用send方法
-        3    接收响应数据
-        4    表示完成
 
-    responseText    响应主体返回的文本
-    responseXML        响应主体返回的XML
 
-*/
-</code></pre>
-<ul>
-<li>GET 和 POST 的一般写法</li>
-</ul>
-<pre><code class="javascript">// get
-let xhr=new XMLHttpRequest();
-url=&quot;http://www.abc.com?a=b&amp;c=d&quot;;
-xhr.open(&quot;get&quot;,url,true);
-xhr.send(null);
-xhr.readyStateChange=function(){
-  if(xhr.readyState==4&amp;&amp;xhr.status==200){
-    console.log(xhr.responseText);
-  }else{
-    console.log(`error${xhr.status}`);
-  }
-};
+XMLHttpRequest的响应方法
 
-//post
-let xhr=new XMLHttpRequest();
-url=&quot;http://abc.com&quot;;
-data=&quot;a=b&amp;c=d&quot;;
-xhr.open(&quot;post&quot;,url,true);
-xhr.setRequestHeader(&quot;Content-Type&quot;,&quot;application/x-www-from-urlencoded&quot;);
-xhr.send(data);
-xhr.readyStateChange=function(){
-  if(xhr.readyState==4&amp;&amp;xhr.status=200){
-    console.log(xhr.responseText);
-  }else{
-    console.log(`error:${xhr.status}`);
-
-  }
-}
-</code></pre>
-<h2 id="jquery-异步"><a href="#jquery-异步" class="headerlink" title="jquery 异步"></a>jquery 异步</h2><h2 id="jsonP"><a href="#jsonP" class="headerlink" title="jsonP"></a>jsonP</h2><h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><p> 两个url中 协议 子域名 主域名 端口号 任意一个不同皆为不同域，而不同域之间的通信称之为跨域。</p>
-<pre><code class="javascript">／*
-
-http :  //  www  .  abc.com  :  8000  /demo/index.html
-协议        子域名        主域名        端口号        路径
-
-*／
-</code></pre>
-<h2 id="JSON-方法"><a href="#JSON-方法" class="headerlink" title="JSON 方法"></a>JSON 方法</h2><pre><code class="javascript">    //to obj
-JSON.parse(str);
-    //to str
-JSON.stringify(obj);
-</code></pre>
-
-          
+/*
+    readyS
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/03/ajax 跨域和jsonp/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -488,7 +435,7 @@ JSON.stringify(obj);
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/javascript事件event/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/javascript DOM操作/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="lijian">
@@ -513,8 +460,8 @@ JSON.stringify(obj);
             
               
                 
-                <a class="post-title-link" href="/2017/03/03/javascript事件event/" itemprop="url">
-                  事件event
+                <a class="post-title-link" href="/2017/03/03/javascript DOM操作/" itemprop="url">
+                  DOM 操作
                 </a>
               
             
@@ -589,92 +536,14 @@ JSON.stringify(obj);
 
       
         
-          
-            <p>事件：用户或者浏览器自身执行的某种动作</p>
-<p>事件处理程序（事件监听器）：响应某个事件的函数，事件处理程序的名字以“on”开头。</p>
-<p>DOM0级：将一个函数赋值给一个事件处理程序属性</p>
-<pre><code class="javascr">btn.onclick=function(){
-}
-</code></pre>
-<p>DOM1级</p>
-<p>DOM2级事件处理程序</p>
-<pre><code>/*
-*1参数为要处理的事件名
-*2参数事件处理程序的函数
-*3参数为布尔值，true表示捕获阶段调用2，false表示冒泡阶段调用2
-    fn在当前作用于运行
-*/
-addEventListener(&quot;&quot;,fn,boolean)
-/*
-参数同上，只是调用变成删除
-*/
-removeEventListener()
-</code></pre><p>捕获：从不具体的父元素逐步传到具体的元素</p>
-<p>冒泡：具体的元素逐步往上传播到不具体的父元素</p>
-<p>DOM事件流（DOM2）:分为事件捕获阶段，处于目标阶段和事件冒泡阶段。（但浏览器都支持捕获和冒泡阶段对目标对象进行操作）</p>
-<p>事件处理程序分类</p>
-<p>HTML事件处理程序 ：写在html标签里</p>
-<p>IE事件处理程序：</p>
-<pre><code class="javasc">// fn会在全局作用域中运行
-attachEvent()
-detachEvent()
-</code></pre>
-<p>事件对象（event）</p>
-<p>触发DOM事件时自动产生事件对象event，该对象包含所有与事件有关的信息。</p>
-<pre><code class="javascript">stopPropagation
-preventDefault()   取消默认行为
-target                返回最初触发事件的元素
-type                返回事件类型
-</code></pre>
-<pre><code class="javascript">//原点为浏览器内容区域左上角
-clientX
-clientY
-
-//原点为屏幕左上角
-screenX
-screenY
-
-//FF特有 原点为浏览器内容区域左上角随scroll变化
-pageX
-pageY
-</code></pre>
-<p>事件委托（代理）：利用冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件</p>
-<h2 id="事件类型"><a href="#事件类型" class="headerlink" title="事件类型"></a>事件类型</h2><ul>
-<li>UI</li>
-</ul>
-<pre><code class="javascript">load
-unload
-abort
-error
-select
-resize
-scroll
-</code></pre>
-<ul>
-<li>鼠标</li>
-</ul>
-<pre><code class="javascript">click
-dbclick
-mousedown
-mouseup
-mouseenter  dom3级，事件不冒泡，移动到子元素上也不触发
-mouseleave  同上
-mousemove   鼠标在目标内移动时重复触发
-mouseout
-mouseover
-</code></pre>
-<ul>
-<li>滚轮</li>
-<li>焦点</li>
-<li>键盘</li>
-<li>文本</li>
-<li>合成，变动，变动名称</li>
-</ul>
-<h2 id="事件绑定-事件监听-事件委托"><a href="#事件绑定-事件监听-事件委托" class="headerlink" title="事件绑定 事件监听 事件委托"></a>事件绑定 事件监听 事件委托</h2><p>​    <code>事件绑定</code>  </p>
-<p>​    <code>事件监听</code>  </p>
-<p>​    <code>事件委托</code>  利用事件冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件。</p>
-
-          
+          <p>摘要 有关dom到基础</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/03/javascript DOM操作/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -791,21 +660,15 @@ mouseover
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/01/16/hello-world/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -944,253 +807,21 @@ mouseover
       
         
           
-            <p><strong>RequireJS中假设所有的依赖资源都为js脚本</strong></p>
-<p>在html中引用</p>
-<pre><code class="vbscript-html">
+          RequireJS中假设所有的依赖资源都为js脚本
+在html中引用
+
 &lt;script src=&quot;app/require.js&quot; data-main=&quot;app/app.js&gt;&quot;
-</code></pre>
-<p>其中 app.js 为 requirejs的配置文件。</p>
-<h2 id="设置模块版本号"><a href="#设置模块版本号" class="headerlink" title="设置模块版本号"></a>设置模块版本号</h2><p><strong><code>扩展阅读</code></strong></p>
-<ul>
-<li><a href="http://www.wojilu.com/Forum1/Topic/4205" target="_blank" rel="external">http://www.wojilu.com/Forum1/Topic/4205</a></li>
-<li><a href="http://www.ruanyifeng.com/blog/2012/11/require_js.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2012/11/require_js.html</a></li>
-<li><a href="https://www.oschina.net/translate/getting-started-with-the-requirejs-library?p=1#comments" target="_blank" rel="external">https://www.oschina.net/translate/getting-started-with-the-requirejs-library?p=1#comments</a></li>
-<li><a href="http://www.qdfuns.com/notes/28100/ce0ba3c76072e916a8ce86e6360ac3de.html" target="_blank" rel="external">http://www.qdfuns.com/notes/28100/ce0ba3c76072e916a8ce86e6360ac3de.html</a></li>
-</ul>
 
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/22/webpack的使用/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="lijian">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/uploads/17428.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="OLLIFE">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="OLLIFE" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/22/webpack的使用/" itemprop="url">
-                  webpack基础应用
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-22T14:29:53+08:00">
-                2016-12-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/工具/" itemprop="url" rel="index">
-                    <span itemprop="name">工具</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><code>官网</code>：<a href="https://webpack.js.org/" target="_blank" rel="external">https://webpack.js.org/</a></p>
-<p>webpack是一款模块加载和打包的工具</p>
-<h2 id="1-全局安装"><a href="#1-全局安装" class="headerlink" title="1.全局安装"></a>1.全局安装</h2><pre><code> npm install -g webpack
-</code></pre><h2 id="进入你的项目文件夹（比如叫yourproject）和-初始化"><a href="#进入你的项目文件夹（比如叫yourproject）和-初始化" class="headerlink" title="进入你的项目文件夹（比如叫yourproject）和 初始化"></a>进入你的项目文件夹（比如叫yourproject）和 初始化</h2><pre><code>cd yourproject
-npm init
-</code></pre><p>初始化用来生成package.json包</p>
-<pre><code class="json">{
-  &quot;name&quot;: &quot;webpacktest&quot;,
-  &quot;version&quot;: &quot;1.0.0&quot;,
-  &quot;description&quot;: &quot;&quot;,
-  &quot;main&quot;: &quot;index.js&quot;,
-  &quot;scripts&quot;: {
-    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;
-  },
-  &quot;author&quot;: &quot;&quot;,
-  &quot;license&quot;: &quot;ISC&quot;,
-  &quot;devDependencies&quot;: {
-    &quot;webpack&quot;: &quot;^1.14.0&quot;
-  }
-}
-</code></pre>
-<h2 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h2><pre><code class="npm">npm install webpack --save-dev
-</code></pre>
-<p>生成mode_modules文件夹以及在package.json的devDependencies中自动添加</p>
-<pre><code class="json">&quot;devDependencies&quot;: {
-    &quot;webpack&quot;: &quot;^1.14.0&quot;
-  }
-</code></pre>
-<p>在每个项目根目录下必须配置一个webpack.config.js文件，此文件用来写配置项，用来告诉webpack做什么。<br>webpack.config.js里一般写法</p>
-<pre><code class="javascript">//var webpack=require(&#39;webpack&#39;);
-//var commonPlugin = new webpack.optimize.CommonsChunkPlugin(&#39;comon.js&#39;);
-
-
-module.explorts={
-  //plugins:[commonPlugin],
-  //entry里为设置处理的文件路径入口
-  entry:{
-    index:&#39;./src/js/page/index.js&#39;
-    },
-  //output里为处理后存放的文件夹以及新的文件名
-  output:{
-    path:&#39;dist/js/page&#39;,
-    //publiPath:&#39;&#39;,
-    filename:&#39;[name].js&#39;
-    },
-  // module这里定义了处理指定后缀文件的插件，插件需要安装在项目内
-  // npm install 插件名 -dev--save
-  module:{
-    loaders:[
-      //处理css和scss文件
-        {test:/\.css$/,
-         loader:&#39;style-loader!css-loader!sass-loader&#39;
-        },
-      //处理es6文件
-        {
-          test:/\.js$/,
-          //排除不需要解析道文件夹
-          exclude:(),
-          loader:&#39;label-loader&#39;,
-          //
-          qurey:{
-            presets:[&#39;es2015&#39;]
-          }
-        }
-
-      ]
-    },
-  //
-  resolve:{
-    // 设置查找module的根目录，可忽略
-    root:&#39;&#39;,
-    // resolve.extensions设置扩展文件后缀名， require()可以省略文件名
-    extensions:[&#39;&#39;,&#39;js&#39;,&#39;css&#39;],
-    //设置模块别名
-    alias:{
-
-      }
-    },
-  //插件
-  plugins:{
-
-  }
-}
-</code></pre>
-<p><strong><code>扩展阅读</code></strong></p>
-<ul>
-<li><a href="http://www.w2bc.com/Article/50764" target="_blank" rel="external">http://www.w2bc.com/Article/50764</a></li>
-<li><a href="http://blog.csdn.net/github_26672553/article/details/52107165" target="_blank" rel="external">http://blog.csdn.net/github_26672553/article/details/52107165</a></li>
-<li>webpack-dev-server使用讲解 </li>
-<li><a href="http://www.tuicool.com/articles/BZrQ3mv" target="_blank" rel="external">http://www.tuicool.com/articles/BZrQ3mv</a></li>
-<li><a href="https://segmentfault.com/a/1190000006964335" target="_blank" rel="external">https://segmentfault.com/a/1190000006964335</a></li>
-</ul>
-
-          
+其中 app.js 为 requirejs的配置文件。
+设置模块版本
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/12/22/requirejs 使用/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1329,8 +960,167 @@ module.explorts={
       
         
           
+          
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/12/22/仿锤子3d动图/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/22/webpack的使用/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="lijian">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/17428.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="OLLIFE">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="OLLIFE" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/22/webpack的使用/" itemprop="url">
+                  webpack基础应用
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-22T14:29:53+08:00">
+                2016-12-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工具/" itemprop="url" rel="index">
+                    <span itemprop="name">工具</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
             
           
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          官网：https://webpack.js.org/
+webpack是一款模块加载和打包的工具
+1.全局安装 npm install -g webpack
+进入你的项目文件夹（比如叫yourproject）和 初始化cd yourproject
+npm init
+初始化用来生成package.jso
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/12/22/webpack的使用/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1469,60 +1259,27 @@ module.explorts={
       
         
           
-            <p>本笔记操作以mac系统为准</p>
-<p><code>路径表示</code> </p>
-<pre><code class="shell">./    当前目录(可省略 比如 cd ./demo 写成 cd demo)
+          本笔记操作以mac系统为准
+路径表示 
+./    当前目录(可省略 比如 cd ./demo 写成 cd demo)
 ../   上一级目录
 /     绝对路径(根目录)
-</code></pre>
-<p><code>cd</code> 改变目录</p>
-<pre><code class="shell">//进入当前目录的子目录demo
+
+cd 改变目录
+//进入当前目录的子目录demo
 cd ./demo
 //进入之前的目录
 cd -
-</code></pre>
-<p><code>touch</code>（新建文件） </p>
-<p><code>mkdir</code>（新建目录）</p>
-<pre><code>// 当前目录新建 demo.txt和index.html
-touch demo.txt index.html
-// 当前目录新建demo文件夹
-mkdir demo
-</code></pre><p><code>rm</code> 删除文件       </p>
-<p>​    常用选项 </p>
-<p>​            -i -r -v 同复制</p>
-<p>​            -f: 忽略不存在的文件</p>
-<p><code>rmdir</code> 删除空目录</p>
-<p><code>ls</code> 显示文件列表</p>
-<p>常用选项    -l:长格式显示结果 </p>
-<p>​            -t:按修改时间来排序 </p>
-<p>​            -a:显示所有文件 -r:相反顺序显示 </p>
-<p>​            -h:长格式列出时，不已字节显示文件大小 </p>
-<p>​            -F: 每个文件加上指示符号 </p>
-<p>​            -d: 列出指定目录中内容 </p>
-<p><code>pwd</code> 显示目录路径 </p>
-<p><code>mv</code>（移动/重命名文件和目录） 和 <code>cp</code>（拷贝文件和目录） </p>
-<p>常用选项       -a:复制所有信息和属性</p>
-<p>​            -i:重写前确认</p>
-<p>​            -r:递归(复制)</p>
-<p>​            -u:仅复制目标目录不存在或新于的文件</p>
-<p>​            -v:显示详细命令操作信息</p>
-<pre><code class="shell">//复制file1文件到file2
-cp file1 file2
-//重命名为file2
-mv file1 file2
-//移动file1到根目录下的demo目录
-mv file1 /demo
-</code></pre>
-<p>file</p>
-<p>less</p>
-<p>type 解释一个命令名</p>
-<p>which 显示会执行哪个可执行程序（可用来找路径）</p>
-<p>man</p>
-<p>info</p>
-<p>whatis</p>
-<p>通配符 *</p>
 
-          
+touch（新建文件
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/12/22/常用Shell命令/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1661,17 +1418,18 @@ mv file1 /demo
       
         
           
-            <pre><code class="html">&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;edge&quot;&gt;
-</code></pre>
-<p>X-UA-Compatible 是针对IE8版本的一个特殊文件头标记，content=”edge” 通知IE用最高级别的可用模式显示内容</p>
-<p>http-equiv 类似于http头部协议，用来回应给浏览器一些信息，以帮助浏览器正确的现实网页内容。<br>一些平常使用的http-equiv的名值对</p>
-<pre><code class="html">//10s后刷新页面
-&lt;meta http-equiv=&quot;refresh&quot; content=&quot;10&quot;&gt;
-//10s后跳转到bing
-&lt;meta http-equiv=&quot;refresh&quot; content=&quot;10&quot; url=&quot;http://bing.com&quot;&gt;
-</code></pre>
+          &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;edge&quot;&gt;
 
-          
+X-UA-Compatible 是针对IE8版本的一个特殊文件头标记，content=”edge” 通知IE用最高级别的可用模式显示内容
+htt
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/12/22/新手小问题收集（HTML）/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1810,24 +1568,27 @@ mv file1 /demo
       
         
           
-            <h2 id="commonJS"><a href="#commonJS" class="headerlink" title="commonJS"></a>commonJS</h2><ul>
-<li>commonJS是服务器端模块的规范，</li>
-<li>commonJS规范定义 文件皆模块</li>
-<li><p>模块的的加载</p>
-<ul>
-<li>require() // 引入外部模块</li>
-<li>exports对象 // 导出当前模块的方法或者变量，唯一的导出口</li>
-</ul>
-</li>
-<li><p>commonJS同步加载模块</p>
-</li>
-</ul>
-<h2 id="AMD"><a href="#AMD" class="headerlink" title="AMD"></a>AMD</h2><p> AMD (Asynchronous Module Definition) 异步模块定义<br> AMD规范只有一个API<br> define(id?, dependencies?, factory);</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="https://segmentfault.com/a/1190000004873947" target="_blank" rel="external">https://segmentfault.com/a/1190000004873947</a></li>
-</ul>
+          commonJS
+commonJS是服务器端模块的规范，
+commonJS规范定义 文件皆模块
+模块的的加载
 
-          
+require() // 引入外部模块
+exports对象 // 导出当前模块的方法或者变量，唯一的导出口
+
+
+commonJS同步加载模块
+
+
+AMD AMD (Asynchronous
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/12/22/commonJS and AMD/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1966,10 +1727,16 @@ mv file1 /demo
       
         
           
-            <p>比特(bit): 1bit为单个二进制数值 0 或者 1 。</p>
-<p>字节(Byte)：1byte=8bit(00000000~11111111)=8位二进制。<br>位：计算机内部数据储存的最小单位(比如cpu有32位二进制和64位二进制)<br>码元：常用时间间隔相同的符号来表示一位二进制数字，这样的时间间隔内的信号          称为二进制码元。<br>字符</p>
-
-          
+          比特(bit): 1bit为单个二进制数值 0 或者 1 。
+字节(Byte)：1byte=8bit(00000000~11111111)=8位二进制。位：计算机内部数据储存的最小单位(比如cpu有32位二进制和64位二进制)码元：常用时间间隔相同的符号来表示一位二进制数字，这样的时间间隔内的信号 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/12/22/计算机基础/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
