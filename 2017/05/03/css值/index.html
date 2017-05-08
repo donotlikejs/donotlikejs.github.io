@@ -102,61 +102,43 @@
 
 
 
-<meta name="description" content="css box
-[max-/min-]width/height margin padding 
-box-sizing 
-box-shadow
-
-位置
-position
-left right top bottom
-
-color
-background[-color]
-
-list
-list-style
-
-text-ag">
+<meta name="description" content="盒模型
+[max-/min-]width
+[max-/min-]height 
+border[-/top/bottom/left/right]:
+            -color:
+            -style:
+            -width:
+            -image:
+                -source:
+                -width">
 <meta property="og:type" content="article">
 <meta property="og:title" content="css2 css3 基础">
 <meta property="og:url" content="http://yoursite.com/2017/05/03/css值/index.html">
 <meta property="og:site_name" content="OLLIFE">
-<meta property="og:description" content="css box
-[max-/min-]width/height margin padding 
-box-sizing 
-box-shadow
-
-位置
-position
-left right top bottom
-
-color
-background[-color]
-
-list
-list-style
-
-text-ag">
-<meta property="og:updated_time" content="2017-05-03T14:17:37.000Z">
+<meta property="og:description" content="盒模型
+[max-/min-]width
+[max-/min-]height 
+border[-/top/bottom/left/right]:
+            -color:
+            -style:
+            -width:
+            -image:
+                -source:
+                -width">
+<meta property="og:updated_time" content="2017-05-08T13:27:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css2 css3 基础">
-<meta name="twitter:description" content="css box
-[max-/min-]width/height margin padding 
-box-sizing 
-box-shadow
-
-位置
-position
-left right top bottom
-
-color
-background[-color]
-
-list
-list-style
-
-text-ag">
+<meta name="twitter:description" content="盒模型
+[max-/min-]width
+[max-/min-]height 
+border[-/top/bottom/left/right]:
+            -color:
+            -style:
+            -width:
+            -image:
+                -source:
+                -width">
 
 
 
@@ -420,22 +402,98 @@ text-ag">
       
 
       
-        <p>css box</p>
-<pre><code class="css">[max-/min-]width/height margin padding 
-box-sizing 
-box-shadow
+        <p>盒模型</p>
+<pre><code class="css">[max-/min-]width
+[max-/min-]height 
+border[-/top/bottom/left/right]:
+            -color:
+            -style:
+            -width:
+            -image:
+                -source:
+                -width:
+                -outset:
+                -repeat:
+                -slice:
+
+padding[-/top/bottom/left/right]:
+margin[-/top/bottom/left/right]:
+
+
+box-sizing :border-box
+box-shadow:x y 
+border-radius:
+outline:
 </code></pre>
 <p>位置</p>
-<pre><code class="css">position
+<pre><code class="css">position:static/relative/fixed/absolute
 left right top bottom
+float:
+clear:
+z-index:
 </code></pre>
-<pre><code class="css">color
-background[-color]
+<p>显示和布局</p>
+<pre><code class="css">display:none/block/inline-block/table/flew
+visibility
 </code></pre>
-<p>list</p>
-<pre><code class="css">list-style
+<p>背景</p>
+<pre><code class="css">/*
+background:
+    -color:    
+    -image:url() /
+    -position:left right top bottom center x y
+    -origin:padding-box border-box centent-box
+    -clip:border-box padding-box center-box
+    -size:cover contain x y
+    -repeat:no-repeat repeat-x repeat-y
+    -attachment:scroll fixed local
+*/
+</code></pre>
+<p>列表</p>
+<pre><code class="css">list
+    -style
+    -position
+    -image
 </code></pre>
 <pre><code class="css">text-ag
+</code></pre>
+<p>字体</p>
+<p>文字样式</p>
+<pre><code class="css">color
+text-decoration:underline/overline/line-through/none
+                -color:
+                -style:
+                -line:
+text-transform:none/capitalize/uppercase/lowercase 
+text-shadow:h-shadow(px) v-shadow blur-radius color
+</code></pre>
+<p>排版</p>
+<pre><code class="css">line-height:
+vertical-align:
+text-align:left/right/center/justify(分散对齐)
+text-align-last:auto/left/right/center/justify/start/end
+text-indent:length/% 首位缩进
+text-overflow: 和overflow:hidden一起使用
+word-spacing:normal/length 单词间空白间距
+white-space:nowrap/pre-wrap/pre/pre-line 处理html句子里内容留白
+---
+word-break:keep-all/break-all 单词是否断句到下一行
+word-wrap:normal/break-word 单词达到容积边界(width)是否断句
+---
+direction:ltr(left to right)/rtl 字体书写方向
+unicode-bidi:normal/embed/bidi-override 和direction合用
+</code></pre>
+<p>表格</p>
+<pre><code class="css">border-collapse:
+caption-side:
+</code></pre>
+<p>其他</p>
+<pre><code class="csss">clip:auto/rect(top(px),width,height,left) 裁切
+all:
+align-self:
+align-items:
+align-content:
+backface-visibility:?
 </code></pre>
 
       

@@ -378,25 +378,38 @@
       
         
           
-          css box
-[max-/min-]width/height margin padding 
-box-sizing 
-box-shadow
+          盒模型
+[max-/min-]width
+[max-/min-]height 
+border[-/top/bottom/left/right]:
+            -color:
+            -style:
+            -width:
+            -image:
+                -source:
+                -width:
+                -outset:
+                -repeat:
+                -slice:
+
+padding[-/top/bottom/left/right]:
+margin[-/top/bottom/left/right]:
+
+
+box-sizing :border-box
+box-shadow:x y 
+border-radius:
+outline:
 
 位置
-position
+position:static/relative/fixed/absolute
 left right top bottom
+float:
+clear:
+z-index:
 
-color
-background[-color]
-
-list
-list-style
-
-text-ag
-
-
-          
+显
+          ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/05/03/css值/#more" rel="contents">
@@ -906,7 +919,7 @@ html5新增        &lt;article&gt;
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/javascript base/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/ES6初探/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="lijian">
@@ -931,8 +944,8 @@ html5新增        &lt;article&gt;
             
               
                 
-                <a class="post-title-link" href="/2017/03/03/javascript base/" itemprop="url">
-                  javascript
+                <a class="post-title-link" href="/2017/03/03/ES6初探/" itemprop="url">
+                  ES6 初探
                 </a>
               
             
@@ -1008,547 +1021,28 @@ html5新增        &lt;article&gt;
       
         
           
-          windowlocalStorage //html5
-    setItem()
-    getItem()
-location
-    host hostname href pathname protocol search port origin     hash
-history
-    back() forward() go()
-screen
-open()
+          let 和 constlet和const声明都不能提升，
+同一个变量不能重复声明，
+声明的全局变量不是全局对象的属性
+const声明和赋值同时进行，对于基本类型不能重复赋值（可以作为常量赋值），引用类型可以。
+let能解决for循环中i的锁定问题。
+箭头函数箭头函数没有this，也没有argument
+//let exp1=function(){return a;}
+let exp1=()=&gt;a;
+//let exp2=function(){let a=0;return console.log(a);}
+let exp2=()=&gt;{let a=0;return console.log(a);}
 
-String/*
-.valueOf()
-.toString()
-fromCharCode()
-fromCodePoint()
-prototype.charAt()
-prototype.charCodeAt()
-prototype.codePointAt()
-prototype.concat()
-.indexOf()
-.lastIndexOf()
-.match()
-.repeat()
-.replace()
-.reach()
+不定参数和默认参数for - of模版字符串使用`  ` 包裹，需要解析的变量用 ${} 
+解构赋值let arr=[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;];
+let first=arr[0],second=arr[1],third=arr[2];
+// 等同于
+let[first,second,third]=arr;
 
-&lt;-----提取字符串-----&gt;
-    .slice(start,end)  获取star到end索引号的字符串并返回可以有负值
-    .substr(start,length) 
-    
+Symbols集合 Set
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/03/03/javascript base/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/css3动画/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="lijian">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/uploads/17428.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="OLLIFE">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="OLLIFE" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/03/css3动画/" itemprop="url">
-                  css3 动画
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-03T15:56:52+08:00">
-                2017-03-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          [TOC]
-浏览器前缀：-moz-，-webkit-，-o-，-ms-css3 动画一共三种转换 transformtransform:translate()/rotate()/scale()/skew()/matrix()
-transform-origin:(默认位置为50% 50%[ 0]，即中心点)
-transform-style:preserve-3d/flat
-perspective:num(3d元素距视图的距离)
-perspective-origin:x y （改变3d元素底部的xy位置）
-backface-visibility:visible／hidden （是否隐藏背面）
-
-过渡 transitiontransiton:propety duration timing-function delay;
-//timing-function:linear ease ease-in ease-out ease-in-out cubic-bezier()
-
-动画 animation @keyframe name{ ;[;;]}animation
-    animation-name
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/03/css3动画/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/正则/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="lijian">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/uploads/17428.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="OLLIFE">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="OLLIFE" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/03/正则/" itemprop="url">
-                  javascript正则
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-03T15:56:52+08:00">
-                2017-03-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/基础/" itemprop="url" rel="index">
-                    <span itemprop="name">基础</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          创建 RegExp//1.
-let patt=/abc/g;
-//2.
-let patt=new RegExp(&#39;abc&#39;,&#39;g&#39;);
-
-修饰符/*
-
-    i    不区分大小
-    g    全局匹配
-    m    多行匹配
-    u    （es6新增）
-
-*/
-
-元字符 . \b \w\d\s/*
-    .          匹配任意字符
-    \b         匹配单词边界
-    \w        匹配数字，字母，下划线
-    \d        匹配数字
-    \s        匹配空格
-    [abc]    匹配方括号里任意一个字符
-    ^        匹配首部
-    $        匹配尾部
-
-    --取反--
-    \B \W \D \S [^abc]
-
-*/
-
-量词 * + ? {}/*
-
-    *        匹配任意个
-    +        匹配一到多个
-    ?        匹配 0 到 1 个
-    {n}        匹配 n 个
-    {n,}    匹配至
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/03/正则/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/偏移量 滚动 视口之类的/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="lijian">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/uploads/17428.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="OLLIFE">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="OLLIFE" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/03/偏移量 滚动 视口之类的/" itemprop="url">
-                  offset alien scroll
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-03T15:56:52+08:00">
-                2017-03-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/基础/" itemprop="url" rel="index">
-                    <span itemprop="name">基础</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          offsetTop
-offsetLeft
-offsetHeight
-offsetWidth
-
-clientHeight
-clientWidth
-
-scrollHeight
-scrollWidth
-scrollLeft
-scrollTop
-
-outerHeight
-outerWidth
-//IE不支持，用clientHeight代替
-innerHeight
-innerWidth
-
-
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/03/偏移量 滚动 视口之类的/#more" rel="contents">
+            <a class="btn" href="/2017/03/03/ES6初探/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1756,7 +1250,7 @@ context.fillRect(5,5,5
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/ES6初探/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/css3动画/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="lijian">
@@ -1781,8 +1275,167 @@ context.fillRect(5,5,5
             
               
                 
-                <a class="post-title-link" href="/2017/03/03/ES6初探/" itemprop="url">
-                  ES6 初探
+                <a class="post-title-link" href="/2017/03/03/css3动画/" itemprop="url">
+                  css3 动画
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-03T15:56:52+08:00">
+                2017-03-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          [TOC]
+浏览器前缀：-moz-，-webkit-，-o-，-ms-css3 动画一共三种转换 transformtransform:translate()/rotate()/scale()/skew()/matrix()
+transform-origin:(默认位置为50% 50%[ 0]，即中心点)
+transform-style:preserve-3d/flat
+perspective:num(3d元素距视图的距离)
+perspective-origin:x y （改变3d元素底部的xy位置）
+backface-visibility:visible／hidden （是否隐藏背面）
+
+过渡 transitiontransiton:propety duration timing-function delay;
+//timing-function:linear ease ease-in ease-out ease-in-out cubic-bezier()
+
+动画 animation @keyframe name{ ;[;;]}animation
+    animation-name
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/03/css3动画/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/javascript DOM操作/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="lijian">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/17428.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="OLLIFE">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="OLLIFE" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/03/javascript DOM操作/" itemprop="url">
+                  DOM 操作
                 </a>
               
             
@@ -1857,29 +1510,359 @@ context.fillRect(5,5,5
 
       
         
+          <p>摘要 有关dom到基础</p>
+<p>[TOC]</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/03/javascript DOM操作/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/偏移量 滚动 视口之类的/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="lijian">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/17428.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="OLLIFE">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="OLLIFE" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/03/偏移量 滚动 视口之类的/" itemprop="url">
+                  offset alien scroll
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-03T15:56:52+08:00">
+                2017-03-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-          let 和 constlet和const声明都不能提升，
-同一个变量不能重复声明，
-声明的全局变量不是全局对象的属性
-const声明和赋值同时进行，对于基本类型不能重复赋值（可以作为常量赋值），引用类型可以。
-let能解决for循环中i的锁定问题。
-箭头函数箭头函数没有this，也没有argument
-//let exp1=function(){return a;}
-let exp1=()=&gt;a;
-//let exp2=function(){let a=0;return console.log(a);}
-let exp2=()=&gt;{let a=0;return console.log(a);}
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/基础/" itemprop="url" rel="index">
+                    <span itemprop="name">基础</span>
+                  </a>
+                </span>
 
-不定参数和默认参数for - of模版字符串使用`  ` 包裹，需要解析的变量用 ${} 
-解构赋值let arr=[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;];
-let first=arr[0],second=arr[1],third=arr[2];
-// 等同于
-let[first,second,third]=arr;
+                
+                
+              
+            </span>
+          
 
-Symbols集合 Set
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          offsetTop
+offsetLeft
+offsetHeight
+offsetWidth
+
+clientHeight
+clientWidth
+
+scrollHeight
+scrollWidth
+scrollLeft
+scrollTop
+
+outerHeight
+outerWidth
+//IE不支持，用clientHeight代替
+innerHeight
+innerWidth
+
+
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/03/偏移量 滚动 视口之类的/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/正则/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="lijian">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/17428.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="OLLIFE">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="OLLIFE" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/03/正则/" itemprop="url">
+                  javascript正则
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-03T15:56:52+08:00">
+                2017-03-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/基础/" itemprop="url" rel="index">
+                    <span itemprop="name">基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          创建 RegExp//1.
+let patt=/abc/g;
+//2.
+let patt=new RegExp(&#39;abc&#39;,&#39;g&#39;);
+
+修饰符/*
+
+    i    不区分大小
+    g    全局匹配
+    m    多行匹配
+    u    （es6新增）
+
+*/
+
+元字符 . \b \w\d\s/*
+    .          匹配任意字符
+    \b         匹配单词边界
+    \w        匹配数字，字母，下划线
+    \d        匹配数字
+    \s        匹配空格
+    [abc]    匹配方括号里任意一个字符
+    ^        匹配首部
+    $        匹配尾部
+
+    --取反--
+    \B \W \D \S [^abc]
+
+*/
+
+量词 * + ? {}/*
+
+    *        匹配任意个
+    +        匹配一到多个
+    ?        匹配 0 到 1 个
+    {n}        匹配 n 个
+    {n,}    匹配至
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/03/03/ES6初探/#more" rel="contents">
+            <a class="btn" href="/2017/03/03/正则/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>

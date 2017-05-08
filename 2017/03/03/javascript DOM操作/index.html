@@ -102,16 +102,19 @@
 
 
 
-<meta name="description" content="摘要 有关dom到基础">
+<meta name="description" content="摘要 有关dom到基础
+[TOC]">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DOM 操作">
 <meta property="og:url" content="http://yoursite.com/2017/03/03/javascript DOM操作/index.html">
 <meta property="og:site_name" content="OLLIFE">
-<meta property="og:description" content="摘要 有关dom到基础">
-<meta property="og:updated_time" content="2017-05-02T08:05:58.000Z">
+<meta property="og:description" content="摘要 有关dom到基础
+[TOC]">
+<meta property="og:updated_time" content="2017-05-04T14:46:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DOM 操作">
-<meta name="twitter:description" content="摘要 有关dom到基础">
+<meta name="twitter:description" content="摘要 有关dom到基础
+[TOC]">
 
 
 
@@ -376,6 +379,7 @@
 
       
         <p>摘要 有关dom到基础</p>
+<p>[TOC]</p>
 <a id="more"></a>
 <h2 id="创建与删除"><a href="#创建与删除" class="headerlink" title="创建与删除"></a>创建与删除</h2><pre><code class="javascript">// 创建元素节点
 document.createElement(&#39;element&#39;)
@@ -408,6 +412,10 @@ element.outerHTML
 element.outText
 </code></pre>
 <h2 id="html属性获取与设置"><a href="#html属性获取与设置" class="headerlink" title="html属性获取与设置"></a>html属性获取与设置</h2><p>##css操作</p>
+<pre><code class="javascript">element.style.border=&quot;1px solid red&quot;
+element.style.cssText=&quot;color:red;line-height:12px;&quot;
+element.setAttribute(&quot;style&quot;,&quot;color:red;border:1px solid yellow;&quot;)
+</code></pre>
 <h2 id="表格操作"><a href="#表格操作" class="headerlink" title="表格操作"></a>表格操作</h2><h2 id="节点：dom的最小组成单位叫做节点（node）"><a href="#节点：dom的最小组成单位叫做节点（node）" class="headerlink" title="节点：dom的最小组成单位叫做节点（node）"></a>节点：dom的最小组成单位叫做节点（node）</h2><p>html文档中节点主要有六种（一共11种） Document    DocumentType    Element        Attribute    Text    DocumentFragment(文档碎片节点) comment节点（注释节点） 都继承Node对象的属性和方法</p>
 <pre><code class="javascript">/*
 -- 属性 ---------------
@@ -479,8 +487,8 @@ element.outText
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/03/ajax 跨域和jsonp/" rel="next" title="ajax 跨域 jsonp">
-                <i class="fa fa-chevron-left"></i> ajax 跨域 jsonp
+              <a href="/2017/03/03/偏移量 滚动 视口之类的/" rel="next" title="offset alien scroll">
+                <i class="fa fa-chevron-left"></i> offset alien scroll
               </a>
             
           </div>
@@ -489,8 +497,8 @@ element.outText
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/03/ES6初探/" rel="prev" title="ES6 初探">
-                ES6 初探 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/03/css3动画/" rel="prev" title="css3 动画">
+                css3 动画 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
