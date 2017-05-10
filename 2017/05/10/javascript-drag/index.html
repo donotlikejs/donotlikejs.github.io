@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="javascript," />
+  <meta name="keywords" content="javascript drag," />
 
 
 
@@ -102,37 +102,16 @@
 
 
 
-<meta name="description" content="let 和 constlet和const声明都不能提升，
-同一个变量不能重复声明，
-声明的全局变量不是全局对象的属性
-const声明和赋值同时进行，对于基本类型不能重复赋值（可以作为常量赋值），引用类型可以。
-let能解决for循环中i的锁定问题。
-箭头函数箭头函数没有this，也没有argument
-//let exp1=function(){return a;}
-let exp1=()=&amp;gt">
+<meta name="description" content="html5拖拽事件介绍和demo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ES6 初探">
-<meta property="og:url" content="http://yoursite.com/2017/03/03/ES6初探/index.html">
+<meta property="og:title" content="html5之拖拽">
+<meta property="og:url" content="http://yoursite.com/2017/05/10/javascript-drag/index.html">
 <meta property="og:site_name" content="OLLIFE">
-<meta property="og:description" content="let 和 constlet和const声明都不能提升，
-同一个变量不能重复声明，
-声明的全局变量不是全局对象的属性
-const声明和赋值同时进行，对于基本类型不能重复赋值（可以作为常量赋值），引用类型可以。
-let能解决for循环中i的锁定问题。
-箭头函数箭头函数没有this，也没有argument
-//let exp1=function(){return a;}
-let exp1=()=&amp;gt">
-<meta property="og:updated_time" content="2017-04-24T08:57:54.000Z">
+<meta property="og:description" content="html5拖拽事件介绍和demo">
+<meta property="og:updated_time" content="2017-05-10T15:25:54.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ES6 初探">
-<meta name="twitter:description" content="let 和 constlet和const声明都不能提升，
-同一个变量不能重复声明，
-声明的全局变量不是全局对象的属性
-const声明和赋值同时进行，对于基本类型不能重复赋值（可以作为常量赋值），引用类型可以。
-let能解决for循环中i的锁定问题。
-箭头函数箭头函数没有this，也没有argument
-//let exp1=function(){return a;}
-let exp1=()=&amp;gt">
+<meta name="twitter:title" content="html5之拖拽">
+<meta name="twitter:description" content="html5拖拽事件介绍和demo">
 
 
 
@@ -160,13 +139,13 @@ let exp1=()=&amp;gt">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/03/ES6初探/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/10/javascript-drag/"/>
 
 
 
 
 
-  <title> ES6 初探 | OLLIFE </title>
+  <title> html5之拖拽 | OLLIFE </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -299,7 +278,7 @@ let exp1=()=&amp;gt">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/ES6初探/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/10/javascript-drag/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="lijian">
@@ -323,7 +302,7 @@ let exp1=()=&amp;gt">
             
             
               
-                ES6 初探
+                html5之拖拽
               
             
           </h1>
@@ -338,8 +317,8 @@ let exp1=()=&amp;gt">
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-03T15:56:52+08:00">
-                2017-03-03
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-10T23:10:14+08:00">
+                2017-05-10
               </time>
             
 
@@ -396,24 +375,18 @@ let exp1=()=&amp;gt">
       
 
       
-        <h2 id="let-和-const"><a href="#let-和-const" class="headerlink" title="let 和 const"></a>let 和 const</h2><p>let和const声明都不能提升，</p>
-<p>同一个变量不能重复声明，</p>
-<p>声明的全局变量不是全局对象的属性</p>
-<p>const声明和赋值同时进行，对于基本类型不能重复赋值（可以作为常量赋值），引用类型可以。</p>
-<p>let能解决for循环中i的锁定问题。</p>
-<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><p>箭头函数没有this，也没有argument</p>
-<pre><code class="javascript">//let exp1=function(){return a;}
-let exp1=()=&gt;a;
-//let exp2=function(){let a=0;return console.log(a);}
-let exp2=()=&gt;{let a=0;return console.log(a);}
-</code></pre>
-<h2 id="不定参数和默认参数"><a href="#不定参数和默认参数" class="headerlink" title="不定参数和默认参数"></a>不定参数和默认参数</h2><h2 id="for-of"><a href="#for-of" class="headerlink" title="for - of"></a>for - of</h2><h2 id="模版字符串"><a href="#模版字符串" class="headerlink" title="模版字符串"></a>模版字符串</h2><p>使用`  ` 包裹，需要解析的变量用 ${} </p>
-<h2 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h2><pre><code class="javascript">let arr=[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;];
-let first=arr[0],second=arr[1],third=arr[2];
-// 等同于
-let[first,second,third]=arr;
-</code></pre>
-<h2 id="Symbols"><a href="#Symbols" class="headerlink" title="Symbols"></a>Symbols</h2><h2 id="集合-Set-Map-amp-amp-weakSet-weakMap"><a href="#集合-Set-Map-amp-amp-weakSet-weakMap" class="headerlink" title="集合 Set Map &amp;&amp; weakSet weakMap"></a>集合 Set Map &amp;&amp; weakSet weakMap</h2><h2 id="代理-proxies"><a href="#代理-proxies" class="headerlink" title="代理 proxies"></a>代理 proxies</h2><h2 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h2><h2 id="类class"><a href="#类class" class="headerlink" title="类class"></a>类class</h2><h2 id="子类-Subclass"><a href="#子类-Subclass" class="headerlink" title="子类 Subclass"></a>子类 Subclass</h2>
+        <p>html5拖拽事件介绍和demo<br><a id="more"></a><br>使用drag事件，首先要在元素标签里设置属性<code>draggable=&quot;true&quot;</code></p>
+<p>在拖拽事件中涉及到被拖拽元素与拖拽目标元素，比如把a拖到b里面，ab分别为被拖拽元素和拖拽目标元素。</p>
+<p>被拖拽元素触发三个事件</p>
+<p>ondragstart 元素开始拖拽时出发</p>
+<p>ondrag 元素拖拽过程中触发？</p>
+<p>ondragend 元素停止拖拽时触发，即松开鼠标时</p>
+<p>拖拽目标元素触发四个事件</p>
+<p>ondragenter 当被拖拽元素进入目标元素时触发</p>
+<p>ondragover 被拖拽元素在目标元素内移动时触发</p>
+<p>ondragleave 被拖拽元素离开目标元素时触发</p>
+<p>ondrop 被拖拽元素移到目标元素上并松开鼠标时触发</p>
+
       
     </div>
 
@@ -436,7 +409,7 @@ let[first,second,third]=arr;
       
         <div class="post-tags">
           
-            <a href="/tags/javascript/" rel="tag"># javascript</a>
+            <a href="/tags/javascript-drag/" rel="tag"># javascript drag</a>
           
         </div>
       
@@ -445,8 +418,8 @@ let[first,second,third]=arr;
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/01/16/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2017/05/09/brower文档模式/" rel="next" title="标准模式 近乎标准模式 怪异模式到异同">
+                <i class="fa fa-chevron-left"></i> 标准模式 近乎标准模式 怪异模式到异同
               </a>
             
           </div>
@@ -454,10 +427,6 @@ let[first,second,third]=arr;
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/03/javascript this/" rel="prev" title="this的指向值">
-                this的指向值 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -504,17 +473,8 @@ let[first,second,third]=arr;
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/17428.jpg"
@@ -570,22 +530,6 @@ let[first,second,third]=arr;
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#let-和-const"><span class="nav-number">1.</span> <span class="nav-text">let 和 const</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#箭头函数"><span class="nav-number">2.</span> <span class="nav-text">箭头函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不定参数和默认参数"><span class="nav-number">3.</span> <span class="nav-text">不定参数和默认参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for-of"><span class="nav-number">4.</span> <span class="nav-text">for - of</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模版字符串"><span class="nav-number">5.</span> <span class="nav-text">模版字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解构赋值"><span class="nav-number">6.</span> <span class="nav-text">解构赋值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Symbols"><span class="nav-number">7.</span> <span class="nav-text">Symbols</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合-Set-Map-amp-amp-weakSet-weakMap"><span class="nav-number">8.</span> <span class="nav-text">集合 Set Map && weakSet weakMap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代理-proxies"><span class="nav-number">9.</span> <span class="nav-text">代理 proxies</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成器"><span class="nav-number">10.</span> <span class="nav-text">生成器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类class"><span class="nav-number">11.</span> <span class="nav-text">类class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#子类-Subclass"><span class="nav-number">12.</span> <span class="nav-text">子类 Subclass</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
     </div>

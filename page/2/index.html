@@ -276,7 +276,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/javascript base/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/javascript事件event/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="lijian">
@@ -301,8 +301,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/03/03/javascript base/" itemprop="url">
-                  javascript
+                <a class="post-title-link" href="/2017/03/03/javascript事件event/" itemprop="url">
+                  事件event
                 </a>
               
             
@@ -378,40 +378,206 @@
       
         
           
-          windowlocalStorage //html5
-    setItem()
-    getItem()
-location
-    host hostname href pathname protocol search port origin     hash
-history
-    back() forward() go()
-screen
-open()
+          事件：用户或者浏览器自身执行的某种动作
+事件处理程序（事件监听器）：响应某个事件的函数，事件处理程序的名字以“on”开头。
+DOM0级：将一个函数赋值给一个事件处理程序属性
+btn.onclick=function(){
+}
 
-String/*
-.valueOf()
-.toString()
-fromCharCode()
-fromCodePoint()
-prototype.charAt()
-prototype.charCodeAt()
-prototype.codePointAt()
-prototype.concat()
-.indexOf()
-.lastIndexOf()
-.match()
-.repeat()
-.replace()
-.reach()
+DOM1级
+DOM2级事件处理程序
+/*
+*1参数为要处理的事件名
+*2参数事件处理程序的函数
+*3参数为布尔值，true表示捕获阶段调用2，false表示冒泡阶段调用2
+    fn在当前作用于运行
+*/
+addEventListener(&quot;&quot;,fn,boolean)
+/*
+参数同上，只是调用变成删除
+*/
+removeEventListener()
+捕获：从不具体的父元素逐步传到具体的元素
+冒泡：具体的元素逐步往上传播到不具体的父元素
+DOM事件流（DOM2）:分为事件捕获阶段，处于目标阶段和事件冒泡阶段。（但浏览器都支持捕获和冒泡阶段对目标对象进行操作）
+事件处理程序分类
+HTML事件处理程序 ：写在html标签里
+IE事件处理程序：
+// fn会在全局作用域中运行
+attachEvent()
+detachEvent()
 
-&lt;-----提取字符串-----&gt;
-    .slice(start,end)  获取star到end索引号的字符串并返回可以有负值
-    .substr(start,length) 
-    
+事件对象（e
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/03/03/javascript base/#more" rel="contents">
+            <a class="btn" href="/2017/03/03/javascript事件event/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/javascript偏移量 滚动 视口之类的/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="lijian">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/17428.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="OLLIFE">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="OLLIFE" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/03/javascript偏移量 滚动 视口之类的/" itemprop="url">
+                  offset alien scroll
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-03T15:56:52+08:00">
+                2017-03-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/基础/" itemprop="url" rel="index">
+                    <span itemprop="name">基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          offsetTop
+offsetLeft //child outsideborder to parent outsidepadding
+offsetHeight
+offsetWidth  //width+padding+border
+
+clientHeight 
+clientWidth  //width+padding
+
+scrollHeight
+scrollWidth
+scrollLeft
+scrollTop
+
+outerHeight
+outerWidth
+//IE不支持，用clientHeight代替
+innerHeight
+innerWidth
+
+
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/03/javascript偏移量 滚动 视口之类的/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -631,7 +797,7 @@ url=&quot;http://w
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/javascript事件event/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/javascript DOM操作/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="lijian">
@@ -656,8 +822,8 @@ url=&quot;http://w
             
               
                 
-                <a class="post-title-link" href="/2017/03/03/javascript事件event/" itemprop="url">
-                  事件event
+                <a class="post-title-link" href="/2017/03/03/javascript DOM操作/" itemprop="url">
+                  DOM 操作
                 </a>
               
             
@@ -732,41 +898,11 @@ url=&quot;http://w
 
       
         
-          
-          事件：用户或者浏览器自身执行的某种动作
-事件处理程序（事件监听器）：响应某个事件的函数，事件处理程序的名字以“on”开头。
-DOM0级：将一个函数赋值给一个事件处理程序属性
-btn.onclick=function(){
-}
-
-DOM1级
-DOM2级事件处理程序
-/*
-*1参数为要处理的事件名
-*2参数事件处理程序的函数
-*3参数为布尔值，true表示捕获阶段调用2，false表示冒泡阶段调用2
-    fn在当前作用于运行
-*/
-addEventListener(&quot;&quot;,fn,boolean)
-/*
-参数同上，只是调用变成删除
-*/
-removeEventListener()
-捕获：从不具体的父元素逐步传到具体的元素
-冒泡：具体的元素逐步往上传播到不具体的父元素
-DOM事件流（DOM2）:分为事件捕获阶段，处于目标阶段和事件冒泡阶段。（但浏览器都支持捕获和冒泡阶段对目标对象进行操作）
-事件处理程序分类
-HTML事件处理程序 ：写在html标签里
-IE事件处理程序：
-// fn会在全局作用域中运行
-attachEvent()
-detachEvent()
-
-事件对象（e
-          ...
+          <p>摘要 有关dom到基础</p>
+<p>[TOC]</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/03/03/javascript事件event/#more" rel="contents">
+            <a class="btn" href="/2017/03/03/javascript DOM操作/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -920,6 +1056,170 @@ detachEvent()
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/03/03/javascript this/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/ES6初探/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="lijian">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/17428.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="OLLIFE">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="OLLIFE" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/03/ES6初探/" itemprop="url">
+                  ES6 初探
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-03T15:56:52+08:00">
+                2017-03-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          let 和 constlet和const声明都不能提升，
+同一个变量不能重复声明，
+声明的全局变量不是全局对象的属性
+const声明和赋值同时进行，对于基本类型不能重复赋值（可以作为常量赋值），引用类型可以。
+let能解决for循环中i的锁定问题。
+箭头函数箭头函数没有this，也没有argument
+//let exp1=function(){return a;}
+let exp1=()=&gt;a;
+//let exp2=function(){let a=0;return console.log(a);}
+let exp2=()=&gt;{let a=0;return console.log(a);}
+
+不定参数和默认参数for - of模版字符串使用`  ` 包裹，需要解析的变量用 ${} 
+解构赋值let arr=[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;];
+let first=arr[0],second=arr[1],third=arr[2];
+// 等同于
+let[first,second,third]=arr;
+
+Symbols集合 Set
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/03/ES6初探/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1558,338 +1858,6 @@ npm init
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/22/常用Shell命令/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="lijian">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/uploads/17428.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="OLLIFE">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="OLLIFE" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/22/常用Shell命令/" itemprop="url">
-                  常用Shell命令
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-22T14:29:53+08:00">
-                2016-12-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/shell/" itemprop="url" rel="index">
-                    <span itemprop="name">shell</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          本笔记操作以mac系统为准
-路径表示 
-./    当前目录(可省略 比如 cd ./demo 写成 cd demo)
-../   上一级目录
-/     绝对路径(根目录)
-
-cd 改变目录
-//进入当前目录的子目录demo
-cd ./demo
-//进入之前的目录
-cd -
-
-touch（新建文件） 
-mkdir（新建目录）
-// 当前目录新建 demo.txt和index.html
-touch demo.txt index.html
-// 当前目录新建demo文件夹
-mkdir demo
-rm 删除文件       
-​    常用选项 
-​            -i -r -v 同复制
-​            -f: 忽略不存在的文件
-rmdir 删除空目录
-ls 显示文件列表
-常用选项    -l:长格式显示结果 
-​            -t:按修改时间来排序 
-​            -a:显示所有文件 -r:相反顺序显示 
-​            -h:长格式列出时，不已字节显示文件大小 
-​            -F: 每个文件加上指示符号 
-​      
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/12/22/常用Shell命令/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/22/新手小问题收集（HTML）/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="lijian">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/uploads/17428.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="OLLIFE">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="OLLIFE" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/22/新手小问题收集（HTML）/" itemprop="url">
-                  新手小问题收集
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-22T14:29:53+08:00">
-                2016-12-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/html/" itemprop="url" rel="index">
-                    <span itemprop="name">html</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;edge&quot;&gt;
-
-X-UA-Compatible 是针对IE8版本的一个特殊文件头标记，content=”edge” 通知IE用最高级别的可用模式显示内容
-http-equiv 类似于http头部协议，用来回应给浏览器一些信息，以帮助浏览器正确的现实网页内容。一些平常使用的http-equiv的名值对
-//10s后刷新页面
-&lt;meta http-equiv=&quot;refresh&quot; content=&quot;10&quot;&gt;
-//10s后跳转到bing
-&lt;meta http-equiv=&quot;refresh&quot; content=&quot;10&quot; url=&quot;http://bing.com&quot;&gt;
-
-
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/12/22/新手小问题收集（HTML）/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1937,7 +1905,7 @@ http-equiv 类似于http头部协议，用来回应给浏览器一些信息，�
           
             <div class="site-state-item site-state-posts">
               <a href="/">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -1946,7 +1914,7 @@ http-equiv 类似于http头部协议，用来回应给浏览器一些信息，�
           
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">categories</span>
               
             </div>
@@ -1955,7 +1923,7 @@ http-equiv 类似于http头部协议，用来回应给浏览器一些信息，�
           
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">tags</span>
               
             </div>
