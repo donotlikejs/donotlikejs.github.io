@@ -102,8 +102,7 @@
 
 
 
-<meta name="description" content="盒模型
-[max-/min-]width
+<meta name="description" content="盒模型[max-/min-]width
 [max-/min-]height 
 border[-/top/bottom/left/right]:
             -color:
@@ -111,13 +110,12 @@ border[-/top/bottom/left/right]:
             -width:
             -image:
                 -source:
-                -width">
+                -width:">
 <meta property="og:type" content="article">
 <meta property="og:title" content="css2 css3 基础">
 <meta property="og:url" content="http://yoursite.com/2017/05/03/css值/index.html">
 <meta property="og:site_name" content="OLLIFE">
-<meta property="og:description" content="盒模型
-[max-/min-]width
+<meta property="og:description" content="盒模型[max-/min-]width
 [max-/min-]height 
 border[-/top/bottom/left/right]:
             -color:
@@ -125,12 +123,11 @@ border[-/top/bottom/left/right]:
             -width:
             -image:
                 -source:
-                -width">
-<meta property="og:updated_time" content="2017-05-08T13:27:32.000Z">
+                -width:">
+<meta property="og:updated_time" content="2017-05-11T14:21:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css2 css3 基础">
-<meta name="twitter:description" content="盒模型
-[max-/min-]width
+<meta name="twitter:description" content="盒模型[max-/min-]width
 [max-/min-]height 
 border[-/top/bottom/left/right]:
             -color:
@@ -138,7 +135,7 @@ border[-/top/bottom/left/right]:
             -width:
             -image:
                 -source:
-                -width">
+                -width:">
 
 
 
@@ -402,8 +399,7 @@ border[-/top/bottom/left/right]:
       
 
       
-        <p>盒模型</p>
-<pre><code class="css">[max-/min-]width
+        <h2 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h2><pre><code class="css">[max-/min-]width
 [max-/min-]height 
 border[-/top/bottom/left/right]:
             -color:
@@ -425,19 +421,16 @@ box-shadow:x y
 border-radius:
 outline:
 </code></pre>
-<p>位置</p>
-<pre><code class="css">position:static/relative/fixed/absolute
+<h2 id="显示和布局"><a href="#显示和布局" class="headerlink" title="显示和布局"></a>显示和布局</h2><pre><code class="css">display:none/block/inline-block/table/flew
+visibility
+
+position:static/relative/fixed/absolute
 left right top bottom
 float:
 clear:
 z-index:
 </code></pre>
-<p>显示和布局</p>
-<pre><code class="css">display:none/block/inline-block/table/flew
-visibility
-</code></pre>
-<p>背景</p>
-<pre><code class="css">/*
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><pre><code class="css">/*
 background:
     -color:    
     -image:url() /
@@ -449,17 +442,18 @@ background:
     -attachment:scroll fixed local
 */
 </code></pre>
-<p>列表</p>
-<pre><code class="css">list
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><pre><code class="css">list
     -style
     -position
     -image
 </code></pre>
 <pre><code class="css">text-ag
 </code></pre>
-<p>字体</p>
-<p>文字样式</p>
-<pre><code class="css">color
+<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><pre><code class="css">    font
+        -style
+        -family
+</code></pre>
+<h2 id="文字样式"><a href="#文字样式" class="headerlink" title="文字样式"></a>文字样式</h2><pre><code class="css">color
 text-decoration:underline/overline/line-through/none
                 -color:
                 -style:
@@ -467,14 +461,14 @@ text-decoration:underline/overline/line-through/none
 text-transform:none/capitalize/uppercase/lowercase 
 text-shadow:h-shadow(px) v-shadow blur-radius color
 </code></pre>
-<p>排版</p>
-<pre><code class="css">line-height:
-vertical-align:
+<h2 id="排版"><a href="#排版" class="headerlink" title="排版"></a>排版</h2><pre><code class="css">line-height:
+vertical-align:baseline/length/%/sub/super/top/text-top/middle/bottom/text-bottom
 text-align:left/right/center/justify(分散对齐)
 text-align-last:auto/left/right/center/justify/start/end
 text-indent:length/% 首位缩进
 text-overflow: 和overflow:hidden一起使用
 word-spacing:normal/length 单词间空白间距
+letter-spacing:
 white-space:nowrap/pre-wrap/pre/pre-line 处理html句子里内容留白
 ---
 word-break:keep-all/break-all 单词是否断句到下一行
@@ -483,12 +477,10 @@ word-wrap:normal/break-word 单词达到容积边界(width)是否断句
 direction:ltr(left to right)/rtl 字体书写方向
 unicode-bidi:normal/embed/bidi-override 和direction合用
 </code></pre>
-<p>表格</p>
-<pre><code class="css">border-collapse:
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><pre><code class="css">border-collapse:
 caption-side:
 </code></pre>
-<p>其他</p>
-<pre><code class="csss">clip:auto/rect(top(px),width,height,left) 裁切
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><pre><code class="csss">clip:auto/rect(top(px),width,height,left) 裁切
 all:
 align-self:
 align-items:
@@ -586,8 +578,17 @@ backface-visibility:?
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/17428.jpg"
@@ -643,6 +644,22 @@ backface-visibility:?
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#盒模型"><span class="nav-number">1.</span> <span class="nav-text">盒模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#显示和布局"><span class="nav-number">2.</span> <span class="nav-text">显示和布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">3.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表"><span class="nav-number">4.</span> <span class="nav-text">列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字体"><span class="nav-number">5.</span> <span class="nav-text">字体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文字样式"><span class="nav-number">6.</span> <span class="nav-text">文字样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#排版"><span class="nav-number">7.</span> <span class="nav-text">排版</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表格"><span class="nav-number">8.</span> <span class="nav-text">表格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">9.</span> <span class="nav-text">其他</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
