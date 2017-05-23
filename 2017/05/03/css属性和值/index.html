@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="css," />
 
 
 
@@ -102,16 +102,40 @@
 
 
 
-<meta name="description" content="标准模式，近乎标准模式，怪异模式在浏览器渲染中的异同">
+<meta name="description" content="盒模型[max-/min-]width
+[max-/min-]height 
+border[-/top/bottom/left/right]:
+            -color:
+            -style:
+            -width:
+            -image:
+                -source:
+                -width:">
 <meta property="og:type" content="article">
-<meta property="og:title" content="标准模式 近乎标准模式 怪异模式到异同">
-<meta property="og:url" content="http://yoursite.com/2017/05/09/brower文档模式/index.html">
+<meta property="og:title" content="css2 css3 基础">
+<meta property="og:url" content="http://yoursite.com/2017/05/03/css属性和值/index.html">
 <meta property="og:site_name" content="OLLIFE">
-<meta property="og:description" content="标准模式，近乎标准模式，怪异模式在浏览器渲染中的异同">
-<meta property="og:updated_time" content="2017-05-09T10:56:24.000Z">
+<meta property="og:description" content="盒模型[max-/min-]width
+[max-/min-]height 
+border[-/top/bottom/left/right]:
+            -color:
+            -style:
+            -width:
+            -image:
+                -source:
+                -width:">
+<meta property="og:updated_time" content="2017-05-23T11:14:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="标准模式 近乎标准模式 怪异模式到异同">
-<meta name="twitter:description" content="标准模式，近乎标准模式，怪异模式在浏览器渲染中的异同">
+<meta name="twitter:title" content="css2 css3 基础">
+<meta name="twitter:description" content="盒模型[max-/min-]width
+[max-/min-]height 
+border[-/top/bottom/left/right]:
+            -color:
+            -style:
+            -width:
+            -image:
+                -source:
+                -width:">
 
 
 
@@ -139,13 +163,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/09/brower文档模式/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/03/css属性和值/"/>
 
 
 
 
 
-  <title> 标准模式 近乎标准模式 怪异模式到异同 | OLLIFE </title>
+  <title> css2 css3 基础 | OLLIFE </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -278,7 +302,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/09/brower文档模式/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/03/css属性和值/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="lijian">
@@ -302,7 +326,7 @@
             
             
               
-                标准模式 近乎标准模式 怪异模式到异同
+                css2 css3 基础
               
             
           </h1>
@@ -317,8 +341,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-09T18:51:06+08:00">
-                2017-05-09
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-03T22:09:59+08:00">
+                2017-05-03
               </time>
             
 
@@ -340,8 +364,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/other/" itemprop="url" rel="index">
-                    <span itemprop="name">other</span>
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
                   </a>
                 </span>
 
@@ -375,7 +399,102 @@
       
 
       
-        <p>标准模式，近乎标准模式，怪异模式在浏览器渲染中的异同<br><a id="more"></a></p>
+        <h2 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h2><pre><code class="css">[max-/min-]width
+[max-/min-]height 
+border[-/top/bottom/left/right]:
+            -color:
+            -style:
+            -width:
+            -image:
+                -source:
+                -width:
+                -outset:
+                -repeat:
+                -slice:
+
+padding[-/top/bottom/left/right]:
+margin[-/top/bottom/left/right]:
+
+
+box-sizing :border-box
+box-shadow:h-shadow v-shadow blur spread color [inset][,h v ...]
+border-radius:
+outline:
+    style:none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset
+    color:
+    width:
+    offset:(往外偏移)
+</code></pre>
+<h2 id="显示和布局"><a href="#显示和布局" class="headerlink" title="显示和布局"></a>显示和布局</h2><pre><code class="css">display:none/block/inline/inline-block/table/flew
+visibility:hidden/visible/collapse(折叠？)
+
+position:static/relative/fixed/absolute
+left right top bottom
+float:
+clear:
+z-index:
+</code></pre>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><pre><code class="css">/*
+background:
+    -color:    
+    -image:url() /
+    -position:left right top bottom center x y
+    -origin:padding-box border-box centent-box
+    -clip:border-box padding-box center-box
+    -size:cover contain x y
+    -repeat:no-repeat repeat-x repeat-y
+    -attachment:scroll fixed local
+*/
+</code></pre>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><pre><code class="css">list
+    -style
+    -position
+    -image
+</code></pre>
+<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><pre><code class="css">／**
+   font   (serif有衬 sans-serif无衬)
+        -style:
+        -family:
+        -size:[x-/xx-]small/[x-/xx-]large/smaller/medium/larger/length
+        -variant:normal/small-caps
+        -weight:nomal(400)/bold()700/bolder/lighter/100-900
+
+**／
+</code></pre>
+<h2 id="文字样式"><a href="#文字样式" class="headerlink" title="文字样式"></a>文字样式</h2><pre><code class="css">color
+text-decoration:underline/overline/line-through/none
+                -color:
+                -style:
+                -line:
+text-transform:none/capitalize/uppercase/lowercase 
+text-shadow:h-shadow(px) v-shadow blur-radius color
+</code></pre>
+<h2 id="排版"><a href="#排版" class="headerlink" title="排版"></a>排版</h2><pre><code class="css">line-height:
+vertical-align:baseline/length/%/sub/super/top/text-top/middle/bottom/text-bottom
+text-align:left/right/center/justify(分散对齐)
+text-align-last:auto/left/right/center/justify/start/end
+text-indent:length/% 首位缩进
+text-overflow: 和overflow:hidden一起使用
+word-spacing:normal/length 单词间空白间距
+letter-spacing:
+white-space:nowrap/pre-wrap/pre/pre-line 处理html句子里内容留白
+---
+word-break:keep-all/break-all 单词是否断句到下一行
+word-wrap:normal/break-word 单词达到容积边界(width)是否断句
+---
+direction:ltr(left to right)/rtl 字体书写方向
+unicode-bidi:normal/embed/bidi-override 和direction合用
+</code></pre>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><pre><code class="css">border-collapse:
+caption-side:
+</code></pre>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><pre><code class="csss">clip:auto/rect(top(px),width,height,left) 裁切
+all:
+align-self:
+align-items:
+align-content:
+backface-visibility:?
+</code></pre>
 
       
     </div>
@@ -397,13 +516,19 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/css/" rel="tag"># css</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/03/css属性和值/" rel="next" title="css2 css3 基础">
-                <i class="fa fa-chevron-left"></i> css2 css3 基础
+              <a href="/2017/05/02/css-颜色/" rel="next" title="css中的颜色">
+                <i class="fa fa-chevron-left"></i> css中的颜色
               </a>
             
           </div>
@@ -412,8 +537,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/10/javascript-drag/" rel="prev" title="html5之拖拽">
-                html5之拖拽 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/09/brower文档模式/" rel="prev" title="标准模式 近乎标准模式 怪异模式到异同">
+                标准模式 近乎标准模式 怪异模式到异同 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -461,8 +586,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/17428.jpg"
@@ -518,6 +652,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#盒模型"><span class="nav-number">1.</span> <span class="nav-text">盒模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#显示和布局"><span class="nav-number">2.</span> <span class="nav-text">显示和布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">3.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表"><span class="nav-number">4.</span> <span class="nav-text">列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字体"><span class="nav-number">5.</span> <span class="nav-text">字体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文字样式"><span class="nav-number">6.</span> <span class="nav-text">文字样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#排版"><span class="nav-number">7.</span> <span class="nav-text">排版</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表格"><span class="nav-number">8.</span> <span class="nav-text">表格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">9.</span> <span class="nav-text">其他</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>

@@ -116,7 +116,7 @@ perspective:n">
 transform-origin:(默认位置为50% 50%[ 0]，即中心点)
 transform-style:preserve-3d/flat
 perspective:n">
-<meta property="og:updated_time" content="2017-04-26T06:39:52.000Z">
+<meta property="og:updated_time" content="2017-05-23T10:58:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css3 动画">
 <meta name="twitter:description" content="[TOC]
@@ -395,10 +395,15 @@ perspective:num(3d元素距视图的距离)
 perspective-origin:x y （改变3d元素底部的xy位置）
 backface-visibility:visible／hidden （是否隐藏背面）
 </code></pre>
-<h3 id="过渡-transition"><a href="#过渡-transition" class="headerlink" title="过渡 transition"></a>过渡 transition</h3><pre><code class="css">transiton:propety duration timing-function delay;
+<h3 id="过渡-transition"><a href="#过渡-transition" class="headerlink" title="过渡 transition"></a>过渡 transition</h3><pre><code class="css">transiton:property duration timing-function delay;
 //timing-function:linear ease ease-in ease-out ease-in-out cubic-bezier()
 </code></pre>
-<h3 id="动画-animation-keyframe-name"><a href="#动画-animation-keyframe-name" class="headerlink" title="动画 animation @keyframe name{ ;[;;]}"></a>动画 animation @keyframe name{ ;[;;]}</h3><pre><code class="css">animation
+<h3 id="动画-animation-keyframe-name"><a href="#动画-animation-keyframe-name" class="headerlink" title="动画 animation @keyframe name{}"></a>动画 animation @keyframe name{}</h3><pre><code class="css">@keyframe name{
+  from[0%] {;[;]}
+  [30%{;[;]}]
+  to[100%]{;[;]}
+}
+animation
     animation-name            @keyframe名
     animation-duration        完成一个周期的时间
     animation-timing-function    速度曲线
@@ -406,7 +411,7 @@ backface-visibility:visible／hidden （是否隐藏背面）
     animation-iteratin-count    num/infinite 播放次数
     animation-direction            normal/alternate 是否下一周期逆向播放
     animation-play-stat            paused/running(不能简写)    
-    animation-fill-mode            none/forware/backwards/both
+    animation-fill-mode(动画结束后的操作)    none/forware/backwards/both
 </code></pre>
 
       
@@ -440,8 +445,8 @@ backface-visibility:visible／hidden （是否隐藏背面）
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/03/javascript偏移量 滚动 视口之类的/" rel="next" title="offset alien scroll">
-                <i class="fa fa-chevron-left"></i> offset alien scroll
+              <a href="/2016/12/22/requirejs 使用/" rel="next" title="requirejs使用">
+                <i class="fa fa-chevron-left"></i> requirejs使用
               </a>
             
           </div>
@@ -450,8 +455,8 @@ backface-visibility:visible／hidden （是否隐藏背面）
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/03/javascript base/" rel="prev" title="javascript">
-                javascript <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/03/javascript事件event/" rel="prev" title="事件event">
+                事件event <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -522,7 +527,7 @@ backface-visibility:visible／hidden （是否隐藏背面）
           
             <div class="site-state-item site-state-posts">
               <a href="/">
-                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -575,7 +580,7 @@ backface-visibility:visible／hidden （是否隐藏背面）
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器前缀：-moz-，-webkit-，-o-，-ms"><span class="nav-number">1.</span> <span class="nav-text">浏览器前缀：-moz-，-webkit-，-o-，-ms-</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css3-动画一共三种"><span class="nav-number">2.</span> <span class="nav-text">css3 动画一共三种</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#转换-transform"><span class="nav-number">2.1.</span> <span class="nav-text">转换 transform</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过渡-transition"><span class="nav-number">2.2.</span> <span class="nav-text">过渡 transition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动画-animation-keyframe-name"><span class="nav-number">2.3.</span> <span class="nav-text">动画 animation @keyframe name{ ;[;;]}</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器前缀：-moz-，-webkit-，-o-，-ms"><span class="nav-number">1.</span> <span class="nav-text">浏览器前缀：-moz-，-webkit-，-o-，-ms-</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css3-动画一共三种"><span class="nav-number">2.</span> <span class="nav-text">css3 动画一共三种</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#转换-transform"><span class="nav-number">2.1.</span> <span class="nav-text">转换 transform</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过渡-transition"><span class="nav-number">2.2.</span> <span class="nav-text">过渡 transition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动画-animation-keyframe-name"><span class="nav-number">2.3.</span> <span class="nav-text">动画 animation @keyframe name{}</span></a></li></ol></li></ol></div>
             
 
           </div>
