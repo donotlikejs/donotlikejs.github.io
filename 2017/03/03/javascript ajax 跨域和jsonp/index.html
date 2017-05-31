@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="javascript," />
+  <meta name="keywords" content="javascript,ajax," />
 
 
 
@@ -102,31 +102,55 @@
 
 
 
-<meta name="description" content="1.在普通函数的调用中，this指向全局对象
-2.函数作为对象方法调用，this指向该对象。
-3.构造函数中，this指向实例对象。
-4.apply方法中，this指向第一参数
-5.箭头函数没有自己的this值，箭头函数内的this值继承自外围作用域。
-6.事件监听中的this">
+<meta name="description" content="AJAX原生
+异步加载必须先实例化一个XMLHttpRequest函数。
+
+let xhr = new XMLHttpRequest();
+xhr.open();
+xhr.send();
+setRequsetHeader();
+
+
+XMLHttpRequest的响应方法
+
+/*
+    readyStateChange 用于监听readyState的变化
+    status 响应状态码 1xx">
 <meta property="og:type" content="article">
-<meta property="og:title" content="this的指向值">
-<meta property="og:url" content="http://yoursite.com/2017/03/03/javascript this/index.html">
+<meta property="og:title" content="ajax 跨域 jsonp">
+<meta property="og:url" content="http://yoursite.com/2017/03/03/javascript ajax 跨域和jsonp/index.html">
 <meta property="og:site_name" content="OLLIFE">
-<meta property="og:description" content="1.在普通函数的调用中，this指向全局对象
-2.函数作为对象方法调用，this指向该对象。
-3.构造函数中，this指向实例对象。
-4.apply方法中，this指向第一参数
-5.箭头函数没有自己的this值，箭头函数内的this值继承自外围作用域。
-6.事件监听中的this">
-<meta property="og:updated_time" content="2017-04-20T08:36:18.000Z">
+<meta property="og:description" content="AJAX原生
+异步加载必须先实例化一个XMLHttpRequest函数。
+
+let xhr = new XMLHttpRequest();
+xhr.open();
+xhr.send();
+setRequsetHeader();
+
+
+XMLHttpRequest的响应方法
+
+/*
+    readyStateChange 用于监听readyState的变化
+    status 响应状态码 1xx">
+<meta property="og:updated_time" content="2017-05-31T14:44:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="this的指向值">
-<meta name="twitter:description" content="1.在普通函数的调用中，this指向全局对象
-2.函数作为对象方法调用，this指向该对象。
-3.构造函数中，this指向实例对象。
-4.apply方法中，this指向第一参数
-5.箭头函数没有自己的this值，箭头函数内的this值继承自外围作用域。
-6.事件监听中的this">
+<meta name="twitter:title" content="ajax 跨域 jsonp">
+<meta name="twitter:description" content="AJAX原生
+异步加载必须先实例化一个XMLHttpRequest函数。
+
+let xhr = new XMLHttpRequest();
+xhr.open();
+xhr.send();
+setRequsetHeader();
+
+
+XMLHttpRequest的响应方法
+
+/*
+    readyStateChange 用于监听readyState的变化
+    status 响应状态码 1xx">
 
 
 
@@ -154,13 +178,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/03/javascript this/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/03/javascript ajax 跨域和jsonp/"/>
 
 
 
 
 
-  <title> this的指向值 | OLLIFE </title>
+  <title> ajax 跨域 jsonp | OLLIFE </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -293,7 +317,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/javascript this/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/javascript ajax 跨域和jsonp/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="lijian">
@@ -317,7 +341,7 @@
             
             
               
-                this的指向值
+                ajax 跨域 jsonp
               
             
           </h1>
@@ -390,13 +414,88 @@
       
 
       
-        <p>1.在普通函数的调用中，this指向全局对象</p>
-<p>2.函数作为对象方法调用，this指向该对象。</p>
-<p>3.构造函数中，this指向实例对象。</p>
-<p>4.apply方法中，this指向第一参数</p>
-<p>5.箭头函数没有自己的this值，箭头函数内的this值继承自外围作用域。</p>
-<p>6.事件监听中的this</p>
+        <h2 id="AJAX原生"><a href="#AJAX原生" class="headerlink" title="AJAX原生"></a>AJAX原生</h2><ul>
+<li>异步加载必须先<code>实例化一个XMLHttpRequest函数</code>。</li>
+</ul>
+<pre><code class="javascript">let xhr = new XMLHttpRequest();
+xhr.open();
+xhr.send();
+setRequsetHeader();
+</code></pre>
+<ul>
+<li>XMLHttpRequest的响应方法</li>
+</ul>
+<pre><code class="javascript">/*
+    readyStateChange 用于监听readyState的变化
+    status 响应状态码 1xx 2xx 3xx 4xx 5xx
+    statusText 响应状态说明
+    readyState    请求／响应过程的当前活动状态
+        0
+        1
+        2    发送，已经调用send方法
+        3    接收响应数据
+        4    表示完成
 
+    responseText    响应主体返回的文本
+    responseXML        响应主体返回的XML
+
+*/
+</code></pre>
+<ul>
+<li>GET 和 POST 的一般写法</li>
+</ul>
+<pre><code class="javascript">// get
+let xhr=new XMLHttpRequest();
+url=&quot;http://www.abc.com?a=b&amp;c=d&quot;;
+xhr.open(&quot;get&quot;,url,true);
+xhr.send(null);
+xhr.readyStateChange=function(){
+  if(xhr.readyState==4&amp;&amp;xhr.status==200){
+    console.log(xhr.responseText);
+  }else{
+    console.log(`error${xhr.status}`);
+  }
+};
+
+//post
+let xhr=new XMLHttpRequest();
+url=&quot;http://abc.com&quot;;
+data=&quot;a=b&amp;c=d&quot;;
+xhr.open(&quot;post&quot;,url,true);
+xhr.setRequestHeader(&quot;Content-Type&quot;,&quot;application/x-www-from-urlencoded&quot;);
+xhr.send(data);
+xhr.readyStateChange=function(){
+  if(xhr.readyState==4&amp;&amp;xhr.status=200){
+    console.log(xhr.responseText);
+  }else{
+    console.log(`error:${xhr.status}`);
+
+  }
+}
+</code></pre>
+<h2 id="jquery-异步"><a href="#jquery-异步" class="headerlink" title="jquery 异步"></a>jquery 异步</h2><h2 id="jsonP"><a href="#jsonP" class="headerlink" title="jsonP"></a>jsonP</h2><p>​    利用<script>标签可跨域的性质，从服务器获取js文件，在当前页运行。</p>
+<h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><p> 两个url中 协议 子域名 主域名 端口号 任意一个不同皆为不同域，而不同域之间的通信称之为跨域。</p>
+<pre><code class="javascript">／*
+
+http :  //  www  .  abc.com  :  8000  /demo/index.html
+协议        子域名        主域名        端口号        路径
+
+*／
+</code></pre>
+<h2 id="JSON-方法"><a href="#JSON-方法" class="headerlink" title="JSON 方法"></a>JSON 方法</h2><pre><code class="javascript">    //to obj
+JSON.parse(str);
+    //to str
+JSON.stringify(obj);
+</code></pre>
+<h2 id="http状态码简记"><a href="#http状态码简记" class="headerlink" title="http状态码简记"></a>http状态码简记</h2><ul>
+<li>1xx:信息响应类：表示接收到请求并且继续处理</li>
+<li>2xx:处理成功响应类：表示动作被成功接收、理解和接受</li>
+<li>3xx:重定向响应类：为了完成指定的动作，必须接受进一步处理</li>
+<li>4xx:客户端错误：客户请求包含语法错误或者是不能正确执行</li>
+<li>5xx:服务端错误：服务器不能正确执行一个正确的请求</li>
+</ul>
+<p><a href="https://segmentfault.com/a/1190000006689786">https://segmentfault.com/a/1190000006689786</a></p>
+</script></p>
       
     </div>
 
@@ -419,7 +518,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/javascript/" rel="tag"># javascript</a>
+            <a href="/tags/javascript-ajax/" rel="tag"># javascript,ajax</a>
           
         </div>
       
@@ -428,8 +527,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/03/javascript偏移量 滚动 视口之类的/" rel="next" title="offset alien scroll">
-                <i class="fa fa-chevron-left"></i> offset alien scroll
+              <a href="/2017/03/03/javascript DOM操作/" rel="next" title="DOM 操作">
+                <i class="fa fa-chevron-left"></i> DOM 操作
               </a>
             
           </div>
@@ -438,8 +537,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/03/javascript事件event/" rel="prev" title="事件event">
-                事件event <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/03/正则/" rel="prev" title="javascript正则">
+                javascript正则 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -487,8 +586,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/17428.jpg"
@@ -544,6 +652,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#AJAX原生"><span class="nav-number">1.</span> <span class="nav-text">AJAX原生</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jquery-异步"><span class="nav-number">2.</span> <span class="nav-text">jquery 异步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsonP"><span class="nav-number">3.</span> <span class="nav-text">jsonP</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
