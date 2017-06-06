@@ -1490,7 +1490,7 @@ html5新增        &lt;article&gt;
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/javascript ajax 跨域和jsonp/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/javascript base/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="lijian">
@@ -1515,8 +1515,8 @@ html5新增        &lt;article&gt;
             
               
                 
-                <a class="post-title-link" href="/2017/03/03/javascript ajax 跨域和jsonp/" itemprop="url">
-                  ajax 跨域 jsonp
+                <a class="post-title-link" href="/2017/03/03/javascript base/" itemprop="url">
+                  javascript
                 </a>
               
             
@@ -1592,43 +1592,40 @@ html5新增        &lt;article&gt;
       
         
           
-          AJAX原生
-异步加载必须先实例化一个XMLHttpRequest函数。
+          windowlocalStorage //html5
+    setItem()
+    getItem()
+location
+    host hostname href pathname protocol search port origin     hash
+history
+    back() forward() go()
+screen
+open()
 
-let xhr = new XMLHttpRequest();
-xhr.open();
-xhr.send();
-setRequsetHeader();
+String/*
+.valueOf()
+.toString()
+fromCharCode()
+fromCodePoint()
+prototype.charAt()
+prototype.charCodeAt()
+prototype.codePointAt()
+prototype.concat()
+.indexOf()
+.lastIndexOf()
+.match()
+.repeat()
+.replace()
+.reach()
 
-
-XMLHttpRequest的响应方法
-
-/*
-    readyStateChange 用于监听readyState的变化
-    status 响应状态码 1xx 2xx 3xx 4xx 5xx
-    statusText 响应状态说明
-    readyState    请求／响应过程的当前活动状态
-        0
-        1
-        2    发送，已经调用send方法
-        3    接收响应数据
-        4    表示完成
-
-    responseText    响应主体返回的文本
-    responseXML        响应主体返回的XML
-
-*/
-
-
-GET 和 POST 的一般写法
-
-// get
-let xhr=new XMLHttpRequest();
-url=&quot;http://w
+&lt;-----提取字符串-----&gt;
+    .slice(start,end)  获取star到end索引号的字符串并返回可以有负值
+    .substr(start,length) 
+    
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/03/03/javascript ajax 跨域和jsonp/#more" rel="contents">
+            <a class="btn" href="/2017/03/03/javascript base/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
