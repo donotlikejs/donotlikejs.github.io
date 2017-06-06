@@ -276,7 +276,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/06/css-grid-layer/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/06/css-grid-layout/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="lijian">
@@ -301,7 +301,7 @@
             
               
                 
-                <a class="post-title-link" href="/2017/06/06/css-grid-layer/" itemprop="url">
+                <a class="post-title-link" href="/2017/06/06/css-grid-layout/" itemprop="url">
                   栅格布局 grid layout
                 </a>
               
@@ -378,7 +378,7 @@
       
         
           
-          grid layout 是微软所提交的方案 支持IE+
+          grid layout 是微软所提交的方案 支持IE+&lt;!– more – &gt;
 ##父容器中的属性-值
 /*
 display:grid;
@@ -419,7 +419,7 @@ align-self:
           
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/06/06/css-grid-layer/#more" rel="contents">
+            <a class="btn" href="/2017/06/06/css-grid-layout/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -563,6 +563,7 @@ align-self:
         
           
           flex-box模型支持IE10以上浏览器
+&lt;!— more –&gt;
 ##flex-box属性与值
 ###父容器中的属性-值
 /*    
@@ -580,8 +581,7 @@ align-self:
      align-items:stretch／center／flex-start/flex-end/baseline
 
  定义弹性换行方式
-     flex-wrap：nowrap／wrap/wrap-reverse
- 定义换
+     flex-wrap：nowrap／wrap
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1726,7 +1726,7 @@ prototype.concat()
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/css3动画/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/canvas要点/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="lijian">
@@ -1751,8 +1751,8 @@ prototype.concat()
             
               
                 
-                <a class="post-title-link" href="/2017/03/03/css3动画/" itemprop="url">
-                  css3 动画
+                <a class="post-title-link" href="/2017/03/03/canvas要点/" itemprop="url">
+                  html之canvas 绘图
                 </a>
               
             
@@ -1791,8 +1791,8 @@ prototype.concat()
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
                   </a>
                 </span>
 
@@ -1828,23 +1828,31 @@ prototype.concat()
       
         
           
-          [TOC]
-浏览器前缀：-moz-，-webkit-，-o-，-ms-css3 动画一共三种转换 transformtransform:translate()/rotate()/scale()/skew()/matrix()
-transform-origin:(默认位置为50% 50%[ 0]，即中心点)
-transform-style:preserve-3d/flat
-perspective:num(3d元素距视图的距离)
-perspective-origin:x y （改变3d元素底部的xy位置）
-backface-visibility:visible／hidden （是否隐藏背面）
+          使用canvas绘图共同步骤
+指定canvas大小（也可称之画布大小）
+调用Context(“2d”)方法
+//html
+&lt;canvas id=&quot;drawing&quot;&gt;&lt;/canvas&gt;
+&lt;style&gt;
+#drawing{width:300px;height:300px}
+&lt;/style&gt;
+&lt;script&gt;
+let drawing=document.getElementById(&quot;drawing&quot;);
+let context=drawing.Context(&quot;2d&quot;);
+&lt;/script&gt;
 
-过渡 transitiontransiton:property duration timing-function delay;
-//timing-function:linear ease ease-in ease-out ease-in-out cubic-bezier()
-
-动画 animation @keyframe name{}@keyframe name{
-  from[0%] {;[;]}
+绘制矩形填充:fillStyle 描边:strokeStyle
+绘制矩形
+fillRect(x,y,width,height)
+strokeRect(x,y,width,height)
+clearRect(x,y,width,height)
+//填充
+context.fillStyle=&quot;#e5e5e5&quot;;
+context.fillRect(5,5,5
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/03/03/css3动画/#more" rel="contents">
+            <a class="btn" href="/2017/03/03/canvas要点/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
