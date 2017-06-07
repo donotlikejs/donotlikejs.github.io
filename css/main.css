@@ -978,7 +978,10 @@ pre .javascript .function {
   bottom: 19px;
 }
 .header {
-  background: #f0f8ff;
+  background-image: url("http://or5plfjz8.bkt.clouddn.com/duck.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   height: 100vh;
 }
 .header-inner {
@@ -1022,7 +1025,7 @@ pre .javascript .function {
   font-family: 'Lobster Two', 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 50px;
   letter-spacing: 40px;
-  text-shadow: 1px 1px 3px #e5e5e5;
+  text-shadow: 0px -26px 2px, 0px -54px 2px;
 }
 .site-subtitle {
   margin-top: 10px;
@@ -1688,7 +1691,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #b018ff;
+  background: #ba7c82;
 }
 .links-of-blogroll {
   font-size: 13px;
