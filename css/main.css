@@ -1025,7 +1025,7 @@ pre .javascript .function {
   font-family: 'Lobster Two', 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 50px;
   letter-spacing: 40px;
-  text-shadow: 0px -26px 2px, 0px -54px 2px;
+  text-shadow: 0px -26px 7px, 0px -54px 17px;
 }
 .site-subtitle {
   margin-top: 10px;
@@ -1691,7 +1691,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ba7c82;
+  background: #3cffbb;
 }
 .links-of-blogroll {
   font-size: 13px;
