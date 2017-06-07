@@ -978,7 +978,8 @@ pre .javascript .function {
   bottom: 19px;
 }
 .header {
-  background: #fff;
+  background: #f0f8ff;
+  height: 100vh;
 }
 .header-inner {
   position: relative;
@@ -1001,7 +1002,7 @@ pre .javascript .function {
   display: inline-block;
   padding: 0 40px;
   color: #fff;
-  background: #222;
+  background: transparent;
   border-bottom: none;
 }
 .brand:hover {
@@ -1017,9 +1018,11 @@ pre .javascript .function {
   display: inline-block;
   vertical-align: top;
   line-height: 36px;
-  font-size: 24px;
   font-weight: normal;
   font-family: 'Lobster Two', 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 50px;
+  letter-spacing: 40px;
+  text-shadow: 1px 1px 3px #e5e5e5;
 }
 .site-subtitle {
   margin-top: 10px;
@@ -1685,7 +1688,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #a37a01;
+  background: #b018ff;
 }
 .links-of-blogroll {
   font-size: 13px;
