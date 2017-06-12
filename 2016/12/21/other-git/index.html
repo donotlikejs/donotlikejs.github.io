@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="javascript," />
+  <meta name="keywords" content="git," />
 
 
 
@@ -102,16 +102,37 @@
 
 
 
-<meta name="description" content="懒加载即需要的时候才加载">
+<meta name="description" content="基础​    + 查看配置信息
+git config --list
+
+​    + 设置 姓名和邮箱地址  (存放于 “~/.gitconfig”)
+    git config —global user.name “yourname”
+    git config —global user.email “yourEmail”
+
+    git config —global color.ui au">
 <meta property="og:type" content="article">
-<meta property="og:title" content="懒加载原理">
-<meta property="og:url" content="http://yoursite.com/2017/04/07/lazyload/index.html">
+<meta property="og:title" content="git和github">
+<meta property="og:url" content="http://yoursite.com/2016/12/21/other-git/index.html">
 <meta property="og:site_name" content="OLLIFE">
-<meta property="og:description" content="懒加载即需要的时候才加载">
-<meta property="og:updated_time" content="2017-04-07T14:39:41.000Z">
+<meta property="og:description" content="基础​    + 查看配置信息
+git config --list
+
+​    + 设置 姓名和邮箱地址  (存放于 “~/.gitconfig”)
+    git config —global user.name “yourname”
+    git config —global user.email “yourEmail”
+
+    git config —global color.ui au">
+<meta property="og:updated_time" content="2017-06-11T14:05:34.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="懒加载原理">
-<meta name="twitter:description" content="懒加载即需要的时候才加载">
+<meta name="twitter:title" content="git和github">
+<meta name="twitter:description" content="基础​    + 查看配置信息
+git config --list
+
+​    + 设置 姓名和邮箱地址  (存放于 “~/.gitconfig”)
+    git config —global user.name “yourname”
+    git config —global user.email “yourEmail”
+
+    git config —global color.ui au">
 
 
 
@@ -139,13 +160,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/07/lazyload/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/12/21/other-git/"/>
 
 
 
 
 
-  <title> 懒加载原理 | OLLIFE </title>
+  <title> git和github | OLLIFE </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -278,7 +299,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/07/lazyload/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/21/other-git/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="lijian">
@@ -302,7 +323,7 @@
             
             
               
-                懒加载原理
+                git和github
               
             
           </h1>
@@ -317,8 +338,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-07T22:35:08+08:00">
-                2017-04-07
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-21T23:09:57+08:00">
+                2016-12-21
               </time>
             
 
@@ -340,8 +361,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
+                  <a href="/categories/基础/" itemprop="url" rel="index">
+                    <span itemprop="name">基础</span>
                   </a>
                 </span>
 
@@ -375,8 +396,122 @@
       
 
       
-        <p><code>懒加载即需要的时候才加载</code></p>
+        <h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><p>​    + 查看配置信息</p>
+<pre><code class="Shell">git config --list
+</code></pre>
+<p>​    + 设置 姓名和邮箱地址  (存放于 “~/.gitconfig”)</p>
+<pre><code class="shell">    git config —global user.name “yourname”
+    git config —global user.email “yourEmail”
 
+    git config —global color.ui auto
+</code></pre>
+<p>​    + 创建 SSH Key</p>
+<pre><code class="shell">    ssh-keygen -t -C “lianggunzai@gmail.com”
+</code></pre>
+<p>​    + 查看 id_rsa.pub（公开密钥）( id_rsa 私有密钥 )</p>
+<pre><code class="shell">    cat ~/.ssh/id_rsa.pub
+</code></pre>
+<p>​    + 和github进行认证</p>
+<pre><code class="shell">    ssh -T git@github.com
+</code></pre>
+<p>​    + 从远程仓库获取</p>
+<pre><code class="shell">    git clone git@github.com:Jianru-Lin/lambda-view.git
+</code></pre>
+<pre><code class="shell">git status    
+查看当前目录还没有被git管理和被git管理且被修改但还没有提交的文件
+
+git branch -a 
+查看当前分支的相关信息     (-a参数可以同时显示本地仓库和远程仓库的分支信息)
+git  add   将文件加入暂存区
+git commit -m “解释短语”   提交
+
+git push    更新
+</code></pre>
+<pre><code>本地建立项目并且推送到远程仓库
+
+首先先建立一个文件夹并进入
+    mkdir gittest
+    cd gittest
+
+初始化仓库（目的是为了产生“.git”目录，里面存放管理当前目录内容的数据，数据也称为附属该目录的工作树）
+    git init
+
+查看仓库状态
+    git status
+
+提交到暂存区
+    git add filename
+
+更新（提交到工作树）
+    git commit -m “这里是解释说明短语”
+
+
+After doing this, you may fix the identity used for this commit with:
+设置完成以后，你可以通过以下这条语句来修复用于此提交到身份
+
+    git commit --amend --reset-author
+查看已提交到日志
+    git log 
+
+    参数 
+        —pertty=short 只显示第一行参数
+        加文件名或目录名 只会显示相关的日志
+        -p 显示文件的前后差别
+
+查看更改前后的差别
+    git diff
+
+                参数 HEAD 查看与最新提交的差别 （好习惯：git commit 前先 git diff HEAD 查看区别）
+
+
+分支操作（重点难点）
+
+显示分支一览表
+    git branch
+
+已当前branch分支为基础创建新分支并且切换到新建的分支
+git checkout -b fenzhia  等同于 git branch fenzhia ; git checkout fenzhia（可以用 git branch 查看当前工作分支）
+
+   切换分支
+git checkout 分支名
+
+git checkout - 切换回上一个分支
+
+合并分支
+先切换到master主分支
+git checkout master
+再
+git merge —no-ff fenzhia （参数—no-ff 可以确保历史记录中明确记录下本次分支合并）
+
+随后编辑器会启动（vi编辑器，直接退出或者，编辑再退出都ok）
+然后结束
+
+以图表形式查看分支
+git log --graph
+
+回溯历史分支（跑回之前修改的某个地方）
+
+git reset —hard 哈希值 （哈希值通过git log 能找到 复制粘贴即可）
+
+
+git reflog  查看当前仓库的所有日志
+
+冲突解决
+如果git merge --no—ff 分支 有冲突
+
+打开编辑器 把内容修改好后 执行 git add 文件名；git commit -m “解释短语”
+-----------------------------------------------------------------------------------------------------------------------------------------
+推送到远程仓库
+
+    添加远程仓库
+        git remote add 仓库路径
+
+    推送至远程仓库
+        git push -u origin master         推送至master分支
+        git push -u origin 其他分支    推送到其他分支
+        (-u参数可以在推送到同时，将origin仓库的master分支设置为本地仓库当前分支的upstream （上游）)
+--------------------------------------------------------------------------------------------------------------------------------------------
+</code></pre>
       
     </div>
 
@@ -399,7 +534,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/javascript/" rel="tag"># javascript</a>
+            <a href="/tags/git/" rel="tag"># git</a>
           
         </div>
       
@@ -408,18 +543,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/03/ES6初探/" rel="next" title="ES6 初探">
-                <i class="fa fa-chevron-left"></i> ES6 初探
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/30/html标签/" rel="prev" title="HTML 标签">
-                HTML 标签 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/12/22/计算机基础/" rel="prev" title="计算机基础">
+                计算机基础 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -467,8 +598,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/17428.jpg"
@@ -524,6 +664,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础"><span class="nav-number">1.</span> <span class="nav-text">基础</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
