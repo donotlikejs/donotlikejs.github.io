@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="javascript,ajax," />
+  <meta name="keywords" content="bash shell," />
 
 
 
@@ -102,55 +102,67 @@
 
 
 
-<meta name="description" content="AJAX原生
-异步加载必须先实例化一个XMLHttpRequest函数。
+<meta name="description" content="本笔记操作以mac系统为准
+打印shell的版本echo $SHELL
 
-let xhr = new XMLHttpRequest();
-xhr.open();
-xhr.send();
-setRequsetHeader();
+环境变量(PATH)的查看，和添加
+在自主安装的文件经常会用到shell来启动执行，需要自行把启动项添加到PATH之中。
+我们一般 只修改用户级别的环境变量 。
+保存环境变量的文件名为 .bash_profile ,位于 home根目录 下。
+查看PATH
+
+echo $PATH
 
 
-XMLHttpRequest的响应方法
+添加path
+path的格式
+​
 
-/*
-    readyStateChange 用于监听readyState的变化
-    status 响应状态码 1xx">
+
+路">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ajax 跨域 jsonp">
-<meta property="og:url" content="http://yoursite.com/2017/03/03/javascript ajax 跨域和jsonp/index.html">
+<meta property="og:title" content="常用Shell命令">
+<meta property="og:url" content="http://yoursite.com/2016/12/22/other-简单的Shell命令/index.html">
 <meta property="og:site_name" content="OLLIFE">
-<meta property="og:description" content="AJAX原生
-异步加载必须先实例化一个XMLHttpRequest函数。
+<meta property="og:description" content="本笔记操作以mac系统为准
+打印shell的版本echo $SHELL
 
-let xhr = new XMLHttpRequest();
-xhr.open();
-xhr.send();
-setRequsetHeader();
+环境变量(PATH)的查看，和添加
+在自主安装的文件经常会用到shell来启动执行，需要自行把启动项添加到PATH之中。
+我们一般 只修改用户级别的环境变量 。
+保存环境变量的文件名为 .bash_profile ,位于 home根目录 下。
+查看PATH
+
+echo $PATH
 
 
-XMLHttpRequest的响应方法
+添加path
+path的格式
+​
 
-/*
-    readyStateChange 用于监听readyState的变化
-    status 响应状态码 1xx">
-<meta property="og:updated_time" content="2017-05-31T14:44:37.000Z">
+
+路">
+<meta property="og:updated_time" content="2017-06-12T04:04:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ajax 跨域 jsonp">
-<meta name="twitter:description" content="AJAX原生
-异步加载必须先实例化一个XMLHttpRequest函数。
+<meta name="twitter:title" content="常用Shell命令">
+<meta name="twitter:description" content="本笔记操作以mac系统为准
+打印shell的版本echo $SHELL
 
-let xhr = new XMLHttpRequest();
-xhr.open();
-xhr.send();
-setRequsetHeader();
+环境变量(PATH)的查看，和添加
+在自主安装的文件经常会用到shell来启动执行，需要自行把启动项添加到PATH之中。
+我们一般 只修改用户级别的环境变量 。
+保存环境变量的文件名为 .bash_profile ,位于 home根目录 下。
+查看PATH
+
+echo $PATH
 
 
-XMLHttpRequest的响应方法
+添加path
+path的格式
+​
 
-/*
-    readyStateChange 用于监听readyState的变化
-    status 响应状态码 1xx">
+
+路">
 
 
 
@@ -178,13 +190,13 @@ XMLHttpRequest的响应方法
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/03/javascript ajax 跨域和jsonp/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/12/22/other-简单的Shell命令/"/>
 
 
 
 
 
-  <title> ajax 跨域 jsonp | OLLIFE </title>
+  <title> 常用Shell命令 | OLLIFE </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -317,7 +329,7 @@ XMLHttpRequest的响应方法
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/javascript ajax 跨域和jsonp/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/22/other-简单的Shell命令/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="lijian">
@@ -341,7 +353,7 @@ XMLHttpRequest的响应方法
             
             
               
-                ajax 跨域 jsonp
+                常用Shell命令
               
             
           </h1>
@@ -356,8 +368,8 @@ XMLHttpRequest的响应方法
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-03T15:56:52+08:00">
-                2017-03-03
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-22T14:29:53+08:00">
+                2016-12-22
               </time>
             
 
@@ -379,8 +391,8 @@ XMLHttpRequest的响应方法
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
+                  <a href="/categories/shell/" itemprop="url" rel="index">
+                    <span itemprop="name">shell</span>
                   </a>
                 </span>
 
@@ -414,88 +426,75 @@ XMLHttpRequest的响应方法
       
 
       
-        <h2 id="AJAX原生"><a href="#AJAX原生" class="headerlink" title="AJAX原生"></a>AJAX原生</h2><ul>
-<li>异步加载必须先<code>实例化一个XMLHttpRequest函数</code>。</li>
+        <p>本笔记操作以mac系统为准</p>
+<h2 id="打印shell的版本"><a href="#打印shell的版本" class="headerlink" title="打印shell的版本"></a>打印shell的版本</h2><pre><code class="shell">echo $SHELL
+</code></pre>
+<h2 id="环境变量-PATH-的查看，和添加"><a href="#环境变量-PATH-的查看，和添加" class="headerlink" title="环境变量(PATH)的查看，和添加"></a>环境变量(PATH)的查看，和添加</h2><ul>
+<li>在自主安装的文件经常会用到shell来启动执行，需要自行把启动项添加到PATH之中。</li>
+<li>我们一般<strong> 只修改用户级别的环境变量 </strong>。</li>
+<li>保存环境变量的文件名为<strong> .bash_profile </strong>,位于<strong> home根目录 </strong>下。</li>
+<li>查看PATH</li>
 </ul>
-<pre><code class="javascript">let xhr = new XMLHttpRequest();
-xhr.open();
-xhr.send();
-setRequsetHeader();
+<pre><code class="shell">echo $PATH
 </code></pre>
 <ul>
-<li>XMLHttpRequest的响应方法</li>
+<li><p>添加path</p>
+<p>path的格式</p>
+<p>​</p>
+</li>
 </ul>
-<pre><code class="javascript">/*
-    readyStateChange 用于监听readyState的变化
-    status 响应状态码 1xx 2xx 3xx 4xx 5xx
-    statusText 响应状态说明
-    readyState    请求／响应过程的当前活动状态
-        0
-        1
-        2    发送，已经调用send方法
-        3    接收响应数据
-        4    表示完成
-
-    responseText    响应主体返回的文本
-    responseXML        响应主体返回的XML
-
-*/
+<p><code>路径表示</code> </p>
+<pre><code class="shell">./    当前目录(可省略 比如 cd ./demo 写成 cd demo)
+../   上一级目录
+/     绝对路径(根目录)
 </code></pre>
-<ul>
-<li>GET 和 POST 的一般写法</li>
-</ul>
-<pre><code class="javascript">// get
-let xhr=new XMLHttpRequest();
-url=&quot;http://www.abc.com?a=b&amp;c=d&quot;;
-xhr.open(&quot;get&quot;,url,true);
-xhr.send(null);
-xhr.readyStateChange=function(){
-  if(xhr.readyState==4&amp;&amp;xhr.status==200){
-    console.log(xhr.responseText);
-  }else{
-    console.log(`error${xhr.status}`);
-  }
-};
-
-//post
-let xhr=new XMLHttpRequest();
-url=&quot;http://abc.com&quot;;
-data=&quot;a=b&amp;c=d&quot;;
-xhr.open(&quot;post&quot;,url,true);
-xhr.setRequestHeader(&quot;Content-Type&quot;,&quot;application/x-www-from-urlencoded&quot;);
-xhr.send(data);
-xhr.readyStateChange=function(){
-  if(xhr.readyState==4&amp;&amp;xhr.status=200){
-    console.log(xhr.responseText);
-  }else{
-    console.log(`error:${xhr.status}`);
-
-  }
-}
+<p><code>cd</code> 改变目录</p>
+<pre><code class="shell">//进入当前目录的子目录demo
+cd ./demo
+//进入之前的目录
+cd -
 </code></pre>
-<h2 id="jquery-异步"><a href="#jquery-异步" class="headerlink" title="jquery 异步"></a>jquery 异步</h2><h2 id="jsonP"><a href="#jsonP" class="headerlink" title="jsonP"></a>jsonP</h2><p>​    利用<script>标签可跨域的性质，从服务器获取js文件，在当前页运行。</p>
-<h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><p> 两个url中 协议 子域名 主域名 端口号 任意一个不同皆为不同域，而不同域之间的通信称之为跨域。</p>
-<pre><code class="javascript">／*
-
-http :  //  www  .  abc.com  :  8000  /demo/index.html
-协议        子域名        主域名        端口号        路径
-
-*／
+<p><code>touch</code>（新建文件） </p>
+<p><code>mkdir</code>（新建目录）</p>
+<pre><code>// 当前目录新建 demo.txt和index.html
+touch demo.txt index.html
+// 当前目录新建demo文件夹
+mkdir demo
+</code></pre><p><code>rm</code> 删除文件       </p>
+<p>​    常用选项 </p>
+<p>​            -i -r -v 同复制</p>
+<p>​            -f: 忽略不存在的文件</p>
+<p><code>rmdir</code> 删除空目录</p>
+<p><code>ls</code> 显示文件列表</p>
+<p>常用选项    -l:长格式显示结果 </p>
+<p>​            -t:按修改时间来排序 </p>
+<p>​            -a:显示所有文件 -r:相反顺序显示 </p>
+<p>​            -h:长格式列出时，不已字节显示文件大小 </p>
+<p>​            -F: 每个文件加上指示符号 </p>
+<p>​            -d: 列出指定目录中内容 </p>
+<p><code>pwd</code> 显示目录路径 </p>
+<p><code>mv</code>（移动/重命名文件和目录） 和 <code>cp</code>（拷贝文件和目录） </p>
+<p>常用选项       -a:复制所有信息和属性</p>
+<p>​            -i:重写前确认</p>
+<p>​            -r:递归(复制)</p>
+<p>​            -u:仅复制目标目录不存在或新于的文件</p>
+<p>​            -v:显示详细命令操作信息</p>
+<pre><code class="shell">//复制file1文件到file2
+cp file1 file2
+//重命名为file2
+mv file1 file2
+//移动file1到根目录下的demo目录
+mv file1 /demo
 </code></pre>
-<h2 id="JSON-方法"><a href="#JSON-方法" class="headerlink" title="JSON 方法"></a>JSON 方法</h2><pre><code class="javascript">    //to obj
-JSON.parse(str);
-    //to str
-JSON.stringify(obj);
-</code></pre>
-<h2 id="http状态码简记"><a href="#http状态码简记" class="headerlink" title="http状态码简记"></a>http状态码简记</h2><ul>
-<li>1xx:信息响应类：表示接收到请求并且继续处理</li>
-<li>2xx:处理成功响应类：表示动作被成功接收、理解和接受</li>
-<li>3xx:重定向响应类：为了完成指定的动作，必须接受进一步处理</li>
-<li>4xx:客户端错误：客户请求包含语法错误或者是不能正确执行</li>
-<li>5xx:服务端错误：服务器不能正确执行一个正确的请求</li>
-</ul>
-<p><a href="https://segmentfault.com/a/1190000006689786">https://segmentfault.com/a/1190000006689786</a></p>
-</script></p>
+<p>file</p>
+<p>less</p>
+<p>type 解释一个命令名</p>
+<p>which 显示会执行哪个可执行程序（可用来找路径）</p>
+<p>man</p>
+<p>info</p>
+<p>whatis</p>
+<p>通配符 *</p>
+
       
     </div>
 
@@ -518,7 +517,7 @@ JSON.stringify(obj);
       
         <div class="post-tags">
           
-            <a href="/tags/javascript-ajax/" rel="tag"># javascript,ajax</a>
+            <a href="/tags/bash-shell/" rel="tag"># bash shell</a>
           
         </div>
       
@@ -527,8 +526,8 @@ JSON.stringify(obj);
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/01/16/sublime常用快捷键/" rel="next" title="sublime常用快捷键">
-                <i class="fa fa-chevron-left"></i> sublime常用快捷键
+              <a href="/2016/12/21/other-git/" rel="next" title="git和github">
+                <i class="fa fa-chevron-left"></i> git和github
               </a>
             
           </div>
@@ -537,8 +536,8 @@ JSON.stringify(obj);
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/03/javascript偏移量 滚动 视口之类的/" rel="prev" title="offset alien scroll">
-                offset alien scroll <i class="fa fa-chevron-right"></i>
+              <a href="/2016/12/22/计算机基础/" rel="prev" title="计算机基础">
+                计算机基础 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -662,7 +661,7 @@ JSON.stringify(obj);
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#AJAX原生"><span class="nav-number">1.</span> <span class="nav-text">AJAX原生</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jquery-异步"><span class="nav-number">2.</span> <span class="nav-text">jquery 异步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsonP"><span class="nav-number">3.</span> <span class="nav-text">jsonP</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#打印shell的版本"><span class="nav-number">1.</span> <span class="nav-text">打印shell的版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境变量-PATH-的查看，和添加"><span class="nav-number">2.</span> <span class="nav-text">环境变量(PATH)的查看，和添加</span></a></li></ol></div>
             
 
           </div>
