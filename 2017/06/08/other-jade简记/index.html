@@ -102,16 +102,16 @@
 
 
 
-<meta name="description" content="Jade">
+<meta name="description" content="Jade现改名pug 官方中文文档">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jade 使用简记">
 <meta property="og:url" content="http://yoursite.com/2017/06/08/other-jade简记/index.html">
 <meta property="og:site_name" content="OLLIFE">
-<meta property="og:description" content="Jade">
-<meta property="og:updated_time" content="2017-06-11T14:29:44.000Z">
+<meta property="og:description" content="Jade现改名pug 官方中文文档">
+<meta property="og:updated_time" content="2017-06-12T08:28:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jade 使用简记">
-<meta name="twitter:description" content="Jade">
+<meta name="twitter:description" content="Jade现改名pug 官方中文文档">
 
 
 
@@ -375,7 +375,7 @@
       
 
       
-        <p>Jade</p>
+        <p>Jade现改名pug <a href="https://pugjs.org/zh-cn/api/getting-started.html" target="_blank" rel="external">官方中文文档</a></p>
 <a id="more"></a>
 <h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><h2 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h2><pre><code>p this is text
 p
@@ -384,12 +384,25 @@ p=&quot;this is text&lt;em&gt;自动转义&lt;/em&gt;&quot;
 p!=&quot;this is text&lt;em&gt;尖括号不转义&lt;/em&gt;&quot;
 </code></pre><h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><p>写在（）里</p>
 <h2 id="缓冲代码和不缓冲代码"><a href="#缓冲代码和不缓冲代码" class="headerlink" title="缓冲代码和不缓冲代码"></a>缓冲代码和不缓冲代码</h2><p>不缓冲代码 前面加 <code>-</code> 不会直接输出</p>
-<p>缓冲代码 前面加<code>=</code> 会进行HTML转义,如果不想转移，前面加<code>!</code>,即<code>!=</code>,<code>=</code>后面只能跟字符串</p>
+<p>缓冲代码 前面加<code>=</code> 会进行HTML转义,如果不想转移，前面加<code>!</code>,即<code>!=</code>,<code>=</code>后面只能跟字符串或变量</p>
+<h2 id="嵌入"><a href="#嵌入" class="headerlink" title="嵌入"></a>嵌入</h2><p>#{var} 变量嵌入</p>
+<p>=var </p>
+<p>[p text] 标签嵌入</p>
 <h2 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h2><p>if …else </p>
 <p>if …elseif …else</p>
 <p>unless == if ! </p>
-<h2 id="include-模版包含"><a href="#include-模版包含" class="headerlink" title="include 模版包含"></a>include 模版包含</h2><h2 id="block-amp-extends-模版块引用"><a href="#block-amp-extends-模版块引用" class="headerlink" title="block &amp; extends 模版块引用"></a>block &amp; extends 模版块引用</h2><p>block 只能在现文件使用或者extends后引用其他文件的block块</p>
-<p>目前不知道extends和include有什么区别</p>
+<h2 id="include-模版包含"><a href="#include-模版包含" class="headerlink" title="include 模版包含"></a>include 模版包含</h2><p>导入其他模块到当前模块</p>
+<h2 id="block块-amp-extends-继承"><a href="#block块-amp-extends-继承" class="headerlink" title="block块 &amp; extends 继承"></a>block块 &amp; extends 继承</h2><p>block块</p>
+<ul>
+<li>当前文件使用和引用</li>
+<li>include后引用其他文件的block块</li>
+<li>extends后覆盖同名block或添加到同名block里</li>
+</ul>
+<p>extends用来继承，且称继承与被继承文件为子模块和主模块。</p>
+<ul>
+<li>子模块继承主模块，如果两个模块之间无同名block块存在，子模块内容将全部被覆盖，如果两个模块之间有同名block块存在，子模块中同名block将覆盖主模块的同名block块。</li>
+<li>使用 append blockname和prepend blockname 可追加到主模块的同名block后面和前面</li>
+</ul>
 <h2 id="mixins-重用块"><a href="#mixins-重用块" class="headerlink" title="mixins 重用块"></a>mixins 重用块</h2><h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><pre><code class="jade">//a   --&gt; &lt;!--a--&gt;
 //-   不编译
 </code></pre>
@@ -556,7 +569,7 @@ p!=&quot;this is text&lt;em&gt;尖括号不转义&lt;/em&gt;&quot;
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#标签"><span class="nav-number">1.</span> <span class="nav-text">标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文本"><span class="nav-number">2.</span> <span class="nav-text">文本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#属性"><span class="nav-number">3.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缓冲代码和不缓冲代码"><span class="nav-number">4.</span> <span class="nav-text">缓冲代码和不缓冲代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件语句"><span class="nav-number">5.</span> <span class="nav-text">条件语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#include-模版包含"><span class="nav-number">6.</span> <span class="nav-text">include 模版包含</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#block-amp-extends-模版块引用"><span class="nav-number">7.</span> <span class="nav-text">block & extends 模版块引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mixins-重用块"><span class="nav-number">8.</span> <span class="nav-text">mixins 重用块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注释"><span class="nav-number">9.</span> <span class="nav-text">注释</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#标签"><span class="nav-number">1.</span> <span class="nav-text">标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文本"><span class="nav-number">2.</span> <span class="nav-text">文本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#属性"><span class="nav-number">3.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缓冲代码和不缓冲代码"><span class="nav-number">4.</span> <span class="nav-text">缓冲代码和不缓冲代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#嵌入"><span class="nav-number">5.</span> <span class="nav-text">嵌入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件语句"><span class="nav-number">6.</span> <span class="nav-text">条件语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#include-模版包含"><span class="nav-number">7.</span> <span class="nav-text">include 模版包含</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#block块-amp-extends-继承"><span class="nav-number">8.</span> <span class="nav-text">block块 & extends 继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mixins-重用块"><span class="nav-number">9.</span> <span class="nav-text">mixins 重用块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注释"><span class="nav-number">10.</span> <span class="nav-text">注释</span></a></li></ol></div>
             
 
           </div>

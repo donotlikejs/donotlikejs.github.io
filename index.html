@@ -377,7 +377,7 @@
 
       
         
-          <p>Jade</p>
+          <p>Jade现改名pug <a href="https://pugjs.org/zh-cn/api/getting-started.html">官方中文文档</a></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/06/08/other-jade简记/#more" rel="contents">
@@ -1635,7 +1635,7 @@ html5新增        &lt;article&gt;
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/canvas要点/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/ES6初探/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="lijian">
@@ -1660,8 +1660,8 @@ html5新增        &lt;article&gt;
             
               
                 
-                <a class="post-title-link" href="/2017/03/03/canvas要点/" itemprop="url">
-                  html之canvas 绘图
+                <a class="post-title-link" href="/2017/03/03/ES6初探/" itemprop="url">
+                  ES6 初探
                 </a>
               
             
@@ -1737,31 +1737,28 @@ html5新增        &lt;article&gt;
       
         
           
-          使用canvas绘图共同步骤
-指定canvas大小（也可称之画布大小）
-调用Context(“2d”)方法
-//html
-&lt;canvas id=&quot;drawing&quot;&gt;&lt;/canvas&gt;
-&lt;style&gt;
-#drawing{width:300px;height:300px}
-&lt;/style&gt;
-&lt;script&gt;
-let drawing=document.getElementById(&quot;drawing&quot;);
-let context=drawing.Context(&quot;2d&quot;);
-&lt;/script&gt;
+          let 和 constlet和const声明都不能提升，
+同一个变量不能重复声明，
+声明的全局变量不是全局对象的属性
+const声明和赋值同时进行，对于基本类型不能重复赋值（可以作为常量赋值），引用类型可以。
+let能解决for循环中i的锁定问题。
+箭头函数箭头函数没有this，也没有argument
+//let exp1=function(){return a;}
+let exp1=()=&gt;a;
+//let exp2=function(){let a=0;return console.log(a);}
+let exp2=()=&gt;{let a=0;return console.log(a);}
 
-绘制矩形填充:fillStyle 描边:strokeStyle
-绘制矩形
-fillRect(x,y,width,height)
-strokeRect(x,y,width,height)
-clearRect(x,y,width,height)
-//填充
-context.fillStyle=&quot;#e5e5e5&quot;;
-context.fillRect(5,5,5
+不定参数和默认参数for - of模版字符串使用`  ` 包裹，需要解析的变量用 ${} 
+解构赋值let arr=[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;];
+let first=arr[0],second=arr[1],third=arr[2];
+// 等同于
+let[first,second,third]=arr;
+
+Symbols集合 Set
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/03/03/canvas要点/#more" rel="contents">
+            <a class="btn" href="/2017/03/03/ES6初探/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>

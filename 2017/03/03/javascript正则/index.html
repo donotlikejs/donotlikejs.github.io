@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="javascript," />
+  <meta name="keywords" content="javascript,regex," />
 
 
 
@@ -102,52 +102,61 @@
 
 
 
-<meta name="description" content="commonJS
-commonJS是服务器端模块的规范，
-commonJS规范定义 文件皆模块
-模块的的加载
+<meta name="description" content="创建 RegExp//1.
+let patt=/abc/g;
+//2.
+let patt=new RegExp(&amp;#39;abc&amp;#39;,&amp;#39;g&amp;#39;);
 
-require() // 引入外部模块
-exports对象 // 导出当前模块的方法或者变量，唯一的导出口
+修饰符/*
 
+    i    不区分大小
+    g    全局匹配
+    m    多行匹配
+    u    （es6新增）
 
-commonJS同步加载模块
+*/
 
-
-AMD AMD (Asynchronous Module Definition) 异步模块定义 AMD规范只有一个API define(id?">
+元字符 . \b \w\d\s/*
+    .          匹配任意字符">
 <meta property="og:type" content="article">
-<meta property="og:title" content="commonJS 和 AMD 规范">
-<meta property="og:url" content="http://yoursite.com/2016/12/22/commonJS and AMD/index.html">
+<meta property="og:title" content="javascript正则">
+<meta property="og:url" content="http://yoursite.com/2017/03/03/javascript正则/index.html">
 <meta property="og:site_name" content="OLLIFE">
-<meta property="og:description" content="commonJS
-commonJS是服务器端模块的规范，
-commonJS规范定义 文件皆模块
-模块的的加载
+<meta property="og:description" content="创建 RegExp//1.
+let patt=/abc/g;
+//2.
+let patt=new RegExp(&amp;#39;abc&amp;#39;,&amp;#39;g&amp;#39;);
 
-require() // 引入外部模块
-exports对象 // 导出当前模块的方法或者变量，唯一的导出口
+修饰符/*
 
+    i    不区分大小
+    g    全局匹配
+    m    多行匹配
+    u    （es6新增）
 
-commonJS同步加载模块
+*/
 
-
-AMD AMD (Asynchronous Module Definition) 异步模块定义 AMD规范只有一个API define(id?">
-<meta property="og:updated_time" content="2017-05-23T10:52:22.000Z">
+元字符 . \b \w\d\s/*
+    .          匹配任意字符">
+<meta property="og:updated_time" content="2017-05-23T10:53:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="commonJS 和 AMD 规范">
-<meta name="twitter:description" content="commonJS
-commonJS是服务器端模块的规范，
-commonJS规范定义 文件皆模块
-模块的的加载
+<meta name="twitter:title" content="javascript正则">
+<meta name="twitter:description" content="创建 RegExp//1.
+let patt=/abc/g;
+//2.
+let patt=new RegExp(&amp;#39;abc&amp;#39;,&amp;#39;g&amp;#39;);
 
-require() // 引入外部模块
-exports对象 // 导出当前模块的方法或者变量，唯一的导出口
+修饰符/*
 
+    i    不区分大小
+    g    全局匹配
+    m    多行匹配
+    u    （es6新增）
 
-commonJS同步加载模块
+*/
 
-
-AMD AMD (Asynchronous Module Definition) 异步模块定义 AMD规范只有一个API define(id?">
+元字符 . \b \w\d\s/*
+    .          匹配任意字符">
 
 
 
@@ -175,13 +184,13 @@ AMD AMD (Asynchronous Module Definition) 异步模块定义 AMD规范只有一�
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/12/22/commonJS and AMD/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/03/javascript正则/"/>
 
 
 
 
 
-  <title> commonJS 和 AMD 规范 | OLLIFE </title>
+  <title> javascript正则 | OLLIFE </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -314,7 +323,7 @@ AMD AMD (Asynchronous Module Definition) 异步模块定义 AMD规范只有一�
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/22/commonJS and AMD/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/javascript正则/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="lijian">
@@ -338,7 +347,7 @@ AMD AMD (Asynchronous Module Definition) 异步模块定义 AMD规范只有一�
             
             
               
-                commonJS 和 AMD 规范
+                javascript正则
               
             
           </h1>
@@ -353,8 +362,8 @@ AMD AMD (Asynchronous Module Definition) 异步模块定义 AMD规范只有一�
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-22T14:29:53+08:00">
-                2016-12-22
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-03T15:56:52+08:00">
+                2017-03-03
               </time>
             
 
@@ -376,8 +385,8 @@ AMD AMD (Asynchronous Module Definition) 异步模块定义 AMD规范只有一�
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/other/" itemprop="url" rel="index">
-                    <span itemprop="name">other</span>
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
                   </a>
                 </span>
 
@@ -411,22 +420,90 @@ AMD AMD (Asynchronous Module Definition) 异步模块定义 AMD规范只有一�
       
 
       
-        <h2 id="commonJS"><a href="#commonJS" class="headerlink" title="commonJS"></a>commonJS</h2><ul>
-<li>commonJS是服务器端模块的规范，</li>
-<li>commonJS规范定义 文件皆模块</li>
-<li><p>模块的的加载</p>
-<ul>
-<li>require() // 引入外部模块</li>
-<li>exports对象 // 导出当前模块的方法或者变量，唯一的导出口</li>
-</ul>
-</li>
-<li><p>commonJS同步加载模块</p>
-</li>
-</ul>
-<h2 id="AMD"><a href="#AMD" class="headerlink" title="AMD"></a>AMD</h2><p> AMD (Asynchronous Module Definition) 异步模块定义<br> AMD规范只有一个API<br> define(id?, dependencies?, factory);</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="https://segmentfault.com/a/1190000004873947" target="_blank" rel="external">https://segmentfault.com/a/1190000004873947</a></li>
-</ul>
+        <h2 id="创建-RegExp"><a href="#创建-RegExp" class="headerlink" title="创建 RegExp"></a>创建 RegExp</h2><pre><code class="javascript">//1.
+let patt=/abc/g;
+//2.
+let patt=new RegExp(&#39;abc&#39;,&#39;g&#39;);
+</code></pre>
+<h2 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h2><pre><code class="javascript">/*
+
+    i    不区分大小
+    g    全局匹配
+    m    多行匹配
+    u    （es6新增）
+
+*/
+</code></pre>
+<h2 id="元字符-b-w-d-s"><a href="#元字符-b-w-d-s" class="headerlink" title="元字符 . \b \w\d\s"></a>元字符 . \b \w\d\s</h2><pre><code class="javascript">/*
+    .          匹配任意字符
+    \b         匹配单词边界
+    \w        匹配数字，字母，下划线
+    \d        匹配数字
+    \s        匹配空格
+    [abc]    匹配方括号里任意一个字符
+    ^        匹配首部
+    $        匹配尾部
+
+    --取反--
+    \B \W \D \S [^abc]
+
+*/
+</code></pre>
+<h2 id="量词"><a href="#量词" class="headerlink" title="量词 * + ? {}"></a>量词 * + ? {}</h2><pre><code class="javascript">/*
+
+    *        匹配任意个
+    +        匹配一到多个
+    ?        匹配 0 到 1 个
+    {n}        匹配 n 个
+    {n,}    匹配至少 n 个
+    {n,m}    匹配 n 到 m 个
+
+*/
+</code></pre>
+<h2 id="分枝条件"><a href="#分枝条件" class="headerlink" title="分枝条件 |"></a>分枝条件 |</h2><pre><code class="javascript">/*
+
+a|b         匹配 a 或者 b 
+
+*/
+</code></pre>
+<h2 id="分组"><a href="#分组" class="headerlink" title="分组 ()"></a>分组 ()</h2><pre><code class="javascript">/*
+
+    (exp)            匹配且分组
+    (?&lt;name&gt;exp)    匹配且以name名分组
+    (?:exp)            只匹配不捕获不分组
+    (?=exp)            匹配exp前面位置
+    (?&lt;=exp)        匹配exp后面位置
+    (?!exp)            匹配后面不跟着exp的位置
+    (?&lt;!exp)        匹配前面不跟着exp的位置
+    (?#comment)        注释
+
+ */
+</code></pre>
+<h2 id="懒惰限定符"><a href="#懒惰限定符" class="headerlink" title="懒惰限定符"></a>懒惰限定符</h2><pre><code class="javascript">/*
+
+    *?
+    +?
+    ??
+    {n,m}?
+    {n,}?
+
+*/
+</code></pre>
+<h2 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符  \"></a>转义字符  <code>\</code></h2><pre><code class="javascript">/*
+
+    需要转义的字符   * . ? + $ ^ [ ] ( ) { } / \ |
+
+*/
+</code></pre>
+<h2 id="RegExp方法"><a href="#RegExp方法" class="headerlink" title="RegExp方法"></a>RegExp方法</h2><h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><pre><code class="javascript">complie()
+exec()
+test()
+</code></pre>
+<h3 id="2-支持RegExp的String方法"><a href="#2-支持RegExp的String方法" class="headerlink" title="2    支持RegExp的String方法"></a>2    支持RegExp的String方法</h3><pre><code class="javascript">search()
+match()
+replace()
+split()
+</code></pre>
 
       
     </div>
@@ -450,7 +527,7 @@ AMD AMD (Asynchronous Module Definition) 异步模块定义 AMD规范只有一�
       
         <div class="post-tags">
           
-            <a href="/tags/javascript/" rel="tag"># javascript</a>
+            <a href="/tags/javascript-regex/" rel="tag"># javascript,regex</a>
           
         </div>
       
@@ -459,8 +536,8 @@ AMD AMD (Asynchronous Module Definition) 异步模块定义 AMD规范只有一�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/22/requirejs 使用/" rel="next" title="requirejs使用">
-                <i class="fa fa-chevron-left"></i> requirejs使用
+              <a href="/2017/03/03/canvas要点/" rel="next" title="html之canvas 绘图">
+                <i class="fa fa-chevron-left"></i> html之canvas 绘图
               </a>
             
           </div>
@@ -469,8 +546,8 @@ AMD AMD (Asynchronous Module Definition) 异步模块定义 AMD规范只有一�
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/12/22/other-Shell命令/" rel="prev" title="常用Shell命令">
-                常用Shell命令 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/03/javascript偏移量 滚动 视口之类的/" rel="prev" title="offset alien scroll">
+                offset alien scroll <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -594,7 +671,7 @@ AMD AMD (Asynchronous Module Definition) 异步模块定义 AMD规范只有一�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#commonJS"><span class="nav-number">1.</span> <span class="nav-text">commonJS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AMD"><span class="nav-number">2.</span> <span class="nav-text">AMD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建-RegExp"><span class="nav-number">1.</span> <span class="nav-text">创建 RegExp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修饰符"><span class="nav-number">2.</span> <span class="nav-text">修饰符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元字符-b-w-d-s"><span class="nav-number">3.</span> <span class="nav-text">元字符 . \b \w\d\s</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#量词"><span class="nav-number">4.</span> <span class="nav-text">量词 * + ? {}</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分枝条件"><span class="nav-number">5.</span> <span class="nav-text">分枝条件 |</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分组"><span class="nav-number">6.</span> <span class="nav-text">分组 ()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#懒惰限定符"><span class="nav-number">7.</span> <span class="nav-text">懒惰限定符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转义字符"><span class="nav-number">8.</span> <span class="nav-text">转义字符  \</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RegExp方法"><span class="nav-number">9.</span> <span class="nav-text">RegExp方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1"><span class="nav-number">9.1.</span> <span class="nav-text">1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-支持RegExp的String方法"><span class="nav-number">9.2.</span> <span class="nav-text">2    支持RegExp的String方法</span></a></li></ol></li></ol></div>
             
 
           </div>
