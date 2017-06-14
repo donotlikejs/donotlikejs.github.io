@@ -108,7 +108,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/06/12/other-scss/index.html">
 <meta property="og:site_name" content="OLLIFE">
 <meta property="og:description" content="scss是sass的进阶版本官网文档">
-<meta property="og:updated_time" content="2017-06-13T14:35:15.000Z">
+<meta property="og:updated_time" content="2017-06-14T08:09:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="scss使用">
 <meta name="twitter:description" content="scss是sass的进阶版本官网文档">
@@ -377,13 +377,26 @@
       
         <p>scss是sass的进阶版本<br><a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html" target="_blank" rel="external">官网文档</a><br><a id="more"></a></p>
 <h2 id="嵌套"><a href="#嵌套" class="headerlink" title="嵌套"></a>嵌套</h2><ul>
-<li>选择器嵌套<ul>
+<li>选择器嵌套</li>
 <li>属性嵌套</li>
 <li>嵌套@import</li>
 </ul>
-</li>
-</ul>
-<h2 id="amp-父选择器定位符"><a href="#amp-父选择器定位符" class="headerlink" title="&amp; 父选择器定位符"></a><strong>&amp;</strong> 父选择器定位符</h2><h2 id="占位符"><a href="#占位符" class="headerlink" title="% 占位符"></a><strong>%</strong> 占位符</h2><h2 id="变量符"><a href="#变量符" class="headerlink" title="$ 变量符"></a><strong>$</strong> 变量符</h2><h2 id="插入"><a href="#插入" class="headerlink" title="#{} 插入"></a>#{} 插入</h2><h2 id="局部文件和下划线"><a href="#局部文件和下划线" class="headerlink" title="局部文件和下划线 _"></a>局部文件和下划线 <code>_</code></h2><h2 id="import"><a href="#import" class="headerlink" title="@import"></a>@import</h2><ul>
+<h2 id="amp-父选择器定位符"><a href="#amp-父选择器定位符" class="headerlink" title="&amp; 父选择器定位符"></a><strong>&amp;</strong> 父选择器定位符</h2><h2 id="占位符"><a href="#占位符" class="headerlink" title="% 占位符"></a><strong>%</strong> 占位符</h2><p>占位符不能单独编译，需要被调用才能显示</p>
+<pre><code class="scss">/*%list如果不被.ul 继承，nav %list就不会被编译*/
+nav %list{
+  list-diretion:none;
+}
+.ul{
+  @extend %list;
+}
+</code></pre>
+<h2 id="变量符"><a href="#变量符" class="headerlink" title="$ 变量符"></a><strong>$</strong> 变量符</h2><pre><code class="scss">$varname:varname
+</code></pre>
+<h2 id="插入"><a href="#插入" class="headerlink" title="#{} 插入"></a>#{} 插入</h2><pre><code class="scss">$varname:foo
+p.#{$varname}{code...}
+</code></pre>
+<h2 id="局部文件和下划线"><a href="#局部文件和下划线" class="headerlink" title="局部文件和下划线 _"></a>局部文件和下划线 <code>_</code></h2><p>  scss文件前加 _ 表示局部文件，不会变编译，比如 _header.scss</p>
+<h2 id="import"><a href="#import" class="headerlink" title="@import"></a>@import</h2><ul>
 <li>@import命令用于在当前scss文件里引入其他scss文件,可以一次@import多个文件。</li>
 <li>以下4种情况会编译为css中的@import<ul>
 <li>文件包含.css<pre><code class="scss">     @import demo.scss
