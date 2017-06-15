@@ -421,7 +421,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/javascript ajax and jsonp/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/css3动画/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="lijian">
@@ -446,8 +446,167 @@
             
               
                 
-                <a class="post-title-link" href="/2017/03/03/javascript ajax and jsonp/" itemprop="url">
-                  ajax 跨域 jsonp
+                <a class="post-title-link" href="/2017/03/03/css3动画/" itemprop="url">
+                  css3 动画
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-03T15:56:52+08:00">
+                2017-03-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          [TOC]
+浏览器前缀：-moz-，-webkit-，-o-，-ms-css3 动画一共三种转换 transformtransform:translate()/rotate()/scale()/skew()/matrix()
+transform-origin:(默认位置为50% 50%[ 0]，即中心点)
+transform-style:preserve-3d/flat
+perspective:num(3d元素距视图的距离)
+perspective-origin:x y （改变3d元素底部的xy位置）
+backface-visibility:visible／hidden （是否隐藏背面）
+
+过渡 transitiontransiton:property duration timing-function delay;
+//timing-function:linear ease ease-in ease-out ease-in-out cubic-bezier()
+
+动画 animation @keyframe name{}@keyframe name{
+  from[0%] {;[;]}
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/03/css3动画/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/javascript事件event/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="lijian">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/17428.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="OLLIFE">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="OLLIFE" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/03/javascript事件event/" itemprop="url">
+                  事件event
                 </a>
               
             
@@ -523,43 +682,34 @@
       
         
           
-          AJAX原生
-异步加载必须先实例化一个XMLHttpRequest函数。
+          事件：用户或者浏览器自身执行的某种动作
+事件处理程序（事件监听器）：响应某个事件的函数，事件处理程序的名字以“on”开头。
+捕获：从不具体的父元素逐步传到具体的元素
+冒泡：具体的元素逐步往上传播到不具体的父元素
+DOM事件流（DOM2级）:分为事件捕获阶段，处于目标阶段和事件冒泡阶段。（但浏览器都支持捕获和冒泡阶段对目标对象进行操作）事件委托（代理）：利用冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件.
+事件处理方法？
+事件绑定 事件监听 事件委托
+DOM0级：事件绑定
 
-let xhr = new XMLHttpRequest();
-xhr.open();
-xhr.send();
-setRequsetHeader();
-
-
-XMLHttpRequest的响应方法
-
-/*
-    readyStateChange 用于监听readyState的变化
-    status 响应状态码 1xx 2xx 3xx 4xx 5xx
-    statusText 响应状态说明
-    readyState    请求／响应过程的当前活动状态
-        0
-        1
-        2    发送，已经调用send方法
-        3    接收响应数据
-        4    表示完成
-
-    responseText    响应主体返回的文本
-    responseXML        响应主体返回的XML
-
-*/
+将一个函数赋值给一个事件处理程序属性
+   btn.onclick=function(){
+   }
 
 
-GET 和 POST 的一般写法
+HTML事件处理程序 ：写在html标签里   &lt;a onclick=&quot;changeColor()&quot;&gt;change color&lt;/&gt;
 
-// get
-let xhr=new XMLHttpRequest();
-url=&quot;http://w
+
+
+
+DOM2级：事件监听
+     /*
+      *1参数为要处理的事件名
+      *2参数事件处理程序的函数
+      *3参数为布尔值，true表示捕获阶段调用2，false表示冒泡阶段调用2fn在当前作用于
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/03/03/javascript ajax and jsonp/#more" rel="contents">
+            <a class="btn" href="/2017/03/03/javascript事件event/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -776,159 +926,6 @@ prototype.concat()
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/javascript this/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="lijian">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/uploads/17428.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="OLLIFE">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="OLLIFE" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/03/javascript this/" itemprop="url">
-                  this的指向值
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-03T15:56:52+08:00">
-                2017-03-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          1.在普通函数的调用中，this指向全局对象
-2.函数作为对象方法调用，this指向该对象。
-3.构造函数中，this指向实例对象。
-4.apply方法中，this指向第一参数
-5.箭头函数没有自己的this值，箭头函数内的this值继承自外围作用域。
-6.事件监听中的this
-
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/03/javascript this/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/ES6初探/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1093,7 +1090,7 @@ Symbols集合 Set
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/javascript事件event/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/javascript ajax and jsonp/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="lijian">
@@ -1118,8 +1115,8 @@ Symbols集合 Set
             
               
                 
-                <a class="post-title-link" href="/2017/03/03/javascript事件event/" itemprop="url">
-                  事件event
+                <a class="post-title-link" href="/2017/03/03/javascript ajax and jsonp/" itemprop="url">
+                  ajax 跨域 jsonp
                 </a>
               
             
@@ -1195,40 +1192,43 @@ Symbols集合 Set
       
         
           
-          事件：用户或者浏览器自身执行的某种动作
-事件处理程序（事件监听器）：响应某个事件的函数，事件处理程序的名字以“on”开头。
-DOM0级：将一个函数赋值给一个事件处理程序属性
-btn.onclick=function(){
-}
+          AJAX原生
+异步加载必须先实例化一个XMLHttpRequest函数。
 
-DOM1级
-DOM2级事件处理程序
-/*
-*1参数为要处理的事件名
-*2参数事件处理程序的函数
-*3参数为布尔值，true表示捕获阶段调用2，false表示冒泡阶段调用2
-    fn在当前作用于运行
-*/
-addEventListener(&quot;&quot;,fn,boolean)
-/*
-参数同上，只是调用变成删除
-*/
-removeEventListener()
-捕获：从不具体的父元素逐步传到具体的元素
-冒泡：具体的元素逐步往上传播到不具体的父元素
-DOM事件流（DOM2）:分为事件捕获阶段，处于目标阶段和事件冒泡阶段。（但浏览器都支持捕获和冒泡阶段对目标对象进行操作）
-事件处理程序分类
-HTML事件处理程序 ：写在html标签里
-IE事件处理程序：
-// fn会在全局作用域中运行
-attachEvent()
-detachEvent()
+let xhr = new XMLHttpRequest();
+xhr.open();
+xhr.send();
+setRequsetHeader();
 
-事件对象（e
+
+XMLHttpRequest的响应方法
+
+/*
+    readyStateChange 用于监听readyState的变化
+    status 响应状态码 1xx 2xx 3xx 4xx 5xx
+    statusText 响应状态说明
+    readyState    请求／响应过程的当前活动状态
+        0
+        1
+        2    发送，已经调用send方法
+        3    接收响应数据
+        4    表示完成
+
+    responseText    响应主体返回的文本
+    responseXML        响应主体返回的XML
+
+*/
+
+
+GET 和 POST 的一般写法
+
+// get
+let xhr=new XMLHttpRequest();
+url=&quot;http://w
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/03/03/javascript事件event/#more" rel="contents">
+            <a class="btn" href="/2017/03/03/javascript ajax and jsonp/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1435,7 +1435,7 @@ innerWidth
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/css3动画/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/canvas要点/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="lijian">
@@ -1460,8 +1460,8 @@ innerWidth
             
               
                 
-                <a class="post-title-link" href="/2017/03/03/css3动画/" itemprop="url">
-                  css3 动画
+                <a class="post-title-link" href="/2017/03/03/canvas要点/" itemprop="url">
+                  html之canvas 绘图
                 </a>
               
             
@@ -1500,8 +1500,8 @@ innerWidth
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
                   </a>
                 </span>
 
@@ -1537,23 +1537,31 @@ innerWidth
       
         
           
-          [TOC]
-浏览器前缀：-moz-，-webkit-，-o-，-ms-css3 动画一共三种转换 transformtransform:translate()/rotate()/scale()/skew()/matrix()
-transform-origin:(默认位置为50% 50%[ 0]，即中心点)
-transform-style:preserve-3d/flat
-perspective:num(3d元素距视图的距离)
-perspective-origin:x y （改变3d元素底部的xy位置）
-backface-visibility:visible／hidden （是否隐藏背面）
+          使用canvas绘图共同步骤
+指定canvas大小（也可称之画布大小）
+调用Context(“2d”)方法
+//html
+&lt;canvas id=&quot;drawing&quot;&gt;&lt;/canvas&gt;
+&lt;style&gt;
+#drawing{width:300px;height:300px}
+&lt;/style&gt;
+&lt;script&gt;
+let drawing=document.getElementById(&quot;drawing&quot;);
+let context=drawing.Context(&quot;2d&quot;);
+&lt;/script&gt;
 
-过渡 transitiontransiton:property duration timing-function delay;
-//timing-function:linear ease ease-in ease-out ease-in-out cubic-bezier()
-
-动画 animation @keyframe name{}@keyframe name{
-  from[0%] {;[;]}
+绘制矩形填充:fillStyle 描边:strokeStyle
+绘制矩形
+fillRect(x,y,width,height)
+strokeRect(x,y,width,height)
+clearRect(x,y,width,height)
+//填充
+context.fillStyle=&quot;#e5e5e5&quot;;
+context.fillRect(5,5,5
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/03/03/css3动画/#more" rel="contents">
+            <a class="btn" href="/2017/03/03/canvas要点/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1776,7 +1784,7 @@ let patt=new RegExp(&#39;abc&#39;,&#39;g&#39;);
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/canvas要点/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/javascript this/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="lijian">
@@ -1801,8 +1809,8 @@ let patt=new RegExp(&#39;abc&#39;,&#39;g&#39;);
             
               
                 
-                <a class="post-title-link" href="/2017/03/03/canvas要点/" itemprop="url">
-                  html之canvas 绘图
+                <a class="post-title-link" href="/2017/03/03/javascript this/" itemprop="url">
+                  this的指向值
                 </a>
               
             
@@ -1878,31 +1886,17 @@ let patt=new RegExp(&#39;abc&#39;,&#39;g&#39;);
       
         
           
-          使用canvas绘图共同步骤
-指定canvas大小（也可称之画布大小）
-调用Context(“2d”)方法
-//html
-&lt;canvas id=&quot;drawing&quot;&gt;&lt;/canvas&gt;
-&lt;style&gt;
-#drawing{width:300px;height:300px}
-&lt;/style&gt;
-&lt;script&gt;
-let drawing=document.getElementById(&quot;drawing&quot;);
-let context=drawing.Context(&quot;2d&quot;);
-&lt;/script&gt;
+          1.在普通函数的调用中，this指向全局对象
+2.函数作为对象方法调用，this指向该对象。
+3.构造函数中，this指向实例对象。
+4.apply方法中，this指向第一参数
+5.箭头函数没有自己的this值，箭头函数内的this值继承自外围作用域。
+6.事件监听中的this
 
-绘制矩形填充:fillStyle 描边:strokeStyle
-绘制矩形
-fillRect(x,y,width,height)
-strokeRect(x,y,width,height)
-clearRect(x,y,width,height)
-//填充
-context.fillStyle=&quot;#e5e5e5&quot;;
-context.fillRect(5,5,5
-          ...
+          
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/03/03/canvas要点/#more" rel="contents">
+            <a class="btn" href="/2017/03/03/javascript this/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
