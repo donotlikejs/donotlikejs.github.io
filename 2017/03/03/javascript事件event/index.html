@@ -104,26 +104,26 @@
 
 <meta name="description" content="事件：用户或者浏览器自身执行的某种动作
 事件处理程序（事件监听器）：响应某个事件的函数，事件处理程序的名字以“on”开头。
-捕获：从不具体的父元素逐步传到具体的元素
-冒泡：具体的元素逐步往上传播到不具体的父元素
-DOM事件流（DOM2级）:分为事件捕获阶段，处于目标阶段和事件冒泡阶段。（但浏览器都支持捕获和冒泡阶段对目标对象进行操作）事件委托（代理）：利用冒泡，只指定一个事件处理程序，就可以管理某">
+事件捕获：从不具体的父元素逐步传到具体的元素（Netscape定义的事件流）
+事件冒泡：具体的元素逐步往上传播到不具体的父元素（IE定义的事件流）
+DOM2级定义的DOM事件流:分为事件捕获阶段，处于目标阶段和事件冒泡阶段。（但浏览器都支持捕获和冒泡阶段对目标对象进行操作）事">
 <meta property="og:type" content="article">
 <meta property="og:title" content="事件event">
 <meta property="og:url" content="http://yoursite.com/2017/03/03/javascript事件event/index.html">
 <meta property="og:site_name" content="OLLIFE">
 <meta property="og:description" content="事件：用户或者浏览器自身执行的某种动作
 事件处理程序（事件监听器）：响应某个事件的函数，事件处理程序的名字以“on”开头。
-捕获：从不具体的父元素逐步传到具体的元素
-冒泡：具体的元素逐步往上传播到不具体的父元素
-DOM事件流（DOM2级）:分为事件捕获阶段，处于目标阶段和事件冒泡阶段。（但浏览器都支持捕获和冒泡阶段对目标对象进行操作）事件委托（代理）：利用冒泡，只指定一个事件处理程序，就可以管理某">
-<meta property="og:updated_time" content="2017-06-15T09:11:36.000Z">
+事件捕获：从不具体的父元素逐步传到具体的元素（Netscape定义的事件流）
+事件冒泡：具体的元素逐步往上传播到不具体的父元素（IE定义的事件流）
+DOM2级定义的DOM事件流:分为事件捕获阶段，处于目标阶段和事件冒泡阶段。（但浏览器都支持捕获和冒泡阶段对目标对象进行操作）事">
+<meta property="og:updated_time" content="2017-06-15T13:05:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="事件event">
 <meta name="twitter:description" content="事件：用户或者浏览器自身执行的某种动作
 事件处理程序（事件监听器）：响应某个事件的函数，事件处理程序的名字以“on”开头。
-捕获：从不具体的父元素逐步传到具体的元素
-冒泡：具体的元素逐步往上传播到不具体的父元素
-DOM事件流（DOM2级）:分为事件捕获阶段，处于目标阶段和事件冒泡阶段。（但浏览器都支持捕获和冒泡阶段对目标对象进行操作）事件委托（代理）：利用冒泡，只指定一个事件处理程序，就可以管理某">
+事件捕获：从不具体的父元素逐步传到具体的元素（Netscape定义的事件流）
+事件冒泡：具体的元素逐步往上传播到不具体的父元素（IE定义的事件流）
+DOM2级定义的DOM事件流:分为事件捕获阶段，处于目标阶段和事件冒泡阶段。（但浏览器都支持捕获和冒泡阶段对目标对象进行操作）事">
 
 
 
@@ -389,24 +389,24 @@ DOM事件流（DOM2级）:分为事件捕获阶段，处于目标阶段和事件
       
         <p><code>事件</code>：用户或者浏览器自身执行的某种动作</p>
 <p><code>事件处理程序（事件监听器）</code>：响应某个事件的函数，事件处理程序的名字以“on”开头。</p>
-<p><code>捕获</code>：从不具体的父元素逐步传到具体的元素</p>
-<p><code>冒泡</code>：具体的元素逐步往上传播到不具体的父元素</p>
-<p><code>DOM事件流（DOM2级）</code>:分为事件捕获阶段，处于目标阶段和事件冒泡阶段。（但浏览器都支持捕获和冒泡阶段对目标对象进行操作）<br><code>事件委托（代理）</code>：利用冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件.</p>
-<p>事件处理方法？</p>
-<h2 id="事件绑定-事件监听-事件委托"><a href="#事件绑定-事件监听-事件委托" class="headerlink" title="事件绑定 事件监听 事件委托"></a>事件绑定 事件监听 事件委托</h2><ul>
-<li><p>DOM0级：事件绑定</p>
+<p><code>事件捕获</code>：从不具体的父元素逐步传到具体的元素（Netscape定义的事件流）</p>
+<p><code>事件冒泡</code>：具体的元素逐步往上传播到不具体的父元素（IE定义的事件流）</p>
+<p><code>DOM2级定义的DOM事件流</code>:分为事件捕获阶段，处于目标阶段和事件冒泡阶段。（但浏览器都支持捕获和冒泡阶段对目标对象进行操作）<br><code>事件委托（代理）</code>：利用冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件.</p>
+<h2 id="事件绑定-amp-事件监听-amp-事件委托"><a href="#事件绑定-amp-事件监听-amp-事件委托" class="headerlink" title="事件绑定&amp;事件监听&amp;事件委托"></a>事件绑定&amp;事件监听&amp;事件委托</h2><ul>
+<li><p>事件绑定（DOM0级定义）</p>
 <ul>
-<li><p>将一个函数赋值给一个事件处理程序属性</p>
-<pre><code class="javascript">   btn.onclick=function(){
-   }
+<li>将一个函数赋值给一个事件处理程序属性</li>
+</ul>
+<pre><code class="javascript">  btn.onclick=function(){
+  }
 </code></pre>
-</li>
-<li>HTML事件处理程序 ：写在html标签里<pre><code class="html">   &lt;a onclick=&quot;changeColor()&quot;&gt;change color&lt;/&gt;
+<ul>
+<li>HTML事件处理程序 ：写在html标签里<pre><code class="html">&lt;a onclick=&quot;changeColor()&quot;&gt;change color&lt;/&gt;
 </code></pre>
 </li>
 </ul>
 </li>
-<li><p>DOM2级：事件监听</p>
+<li><p>事件监听（DOM2级定义的方法）</p>
 <pre><code class="javascript">     /*
       *1参数为要处理的事件名
       *2参数事件处理程序的函数
@@ -511,8 +511,8 @@ mouseover
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/03/javascript base/" rel="next" title="javascript">
-                <i class="fa fa-chevron-left"></i> javascript
+              <a href="/2017/03/03/javascript偏移量 滚动 视口之类的/" rel="next" title="offset alien scroll">
+                <i class="fa fa-chevron-left"></i> offset alien scroll
               </a>
             
           </div>
@@ -521,8 +521,8 @@ mouseover
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/03/css3动画/" rel="prev" title="css3 动画">
-                css3 动画 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/03/canvas要点/" rel="prev" title="html之canvas 绘图">
+                html之canvas 绘图 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -593,7 +593,7 @@ mouseover
           
             <div class="site-state-item site-state-posts">
               <a href="/">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -646,7 +646,7 @@ mouseover
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#事件绑定-事件监听-事件委托"><span class="nav-number">1.</span> <span class="nav-text">事件绑定 事件监听 事件委托</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件类型"><span class="nav-number">2.</span> <span class="nav-text">事件类型</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#事件绑定-amp-事件监听-amp-事件委托"><span class="nav-number">1.</span> <span class="nav-text">事件绑定&事件监听&事件委托</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件类型"><span class="nav-number">2.</span> <span class="nav-text">事件类型</span></a></li></ol></div>
             
 
           </div>
