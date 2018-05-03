@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/default" title="OLLIFE">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.6.0" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/page/4/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
+
+
+
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+    <title> OLLIFE </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">OLLIFE</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">OLLIFE</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts">
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2016/12/21/other-git/">git简明操作</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2016-12-21
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/other/">other</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          <h2 id="基本设置"><a href="#基本设置" class="headerlink" title="基本设置"></a>基本设置</h2><p>​    - 查看配置信息</p>
+<pre><code class="Shell">git config --list
+</code></pre>
+<p>​    - 设置 姓名和邮箱地址  (存放于 “~/.gitconfig”)</p>
+<pre><code class="shell">    git config —global user.name “yourname”
+    git config —global user.email “yourEmail”
+
+    git config —global color.ui auto
+</code></pre>
+<p>​    - 创建 SSH Key</p>
+<pre><code class="shell">    ssh-keygen -t -C “lianggunzai@gmail.com”
+</code></pre>
+<p>​    - 查看 id_rsa.pub（公开密钥）( id_rsa 私有密钥 )</p>
+<pre><code class="shell">    cat ~/.ssh/id_rsa.pub
+</code></pre>
+<p>​    - 和github进行认证</p>
+<pre><code class="shell">    ssh -T git@github.com
+</code></pre>
+<h2 id="从远程仓库获取"><a href="#从远程仓库获取" class="headerlink" title="从远程仓库获取"></a>从远程仓库获取</h2><pre><code class="shell">    #获取远程仓库
+    git clone git@github.com:Jianru-Lin/lambda-view.git
+
+    #查看当前目录还没有被git管理和被git管理且被修改但还没有提交的文件
+    git status    
+
+    #查看当前分支的相关信息     (-a参数可以同时显示本地仓库和远程仓库的分支信息)
+    git branch -a 
+
+    #文件加入暂存区
+    git  add   将文件加入暂存区
+
+    #提交（加入git树）
+    git commit -m “解释短语” 
+
+    #更新
+    git push
+</code></pre>
+<h2 id="本地建立项目并且推送到远程仓库"><a href="#本地建立项目并且推送到远程仓库" class="headerlink" title="本地建立项目并且推送到远程仓库"></a>本地建立项目并且推送到远程仓库</h2><pre><code class="shell">    #首先先建立一个文件夹并进入
+    mkdir gittest
+    cd gittest
+
+    #初始化仓库（目的是为了产生“.git”目录，里面存放管理当前目录内容的数据，数据也称为附属该目录的工作树）
+    git init
+
+    #查看仓库状态
+    git status
+
+    #提交到暂存区
+    git add filename
+
+    #更新（提交到工作树）
+    git commit -m “解释说明短语”
+
+    #添加远程仓库
+        git remote add 仓库路径
+
+    #推送至远程仓库
+        git push -u origin master         推送至master分支
+        git push -u origin 其他分支    推送到其他分支
+        (-u参数可以在推送到同时，将origin仓库的master分支设置为本地仓库当前分支的upstream （上游）)
+</code></pre>
+<h2 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h2><h3 id="分支-branch"><a href="#分支-branch" class="headerlink" title="分支 branch"></a>分支 branch</h3><pre><code class="shell">    #查看分支一览表和显示当前分支
+    git branch
+
+    #已当前branch分支为基础创建新分支并且切换到新建的分支
+    #等同于 git branch fenzhia ; git checkout fenzhia
+    git checkout -b fenzhia  
+
+   #切换分支
+    git checkout branch-name
+    #切换回上一个分支
+    git checkout - 
+
+    #合并分支
+        #1.先切换到master主分支
+    git checkout master
+        #2.再合并
+        #参数 —no-ff 可以确保历史记录中明确记录下本次分支合并
+    git merge —no-ff fenzhia
+</code></pre>
+<h3 id="合并冲突处理"><a href="#合并冲突处理" class="headerlink" title="合并冲突处理"></a>合并冲突处理</h3><pre><code class="shell">    #如果git merge --no—ff 分支 有冲突
+    #打开编辑器 把内容修改好后 执行 git add 文件名；git commit -m “解释短语”
+</code></pre>
+<h3 id="版本回溯和推进"><a href="#版本回溯和推进" class="headerlink" title="版本回溯和推进"></a>版本回溯和推进</h3><h3 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h3><p>After doing this, you may fix the identity used for this commit with:<br>设置完成以后，你可以通过以下这条语句来修复用于此提交到身份</p>
+<pre><code>git commit --amend --reset-author
+</code></pre><p>查看已提交到日志<br>    git log </p>
+<pre><code>参数 
+    —pertty=short 只显示第一行参数
+    加文件名或目录名 只会显示相关的日志
+    -p 显示文件的前后差别
+</code></pre><p>查看更改前后的差别<br>    git diff</p>
+<pre><code>            参数 HEAD 查看与最新提交的差别 （好习惯：git commit 前先 git diff HEAD 查看区别）
+</code></pre><p>以图表形式查看分支<br>git log –graph</p>
+<p>回溯历史分支（跑回之前修改的某个地方）</p>
+<p>git reset —hard 哈希值 （哈希值通过git log 能找到 复制粘贴即可）</p>
+<p>git reflog  查看当前仓库的所有日志</p>
+
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    
+      <a class="prev" href="/page/3/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text">上一页</span>
+      </a>
+    
+    
+  </nav>
+
+
+          </div>
+          
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+      
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2018
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">lijian</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.6.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.6.0"></script>
+
+  </body>
+</html>
