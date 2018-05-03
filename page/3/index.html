@@ -96,7 +96,7 @@
         <li class="mobile-menu-item">
           
           
-            首页
+            Home
           
         </li>
       </a>
@@ -105,7 +105,7 @@
         <li class="mobile-menu-item">
           
           
-            归档
+            Archives
           
         </li>
       </a>
@@ -126,7 +126,7 @@
           <a class="menu-item-link" href="/">
             
             
-              首页
+              Home
             
           </a>
         </li>
@@ -135,7 +135,7 @@
           <a class="menu-item-link" href="/archives/">
             
             
-              归档
+              Archives
             
           </a>
         </li>
@@ -157,7 +157,7 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          <a class="post-link" href="/2017/03/03/ES6初探/">ES6 初探</a>
+          <a class="post-link" href="/2017/03/03/javascript this/">this的指向值</a>
         
       </h1>
 
@@ -185,24 +185,13 @@
         
 
         
-          <h2 id="let-和-const"><a href="#let-和-const" class="headerlink" title="let 和 const"></a>let 和 const</h2><p>let和const声明都不能提升，</p>
-<p>同一个变量不能重复声明，</p>
-<p>声明的全局变量不是全局对象的属性</p>
-<p>const声明和赋值同时进行，对于基本类型不能重复赋值（可以作为常量赋值），引用类型可以。</p>
-<p>let能解决for循环中i的锁定问题。</p>
-<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><p>箭头函数没有this，也没有argument</p>
-<pre><code class="javascript">//let exp1=function(){return a;}
-let exp1=()=&gt;a;
-//let exp2=function(){let a=0;return console.log(a);}
-let exp2=()=&gt;{let a=0;return console.log(a);}
-</code></pre>
-<h2 id="不定参数和默认参数"><a href="#不定参数和默认参数" class="headerlink" title="不定参数和默认参数"></a>不定参数和默认参数</h2><h2 id="for-of"><a href="#for-of" class="headerlink" title="for - of"></a>for - of</h2><h2 id="模版字符串"><a href="#模版字符串" class="headerlink" title="模版字符串"></a>模版字符串</h2><p>使用`  ` 包裹，需要解析的变量用 ${} </p>
-<h2 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h2><pre><code class="javascript">let arr=[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;];
-let first=arr[0],second=arr[1],third=arr[2];
-// 等同于
-let[first,second,third]=arr;
-</code></pre>
-<h2 id="Symbols"><a href="#Symbols" class="headerlink" title="Symbols"></a>Symbols</h2><h2 id="集合-Set-Map-amp-amp-weakSet-weakMap"><a href="#集合-Set-Map-amp-amp-weakSet-weakMap" class="headerlink" title="集合 Set Map &amp;&amp; weakSet weakMap"></a>集合 Set Map &amp;&amp; weakSet weakMap</h2><h2 id="代理-proxies"><a href="#代理-proxies" class="headerlink" title="代理 proxies"></a>代理 proxies</h2><h2 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h2><h2 id="类class"><a href="#类class" class="headerlink" title="类class"></a>类class</h2><h2 id="子类-Subclass"><a href="#子类-Subclass" class="headerlink" title="子类 Subclass"></a>子类 Subclass</h2>
+          <p>1.在普通函数的调用中，this指向全局对象</p>
+<p>2.函数作为对象方法调用，this指向该对象。</p>
+<p>3.构造函数中，this指向实例对象。</p>
+<p>4.apply方法中，this指向第一参数</p>
+<p>5.箭头函数没有自己的this值，箭头函数内的this值继承自外围作用域。</p>
+<p>6.事件监听中的this</p>
+
         
       
     </div>
@@ -219,7 +208,7 @@ let[first,second,third]=arr;
     <header class="post-header">
       <h1 class="post-title">
         
-          <a class="post-link" href="/2017/03/03/javascript DOM操作/">DOM 操作</a>
+          <a class="post-link" href="/2017/03/03/javascript ajax and jsonp/">ajax 跨域 jsonp</a>
         
       </h1>
 
@@ -245,14 +234,87 @@ let[first,second,third]=arr;
       
         
         
-          
-        
 
         
-          <p>摘要 有关dom到基础</p>
-          <div class="read-more">
-            <a href="/2017/03/03/javascript DOM操作/" class="read-more-link">阅读更多</a>
-          </div>
+          <h2 id="AJAX原生"><a href="#AJAX原生" class="headerlink" title="AJAX原生"></a>AJAX原生</h2><ul>
+<li>异步加载必须先<code>实例化一个XMLHttpRequest函数</code>。</li>
+</ul>
+<pre><code class="javascript">let xhr = new XMLHttpRequest();
+xhr.open();
+xhr.send();
+setRequsetHeader();
+</code></pre>
+<ul>
+<li>XMLHttpRequest的响应方法</li>
+</ul>
+<pre><code class="javascript">/*
+    readyStateChange 用于监听readyState的变化
+    status 响应状态码 1xx 2xx 3xx 4xx 5xx
+    statusText 响应状态说明
+    readyState    请求／响应过程的当前活动状态
+        0
+        1
+        2    发送，已经调用send方法
+        3    接收响应数据
+        4    表示完成
+
+    responseText    响应主体返回的文本
+    responseXML        响应主体返回的XML
+
+*/
+</code></pre>
+<ul>
+<li>GET 和 POST 的一般写法</li>
+</ul>
+<pre><code class="javascript">// get
+let xhr=new XMLHttpRequest();
+url=&quot;http://www.abc.com?a=b&amp;c=d&quot;;
+xhr.open(&quot;get&quot;,url,true);
+xhr.send(null);
+xhr.readyStateChange=function(){
+  if(xhr.readyState==4&amp;&amp;xhr.status==200){
+    console.log(xhr.responseText);
+  }else{
+    console.log(`error${xhr.status}`);
+  }
+};
+
+//post
+let xhr=new XMLHttpRequest();
+url=&quot;http://abc.com&quot;;
+data=&quot;a=b&amp;c=d&quot;;
+xhr.open(&quot;post&quot;,url,true);
+xhr.setRequestHeader(&quot;Content-Type&quot;,&quot;application/x-www-from-urlencoded&quot;);
+xhr.send(data);
+xhr.readyStateChange=function(){
+  if(xhr.readyState==4&amp;&amp;xhr.status=200){
+    console.log(xhr.responseText);
+  }else{
+    console.log(`error:${xhr.status}`);
+
+  }
+}
+</code></pre>
+<h2 id="jquery-异步"><a href="#jquery-异步" class="headerlink" title="jquery 异步"></a>jquery 异步</h2><h2 id="jsonP"><a href="#jsonP" class="headerlink" title="jsonP"></a>jsonP</h2><p>利用\<script\>标签可跨域的性质，从服务器获取js文件，在当前页运行。</script\></p>
+<h2 id="JSON的两个方法"><a href="#JSON的两个方法" class="headerlink" title="JSON的两个方法"></a>JSON的两个方法</h2><pre><code>+ to obj     `JSON.parse(text)`
+ + to str    `JSON.stringify(obj)`
+</code></pre><h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><p>两个url中 协议 子域名 主域名 端口号 任意一个不同皆为不同域，而不同域之间的通信称之为跨域。</p>
+<pre><code class="javascript">／*
+
+http :  //  www  .  abc.com  :  8000  /demo/index.html
+协议        子域名        主域名        端口号        路径
+
+*／
+</code></pre>
+<h2 id="http状态码简记"><a href="#http状态码简记" class="headerlink" title="http状态码简记"></a>http状态码简记</h2><ul>
+<li>1xx:信息响应类：表示接收到请求并且继续处理</li>
+<li>2xx:处理成功响应类：表示动作被成功接收、理解和接受</li>
+<li>3xx:重定向响应类：为了完成指定的动作，必须接受进一步处理</li>
+<li>4xx:客户端错误：客户请求包含语法错误或者是不能正确执行</li>
+<li>5xx:服务端错误：服务器不能正确执行一个正确的请求</li>
+</ul>
+<p><a href="https://segmentfault.com/a/1190000006689786" target="_blank" rel="external">https://segmentfault.com/a/1190000006689786</a></p>
+
         
       
     </div>
@@ -310,6 +372,64 @@ let[first,second,third]=arr;
 <p><strong>写入文本</strong></p>
 <pre><code>a{插入文本}
 </code></pre>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2016/12/22/requirejs 使用/">requirejs使用</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2016-12-22
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/工具/">工具</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          <p><strong>RequireJS中假设所有的依赖资源都为js脚本</strong></p>
+<p>在html中引用</p>
+<pre><code class="vbscript-html">
+&lt;script src=&quot;app/require.js&quot; data-main=&quot;app/app.js&gt;&quot;
+</code></pre>
+<p>其中 app.js 为 requirejs的配置文件。</p>
+<h2 id="设置模块版本号"><a href="#设置模块版本号" class="headerlink" title="设置模块版本号"></a>设置模块版本号</h2><p><strong><code>扩展阅读</code></strong></p>
+<ul>
+<li><a href="http://www.wojilu.com/Forum1/Topic/4205" target="_blank" rel="external">http://www.wojilu.com/Forum1/Topic/4205</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2012/11/require_js.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2012/11/require_js.html</a></li>
+<li><a href="https://www.oschina.net/translate/getting-started-with-the-requirejs-library?p=1#comments" target="_blank" rel="external">https://www.oschina.net/translate/getting-started-with-the-requirejs-library?p=1#comments</a></li>
+<li><a href="http://www.qdfuns.com/notes/28100/ce0ba3c76072e916a8ce86e6360ac3de.html" target="_blank" rel="external">http://www.qdfuns.com/notes/28100/ce0ba3c76072e916a8ce86e6360ac3de.html</a></li>
+</ul>
+
         
       
     </div>
@@ -454,7 +574,7 @@ mv file1 /demo
     <header class="post-header">
       <h1 class="post-title">
         
-          <a class="post-link" href="/2016/12/22/requirejs 使用/">requirejs使用</a>
+          <a class="post-link" href="/2016/12/22/commonJS and AMD/">commonJS 和 AMD 规范</a>
         
       </h1>
 
@@ -465,7 +585,7 @@ mv file1 /demo
         
           <div class="post-category">
             
-              <a href="/categories/工具/">工具</a>
+              <a href="/categories/other/">other</a>
             
           </div>
         
@@ -482,20 +602,115 @@ mv file1 /demo
         
 
         
-          <p><strong>RequireJS中假设所有的依赖资源都为js脚本</strong></p>
-<p>在html中引用</p>
-<pre><code class="vbscript-html">
-&lt;script src=&quot;app/require.js&quot; data-main=&quot;app/app.js&gt;&quot;
-</code></pre>
-<p>其中 app.js 为 requirejs的配置文件。</p>
-<h2 id="设置模块版本号"><a href="#设置模块版本号" class="headerlink" title="设置模块版本号"></a>设置模块版本号</h2><p><strong><code>扩展阅读</code></strong></p>
+          <h2 id="commonJS"><a href="#commonJS" class="headerlink" title="commonJS"></a>commonJS</h2><ul>
+<li>commonJS是服务器端模块的规范，</li>
+<li>commonJS规范定义 文件皆模块</li>
+<li><p>模块的的加载</p>
 <ul>
-<li><a href="http://www.wojilu.com/Forum1/Topic/4205" target="_blank" rel="external">http://www.wojilu.com/Forum1/Topic/4205</a></li>
-<li><a href="http://www.ruanyifeng.com/blog/2012/11/require_js.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2012/11/require_js.html</a></li>
-<li><a href="https://www.oschina.net/translate/getting-started-with-the-requirejs-library?p=1#comments" target="_blank" rel="external">https://www.oschina.net/translate/getting-started-with-the-requirejs-library?p=1#comments</a></li>
-<li><a href="http://www.qdfuns.com/notes/28100/ce0ba3c76072e916a8ce86e6360ac3de.html" target="_blank" rel="external">http://www.qdfuns.com/notes/28100/ce0ba3c76072e916a8ce86e6360ac3de.html</a></li>
+<li>require() // 引入外部模块</li>
+<li>exports对象 // 导出当前模块的方法或者变量，唯一的导出口</li>
+</ul>
+</li>
+<li><p>commonJS同步加载模块</p>
+</li>
+</ul>
+<h2 id="AMD"><a href="#AMD" class="headerlink" title="AMD"></a>AMD</h2><p> AMD (Asynchronous Module Definition) 异步模块定义<br> AMD规范只有一个API<br> define(id?, dependencies?, factory);</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://segmentfault.com/a/1190000004873947" target="_blank" rel="external">https://segmentfault.com/a/1190000004873947</a></li>
 </ul>
 
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2016/12/22/计算机基础/">计算机基础</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2016-12-22
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/javascript/">javascript</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          <p>比特(bit): 1bit为单个二进制数值 0 或者 1 。</p>
+<p>字节(Byte)：1byte=8bit(00000000~11111111)=8位二进制。<br>位：计算机内部数据储存的最小单位(比如cpu有32位二进制和64位二进制)<br>码元：常用时间间隔相同的符号来表示一位二进制数字，这样的时间间隔内的信号          称为二进制码元。<br>字符</p>
+
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2016/12/22/仿锤子3d动图/">防锤子3d动图</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2016-12-22
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/javascript-css/">javascript css</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          
         
       
     </div>
@@ -653,159 +868,6 @@ module.explorts={
     <header class="post-header">
       <h1 class="post-title">
         
-          <a class="post-link" href="/2016/12/22/commonJS and AMD/">commonJS 和 AMD 规范</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2016-12-22
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/categories/other/">other</a>
-            
-          </div>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <h2 id="commonJS"><a href="#commonJS" class="headerlink" title="commonJS"></a>commonJS</h2><ul>
-<li>commonJS是服务器端模块的规范，</li>
-<li>commonJS规范定义 文件皆模块</li>
-<li><p>模块的的加载</p>
-<ul>
-<li>require() // 引入外部模块</li>
-<li>exports对象 // 导出当前模块的方法或者变量，唯一的导出口</li>
-</ul>
-</li>
-<li><p>commonJS同步加载模块</p>
-</li>
-</ul>
-<h2 id="AMD"><a href="#AMD" class="headerlink" title="AMD"></a>AMD</h2><p> AMD (Asynchronous Module Definition) 异步模块定义<br> AMD规范只有一个API<br> define(id?, dependencies?, factory);</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="https://segmentfault.com/a/1190000004873947" target="_blank" rel="external">https://segmentfault.com/a/1190000004873947</a></li>
-</ul>
-
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2016/12/22/仿锤子3d动图/">防锤子3d动图</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2016-12-22
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/categories/javascript-css/">javascript css</a>
-            
-          </div>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2016/12/22/计算机基础/">计算机基础</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2016-12-22
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/categories/javascript/">javascript</a>
-            
-          </div>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <p>比特(bit): 1bit为单个二进制数值 0 或者 1 。</p>
-<p>字节(Byte)：1byte=8bit(00000000~11111111)=8位二进制。<br>位：计算机内部数据储存的最小单位(比如cpu有32位二进制和64位二进制)<br>码元：常用时间间隔相同的符号来表示一位二进制数字，这样的时间间隔内的信号          称为二进制码元。<br>字符</p>
-
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
           <a class="post-link" href="/2016/12/22/新手小问题收集（HTML）/">新手小问题收集</a>
         
       </h1>
@@ -862,12 +924,12 @@ module.explorts={
     
       <a class="prev" href="/page/2/">
         <i class="iconfont icon-left"></i>
-        <span class="prev-text">上一页</span>
+        <span class="prev-text">Prev</span>
       </a>
     
     
       <a class="next" href="/page/4/">
-        <span class="next-text">下一页</span>
+        <span class="next-text">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
     
@@ -924,11 +986,11 @@ module.explorts={
 
 <div class="copyright">
   <span class="power-by">
-    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    主题 - 
+    Theme - 
     <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 
