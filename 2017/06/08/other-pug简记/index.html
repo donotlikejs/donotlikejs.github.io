@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="jade 使用简记"/>
+
+
+
+
+  <meta name="keywords" content="jade, OLLIFE" />
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/default" title="OLLIFE">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.6.0" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2017/06/08/other-pug简记/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
+
+
+
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+    <title> jade 使用简记 - OLLIFE </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">OLLIFE</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">OLLIFE</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          jade 使用简记
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2017-06-08
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/other/">other</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#和"><span class="toc-text">=和!=</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#标签"><span class="toc-text">标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文本"><span class="toc-text">文本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#属性"><span class="toc-text">属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#class属性"><span class="toc-text">class属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#id属性"><span class="toc-text">id属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#style属性"><span class="toc-text">style属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#amp-attributes语法"><span class="toc-text">&attributes语法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#缓冲代码和不缓冲代码"><span class="toc-text">缓冲代码和不缓冲代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#嵌入"><span class="toc-text">嵌入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条件语句"><span class="toc-text">条件语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#include-模版包含"><span class="toc-text">include 模版包含</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#block块-amp-extends-继承"><span class="toc-text">block块 & extends 继承</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mixins-重用块"><span class="toc-text">mixins 重用块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注释"><span class="toc-text">注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编译成HTML"><span class="toc-text">编译成HTML</span></a></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <p>Jade现改名pug <a href="https://pugjs.org/zh-cn/api/getting-started.html" target="_blank" rel="external">官方中文文档</a></p>
+<a id="more"></a>
+<h2 id="和"><a href="#和" class="headerlink" title="=和!="></a>=和!=</h2><pre><code>= 符号会自动转义，!= 不会转义
+</code></pre><h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><h2 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h2><pre><code class="jade">p this is text
+p
+ this is text
+p=&quot;this is text&lt;em&gt;自动转义&lt;/em&gt;&quot;
+p!=&quot;this is text&lt;em&gt;尖括号不转义&lt;/em&gt;&quot;
+</code></pre>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><ul>
+<li>属性用()包裹，属性间空格或者加逗号。如果属性名和js保留字同名需要‘’或者“”包裹。</li>
+</ul>
+<pre><code class="jade">a(class=&quot;a&quot; href=&quot;/demo.html&quot; &#39;script&#39;=&quot;xx/1.jpg&quot;)
+</code></pre>
+<ul>
+<li><p>判断</p>
+<pre><code class="jade">-var istrue=true
+a(class=istrue?&#39;true&#39;:&#39;false&#39; href=&#39;/page.html&#39;) boolean
+</code></pre>
+<h3 id="class属性"><a href="#class属性" class="headerlink" title="class属性"></a>class属性</h3></li>
+<li><p>字面量写法</p>
+</li>
+</ul>
+<pre><code class="jade">  .classname
+  a.classname
+</code></pre>
+<ul>
+<li>插入数组和合并数组<pre><code class="jade">- var classes=[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]
+a(class=classes)
+p(class=classes class=[&#39;newa&#39;,&#39;newb&#39;])
+</code></pre>
+</li>
+<li><p>boolean判断</p>
+<pre><code class="jade">-var homeadd=&#39;/home&#39;
+a(class={active:homeadd===&#39;/about&#39;}) about
+a(class={active:homeadd===&#39;/home&#39;}) home
+</code></pre>
+<h3 id="id属性"><a href="#id属性" class="headerlink" title="id属性"></a>id属性</h3></li>
+<li><p>字面量写法</p>
+<pre><code class="jade">.idname
+a.idname
+</code></pre>
+<h3 id="style属性"><a href="#style属性" class="headerlink" title="style属性"></a>style属性</h3><p>style 属性值以对象字面量格式输入，css属性间用逗号间隔，css属性值为string</p>
+<pre><code class="jade">a(style={border:&#39;1px solid red&#39;,border-radio:&#39;3px&#39;})
+</code></pre>
+<h3 id="amp-attributes语法"><a href="#amp-attributes语法" class="headerlink" title="&amp;attributes语法"></a>&amp;attributes语法</h3><p>对象字面量形式</p>
+<pre><code class="jade">//data-name 因为存在-，不能正常解析，需要加上双引号
+p(class=&#39;a&#39;&amp;attributes{&#39;data-name&#39;:&#39;active&#39;,id:&#39;ptext&#39;})
+- var attobj={}
+- attobj.id=&#39;nav&#39;
+- attobj.herf=&#39;/page.html&#39;
+a.demo(data-name=&#39;dataname&#39;)&amp;attributes(attobj) pagehtml
+</code></pre>
+</li>
+</ul>
+<h2 id="缓冲代码和不缓冲代码"><a href="#缓冲代码和不缓冲代码" class="headerlink" title="缓冲代码和不缓冲代码"></a>缓冲代码和不缓冲代码</h2><p>不缓冲代码 前面加 <code>-</code> 不会直接输出</p>
+<p>缓冲代码 前面加<code>=</code> 会进行HTML转义,如果不想转移，前面加<code>!</code>,即<code>!=</code>,<code>=</code>后面只能跟字符串或变量</p>
+<h2 id="嵌入"><a href="#嵌入" class="headerlink" title="嵌入"></a>嵌入</h2><p>#{var} 变量嵌入</p>
+<p>=var </p>
+<p>[p text] 标签嵌入</p>
+<h2 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h2><p>if …else </p>
+<p>if …elseif …else</p>
+<p>unless == if ! </p>
+<h2 id="include-模版包含"><a href="#include-模版包含" class="headerlink" title="include 模版包含"></a>include 模版包含</h2><p>导入其他模块到当前模块</p>
+<h2 id="block块-amp-extends-继承"><a href="#block块-amp-extends-继承" class="headerlink" title="block块 &amp; extends 继承"></a>block块 &amp; extends 继承</h2><p>block块</p>
+<ul>
+<li>当前文件使用和引用</li>
+<li>include后引用其他文件的block块</li>
+<li>extends后覆盖同名block或添加到同名block里</li>
+</ul>
+<p>extends用来继承，且称继承与被继承文件为子模块和主模块。</p>
+<ul>
+<li>子模块继承主模块，如果两个模块之间无同名block块存在，子模块内容将全部被覆盖，如果两个模块之间有同名block块存在，子模块中同名block将覆盖主模块的同名block块。</li>
+<li>使用 append blockname和prepend blockname 可追加到主模块的同名block后面和前面</li>
+</ul>
+<h2 id="mixins-重用块"><a href="#mixins-重用块" class="headerlink" title="mixins 重用块"></a>mixins 重用块</h2><pre><code class="jade">mixin name
+    code
++name
+</code></pre>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><pre><code class="jade">//a   --&gt; &lt;!--a--&gt;
+//-   不编译
+</code></pre>
+<h2 id="编译成HTML"><a href="#编译成HTML" class="headerlink" title="编译成HTML"></a>编译成HTML</h2>
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://yoursite.com">lijian</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://yoursite.com/2017/06/08/other-pug简记/">http://yoursite.com/2017/06/08/other-pug简记/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/jade/">jade</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2017/06/12/other-scss/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">scss使用</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/2017/06/06/css-grid-layout/">
+        <span class="next-text nav-default">栅格布局 grid layout</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+      
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2018
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">lijian</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.6.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.6.0"></script>
+
+  </body>
+</html>

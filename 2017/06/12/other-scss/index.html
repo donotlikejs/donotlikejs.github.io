@@ -100,7 +100,7 @@
         <li class="mobile-menu-item">
           
           
-            Home
+            首页
           
         </li>
       </a>
@@ -109,7 +109,7 @@
         <li class="mobile-menu-item">
           
           
-            Archives
+            归档
           
         </li>
       </a>
@@ -130,7 +130,7 @@
           <a class="menu-item-link" href="/">
             
             
-              Home
+              首页
             
           </a>
         </li>
@@ -139,7 +139,7 @@
           <a class="menu-item-link" href="/archives/">
             
             
-              Archives
+              归档
             
           </a>
         </li>
@@ -181,9 +181,9 @@
     
     
   <div class="post-toc" id="post-toc">
-    <h2 class="post-toc-title">Contents</h2>
+    <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#嵌套"><span class="toc-text">嵌套</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#amp-父选择器定位符"><span class="toc-text">& 父选择器定位符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#占位符"><span class="toc-text">% 占位符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#变量符"><span class="toc-text">$ 变量符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插入"><span class="toc-text">#{} 插入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#局部文件和下划线"><span class="toc-text">局部文件和下划线 _</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#import"><span class="toc-text">@import</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mixin-复用指令"><span class="toc-text">@mixin     复用指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#include-包含指令"><span class="toc-text">@include   包含指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#extend-继承指令"><span class="toc-text">@extend    继承指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据类型"><span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注释-and"><span class="toc-text">注释 // and /**/</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#嵌套"><span class="toc-text">嵌套</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#amp-父选择器定位符"><span class="toc-text">& 父选择器定位符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#占位符"><span class="toc-text">% 占位符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#变量"><span class="toc-text">$ 变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插入"><span class="toc-text">#{} 插入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#局部文件和下划线"><span class="toc-text">局部文件和下划线 _</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#import"><span class="toc-text">@import</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mixin-复用指令"><span class="toc-text">@mixin     复用指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#include-包含指令"><span class="toc-text">@include   包含指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#extend-继承指令"><span class="toc-text">@extend    继承指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据类型"><span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注释-and"><span class="toc-text">注释 // and /**/</span></a></li></ol>
     </div>
   </div>
 
@@ -196,16 +196,20 @@
 <li>属性嵌套</li>
 <li>嵌套@import</li>
 </ul>
-<h2 id="amp-父选择器定位符"><a href="#amp-父选择器定位符" class="headerlink" title="&amp; 父选择器定位符"></a><strong>&amp;</strong> 父选择器定位符</h2><h2 id="占位符"><a href="#占位符" class="headerlink" title="% 占位符"></a><strong>%</strong> 占位符</h2><p>占位符不能单独编译，需要被调用才能显示</p>
+<h2 id="amp-父选择器定位符"><a href="#amp-父选择器定位符" class="headerlink" title="&amp; 父选择器定位符"></a><strong>&amp;</strong> 父选择器定位符</h2><p>​    </p>
+<h2 id="占位符"><a href="#占位符" class="headerlink" title="% 占位符"></a><strong>%</strong> 占位符</h2><p>占位符不能单独编译，需要被调用才能显示</p>
 <pre><code class="scss">/*%list如果不被.ul 继承，nav %list就不会被编译*/
 nav %list{
   list-diretion:none;
 }
-.ul{
+
+ul{
   @extend %list;
 }
+//相当于
+nav ul{list-diretion:none;}
 </code></pre>
-<h2 id="变量符"><a href="#变量符" class="headerlink" title="$ 变量符"></a><strong>$</strong> 变量符</h2><pre><code class="scss">$varname:varname
+<h2 id="变量"><a href="#变量" class="headerlink" title="$ 变量"></a><strong>$</strong> 变量</h2><pre><code class="scss">$varname:varname
 </code></pre>
 <h2 id="插入"><a href="#插入" class="headerlink" title="#{} 插入"></a>#{} 插入</h2><pre><code class="scss">$varname:foo
 p.#{$varname}{code...}
@@ -239,15 +243,15 @@ p.#{$varname}{code...}
 
   <div class="post-copyright">
     <p class="copyright-item">
-      <span>Author: </span>
+      <span>原文作者: </span>
       <a href="http://yoursite.com">lijian</a>
     </p>
     <p class="copyright-item">
-      <span>Link: </span>
+      <span>原文链接: </span>
       <a href="http://yoursite.com/2017/06/12/other-scss/">http://yoursite.com/2017/06/12/other-scss/</a>
     </p>
     <p class="copyright-item">
-      <span>License: </span>
+      <span>许可协议: </span>
       
       <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
     </p>
@@ -275,13 +279,13 @@ p.#{$varname}{code...}
       <a class="prev" href="/2017/08/07/homebrew命令/">
         <i class="iconfont icon-left"></i>
         <span class="prev-text nav-default"></span>
-        <span class="prev-text nav-mobile">Prev</span>
+        <span class="prev-text nav-mobile">上一篇</span>
       </a>
     
     
-      <a class="next" href="/2017/06/08/other-jade简记/">
+      <a class="next" href="/2017/06/08/other-pug简记/">
         <span class="next-text nav-default">jade 使用简记</span>
-        <span class="prev-text nav-mobile">Next</span>
+        <span class="prev-text nav-mobile">下一篇</span>
         <i class="iconfont icon-right"></i>
       </a>
     
@@ -347,11 +351,11 @@ p.#{$varname}{code...}
 
 <div class="copyright">
   <span class="power-by">
-    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    Theme - 
+    主题 - 
     <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 

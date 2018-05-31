@@ -96,7 +96,7 @@
         <li class="mobile-menu-item">
           
           
-            Home
+            首页
           
         </li>
       </a>
@@ -105,7 +105,7 @@
         <li class="mobile-menu-item">
           
           
-            Archives
+            归档
           
         </li>
       </a>
@@ -126,7 +126,7 @@
           <a class="menu-item-link" href="/">
             
             
-              Home
+              首页
             
           </a>
         </li>
@@ -135,7 +135,7 @@
           <a class="menu-item-link" href="/archives/">
             
             
-              Archives
+              归档
             
           </a>
         </li>
@@ -151,6 +151,300 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts">
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2017/03/03/javascript事件event/">事件event</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2017-03-03
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/javascript/">javascript</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          <p><code>事件</code>：用户或者浏览器自身执行的某种动作。</p>
+<p><code>事件流</code> 页面中接收事件的顺序。</p>
+<p><code>事件捕获</code>：从不具体的父元素逐步传到具体的元素（Netscape定义的事件流）</p>
+<p><code>事件冒泡</code>：具体的元素逐步往上传播到不具体的父元素（IE定义的事件流）</p>
+<p><code>DOM2级定义的DOM事件流</code>:分为事件捕获阶段，处于目标阶段和事件冒泡阶段。（但浏览器都支持捕获和冒泡阶段对目标对象进行操作）</p>
+<p><code>事件处理程序（事件监听器）</code>：响应某个事件的函数，事件处理程序的名字以“on”开头。</p>
+<p><code>事件委托（代理）</code>：利用冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件.</p>
+<h2 id="事件绑定-amp-事件监听-amp-事件委托"><a href="#事件绑定-amp-事件监听-amp-事件委托" class="headerlink" title="事件绑定&amp;事件监听&amp;事件委托"></a>事件绑定&amp;事件监听&amp;事件委托</h2><ul>
+<li><p>事件绑定（DOM0级定义）</p>
+<ul>
+<li>将一个函数赋值给一个事件处理程序属性</li>
+</ul>
+<pre><code class="javascript">  btn.onclick=function(){
+  }
+</code></pre>
+<ul>
+<li>HTML事件处理程序 ：写在html标签里<pre><code class="html">&lt;a onclick=&quot;changeColor()&quot;&gt;change color&lt;/&gt;
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>事件监听（DOM2级定义的方法）</p>
+<pre><code class="javascript">     /*
+      *1参数为要处理的事件名
+      *2参数事件处理程序的函数
+      *3参数为布尔值，true表示捕获阶段调用2，false表示冒泡阶段调用2fn在当前作用于运行
+      */
+      addEventListener(&quot;&quot;,fn,boolean)
+      /*
+       *参数同上，只是调用变成删除
+       */
+      removeEventListener()
+</code></pre>
+</li>
+</ul>
+<ul>
+<li>DOM3级:事件委托</li>
+</ul>
+<p>IE事件处理程序：</p>
+<pre><code class="javasc">// fn会在全局作用域中运行
+attachEvent()
+detachEvent()
+</code></pre>
+<p>事件对象（event）</p>
+<p>触发DOM事件时自动产生事件对象event，该对象包含所有与事件有关的信息。</p>
+<pre><code class="javascript">stopPropagation() 停止派发事件
+preventDefault()   取消默认行为
+target                返回最初触发事件的元素
+type                返回事件类型
+</code></pre>
+<pre><code class="javascript">//原点为浏览器内容区域左上角
+clientX
+clientY
+
+//原点为屏幕左上角
+screenX
+screenY
+
+//FF特有 原点为浏览器内容区域左上角随scroll变化
+pageX
+pageY
+</code></pre>
+<h2 id="事件类型"><a href="#事件类型" class="headerlink" title="事件类型"></a>事件类型</h2><ul>
+<li>UI</li>
+</ul>
+<pre><code class="javascript">load
+unload
+abort
+error
+select
+resize
+scroll
+</code></pre>
+<ul>
+<li>鼠标和滚轮</li>
+</ul>
+<pre><code class="javascript">click
+dbclick
+mousedown
+mouseup
+mouseenter  dom3级，事件不冒泡，移动到子元素上也不触发
+mouseleave  同上
+mousemove   鼠标在目标内移动时重复触发
+mouseout
+mouseover
+</code></pre>
+<ul>
+<li>表单</li>
+<li>拖拽</li>
+<li>焦点</li>
+<li>键盘</li>
+<li>文本</li>
+<li>合成，变动，变动名称</li>
+</ul>
+
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2017/03/03/javascript正则/">javascript正则</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2017-03-03
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/javascript/">javascript</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          <h2 id="创建-RegExp"><a href="#创建-RegExp" class="headerlink" title="创建 RegExp"></a>创建 RegExp</h2><pre><code class="javascript">//1.
+let patt=/abc/g;
+//2.
+let patt=new RegExp(&#39;abc&#39;,&#39;g&#39;);
+</code></pre>
+<h2 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h2><pre><code class="javascript">/*
+
+    i    不区分大小
+    g    全局匹配
+    m    多行匹配
+    u    （es6新增）
+
+*/
+</code></pre>
+<h2 id="元字符-b-w-d-s"><a href="#元字符-b-w-d-s" class="headerlink" title="元字符 . \b \w\d\s"></a>元字符 . \b \w\d\s</h2><pre><code class="javascript">/*
+    .          匹配任意字符
+    \b         匹配单词边界
+    \w        匹配数字，字母，下划线
+    \d        匹配数字
+    \s        匹配空格
+    [abc]    匹配方括号里任意一个字符
+    ^        匹配首部
+    $        匹配尾部
+
+    --取反--
+    \B \W \D \S [^abc]
+
+*/
+</code></pre>
+<h2 id="量词"><a href="#量词" class="headerlink" title="量词 * + ? {}"></a>量词 * + ? {}</h2><pre><code class="javascript">/*
+
+    *        匹配任意个
+    +        匹配一到多个
+    ?        匹配 0 到 1 个
+    {n}        匹配 n 个
+    {n,}    匹配至少 n 个
+    {n,m}    匹配 n 到 m 个
+
+*/
+</code></pre>
+<h2 id="分枝条件"><a href="#分枝条件" class="headerlink" title="分枝条件 |"></a>分枝条件 |</h2><pre><code class="javascript">/*
+
+a|b         匹配 a 或者 b 
+
+*/
+</code></pre>
+<h2 id="分组"><a href="#分组" class="headerlink" title="分组 ()"></a>分组 ()</h2><pre><code class="javascript">/*
+
+    (exp)            匹配且分组
+    (?&lt;name&gt;exp)    匹配且以name名分组
+    (?:exp)            只匹配不捕获不分组
+    (?=exp)            匹配exp前面位置
+    (?&lt;=exp)        匹配exp后面位置
+    (?!exp)            匹配后面不跟着exp的位置
+    (?&lt;!exp)        匹配前面不跟着exp的位置
+    (?#comment)        注释
+
+ */
+</code></pre>
+<h2 id="懒惰限定符"><a href="#懒惰限定符" class="headerlink" title="懒惰限定符"></a>懒惰限定符</h2><pre><code class="javascript">/*
+
+    *?
+    +?
+    ??
+    {n,m}?
+    {n,}?
+
+*/
+</code></pre>
+<h2 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符  \"></a>转义字符  <code>\</code></h2><pre><code class="javascript">/*
+
+    需要转义的字符   * . ? + $ ^ [ ] ( ) { } / \ |
+
+*/
+</code></pre>
+<h2 id="RegExp方法"><a href="#RegExp方法" class="headerlink" title="RegExp方法"></a>RegExp方法</h2><h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><pre><code class="javascript">complie()
+exec()
+test()
+</code></pre>
+<h3 id="2-支持RegExp的String方法"><a href="#2-支持RegExp的String方法" class="headerlink" title="2    支持RegExp的String方法"></a>2    支持RegExp的String方法</h3><pre><code class="javascript">search()
+match()
+replace()
+split()
+</code></pre>
+<table>
+<thead>
+<tr>
+<th><code>$$</code></th>
+<th>插入一个 “$”。</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$&amp;</code></td>
+<td>插入匹配的子串。</td>
+</tr>
+<tr>
+<td>`$``</td>
+<td>插入当前匹配的子串左边的内容。</td>
+</tr>
+<tr>
+<td><code>$&#39;</code></td>
+<td>插入当前匹配的子串右边的内容。</td>
+</tr>
+<tr>
+<td><code>$*n*</code></td>
+<td>假如第一个参数是 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/RegExp" target="_blank" rel="external"><code>RegExp</code></a>对象，并且 n 是个小于100的非负整数，那么插入第 n 个括号匹配的字符串。</td>
+</tr>
+</tbody>
+</table>
+
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
     
       
   <article class="post">
@@ -208,7 +502,7 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          <a class="post-link" href="/2017/03/03/javascript ajax and jsonp/">ajax 跨域 jsonp</a>
+          <a class="post-link" href="/2017/03/03/javascript偏移量 滚动 视口之类的/">offset alien scroll</a>
         
       </h1>
 
@@ -236,84 +530,25 @@
         
 
         
-          <h2 id="AJAX原生"><a href="#AJAX原生" class="headerlink" title="AJAX原生"></a>AJAX原生</h2><ul>
-<li>异步加载必须先<code>实例化一个XMLHttpRequest函数</code>。</li>
-</ul>
-<pre><code class="javascript">let xhr = new XMLHttpRequest();
-xhr.open();
-xhr.send();
-setRequsetHeader();
+          <pre><code class="javascript">offsetTop
+offsetLeft //child outsideborder to parent outsidepadding
+offsetHeight
+offsetWidth  //width+padding+border
+
+clientHeight 
+clientWidth  //width+padding
+
+scrollHeight
+scrollWidth
+scrollLeft
+scrollTop
+
+outerHeight
+outerWidth
+//IE不支持，用clientHeight代替
+innerHeight
+innerWidth
 </code></pre>
-<ul>
-<li>XMLHttpRequest的响应方法</li>
-</ul>
-<pre><code class="javascript">/*
-    readyStateChange 用于监听readyState的变化
-    status 响应状态码 1xx 2xx 3xx 4xx 5xx
-    statusText 响应状态说明
-    readyState    请求／响应过程的当前活动状态
-        0
-        1
-        2    发送，已经调用send方法
-        3    接收响应数据
-        4    表示完成
-
-    responseText    响应主体返回的文本
-    responseXML        响应主体返回的XML
-
-*/
-</code></pre>
-<ul>
-<li>GET 和 POST 的一般写法</li>
-</ul>
-<pre><code class="javascript">// get
-let xhr=new XMLHttpRequest();
-url=&quot;http://www.abc.com?a=b&amp;c=d&quot;;
-xhr.open(&quot;get&quot;,url,true);
-xhr.send(null);
-xhr.readyStateChange=function(){
-  if(xhr.readyState==4&amp;&amp;xhr.status==200){
-    console.log(xhr.responseText);
-  }else{
-    console.log(`error${xhr.status}`);
-  }
-};
-
-//post
-let xhr=new XMLHttpRequest();
-url=&quot;http://abc.com&quot;;
-data=&quot;a=b&amp;c=d&quot;;
-xhr.open(&quot;post&quot;,url,true);
-xhr.setRequestHeader(&quot;Content-Type&quot;,&quot;application/x-www-from-urlencoded&quot;);
-xhr.send(data);
-xhr.readyStateChange=function(){
-  if(xhr.readyState==4&amp;&amp;xhr.status=200){
-    console.log(xhr.responseText);
-  }else{
-    console.log(`error:${xhr.status}`);
-
-  }
-}
-</code></pre>
-<h2 id="jquery-异步"><a href="#jquery-异步" class="headerlink" title="jquery 异步"></a>jquery 异步</h2><h2 id="jsonP"><a href="#jsonP" class="headerlink" title="jsonP"></a>jsonP</h2><p>利用\<script\>标签可跨域的性质，从服务器获取js文件，在当前页运行。</script\></p>
-<h2 id="JSON的两个方法"><a href="#JSON的两个方法" class="headerlink" title="JSON的两个方法"></a>JSON的两个方法</h2><pre><code>+ to obj     `JSON.parse(text)`
- + to str    `JSON.stringify(obj)`
-</code></pre><h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><p>两个url中 协议 子域名 主域名 端口号 任意一个不同皆为不同域，而不同域之间的通信称之为跨域。</p>
-<pre><code class="javascript">／*
-
-http :  //  www  .  abc.com  :  8000  /demo/index.html
-协议        子域名        主域名        端口号        路径
-
-*／
-</code></pre>
-<h2 id="http状态码简记"><a href="#http状态码简记" class="headerlink" title="http状态码简记"></a>http状态码简记</h2><ul>
-<li>1xx:信息响应类：表示接收到请求并且继续处理</li>
-<li>2xx:处理成功响应类：表示动作被成功接收、理解和接受</li>
-<li>3xx:重定向响应类：为了完成指定的动作，必须接受进一步处理</li>
-<li>4xx:客户端错误：客户请求包含语法错误或者是不能正确执行</li>
-<li>5xx:服务端错误：服务器不能正确执行一个正确的请求</li>
-</ul>
-<p><a href="https://segmentfault.com/a/1190000006689786" target="_blank" rel="external">https://segmentfault.com/a/1190000006689786</a></p>
 
         
       
@@ -388,6 +623,147 @@ http :  //  www  .  abc.com  :  8000  /demo/index.html
     <header class="post-header">
       <h1 class="post-title">
         
+          <a class="post-link" href="/2016/12/22/webpack的使用/">webpack基础应用</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2016-12-22
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/工具/">工具</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          <p><code>官网</code>：<a href="https://webpack.js.org/" target="_blank" rel="external">https://webpack.js.org/</a></p>
+<p>webpack是一款模块加载和打包的工具</p>
+<h2 id="1-全局安装"><a href="#1-全局安装" class="headerlink" title="1.全局安装"></a>1.全局安装</h2><pre><code> npm install -g webpack
+</code></pre><h2 id="进入你的项目文件夹（比如叫yourproject）和-初始化"><a href="#进入你的项目文件夹（比如叫yourproject）和-初始化" class="headerlink" title="进入你的项目文件夹（比如叫yourproject）和 初始化"></a>进入你的项目文件夹（比如叫yourproject）和 初始化</h2><pre><code>cd yourproject
+npm init
+</code></pre><p>初始化用来生成package.json包</p>
+<pre><code class="json">{
+  &quot;name&quot;: &quot;webpacktest&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;description&quot;: &quot;&quot;,
+  &quot;main&quot;: &quot;index.js&quot;,
+  &quot;scripts&quot;: {
+    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;
+  },
+  &quot;author&quot;: &quot;&quot;,
+  &quot;license&quot;: &quot;ISC&quot;,
+  &quot;devDependencies&quot;: {
+    &quot;webpack&quot;: &quot;^1.14.0&quot;
+  }
+}
+</code></pre>
+<h2 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h2><pre><code class="npm">npm install webpack --save-dev
+</code></pre>
+<p>生成mode_modules文件夹以及在package.json的devDependencies中自动添加</p>
+<pre><code class="json">&quot;devDependencies&quot;: {
+    &quot;webpack&quot;: &quot;^1.14.0&quot;
+  }
+</code></pre>
+<p>在每个项目根目录下必须配置一个webpack.config.js文件，此文件用来写配置项，用来告诉webpack做什么。<br>webpack.config.js里一般写法</p>
+<pre><code class="javascript">//var webpack=require(&#39;webpack&#39;);
+//var commonPlugin = new webpack.optimize.CommonsChunkPlugin(&#39;comon.js&#39;);
+
+
+module.explorts={
+  //plugins:[commonPlugin],
+  //entry里为设置处理的文件路径入口
+  entry:{
+    index:&#39;./src/js/page/index.js&#39;
+    },
+  //output里为处理后存放的文件夹以及新的文件名
+  output:{
+    path:&#39;dist/js/page&#39;,
+    //publiPath:&#39;&#39;,
+    filename:&#39;[name].js&#39;
+    },
+  // module这里定义了处理指定后缀文件的插件，插件需要安装在项目内
+  // npm install 插件名 -dev--save
+  module:{
+    loaders:[
+      //处理css和scss文件
+        {test:/\.css$/,
+         loader:&#39;style-loader!css-loader!sass-loader&#39;
+        },
+      //处理es6文件
+        {
+          test:/\.js$/,
+          //排除不需要解析道文件夹
+          exclude:(),
+          loader:&#39;label-loader&#39;,
+          //
+          qurey:{
+            presets:[&#39;es2015&#39;]
+          }
+        }
+
+      ]
+    },
+  //
+  resolve:{
+    // 设置查找module的根目录，可忽略
+    root:&#39;&#39;,
+    // resolve.extensions设置扩展文件后缀名， require()可以省略文件名
+    extensions:[&#39;&#39;,&#39;js&#39;,&#39;css&#39;],
+    //设置模块别名
+    alias:{
+
+      }
+    },
+  //插件
+  plugins:{
+
+  }
+}
+</code></pre>
+<p>__filename:当前文件的绝对值</p>
+<p>__dirname:当前文件所在目录的绝对路径</p>
+<p>path.resolve()</p>
+<p>path.jion()</p>
+<p><strong><code>扩展阅读</code></strong></p>
+<ul>
+<li><a href="http://www.w2bc.com/Article/50764" target="_blank" rel="external">http://www.w2bc.com/Article/50764</a></li>
+<li><a href="http://blog.csdn.net/github_26672553/article/details/52107165" target="_blank" rel="external">http://blog.csdn.net/github_26672553/article/details/52107165</a></li>
+<li>webpack-dev-server使用讲解 </li>
+<li><a href="http://www.tuicool.com/articles/BZrQ3mv" target="_blank" rel="external">http://www.tuicool.com/articles/BZrQ3mv</a></li>
+<li><a href="https://segmentfault.com/a/1190000006964335" target="_blank" rel="external">https://segmentfault.com/a/1190000006964335</a></li>
+</ul>
+
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
           <a class="post-link" href="/2016/12/22/requirejs 使用/">requirejs使用</a>
         
       </h1>
@@ -430,6 +806,51 @@ http :  //  www  .  abc.com  :  8000  /demo/index.html
 <li><a href="http://www.qdfuns.com/notes/28100/ce0ba3c76072e916a8ce86e6360ac3de.html" target="_blank" rel="external">http://www.qdfuns.com/notes/28100/ce0ba3c76072e916a8ce86e6360ac3de.html</a></li>
 </ul>
 
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2016/12/22/仿锤子3d动图/">防锤子3d动图</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2016-12-22
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/javascript-css/">javascript css</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          
         
       
     </div>
@@ -630,293 +1051,6 @@ mv file1 /demo
   </article>
 
     
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2016/12/22/计算机基础/">计算机基础</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2016-12-22
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/categories/javascript/">javascript</a>
-            
-          </div>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <p>比特(bit): 1bit为单个二进制数值 0 或者 1 。</p>
-<p>字节(Byte)：1byte=8bit(00000000~11111111)=8位二进制。<br>位：计算机内部数据储存的最小单位(比如cpu有32位二进制和64位二进制)<br>码元：常用时间间隔相同的符号来表示一位二进制数字，这样的时间间隔内的信号          称为二进制码元。<br>字符</p>
-
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2016/12/22/仿锤子3d动图/">防锤子3d动图</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2016-12-22
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/categories/javascript-css/">javascript css</a>
-            
-          </div>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2016/12/22/webpack的使用/">webpack基础应用</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2016-12-22
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/categories/工具/">工具</a>
-            
-          </div>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <p><code>官网</code>：<a href="https://webpack.js.org/" target="_blank" rel="external">https://webpack.js.org/</a></p>
-<p>webpack是一款模块加载和打包的工具</p>
-<h2 id="1-全局安装"><a href="#1-全局安装" class="headerlink" title="1.全局安装"></a>1.全局安装</h2><pre><code> npm install -g webpack
-</code></pre><h2 id="进入你的项目文件夹（比如叫yourproject）和-初始化"><a href="#进入你的项目文件夹（比如叫yourproject）和-初始化" class="headerlink" title="进入你的项目文件夹（比如叫yourproject）和 初始化"></a>进入你的项目文件夹（比如叫yourproject）和 初始化</h2><pre><code>cd yourproject
-npm init
-</code></pre><p>初始化用来生成package.json包</p>
-<pre><code class="json">{
-  &quot;name&quot;: &quot;webpacktest&quot;,
-  &quot;version&quot;: &quot;1.0.0&quot;,
-  &quot;description&quot;: &quot;&quot;,
-  &quot;main&quot;: &quot;index.js&quot;,
-  &quot;scripts&quot;: {
-    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;
-  },
-  &quot;author&quot;: &quot;&quot;,
-  &quot;license&quot;: &quot;ISC&quot;,
-  &quot;devDependencies&quot;: {
-    &quot;webpack&quot;: &quot;^1.14.0&quot;
-  }
-}
-</code></pre>
-<h2 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h2><pre><code class="npm">npm install webpack --save-dev
-</code></pre>
-<p>生成mode_modules文件夹以及在package.json的devDependencies中自动添加</p>
-<pre><code class="json">&quot;devDependencies&quot;: {
-    &quot;webpack&quot;: &quot;^1.14.0&quot;
-  }
-</code></pre>
-<p>在每个项目根目录下必须配置一个webpack.config.js文件，此文件用来写配置项，用来告诉webpack做什么。<br>webpack.config.js里一般写法</p>
-<pre><code class="javascript">//var webpack=require(&#39;webpack&#39;);
-//var commonPlugin = new webpack.optimize.CommonsChunkPlugin(&#39;comon.js&#39;);
-
-
-module.explorts={
-  //plugins:[commonPlugin],
-  //entry里为设置处理的文件路径入口
-  entry:{
-    index:&#39;./src/js/page/index.js&#39;
-    },
-  //output里为处理后存放的文件夹以及新的文件名
-  output:{
-    path:&#39;dist/js/page&#39;,
-    //publiPath:&#39;&#39;,
-    filename:&#39;[name].js&#39;
-    },
-  // module这里定义了处理指定后缀文件的插件，插件需要安装在项目内
-  // npm install 插件名 -dev--save
-  module:{
-    loaders:[
-      //处理css和scss文件
-        {test:/\.css$/,
-         loader:&#39;style-loader!css-loader!sass-loader&#39;
-        },
-      //处理es6文件
-        {
-          test:/\.js$/,
-          //排除不需要解析道文件夹
-          exclude:(),
-          loader:&#39;label-loader&#39;,
-          //
-          qurey:{
-            presets:[&#39;es2015&#39;]
-          }
-        }
-
-      ]
-    },
-  //
-  resolve:{
-    // 设置查找module的根目录，可忽略
-    root:&#39;&#39;,
-    // resolve.extensions设置扩展文件后缀名， require()可以省略文件名
-    extensions:[&#39;&#39;,&#39;js&#39;,&#39;css&#39;],
-    //设置模块别名
-    alias:{
-
-      }
-    },
-  //插件
-  plugins:{
-
-  }
-}
-</code></pre>
-<p>__filename:当前文件的绝对值</p>
-<p>__dirname:当前文件所在目录的绝对路径</p>
-<p>path.resolve()</p>
-<p>path.jion()</p>
-<p><strong><code>扩展阅读</code></strong></p>
-<ul>
-<li><a href="http://www.w2bc.com/Article/50764" target="_blank" rel="external">http://www.w2bc.com/Article/50764</a></li>
-<li><a href="http://blog.csdn.net/github_26672553/article/details/52107165" target="_blank" rel="external">http://blog.csdn.net/github_26672553/article/details/52107165</a></li>
-<li>webpack-dev-server使用讲解 </li>
-<li><a href="http://www.tuicool.com/articles/BZrQ3mv" target="_blank" rel="external">http://www.tuicool.com/articles/BZrQ3mv</a></li>
-<li><a href="https://segmentfault.com/a/1190000006964335" target="_blank" rel="external">https://segmentfault.com/a/1190000006964335</a></li>
-</ul>
-
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2016/12/22/新手小问题收集（HTML）/">新手小问题收集</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2016-12-22
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/categories/html/">html</a>
-            
-          </div>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <pre><code class="html">&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;edge&quot;&gt;
-</code></pre>
-<p>X-UA-Compatible 是针对IE8版本的一个特殊文件头标记，content=”edge” 通知IE用最高级别的可用模式显示内容</p>
-<p>http-equiv 类似于http头部协议，用来回应给浏览器一些信息，以帮助浏览器正确的现实网页内容。<br>一些平常使用的http-equiv的名值对</p>
-<pre><code class="html">//10s后刷新页面
-&lt;meta http-equiv=&quot;refresh&quot; content=&quot;10&quot;&gt;
-//10s后跳转到bing
-&lt;meta http-equiv=&quot;refresh&quot; content=&quot;10&quot; url=&quot;http://bing.com&quot;&gt;
-</code></pre>
-
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
   </section>
 
   
@@ -924,12 +1058,12 @@ module.explorts={
     
       <a class="prev" href="/page/2/">
         <i class="iconfont icon-left"></i>
-        <span class="prev-text">Prev</span>
+        <span class="prev-text">上一页</span>
       </a>
     
     
       <a class="next" href="/page/4/">
-        <span class="next-text">Next</span>
+        <span class="next-text">下一页</span>
         <i class="iconfont icon-right"></i>
       </a>
     
@@ -986,11 +1120,11 @@ module.explorts={
 
 <div class="copyright">
   <span class="power-by">
-    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    Theme - 
+    主题 - 
     <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 
