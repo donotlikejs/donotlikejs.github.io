@@ -637,7 +637,7 @@ http :  //  www  .  abc.com  :  8000  /demo/index.html
     <header class="post-header">
       <h1 class="post-title">
         
-          <a class="post-link" href="/2017/03/03/javascript DOM操作/">DOM 操作</a>
+          <a class="post-link" href="/2017/03/03/javascript正则/">javascript正则</a>
         
       </h1>
 
@@ -663,14 +663,119 @@ http :  //  www  .  abc.com  :  8000  /demo/index.html
       
         
         
-          
-        
 
         
-          <p>摘要 有关dom到基础</p>
-          <div class="read-more">
-            <a href="/2017/03/03/javascript DOM操作/" class="read-more-link">阅读更多</a>
-          </div>
+          <h2 id="创建-RegExp"><a href="#创建-RegExp" class="headerlink" title="创建 RegExp"></a>创建 RegExp</h2><pre><code class="javascript">//1.
+let patt=/abc/g;
+//2.
+let patt=new RegExp(&#39;abc&#39;,&#39;g&#39;);
+</code></pre>
+<h2 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h2><pre><code class="javascript">/*
+
+    i    不区分大小
+    g    全局匹配
+    m    多行匹配
+    u    （es6新增）
+
+*/
+</code></pre>
+<h2 id="元字符-b-w-d-s"><a href="#元字符-b-w-d-s" class="headerlink" title="元字符 . \b \w\d\s"></a>元字符 . \b \w\d\s</h2><pre><code class="javascript">/*
+    .          匹配任意字符
+    \b         匹配单词边界
+    \w        匹配数字，字母，下划线
+    \d        匹配数字
+    \s        匹配空格
+    [abc]    匹配方括号里任意一个字符
+    ^        匹配首部
+    $        匹配尾部
+
+    --取反--
+    \B \W \D \S [^abc]
+
+*/
+</code></pre>
+<h2 id="量词"><a href="#量词" class="headerlink" title="量词 * + ? {}"></a>量词 * + ? {}</h2><pre><code class="javascript">/*
+
+    *        匹配任意个
+    +        匹配一到多个
+    ?        匹配 0 到 1 个
+    {n}        匹配 n 个
+    {n,}    匹配至少 n 个
+    {n,m}    匹配 n 到 m 个
+
+*/
+</code></pre>
+<h2 id="分枝条件"><a href="#分枝条件" class="headerlink" title="分枝条件 |"></a>分枝条件 |</h2><pre><code class="javascript">/*
+
+a|b         匹配 a 或者 b 
+
+*/
+</code></pre>
+<h2 id="分组"><a href="#分组" class="headerlink" title="分组 ()"></a>分组 ()</h2><pre><code class="javascript">/*
+
+    (exp)            匹配且分组
+    (?&lt;name&gt;exp)    匹配且以name名分组
+    (?:exp)            只匹配不捕获不分组
+    (?=exp)            匹配exp前面位置
+    (?&lt;=exp)        匹配exp后面位置
+    (?!exp)            匹配后面不跟着exp的位置
+    (?&lt;!exp)        匹配前面不跟着exp的位置
+    (?#comment)        注释
+
+ */
+</code></pre>
+<h2 id="懒惰限定符"><a href="#懒惰限定符" class="headerlink" title="懒惰限定符"></a>懒惰限定符</h2><pre><code class="javascript">/*
+
+    *?
+    +?
+    ??
+    {n,m}?
+    {n,}?
+
+*/
+</code></pre>
+<h2 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符  \"></a>转义字符  <code>\</code></h2><pre><code class="javascript">/*
+
+    需要转义的字符   * . ? + $ ^ [ ] ( ) { } / \ |
+
+*/
+</code></pre>
+<h2 id="RegExp方法"><a href="#RegExp方法" class="headerlink" title="RegExp方法"></a>RegExp方法</h2><h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><pre><code class="javascript">complie()
+exec()
+test()
+</code></pre>
+<h3 id="2-支持RegExp的String方法"><a href="#2-支持RegExp的String方法" class="headerlink" title="2    支持RegExp的String方法"></a>2    支持RegExp的String方法</h3><pre><code class="javascript">search()
+match()
+replace()
+split()
+</code></pre>
+<table>
+<thead>
+<tr>
+<th><code>$$</code></th>
+<th>插入一个 “$”。</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$&amp;</code></td>
+<td>插入匹配的子串。</td>
+</tr>
+<tr>
+<td>`$``</td>
+<td>插入当前匹配的子串左边的内容。</td>
+</tr>
+<tr>
+<td><code>$&#39;</code></td>
+<td>插入当前匹配的子串右边的内容。</td>
+</tr>
+<tr>
+<td><code>$*n*</code></td>
+<td>假如第一个参数是 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/RegExp" target="_blank" rel="external"><code>RegExp</code></a>对象，并且 n 是个小于100的非负整数，那么插入第 n 个括号匹配的字符串。</td>
+</tr>
+</tbody>
+</table>
+
         
       
     </div>
@@ -997,7 +1102,7 @@ Number.parseInt()==parseInt()//es6
     <header class="post-header">
       <h1 class="post-title">
         
-          <a class="post-link" href="/2017/03/03/ES6初探/">ES6 初探</a>
+          <a class="post-link" href="/2017/03/03/javascript偏移量 滚动 视口之类的/">offset alien scroll</a>
         
       </h1>
 
@@ -1025,24 +1130,26 @@ Number.parseInt()==parseInt()//es6
         
 
         
-          <h2 id="let-和-const"><a href="#let-和-const" class="headerlink" title="let 和 const"></a>let 和 const</h2><p>let和const声明都不能提升，</p>
-<p>同一个变量不能重复声明，</p>
-<p>声明的全局变量不是全局对象的属性</p>
-<p>const声明和赋值同时进行，对于基本类型不能重复赋值（可以作为常量赋值），引用类型可以。</p>
-<p>let能解决for循环中i的锁定问题。</p>
-<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><p>箭头函数没有this，也没有argument</p>
-<pre><code class="javascript">//let exp1=function(){return a;}
-let exp1=()=&gt;a;
-//let exp2=function(){let a=0;return console.log(a);}
-let exp2=()=&gt;{let a=0;return console.log(a);}
+          <pre><code class="javascript">offsetTop
+offsetLeft //child outsideborder to parent outsidepadding
+offsetHeight
+offsetWidth  //width+padding+border
+
+clientHeight 
+clientWidth  //width+padding
+
+scrollHeight
+scrollWidth
+scrollLeft
+scrollTop
+
+outerHeight
+outerWidth
+//IE不支持，用clientHeight代替
+innerHeight
+innerWidth
 </code></pre>
-<h2 id="不定参数和默认参数"><a href="#不定参数和默认参数" class="headerlink" title="不定参数和默认参数"></a>不定参数和默认参数</h2><h2 id="for-of"><a href="#for-of" class="headerlink" title="for - of"></a>for - of</h2><h2 id="模版字符串"><a href="#模版字符串" class="headerlink" title="模版字符串"></a>模版字符串</h2><p>使用`  ` 包裹，需要解析的变量用 ${} </p>
-<h2 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h2><pre><code class="javascript">let arr=[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;];
-let first=arr[0],second=arr[1],third=arr[2];
-// 等同于
-let[first,second,third]=arr;
-</code></pre>
-<h2 id="Symbols"><a href="#Symbols" class="headerlink" title="Symbols"></a>Symbols</h2><h2 id="集合-Set-Map-amp-amp-weakSet-weakMap"><a href="#集合-Set-Map-amp-amp-weakSet-weakMap" class="headerlink" title="集合 Set Map &amp;&amp; weakSet weakMap"></a>集合 Set Map &amp;&amp; weakSet weakMap</h2><h2 id="代理-proxies"><a href="#代理-proxies" class="headerlink" title="代理 proxies"></a>代理 proxies</h2><h2 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h2><h2 id="类class"><a href="#类class" class="headerlink" title="类class"></a>类class</h2><h2 id="子类-Subclass"><a href="#子类-Subclass" class="headerlink" title="子类 Subclass"></a>子类 Subclass</h2>
+
         
       
     </div>
